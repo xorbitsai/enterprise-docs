@@ -1,0 +1,206 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, Xorbits Inc.
+# This file is distributed under the same license as the Xinference package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-02-09 17:40+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../getting_started/installation.rst:5
+msgid "Installation"
+msgstr "安装"
+
+#: ../getting_started/installation.rst:7
+msgid ""
+"Xinference can be installed with ``docker`` on Nvidia, NPU, GCU, and "
+"DCU.To run models using Xinference, you will need to pull the image "
+"corresponding to the type of device you intend to serve."
+msgstr ""
+"Xinference 可以通过 ``docker`` 安装在 Nvidia、NPU、GCU 和 DCU 上。"
+"要使用 Xinference 运行模型，您需要拉取与您打算服务的设备类型对应的镜像。"
+
+#: ../getting_started/installation.rst:12
+msgid "Nvidia"
+msgstr "Nvidia"
+
+#: ../getting_started/installation.rst:14
+msgid "To pull the Nvidia image, run the following command:"
+msgstr "要拉取 Nvidia 镜像，请运行以下命令："
+
+#: ../getting_started/installation.rst:24
+#: ../getting_started/installation.rst:109
+msgid "Run Command Example"
+msgstr "运行命令示例"
+
+#: ../getting_started/installation.rst:26
+#: ../getting_started/installation.rst:110
+msgid "To run the container, use the following command:"
+msgstr "要运行容器，请使用以下命令："
+
+#: ../getting_started/installation.rst:41
+#: ../getting_started/installation.rst:139
+msgid "Start Xinference"
+msgstr "启动 Xinference"
+
+#: ../getting_started/installation.rst:43
+#: ../getting_started/installation.rst:140
+msgid ""
+"After starting the container, navigate to the `/opt/projects` directory "
+"inside the container and run the following command:"
+msgstr ""
+"启动容器后，进入容器内的 `/opt/projects` 目录并运行以下命令："
+
+#: ../getting_started/installation.rst:50
+msgid ""
+"The `./xinf-enterprise.sh` script is used to start the Nginx service and "
+"write the Xinf service startup address to the configuration file."
+msgstr ""
+"`./xinf-enterprise.sh` 脚本用于启动 Nginx 服务并将 Xinf 服务启动地址写入配置文件。"
+
+#: ../getting_started/installation.rst:52
+msgid ""
+"The Xinf service startup command can be adjusted according to actual "
+"requirements. The `host` and `port` should be adjusted according to your "
+"device's configuration."
+msgstr ""
+"Xinf 服务启动命令可以根据实际需求进行调整。`host` 和 `port` 应根据设备配置进行调整。"
+
+#: ../getting_started/installation.rst:54
+msgid ""
+"Once the Xinf service is started, you can access the Xinf WebUI interface"
+" by visiting port 8000."
+msgstr ""
+"Xinf 服务启动后，您可以通过访问 8000 端口来访问 Xinf WebUI 界面。"
+
+#: ../getting_started/installation.rst:57
+msgid "MindIE Series"
+msgstr "MindIE 系列"
+
+#: ../getting_started/installation.rst:60
+msgid "Version Information"
+msgstr "版本信息"
+
+#: ../getting_started/installation.rst:61
+msgid "Python Version: 3.10"
+msgstr "Python 版本：3.10"
+
+#: ../getting_started/installation.rst:62
+msgid "CANN Version: 8.0.rc2"
+msgstr "CANN 版本：8.0.rc2"
+
+#: ../getting_started/installation.rst:63
+msgid "Operating System Version: ubuntu_22.04"
+msgstr "操作系统版本：ubuntu_22.04"
+
+#: ../getting_started/installation.rst:64
+msgid "mindie_1.0.RC2"
+msgstr "mindie_1.0.RC2"
+
+#: ../getting_started/installation.rst:68
+msgid "Dependencies"
+msgstr "依赖项"
+
+#: ../getting_started/installation.rst:69
+msgid ""
+"For 310I DUO: - Driver: Ascend-hdk-310p-npu-driver_24.1.rc2_linux-"
+"aarch64.run - `Download <https://obs-whaicc-fae-public.obs.cn-"
+"central-221.ovaijisuan.com/cann/mindie/1.0.RC2/310p/Ascend-hdk-310p-npu-"
+"driver_24.1.rc2_linux-aarch64.run>`_ - Firmware: Ascend-hdk-310p-npu-"
+"firmware_7.3.0.1.231.run - `Download <https://obs-whaicc-fae-public.obs"
+".cn-central-221.ovaijisuan.com/cann/mindie/1.0.RC2/310p/Ascend-hdk-310p-"
+"npu-firmware_7.3.0.1.231.run>`_"
+msgstr ""
+"对于 310I DUO： - 驱动：Ascend-hdk-310p-npu-driver_24.1.rc2_linux-"
+"aarch64.run - `下载 <https://obs-whaicc-fae-public.obs.cn-"
+"central-221.ovaijisuan.com/cann/mindie/1.0.RC2/310p/Ascend-hdk-310p-npu-"
+"driver_24.1.rc2_linux-aarch64.run>`_ - 固件：Ascend-hdk-310p-npu-"
+"firmware_7.3.0.1.231.run - `下载 <https://obs-whaicc-fae-public.obs"
+".cn-central-221.ovaijisuan.com/cann/mindie/1.0.RC2/310p/Ascend-hdk-310p-"
+"npu-firmware_7.3.0.1.231.run>`_"
+
+#: ../getting_started/installation.rst:73
+msgid ""
+"For 910B: - Driver: Ascend-hdk-910b-npu-driver_24.1.rc3_linux-aarch64.run"
+" - `Download <https://ascend-repo.obs.cn-"
+"east-2.myhuaweicloud.com/Ascend%20HDK/Ascend%20HDK%2024.1.RC3/Ascend-hdk-"
+"910b-npu-driver_24.1.rc3_linux-aarch64.run?response-content-"
+"type=application/octet-stream>`_ - Firmware: Ascend-hdk-910b-npu-"
+"firmware_7.5.0.1.129.run - `Download <https://ascend-repo.obs.cn-"
+"east-2.myhuaweicloud.com/Ascend%20HDK/Ascend%20HDK%2024.1.RC3/Ascend-hdk-"
+"910b-npu-firmware_7.5.0.1.129.run?response-content-type=application"
+"/octet-stream>`_"
+msgstr ""
+"对于 910B： - 驱动：Ascend-hdk-910b-npu-driver_24.1.rc3_linux-aarch64.run"
+" - `下载 <https://ascend-repo.obs.cn-"
+"east-2.myhuaweicloud.com/Ascend%20HDK/Ascend%20HDK%2024.1.RC3/Ascend-hdk-"
+"910b-npu-driver_24.1.rc3_linux-aarch64.run?response-content-"
+"type=application/octet-stream>`_ - 固件：Ascend-hdk-910b-npu-"
+"firmware_7.5.0.1.129.run - `下载 <https://ascend-repo.obs.cn-"
+"east-2.myhuaweicloud.com/Ascend%20HDK/Ascend%20HDK%2024.1.RC3/Ascend-hdk-"
+"910b-npu-firmware_7.5.0.1.129.run?response-content-type=application"
+"/octet-stream>`_"
+
+#: ../getting_started/installation.rst:77
+msgid ""
+"Download the `.run` packages to the host machine, and then run the "
+"following commands to install the drivers and firmware:"
+msgstr ""
+"将 `.run` 包下载到主机上，然后运行以下命令安装驱动和固件："
+
+#: ../getting_started/installation.rst:84
+msgid ""
+"Once the installation is complete, the output should indicate "
+"\"successfully,\" confirming the installation. The firmware installation "
+"method is the same."
+msgstr ""
+"安装完成后，输出应显示 \"成功\"，确认安装完成。固件安装方法相同。"
+
+#: ../getting_started/installation.rst:86
+msgid ""
+"When Mindie does not start properly, verify that the driver and firmware "
+"versions match. Both the driver and firmware must be installed on the "
+"host machine and loaded into the Docker container via mounting."
+msgstr ""
+"当 Mindie 无法正常启动时，请验证驱动和固件版本是否匹配。驱动和固件必须在主机上安装，并通过挂载加载到 Docker 容器中。"
+
+#: ../getting_started/installation.rst:88
+msgid "For version upgrades, install the firmware first, then the driver."
+msgstr "对于版本升级，先安装固件，然后安装驱动。"
+
+#: ../getting_started/installation.rst:91
+msgid "Pull the Image"
+msgstr "拉取镜像"
+
+#: ../getting_started/installation.rst:92
+msgid "For 310I DUO:"
+msgstr "对于 310I DUO："
+
+#: ../getting_started/installation.rst:100
+msgid "For 910B:"
+msgstr "对于 910B："
+
+#: ../getting_started/installation.rst:105
+msgid "Installation for Arm-based Systems"
+msgstr "适用于基于 Arm 的系统的安装"
+
+#: ../getting_started/installation.rst:107
+msgid ""
+"To use Mindie on Arm-based systems (like Jetson Xavier NX and Jetson AGX "
+"Orin), you need to download the image for Arm-based systems and install "
+"the drivers and firmware as described above."
+msgstr ""
+"要在基于 Arm 的系统（如 Jetson Xavier NX 和 Jetson AGX Orin）上使用 Mindie，"
+"您需要下载适用于 Arm 系统的镜像，并按照上述说明安装驱动和固件。"
