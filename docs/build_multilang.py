@@ -42,6 +42,14 @@ def build_language(lang, output_dir):
     print(f"Successfully built {lang} documentation")
     return True
 
+def copy_nojekyll_file():
+    """复制.nojekyll文件到输出目录"""
+    nojekyll_source = Path("source/.nojekyll")
+    if nojekyll_source.exists():
+        # 复制到中文版本根目录
+        shutil.copy2(nojekyll_source, "build/html/.nojekyll")
+        print("Copied .nojekyll to build/html/")
+
 def update_switcher_config():
     """更新语言切换器配置"""
     switcher_config = [
@@ -96,6 +104,10 @@ def main():
     # 构建英文版本
     if not build_language('en', 'build/html/en'):
         return False
+    
+    # 复制.nojekyll文件
+    print("\n=== Copying .nojekyll file ===")
+    copy_nojekyll_file()
     
     # 更新语言切换器配置
     print("\n=== Updating language switcher ===")
