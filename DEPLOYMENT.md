@@ -17,11 +17,20 @@
 
 ### 部署流程
 
-当你推送代码到 `main` 或 `master` 分支时，GitHub Actions 会自动：
+#### PR 构建验证
+当你创建或更新 Pull Request 时，GitHub Actions 会自动：
 
 1. **安装依赖**: 安装 Python 和 Sphinx 相关包
 2. **构建文档**: 运行 `build_multilang.py` 生成多语言文档
-3. **部署到 Pages**: 将构建结果发布到 GitHub Pages
+3. **上传预览**: 将构建结果作为 artifacts 上传（保留7天）
+4. **状态检查**: 在PR中显示构建状态和预览链接
+
+#### 生产部署
+当你推送代码到 `main` 或 `master` 分支时，GitHub Actions 会自动：
+
+1. **构建文档**: 执行完整的多语言构建
+2. **部署到 Pages**: 将构建结果发布到 GitHub Pages
+3. **更新网站**: 实时更新在线文档
 
 ### 访问地址
 
@@ -86,6 +95,7 @@ enterprise-docs/
 1. **构建失败**
    - 检查 `requirements.txt` 中的依赖版本
    - 查看 GitHub Actions 日志中的错误信息
+   - 确认使用的是最新版本的 GitHub Actions
 
 2. **页面显示异常**
    - 确保 `.nojekyll` 文件存在于输出目录
@@ -94,6 +104,13 @@ enterprise-docs/
 3. **多语言切换不工作**
    - 确认 `switcher.json` 文件已正确生成
    - 检查语言切换器配置
+
+4. **GitHub Actions 版本错误**
+   - 如果遇到 "deprecated version" 错误，确保使用最新版本：
+     - `actions/setup-python@v5`
+     - `actions/configure-pages@v4`
+     - `actions/upload-pages-artifact@v3`
+     - `actions/deploy-pages@v4`
 
 ### 调试步骤
 
