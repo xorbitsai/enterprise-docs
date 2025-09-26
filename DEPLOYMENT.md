@@ -86,6 +86,7 @@ enterprise-docs/
 1. **构建失败**
    - 检查 `requirements.txt` 中的依赖版本
    - 查看 GitHub Actions 日志中的错误信息
+   - 确认使用的是最新版本的 GitHub Actions
 
 2. **页面显示异常**
    - 确保 `.nojekyll` 文件存在于输出目录
@@ -94,6 +95,13 @@ enterprise-docs/
 3. **多语言切换不工作**
    - 确认 `switcher.json` 文件已正确生成
    - 检查语言切换器配置
+
+4. **GitHub Actions 版本错误**
+   - 如果遇到 "deprecated version" 错误，确保使用最新版本：
+     - `actions/setup-python@v5`
+     - `actions/configure-pages@v4`
+     - `actions/upload-pages-artifact@v3`
+     - `actions/deploy-pages@v4`
 
 ### 调试步骤
 
