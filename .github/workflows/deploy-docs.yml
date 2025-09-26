@@ -1,7 +1,9 @@
-name: Deploy Documentation to GitHub Pages
+name: Build and Deploy Documentation
 
 on:
   push:
+    branches: [ main, master ]
+  pull_request:
     branches: [ main, master ]
   workflow_dispatch:
 
@@ -15,7 +17,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     
     steps:
@@ -45,14 +47,34 @@ jobs:
         cd docs
         python build_multilang.py
         
+    - name: Upload build artifacts (for PR preview)
+      uses: actions/upload-artifact@v4
+      if: github.event_name == 'pull_request'
+      with:
+        name: documentation-preview
+        path: docs/build/html
+        retention-days: 7
+        
     - name: Setup Pages
       uses: actions/configure-pages@v4
+      if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
       
     - name: Upload Pages artifact
       uses: actions/upload-pages-artifact@v3
+      if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
       with:
         path: docs/build/html
-        
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
+    steps:
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v4

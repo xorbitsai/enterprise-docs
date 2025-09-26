@@ -17,11 +17,20 @@
 
 ### 部署流程
 
-当你推送代码到 `main` 或 `master` 分支时，GitHub Actions 会自动：
+#### PR 构建验证
+当你创建或更新 Pull Request 时，GitHub Actions 会自动：
 
 1. **安装依赖**: 安装 Python 和 Sphinx 相关包
 2. **构建文档**: 运行 `build_multilang.py` 生成多语言文档
-3. **部署到 Pages**: 将构建结果发布到 GitHub Pages
+3. **上传预览**: 将构建结果作为 artifacts 上传（保留7天）
+4. **状态检查**: 在PR中显示构建状态和预览链接
+
+#### 生产部署
+当你推送代码到 `main` 或 `master` 分支时，GitHub Actions 会自动：
+
+1. **构建文档**: 执行完整的多语言构建
+2. **部署到 Pages**: 将构建结果发布到 GitHub Pages
+3. **更新网站**: 实时更新在线文档
 
 ### 访问地址
 
