@@ -1,0 +1,1231 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Enterprise Chain Logging Usage &#8212; Xinference</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'xinference_images/langfuse';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = '_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'zh-cn';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="故障排除" href="troubleshooting.html" />
+    <link rel="prev" title="Deploy on K8s" href="kubernetes.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Xinference</p>
+  
+</a></div>
+    
+      <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting_started/index.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Xinference Image Usage
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://xorbits.cn">
+    产品官网
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/xorbitsai/inference" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://xorbits.cn/assets/images/wechat_work_qr.png" title="WeChat" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-weixin fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">WeChat</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://zhihu.com/org/xorbits" title="Zhihu" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-zhihu fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Zhihu</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting_started/index.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Xinference Image Usage
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://xorbits.cn">
+    产品官网
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/xorbitsai/inference" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://xorbits.cn/assets/images/wechat_work_qr.png" title="WeChat" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-weixin fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">WeChat</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://zhihu.com/org/xorbits" title="Zhihu" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-zhihu fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Zhihu</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="nvidia.html">NVIDIA Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mindie.html">MindIE Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hygon.html">Hygon Series</a></li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="license.html">Xinf证书更新</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance.html">Performance Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multi_deployment.html">Xinference Multi-Machine Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kubernetes.html">Deploy on K8s</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Enterprise Chain Logging Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">故障排除</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Xinference Image Usage</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Enterprise Chain Logging Usage</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="langfuse-usage">
+<span id="id1"></span><h1>Enterprise Chain Logging Usage<a class="headerlink" href="#langfuse-usage" title="Link to this heading">#</a></h1>
+<p>本文档介绍如何使用Xinference企业版的链路日志功能，基于Langfuse服务实现调用链路追踪和监控。</p>
+<nav class="contents local" id="id2">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#id3" id="id30">前置要求</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id4" id="id31">系统要求</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id32">端口要求</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id6" id="id33">概览</a></p></li>
+<li><p><a class="reference internal" href="#id7" id="id34">服务启动</a></p>
+<ul>
+<li><p><a class="reference internal" href="#docker-compose" id="id35">Docker Compose配置</a></p></li>
+<li><p><a class="reference internal" href="#id8" id="id36">启动服务</a></p></li>
+<li><p><a class="reference internal" href="#id9" id="id37">验证部署</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#langfuse" id="id38">设置Langfuse</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id10" id="id39">配置连接</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id14" id="id40">模型调用监控</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id15" id="id41">概览页面</a></p></li>
+<li><p><a class="reference internal" href="#id16" id="id42">主要指标</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id17" id="id43">Chain Status</a></p></li>
+<li><p><a class="reference internal" href="#id18" id="id44">Chain Details</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id19" id="id45">展示格式</a></p></li>
+<li><p><a class="reference internal" href="#id20" id="id46">详情信息</a></p></li>
+<li><p><a class="reference internal" href="#id21" id="id47">数据格式</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id22" id="id48">使用场景</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id23" id="id49">性能优化</a></p></li>
+<li><p><a class="reference internal" href="#id24" id="id50">调试分析</a></p></li>
+<li><p><a class="reference internal" href="#id25" id="id51">成本管理</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id26" id="id52">Troubleshooting</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id27" id="id53">常见问题</a></p></li>
+<li><p><a class="reference internal" href="#id28" id="id54">维护建议</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id29" id="id55">Related Documentation</a></p></li>
+</ul>
+</nav>
+<section id="id3">
+<h2><a class="toc-backref" href="#id30" role="doc-backlink">前置要求</a><a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="id4">
+<h3><a class="toc-backref" href="#id31" role="doc-backlink">系统要求</a><a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>在部署Langfuse服务之前，请确保：</p>
+<ul class="simple">
+<li><p><strong>Docker</strong>：Docker 20.10+ 和 Docker Compose v2+</p></li>
+<li><p><strong>内存</strong>：建议至少4GB可用内存</p></li>
+<li><p><strong>存储</strong>：至少10GB可用磁盘空间</p></li>
+<li><p><strong>网络</strong>：确保相关端口未被占用</p></li>
+</ul>
+</section>
+<section id="id5">
+<h3><a class="toc-backref" href="#id32" role="doc-backlink">端口要求</a><a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>Langfuse服务需要以下端口：</p>
+<ul class="simple">
+<li><p><strong>3000</strong>：Langfuse Web界面</p></li>
+<li><p><strong>5432</strong>：PostgreSQL数据库</p></li>
+<li><p><strong>6379</strong>：Redis缓存</p></li>
+<li><p><strong>8123/9000</strong>：ClickHouse数据库</p></li>
+<li><p><strong>9090/9091</strong>：MinIO对象存储</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 检查端口占用情况</span>
+netstat<span class="w"> </span>-tlnp<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s2">&quot;(3000|5432|6379|8123|9000|9090|9091)&quot;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id6">
+<h2><a class="toc-backref" href="#id33" role="doc-backlink">概览</a><a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<p>链路以及模型使用情况等相关的功能依赖于Langfuse服务，因此在启动Xinference后，还需要启动Langfuse服务。</p>
+<p>Langfuse是一个开源的LLM工程平台，提供：</p>
+<ul class="simple">
+<li><p><strong>链路追踪</strong>：完整的模型调用链路记录</p></li>
+<li><p><strong>性能监控</strong>：延迟、Token使用量等指标统计</p></li>
+<li><p><strong>调用分析</strong>：模型使用情况和趋势分析</p></li>
+<li><p><strong>调试支持</strong>：详细的输入输出日志</p></li>
+</ul>
+</section>
+<section id="id7">
+<h2><a class="toc-backref" href="#id34" role="doc-backlink">服务启动</a><a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<p>使用Docker Compose启动Langfuse服务。将以下代码保存为 <code class="docutils literal notranslate"><span class="pre">docker-compose.yaml</span></code> 文件，xinference即可自动接入Langfuse服务。</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>安全配置重要提醒</strong>：</p>
+<p>配置文件中包含多个需要修改的安全参数，标记为 <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">CHANGEME</span></code>：</p>
+<ul class="simple">
+<li><p>数据库密码</p></li>
+<li><p>Redis认证密码</p></li>
+<li><p>MinIO访问密钥</p></li>
+<li><p>ClickHouse密码</p></li>
+<li><p>加密密钥等</p></li>
+</ul>
+<p><strong>生产环境部署前务必修改这些默认值！</strong></p>
+</div>
+<section id="docker-compose">
+<h3><a class="toc-backref" href="#id35" role="doc-backlink">Docker Compose配置</a><a class="headerlink" href="#docker-compose" title="Link to this heading">#</a></h3>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;3.8&#39;</span>
+
+<span class="nt">services</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">langfuse-worker</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker.io/langfuse/langfuse-worker:3</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+<span class="w">    </span><span class="nt">depends_on</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;langfuse-depends-on</span>
+<span class="w">      </span><span class="nt">postgres</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service_healthy</span>
+<span class="w">      </span><span class="nt">minio</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service_healthy</span>
+<span class="w">      </span><span class="nt">redis</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service_healthy</span>
+<span class="w">      </span><span class="nt">clickhouse</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">condition</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">service_healthy</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">127.0.0.1:3030:3030</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;langfuse-worker-env</span>
+<span class="w">      </span><span class="nt">NEXTAUTH_URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">http://localhost:3000</span>
+<span class="w">      </span><span class="nt">DATABASE_URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgresql://postgres:postgres@postgres:5432/postgres</span><span class="w"> </span><span class="c1"># CHANGEME</span>
+<span class="w">      </span><span class="nt">SALT</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;mysalt&quot;</span><span class="w"> </span><span class="c1"># CHANGEME</span>
+<span class="w">      </span><span class="nt">ENCRYPTION_KEY</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0000000000000000000000000000000000000000000000000000000000000000&quot;</span><span class="w"> </span><span class="c1"># CHANGEME: generate via `openssl rand -hex 32`</span>
+<span class="w">      </span><span class="nt">TELEMETRY_ENABLED</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${TELEMETRY_ENABLED:-true}</span>
+<span class="w">      </span><span class="nt">LANGFUSE_ENABLE_EXPERIMENTAL_FEATURES</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${LANGFUSE_ENABLE_EXPERIMENTAL_FEATURES:-true}</span>
+<span class="w">      </span><span class="nt">CLICKHOUSE_MIGRATION_URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${CLICKHOUSE_MIGRATION_URL:-clickhouse://clickhouse:9000}</span>
+<span class="w">      </span><span class="nt">CLICKHOUSE_URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${CLICKHOUSE_URL:-http://clickhouse:8123}</span>
+<span class="w">      </span><span class="nt">CLICKHOUSE_USER</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${CLICKHOUSE_USER:-clickhouse}</span>
+<span class="w">      </span><span class="nt">CLICKHOUSE_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${CLICKHOUSE_PASSWORD:-clickhouse}</span><span class="w"> </span><span class="c1"># CHANGEME</span>
+<span class="w">      </span><span class="nt">CLICKHOUSE_CLUSTER_ENABLED</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${CLICKHOUSE_CLUSTER_ENABLED:-false}</span>
+<span class="w">      </span><span class="nt">LANGFUSE_USE_AZURE_BLOB</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${LANGFUSE_USE_AZURE_BLOB:-false}</span>
+<span class="w">      </span><span class="nt">LANGFUSE_S3_EVENT_UPLOAD_BUCKET</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${LANGFUSE_S3_EVENT_UPLOAD_BUCKET:-langfuse}</span>
+<span class="w">      </span><span class="nt">LANGFUSE_S3_EVENT_UPLOAD_REGION</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${LANGFUSE_S3_EVENT_UPLOAD_REGION:-auto}</span>
+<span class="w">      </span><span class="nt">LANGFUSE_S3_EVENT_UPLOAD_ACCESS_KEY_ID</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${LANGFUSE_S3_EVENT_UPLOAD_ACCESS_KEY_ID:-minio}</span>
+<span class="w">      </span><span class="nt">LANGFUSE_S3_EVENT_UPLOAD_SECRET_ACCESS_KEY</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${LANGFUSE_S3_EVENT_UPLOAD_SECRET_ACCESS_KEY:-miniosecret}</span><span class="w"> </span><span class="c1"># CHANGEME</span>
+<span class="w">      </span><span class="nt">LANGFUSE_S3_EVENT_UPLOAD_ENDPOINT</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${LANGFUSE_S3_EVENT_UPLOAD_ENDPOINT:-http://minio:9000}</span>
+<span class="w">      </span><span class="nt">LANGFUSE_S3_EVENT_UPLOAD_FORCE_PATH_STYLE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${LANGFUSE_S3_EVENT_UPLOAD_FORCE_PATH_STYLE:-true}</span>
+<span class="w">      </span><span class="nt">LANGFUSE_S3_EVENT_UPLOAD_PREFIX</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${LANGFUSE_S3_EVENT_UPLOAD_PREFIX:-events/}</span>
+<span class="w">      </span><span class="nt">LANGFUSE_S3_MEDIA_UPLOAD_BUCKET</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${LANGFUSE_S3_MEDIA_UPLOAD_BUCKET:-langfuse}</span>
+<span class="w">      </span><span class="nt">LANGFUSE_S3_MEDIA_UPLOAD_REGION</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${LANGFUSE_S3_MEDIA_UPLOAD_REGION:-auto}</span>
+<span class="w">      </span><span class="nt">LANGFUSE_S3_MEDIA_UPLOAD_ACCESS_KEY_ID</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${LANGFUSE_S3_MEDIA_UPLOAD_ACCESS_KEY_ID:-minio}</span>
+<span class="w">      </span><span class="nt">LANGFUSE_S3_MEDIA_UPLOAD_SECRET_ACCESS_KEY</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${LANGFUSE_S3_MEDIA_UPLOAD_SECRET_ACCESS_KEY:-miniosecret}</span><span class="w"> </span><span class="c1"># CHANGEME</span>
+<span class="w">      </span><span class="nt">LANGFUSE_S3_MEDIA_UPLOAD_ENDPOINT</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${LANGFUSE_S3_MEDIA_UPLOAD_ENDPOINT:-http://localhost:9090}</span>
+<span class="w">      </span><span class="nt">LANGFUSE_S3_MEDIA_UPLOAD_FORCE_PATH_STYLE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${LANGFUSE_S3_MEDIA_UPLOAD_FORCE_PATH_STYLE:-true}</span>
+<span class="w">      </span><span class="nt">LANGFUSE_S3_MEDIA_UPLOAD_PREFIX</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${LANGFUSE_S3_MEDIA_UPLOAD_PREFIX:-media/}</span>
+<span class="w">      </span><span class="nt">LANGFUSE_S3_BATCH_EXPORT_ENABLED</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${LANGFUSE_S3_BATCH_EXPORT_ENABLED:-false}</span>
+<span class="w">      </span><span class="nt">LANGFUSE_S3_BATCH_EXPORT_BUCKET</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${LANGFUSE_S3_BATCH_EXPORT_BUCKET:-langfuse}</span>
+<span class="w">      </span><span class="nt">LANGFUSE_S3_BATCH_EXPORT_PREFIX</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${LANGFUSE_S3_BATCH_EXPORT_PREFIX:-exports/}</span>
+<span class="w">      </span><span class="nt">LANGFUSE_S3_BATCH_EXPORT_REGION</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${LANGFUSE_S3_BATCH_EXPORT_REGION:-auto}</span>
+<span class="w">      </span><span class="nt">LANGFUSE_S3_BATCH_EXPORT_ENDPOINT</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${LANGFUSE_S3_BATCH_EXPORT_ENDPOINT:-http://minio:9000}</span>
+<span class="w">      </span><span class="nt">LANGFUSE_S3_BATCH_EXPORT_EXTERNAL_ENDPOINT</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${LANGFUSE_S3_BATCH_EXPORT_EXTERNAL_ENDPOINT:-http://localhost:9090}</span>
+<span class="w">      </span><span class="nt">LANGFUSE_S3_BATCH_EXPORT_ACCESS_KEY_ID</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${LANGFUSE_S3_BATCH_EXPORT_ACCESS_KEY_ID:-minio}</span>
+<span class="w">      </span><span class="nt">LANGFUSE_S3_BATCH_EXPORT_SECRET_ACCESS_KEY</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${LANGFUSE_S3_BATCH_EXPORT_SECRET_ACCESS_KEY:-miniosecret}</span><span class="w"> </span><span class="c1"># CHANGEME</span>
+<span class="w">      </span><span class="nt">LANGFUSE_S3_BATCH_EXPORT_FORCE_PATH_STYLE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${LANGFUSE_S3_BATCH_EXPORT_FORCE_PATH_STYLE:-true}</span>
+<span class="w">      </span><span class="nt">LANGFUSE_INGESTION_QUEUE_DELAY_MS</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${LANGFUSE_INGESTION_QUEUE_DELAY_MS:-}</span>
+<span class="w">      </span><span class="nt">LANGFUSE_INGESTION_CLICKHOUSE_WRITE_INTERVAL_MS</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${LANGFUSE_INGESTION_CLICKHOUSE_WRITE_INTERVAL_MS:-}</span>
+<span class="w">      </span><span class="nt">REDIS_HOST</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${REDIS_HOST:-redis}</span>
+<span class="w">      </span><span class="nt">REDIS_PORT</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${REDIS_PORT:-6379}</span>
+<span class="w">      </span><span class="nt">REDIS_AUTH</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${REDIS_AUTH:-myredissecret}</span><span class="w"> </span><span class="c1"># CHANGEME</span>
+<span class="w">      </span><span class="nt">REDIS_TLS_ENABLED</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${REDIS_TLS_ENABLED:-false}</span>
+<span class="w">      </span><span class="nt">REDIS_TLS_CA</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${REDIS_TLS_CA:-/certs/ca.crt}</span>
+<span class="w">      </span><span class="nt">REDIS_TLS_CERT</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${REDIS_TLS_CERT:-/certs/redis.crt}</span>
+<span class="w">      </span><span class="nt">REDIS_TLS_KEY</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${REDIS_TLS_KEY:-/certs/redis.key}</span>
+<span class="w">      </span><span class="nt">EMAIL_FROM_ADDRESS</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${EMAIL_FROM_ADDRESS:-}</span>
+<span class="w">      </span><span class="nt">SMTP_CONNECTION_URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${SMTP_CONNECTION_URL:-}</span>
+
+<span class="w">  </span><span class="nt">langfuse-web</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker.io/langfuse/langfuse:3</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+<span class="w">    </span><span class="nt">depends_on</span><span class="p">:</span><span class="w"> </span><span class="nv">*langfuse-depends-on</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3000:3000</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*langfuse-worker-env</span>
+<span class="w">      </span><span class="nt">NEXTAUTH_SECRET</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mysecret</span><span class="w"> </span><span class="c1"># CHANGEME</span>
+<span class="w">      </span><span class="nt">LANGFUSE_INIT_ORG_ID</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20250101</span>
+<span class="w">      </span><span class="nt">LANGFUSE_INIT_ORG_NAME</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">orbitAI</span>
+<span class="w">      </span><span class="nt">LANGFUSE_INIT_PROJECT_ID</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20250101</span>
+<span class="w">      </span><span class="nt">LANGFUSE_INIT_PROJECT_NAME</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xinference</span>
+<span class="w">      </span><span class="nt">LANGFUSE_INIT_PROJECT_PUBLIC_KEY</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pk-lf-8a79d84e-5537-47b7-86bb-ba36257684f2</span>
+<span class="w">      </span><span class="nt">LANGFUSE_INIT_PROJECT_SECRET_KEY</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sk-lf-d1d41a0b-672e-49c9-aece-f9a2b40828de</span>
+<span class="w">      </span><span class="nt">LANGFUSE_INIT_USER_EMAIL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">administrator@orbitai.com</span>
+<span class="w">      </span><span class="nt">LANGFUSE_INIT_USER_NAME</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">administrator</span>
+<span class="w">      </span><span class="nt">LANGFUSE_INIT_USER_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">administrator</span>
+
+<span class="w">  </span><span class="nt">clickhouse</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker.io/clickhouse/clickhouse-server</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+<span class="w">    </span><span class="nt">user</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;101:101&quot;</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">CLICKHOUSE_DB</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<span class="w">      </span><span class="nt">CLICKHOUSE_USER</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">clickhouse</span>
+<span class="w">      </span><span class="nt">CLICKHOUSE_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">clickhouse</span><span class="w"> </span><span class="c1"># CHANGEME</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">langfuse_clickhouse_data:/var/lib/clickhouse</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">langfuse_clickhouse_logs:/var/log/clickhouse-server</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">127.0.0.1:8123:8123</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">127.0.0.1:9000:9000</span>
+<span class="w">    </span><span class="nt">healthcheck</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">test</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wget --no-verbose --tries=1 --spider http://localhost:8123/ping || exit 1</span>
+<span class="w">      </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5s</span>
+<span class="w">      </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5s</span>
+<span class="w">      </span><span class="nt">retries</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
+<span class="w">      </span><span class="nt">start_period</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1s</span>
+
+<span class="w">  </span><span class="nt">minio</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker.io/minio/minio</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+<span class="w">    </span><span class="nt">entrypoint</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sh</span>
+<span class="w">    </span><span class="c1"># create the &#39;langfuse&#39; bucket before starting the service</span>
+<span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-c &#39;mkdir -p /data/langfuse &amp;&amp; minio server --address &quot;:9000&quot; --console-address &quot;:9001&quot; /data&#39;</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">MINIO_ROOT_USER</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">minio</span>
+<span class="w">      </span><span class="nt">MINIO_ROOT_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">miniosecret</span><span class="w"> </span><span class="c1"># CHANGEME</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9090:9000</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">127.0.0.1:9091:9001</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">langfuse_minio_data:/data</span>
+<span class="w">    </span><span class="nt">healthcheck</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">test</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;CMD&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;mc&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;ready&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;local&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1s</span>
+<span class="w">      </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5s</span>
+<span class="w">      </span><span class="nt">retries</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+<span class="w">      </span><span class="nt">start_period</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1s</span>
+
+<span class="w">  </span><span class="nt">redis</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker.io/redis:7</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+<span class="w">    </span><span class="c1"># CHANGEME: row below to secure redis password</span>
+<span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span>
+<span class="w">      </span><span class="no">--requirepass ${REDIS_AUTH:-myredissecret}</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">127.0.0.1:6379:6379</span>
+<span class="w">    </span><span class="nt">healthcheck</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">test</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;CMD&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;redis-cli&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;ping&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3s</span>
+<span class="w">      </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10s</span>
+<span class="w">      </span><span class="nt">retries</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
+
+<span class="w">  </span><span class="nt">postgres</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">docker.io/postgres:${POSTGRES_VERSION:-latest}</span>
+<span class="w">    </span><span class="nt">restart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">always</span>
+<span class="w">    </span><span class="nt">healthcheck</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">test</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;CMD-SHELL&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;pg_isready</span><span class="nv"> </span><span class="s">-U</span><span class="nv"> </span><span class="s">postgres&quot;</span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3s</span>
+<span class="w">      </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3s</span>
+<span class="w">      </span><span class="nt">retries</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
+<span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">POSTGRES_USER</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres</span>
+<span class="w">      </span><span class="nt">POSTGRES_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres</span><span class="w"> </span><span class="c1"># CHANGEME</span>
+<span class="w">      </span><span class="nt">POSTGRES_DB</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5432:5432</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">langfuse_postgres_data:/var/lib/postgresql/data</span>
+
+<span class="nt">volumes</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">langfuse_postgres_data</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span>
+<span class="w">  </span><span class="nt">langfuse_clickhouse_data</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span>
+<span class="w">  </span><span class="nt">langfuse_clickhouse_logs</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span>
+<span class="w">  </span><span class="nt">langfuse_minio_data</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span>
+</pre></div>
+</div>
+</section>
+<section id="id8">
+<h3><a class="toc-backref" href="#id36" role="doc-backlink">启动服务</a><a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 启动所有服务</span>
+docker-compose<span class="w"> </span>up<span class="w"> </span>-d
+
+<span class="c1"># 查看服务状态</span>
+docker-compose<span class="w"> </span>ps
+
+<span class="c1"># 查看服务日志</span>
+docker-compose<span class="w"> </span>logs<span class="w"> </span>-f
+</pre></div>
+</div>
+</section>
+<section id="id9">
+<h3><a class="toc-backref" href="#id37" role="doc-backlink">验证部署</a><a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<p><strong>检查服务状态</strong>：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 检查所有容器是否正常运行</span>
+docker-compose<span class="w"> </span>ps
+
+<span class="c1"># 检查各服务健康状态</span>
+docker-compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>langfuse-web<span class="w"> </span>curl<span class="w"> </span>-f<span class="w"> </span>http://localhost:3000/api/public/health
+docker-compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>postgres<span class="w"> </span>pg_isready<span class="w"> </span>-U<span class="w"> </span>postgres
+docker-compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>redis<span class="w"> </span>redis-cli<span class="w"> </span>ping
+</pre></div>
+</div>
+<p><strong>访问Web界面</strong>：</p>
+<ol class="arabic simple">
+<li><p><strong>打开浏览器</strong>：访问 <code class="docutils literal notranslate"><span class="pre">http://localhost:3000</span></code></p></li>
+<li><p><strong>首次登录</strong>：使用配置的默认凭据</p>
+<ul class="simple">
+<li><p>邮箱：<code class="docutils literal notranslate"><span class="pre">administrator&#64;orbitai.com</span></code></p></li>
+<li><p>密码：<code class="docutils literal notranslate"><span class="pre">administrator</span></code></p></li>
+</ul>
+</li>
+<li><p><strong>验证功能</strong>：</p>
+<ul class="simple">
+<li><p>确认可以正常登录</p></li>
+<li><p>检查项目配置是否正确</p></li>
+<li><p>验证数据库连接状态</p></li>
+</ul>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>服务完全启动可能需要1-2分钟，请耐心等待所有容器状态变为健康。</p>
+</div>
+</section>
+</section>
+<section id="langfuse">
+<h2><a class="toc-backref" href="#id38" role="doc-backlink">设置Langfuse</a><a class="headerlink" href="#langfuse" title="Link to this heading">#</a></h2>
+<section id="id10">
+<h3><a class="toc-backref" href="#id39" role="doc-backlink">配置连接</a><a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<p>在Xinference WebUI中配置Langfuse连接参数：</p>
+<section id="id11">
+<h4>配置步骤<a class="headerlink" href="#id11" title="Link to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p><strong>访问Xinference WebUI</strong>：打开浏览器访问 <code class="docutils literal notranslate"><span class="pre">http://&lt;xinference-ip&gt;:8000</span></code></p></li>
+<li><p><strong>进入设置页面</strong>：点击右上角设置按钮</p></li>
+<li><p><strong>选择链路配置</strong>：选择”链路”标签页</p></li>
+<li><p><strong>配置连接参数</strong>：填写Langfuse服务信息</p></li>
+</ol>
+</section>
+<section id="id12">
+<h4>配置参数<a class="headerlink" href="#id12" title="Link to this heading">#</a></h4>
+<p><strong>同机部署（默认配置）</strong>：</p>
+<ul class="simple">
+<li><p><strong>主机地址</strong>：<code class="docutils literal notranslate"><span class="pre">http://localhost:3000</span></code></p></li>
+<li><p><strong>项目公钥</strong>：<code class="docutils literal notranslate"><span class="pre">pk-lf-8a79d84e-5537-47b7-86bb-ba36257684f2</span></code></p></li>
+<li><p><strong>项目私钥</strong>：<code class="docutils literal notranslate"><span class="pre">sk-lf-d1d41a0b-672e-49c9-aece-f9a2b40828de</span></code></p></li>
+</ul>
+<p><strong>跨机部署配置</strong>：</p>
+<p>如果Langfuse与Xinference不在同一台机器：</p>
+<ul class="simple">
+<li><p><strong>主机地址</strong>：<code class="docutils literal notranslate"><span class="pre">http://&lt;langfuse-server-ip&gt;:3000</span></code></p></li>
+<li><p><strong>项目公钥</strong>：保持不变或使用自定义项目的公钥</p></li>
+<li><p><strong>项目私钥</strong>：保持不变或使用自定义项目的私钥</p></li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>配置注意事项</strong>：</p>
+<ul class="simple">
+<li><p>确保Xinference服务可以访问Langfuse服务地址</p></li>
+<li><p>如果修改了Docker Compose中的端口，需要相应调整主机地址</p></li>
+<li><p>生产环境建议创建专用的项目和密钥对</p></li>
+</ul>
+</div>
+</section>
+<section id="id13">
+<h4>测试连接<a class="headerlink" href="#id13" title="Link to this heading">#</a></h4>
+<p>配置完成后，可以通过以下方式验证连接：</p>
+<ol class="arabic simple">
+<li><p><strong>保存配置</strong>：点击保存按钮</p></li>
+<li><p><strong>执行模型调用</strong>：进行一次模型推理测试</p></li>
+<li><p><strong>检查Langfuse</strong>：在Langfuse界面查看是否有新的调用记录</p></li>
+</ol>
+</section>
+</section>
+</section>
+<section id="id14">
+<h2><a class="toc-backref" href="#id40" role="doc-backlink">模型调用监控</a><a class="headerlink" href="#id14" title="Link to this heading">#</a></h2>
+<section id="id15">
+<h3><a class="toc-backref" href="#id41" role="doc-backlink">概览页面</a><a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
+<p>模型调用监控页面提供以下功能：</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>页面已实现轮询逻辑，无需手动刷新</p></li>
+<li><p>模型调用显示的是今日各个模型调用次数</p></li>
+<li><p>tokens每日总数变化为最近一周，如需查看往日数据，请移步至 监控运维-&gt;模型调用</p></li>
+</ul>
+</div>
+</section>
+<section id="id16">
+<h3><a class="toc-backref" href="#id42" role="doc-backlink">主要指标</a><a class="headerlink" href="#id16" title="Link to this heading">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>右上角支持日期筛选</p></li>
+<li><p>提供指标：大模型调用次数总数及各个模型调用次数、输入/输出tokens总数及各个模型输入/输出tokens总数、大模型每日调用次数变化、tokens每日总数变化</p></li>
+</ul>
+</div>
+<p>监控指标包括：</p>
+<dl class="simple">
+<dt><strong>调用统计</strong></dt><dd><ul class="simple">
+<li><p>大模型调用次数总数</p></li>
+<li><p>各个模型调用次数分布</p></li>
+<li><p>大模型每日调用次数变化趋势</p></li>
+</ul>
+</dd>
+<dt><strong>Token统计</strong></dt><dd><ul class="simple">
+<li><p>输入tokens总数</p></li>
+<li><p>输出tokens总数</p></li>
+<li><p>各个模型输入/输出tokens分布</p></li>
+<li><p>tokens每日总数变化趋势</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+</section>
+<section id="id17">
+<h2><a class="toc-backref" href="#id43" role="doc-backlink">Chain Status</a><a class="headerlink" href="#id17" title="Link to this heading">#</a></h2>
+<p>链路追踪功能提供详细的调用链路信息：</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>数据来源：运行实例详情 / 批处理</p></li>
+<li><p>链路列表：支持日期/User筛选，查看某链路详情</p></li>
+</ul>
+</div>
+<p>功能特性：</p>
+<ul class="simple">
+<li><p><strong>日期筛选</strong>：按时间范围查看链路记录</p></li>
+<li><p><strong>用户筛选</strong>：按用户维度分析调用情况</p></li>
+<li><p><strong>详情查看</strong>：点击链路可查看完整调用详情</p></li>
+</ul>
+</section>
+<section id="id18">
+<h2><a class="toc-backref" href="#id44" role="doc-backlink">Chain Details</a><a class="headerlink" href="#id18" title="Link to this heading">#</a></h2>
+<p>链路详情页面提供两种展示格式：</p>
+<section id="id19">
+<h3><a class="toc-backref" href="#id45" role="doc-backlink">展示格式</a><a class="headerlink" href="#id19" title="Link to this heading">#</a></h3>
+<dl class="simple">
+<dt><strong>Tree格式</strong></dt><dd><p>以树状结构展示调用链路层次关系</p>
+</dd>
+<dt><strong>Timeline格式</strong></dt><dd><p>以时间线形式展示调用的时序关系</p>
+</dd>
+</dl>
+</section>
+<section id="id20">
+<h3><a class="toc-backref" href="#id46" role="doc-backlink">详情信息</a><a class="headerlink" href="#id20" title="Link to this heading">#</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>两种展示方式Tree/Timeline</p></li>
+<li><p>详情数据：Latency，tokens输入/输出/总计，模型实例名称，对话的输入/输出，Metadata等</p></li>
+<li><p>支持Pretty/JSON格式转换</p></li>
+</ul>
+</div>
+<p>每个链路详情包含：</p>
+<dl class="simple">
+<dt><strong>性能指标</strong></dt><dd><ul class="simple">
+<li><p><strong>Latency</strong>：调用延迟时间</p></li>
+<li><p><strong>Tokens</strong>：输入/输出/总计token数量</p></li>
+</ul>
+</dd>
+<dt><strong>调用信息</strong></dt><dd><ul class="simple">
+<li><p><strong>模型实例名称</strong>：使用的具体模型实例</p></li>
+<li><p><strong>输入内容</strong>：用户的输入prompt</p></li>
+<li><p><strong>输出内容</strong>：模型的响应结果</p></li>
+</ul>
+</dd>
+<dt><strong>元数据</strong></dt><dd><ul class="simple">
+<li><p><strong>Metadata</strong>：调用的附加信息</p></li>
+<li><p><strong>时间戳</strong>：精确的调用时间</p></li>
+<li><p><strong>用户信息</strong>：调用者标识</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="id21">
+<h3><a class="toc-backref" href="#id47" role="doc-backlink">数据格式</a><a class="headerlink" href="#id21" title="Link to this heading">#</a></h3>
+<p>支持两种数据展示格式：</p>
+<ul class="simple">
+<li><p><strong>Pretty格式</strong>：格式化的易读显示</p></li>
+<li><p><strong>JSON格式</strong>：原始的JSON数据结构</p></li>
+</ul>
+</section>
+</section>
+<section id="id22">
+<h2><a class="toc-backref" href="#id48" role="doc-backlink">使用场景</a><a class="headerlink" href="#id22" title="Link to this heading">#</a></h2>
+<section id="id23">
+<h3><a class="toc-backref" href="#id49" role="doc-backlink">性能优化</a><a class="headerlink" href="#id23" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>通过延迟统计识别性能瓶颈</p></li>
+<li><p>分析token使用效率</p></li>
+<li><p>监控模型响应时间趋势</p></li>
+</ul>
+</section>
+<section id="id24">
+<h3><a class="toc-backref" href="#id50" role="doc-backlink">调试分析</a><a class="headerlink" href="#id24" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>查看完整的输入输出内容</p></li>
+<li><p>分析调用链路中的异常</p></li>
+<li><p>追踪特定用户的使用模式</p></li>
+</ul>
+</section>
+<section id="id25">
+<h3><a class="toc-backref" href="#id51" role="doc-backlink">成本管理</a><a class="headerlink" href="#id25" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>统计各模型的token消耗</p></li>
+<li><p>分析成本分布和趋势</p></li>
+<li><p>优化模型选择策略</p></li>
+</ul>
+</section>
+</section>
+<section id="id26">
+<h2><a class="toc-backref" href="#id52" role="doc-backlink">Troubleshooting</a><a class="headerlink" href="#id26" title="Link to this heading">#</a></h2>
+<section id="id27">
+<h3><a class="toc-backref" href="#id53" role="doc-backlink">常见问题</a><a class="headerlink" href="#id27" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p><strong>Langfuse服务无法启动</strong></p>
+<p><strong>可能原因</strong>：
+* Docker或Docker Compose版本过低
+* 端口被占用
+* 磁盘空间不足
+* 内存不足</p>
+<p><strong>解决方案</strong>：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 检查Docker版本</span>
+docker<span class="w"> </span>--version
+docker-compose<span class="w"> </span>--version
+
+<span class="c1"># 检查端口占用</span>
+netstat<span class="w"> </span>-tlnp<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s2">&quot;(3000|5432|6379|8123|9000)&quot;</span>
+
+<span class="c1"># 检查磁盘空间</span>
+df<span class="w"> </span>-h
+
+<span class="c1"># 查看容器日志</span>
+docker-compose<span class="w"> </span>logs<span class="w"> </span>langfuse-web
+docker-compose<span class="w"> </span>logs<span class="w"> </span>postgres
+</pre></div>
+</div>
+</li>
+<li><p><strong>Xinference无法连接Langfuse</strong></p>
+<p><strong>可能原因</strong>：
+* 网络连通性问题
+* 配置参数错误
+* 防火墙阻拦</p>
+<p><strong>解决方案</strong>：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 测试网络连通性</span>
+curl<span class="w"> </span>-f<span class="w"> </span>http://&lt;langfuse-ip&gt;:3000/api/public/health
+
+<span class="c1"># 检查Xinference配置</span>
+<span class="c1"># 在Xinference WebUI设置中验证Langfuse连接参数</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>链路数据不显示</strong></p>
+<p><strong>可能原因</strong>：
+* Langfuse配置未生效
+* 模型调用异常
+* 数据库连接问题</p>
+<p><strong>解决方案</strong>：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 检查Langfuse服务状态</span>
+docker-compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>langfuse-web<span class="w"> </span>curl<span class="w"> </span>-f<span class="w"> </span>http://localhost:3000/api/public/health
+
+<span class="c1"># 检查数据库连接</span>
+docker-compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>postgres<span class="w"> </span>pg_isready<span class="w"> </span>-U<span class="w"> </span>postgres
+
+<span class="c1"># 重启Xinference服务以重新加载配置</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>性能问题</strong></p>
+<p><strong>可能原因</strong>：
+* 资源不足
+* 数据库性能瓶颈
+* 网络延迟</p>
+<p><strong>解决方案</strong>：
+* 增加系统内存
+* 优化数据库配置
+* 使用本地部署减少网络延迟</p>
+</li>
+</ol>
+</section>
+<section id="id28">
+<h3><a class="toc-backref" href="#id54" role="doc-backlink">维护建议</a><a class="headerlink" href="#id28" title="Link to this heading">#</a></h3>
+<p><strong>定期维护</strong>：
+* 定期清理旧的链路数据
+* 监控磁盘使用情况
+* 备份重要的配置和数据</p>
+<p><strong>性能优化</strong>：
+* 根据使用量调整数据库配置
+* 考虑使用外部高性能数据库
+* 定期更新到最新版本</p>
+<p>更多详细的故障排除方案请参考：<a class="reference internal" href="troubleshooting.html"><span class="doc">故障排除</span></a></p>
+</section>
+</section>
+<section id="id29">
+<h2><a class="toc-backref" href="#id55" role="doc-backlink">Related Documentation</a><a class="headerlink" href="#id29" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="index.html"><span class="doc">Xinference Image Usage</span></a> - 镜像使用总览</p></li>
+<li><p><a class="reference internal" href="nvidia.html"><span class="doc">NVIDIA Series</span></a> - Nvidia系列镜像使用</p></li>
+<li><p><a class="reference internal" href="multi_deployment.html"><span class="doc">Xinference Multi-Machine Deployment</span></a> - 多机部署配置</p></li>
+<li><p><a class="reference internal" href="kubernetes.html"><span class="doc">Deploy on K8s</span></a> - K8s部署配置</p></li>
+<li><p><a class="reference internal" href="performance.html"><span class="doc">Performance Testing</span></a> - 性能测试指南</p></li>
+<li><p><a class="reference internal" href="troubleshooting.html"><span class="doc">故障排除</span></a> - 故障排除指南</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>部署建议</strong>：</p>
+<ul class="simple">
+<li><p>建议在Xinference服务稳定运行后再部署Langfuse</p></li>
+<li><p>生产环境请修改所有默认密码和密钥</p></li>
+<li><p>定期备份Langfuse数据以防数据丢失</p></li>
+<li><p>如遇问题，请优先查看容器日志进行排查</p></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="kubernetes.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Deploy on K8s</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="troubleshooting.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">故障排除</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">前置要求</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">系统要求</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">端口要求</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">概览</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">服务启动</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-compose">Docker Compose配置</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">启动服务</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">验证部署</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langfuse">设置Langfuse</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">配置连接</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">配置步骤</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">配置参数</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">测试连接</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">模型调用监控</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">概览页面</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">主要指标</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">Chain Status</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">Chain Details</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id19">展示格式</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id20">详情信息</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id21">数据格式</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id22">使用场景</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id23">性能优化</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id24">调试分析</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id25">成本管理</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id26">Troubleshooting</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id27">常见问题</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id28">维护建议</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id29">Related Documentation</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/xinference_images/langfuse.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2023, Xorbits Inc..
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,274 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, Xorbits Inc.
+# This file is distributed under the same license as the Xinference package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-26 11:49+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../source/getting_started/installation.rst:5
+msgid "Installation"
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:7
+msgid ""
+"Xinference can be installed with ``docker`` on Nvidia, NPU, GCU, and "
+"DCU.To run models using Xinference, you will need to pull the image "
+"corresponding to the type of device you intend to serve."
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:12
+msgid "Nvidia"
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:14
+msgid "To pull the Nvidia image, run the following command:"
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:24
+#: ../../source/getting_started/installation.rst:109
+msgid "Run Command Example"
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:26
+#: ../../source/getting_started/installation.rst:110
+msgid "To run the container, use the following command:"
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:41
+#: ../../source/getting_started/installation.rst:139
+msgid "Start Xinference"
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:43
+#: ../../source/getting_started/installation.rst:140
+msgid ""
+"After starting the container, navigate to the `/opt/projects` directory "
+"inside the container and run the following command:"
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:50
+msgid ""
+"The `./xinf-enterprise.sh` script is used to start the Nginx service and "
+"write the Xinf service startup address to the configuration file."
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:52
+msgid ""
+"The Xinf service startup command can be adjusted according to actual "
+"requirements. The `host` and `port` should be adjusted according to your "
+"device's configuration."
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:54
+msgid ""
+"Once the Xinf service is started, you can access the Xinf WebUI interface"
+" by visiting port 8000."
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:57
+msgid "MindIE Series"
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:60
+msgid "Version Information"
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:61
+msgid "Python Version: 3.10"
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:62
+msgid "CANN Version: 8.0.rc2"
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:63
+msgid "Operating System Version: ubuntu_22.04"
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:64
+msgid "mindie_1.0.RC2"
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:68
+msgid "Dependencies"
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:69
+msgid ""
+"For 310I DUO: - Driver: Ascend-hdk-310p-npu-driver_24.1.rc2_linux-"
+"aarch64.run - `Download <https://obs-whaicc-fae-public.obs.cn-"
+"central-221.ovaijisuan.com/cann/mindie/1.0.RC2/310p/Ascend-hdk-310p-npu-"
+"driver_24.1.rc2_linux-aarch64.run>`_ - Firmware: Ascend-hdk-310p-npu-"
+"firmware_7.3.0.1.231.run - `Download <https://obs-whaicc-fae-public.obs"
+".cn-central-221.ovaijisuan.com/cann/mindie/1.0.RC2/310p/Ascend-hdk-310p-"
+"npu-firmware_7.3.0.1.231.run>`_"
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:73
+msgid ""
+"For 910B: - Driver: Ascend-hdk-910b-npu-driver_24.1.rc3_linux-aarch64.run"
+" - `Download <https://ascend-repo.obs.cn-"
+"east-2.myhuaweicloud.com/Ascend%20HDK/Ascend%20HDK%2024.1.RC3/Ascend-hdk-"
+"910b-npu-driver_24.1.rc3_linux-aarch64.run?response-content-"
+"type=application/octet-stream>`_ - Firmware: Ascend-hdk-910b-npu-"
+"firmware_7.5.0.1.129.run - `Download <https://ascend-repo.obs.cn-"
+"east-2.myhuaweicloud.com/Ascend%20HDK/Ascend%20HDK%2024.1.RC3/Ascend-hdk-"
+"910b-npu-firmware_7.5.0.1.129.run?response-content-type=application"
+"/octet-stream>`_"
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:77
+msgid ""
+"Download the `.run` packages to the host machine, and then run the "
+"following commands to install the drivers and firmware:"
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:84
+msgid ""
+"Once the installation is complete, the output should indicate "
+"\"successfully,\" confirming the installation. The firmware installation "
+"method is the same."
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:86
+msgid ""
+"When Mindie does not start properly, verify that the driver and firmware "
+"versions match. Both the driver and firmware must be installed on the "
+"host machine and loaded into the Docker container via mounting."
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:88
+msgid "For version upgrades, install the firmware first, then the driver."
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:91
+msgid "Pull the Image"
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:92
+msgid "For 310I DUO:"
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:100
+msgid "For 910B:"
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:147
+msgid ""
+"The `./xinf-enterprise.sh` script starts the Nginx service and writes the"
+" Xinf service startup address to the configuration file."
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:149
+msgid ""
+"The Xinf service startup command can be adjusted according to your needs."
+" Adjust the `host` and `port` according to your device's configuration."
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:151
+msgid ""
+"Once the Xinf service is started, you can access the Xinf WebUI by "
+"visiting port 8000."
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:154
+msgid "Supported Models"
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:156
+msgid ""
+"When selecting a model execution engine, we recommend using the Mindie "
+"model for faster inference speed. Other engines may have slower inference"
+" speeds and are not recommended for use."
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:158
+msgid "Currently, Mindie supports the following large language models:"
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:160
+msgid "baichuan-chat"
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:161
+msgid "baichuan-2-chat"
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:162
+msgid "chatglm3"
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:163
+msgid "deepseek-chat"
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:164
+msgid "deepseek-coder-instruct"
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:165
+msgid "llama-3-instruct"
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:166
+msgid "mistral-instruct-v0.3"
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:167
+msgid "telechat"
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:168
+msgid "Yi-chat"
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:169
+msgid "Yi-1.5-chat"
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:170
+msgid "qwen-chat"
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:171
+msgid "qwen1.5-chat"
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:172
+msgid "codeqwen1.5-chat"
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:173
+msgid "qwen2-instruct"
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:174
+msgid "csg-wukong-chat-v0.1"
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:175
+msgid "qwen2.5 series (qwen2.5-instruct, qwen2.5-coder-instruct, etc.)"
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:177
+msgid "Embedding Models: - bge-large-zh-v1.5"
+msgstr ""
+
+#: ../../source/getting_started/installation.rst:180
+msgid "Rerank Models: - bge-reranker-large"
+msgstr ""
+

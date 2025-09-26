@@ -1,0 +1,314 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, Xorbits Inc.
+# This file is distributed under the same license as the Xinference package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-26 13:22+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../source/xinference_images/troubleshooting.rst:5
+msgid "故障排除"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:7
+msgid "本文档提供Xinference企业版常见问题的解决方案和故障排除指南。"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:11
+msgid "目录"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:14
+msgid "多机部署问题"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:17
+msgid "Worker无法连接到Supervisor"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:19
+msgid "**问题描述**：Worker节点无法成功连接到Supervisor节点"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:21
+#: ../../source/xinference_images/troubleshooting.rst:68
+#: ../../source/xinference_images/troubleshooting.rst:105
+#: ../../source/xinference_images/troubleshooting.rst:142
+#: ../../source/xinference_images/troubleshooting.rst:180
+msgid "**可能原因及解决方案**："
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:23
+msgid "**网络连通性问题**"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:34
+msgid "**防火墙配置问题**"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:47
+msgid "**IP地址和端口配置错误**"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:49
+msgid "确认Supervisor启动时使用的IP地址和端口"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:50
+msgid "检查Worker连接命令中的Supervisor地址"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:51
+msgid "验证IP地址是否为实际的网络接口地址"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:53
+msgid "**Supervisor服务未正常启动**"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:64
+msgid "Web界面无法访问"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:66
+msgid "**问题描述**：无法通过浏览器访问Xinference WebUI界面"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:70
+msgid "**nginx服务未启动**"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:80
+msgid "**端口冲突或被占用**"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:91
+msgid "**IP地址配置问题**"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:93
+msgid "确认访问的IP地址是否正确"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:94
+msgid "检查是否使用了内网IP但从外网访问"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:95
+msgid "验证容器的网络模式配置"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:98
+msgid "单机部署问题"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:101
+msgid "容器启动失败"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:103
+msgid "**问题描述**：Docker容器无法正常启动"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:107
+msgid "**GPU资源问题**"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:117
+msgid "**内存不足**"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:127
+#: ../../source/xinference_images/troubleshooting.rst:156
+msgid "**存储空间不足**"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:138
+msgid "模型加载问题"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:140
+msgid "**问题描述**：模型下载或加载失败"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:144
+msgid "**网络连接问题**"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:158
+msgid "确保模型存储目录有足够空间"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:159
+msgid "大模型通常需要几十GB空间"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:160
+msgid "检查挂载路径的磁盘使用情况"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:162
+msgid "**权限问题**"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:173
+msgid "性能问题"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:176
+msgid "推理速度慢"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:178
+msgid "**问题描述**：模型推理响应时间过长"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:182
+msgid "**GPU资源不足**"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:192
+msgid "**模型配置问题**"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:194
+msgid "选择合适的模型大小"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:195
+msgid "调整批处理大小"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:196
+msgid "使用量化模型减少内存占用"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:198
+msgid "**网络延迟**"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:200
+msgid "确保客户端与服务器网络连通良好"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:201
+msgid "考虑使用本地部署减少网络开销"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:204
+msgid "内存使用过高"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:206
+msgid "**问题描述**：系统内存或GPU内存使用过高"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:208
+msgid "**解决方案**："
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:210
+msgid "**调整模型参数**"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:212
+msgid "使用较小的模型"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:213
+msgid "启用模型量化"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:214
+msgid "减少并发请求数量"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:216
+msgid "**优化容器配置**"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:224
+msgid "日志和调试"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:227
+msgid "查看详细日志"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:241
+msgid "常用调试命令"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:257
+msgid "获取帮助"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:259
+msgid "如果以上解决方案无法解决您的问题，请："
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:261
+msgid "**收集信息**："
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:263
+msgid "系统环境信息（OS、Docker版本、GPU型号等）"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:264
+msgid "错误日志和详细错误信息"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:265
+msgid "使用的镜像版本和配置参数"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:267
+msgid "**联系支持**："
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:269
+msgid "查看官方文档获取最新信息"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:270
+msgid "联系技术支持团队"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:271
+msgid "提供详细的问题描述和环境信息"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:274
+msgid "相关文档"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:276
+msgid ":doc:`multi_deployment` - 多机部署配置"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:277
+msgid ":doc:`nvidia` - Nvidia系列镜像使用"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:278
+msgid ":doc:`performance` - 性能测试指南"
+msgstr ""
+
+#: ../../source/xinference_images/troubleshooting.rst:279
+msgid ":doc:`kubernetes` - K8s部署配置"
+msgstr ""
+

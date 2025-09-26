@@ -1,0 +1,541 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, Xorbits Inc.
+# This file is distributed under the same license as the Xinference package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-26 13:38+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../source/xinference_images/multi_deployment.rst:5
+msgid "Xinference 多机部署"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:7
+msgid "本文档介绍如何在多台机器上部署Xinference集群服务。"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:11
+msgid "目录"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:14
+msgid "前置要求"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:17
+msgid "系统要求"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:19
+msgid "**每台机器都需要满足**："
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:21
+msgid "**硬件**：NVIDIA GPU（支持CUDA计算能力3.5+）"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:22
+msgid "**内存**：建议16GB以上系统内存"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:23
+msgid "**存储**：至少50GB可用磁盘空间"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:24
+msgid "**网络**：稳定的局域网连接，各节点间可互相访问"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:26
+msgid "**软件要求**："
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:28
+msgid "**操作系统**：Linux (Ubuntu 20.04+, CentOS 7+)"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:29
+msgid "**Docker**：Docker 20.10+"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:30
+msgid "**NVIDIA Driver**：版本450+"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:31
+msgid "**NVIDIA Container Toolkit**：用于Docker GPU支持"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:34
+msgid "网络规划"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:36
+msgid "**端口规划**："
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:38
+msgid "**Supervisor节点**：需要开放服务端口（如9997）和WebUI端口（8000）"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:39
+msgid "**Worker节点**：需要能够访问Supervisor的服务端口"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:40
+msgid "**防火墙**：确保相关端口在防火墙中开放"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:42
+msgid "**IP地址规划示例**："
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:44
+msgid "Supervisor：192.168.1.100"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:45
+msgid "Worker-01：192.168.1.101"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:46
+msgid "Worker-02：192.168.1.102"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:49
+msgid "概述"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:51
+msgid "在Xinf服务中，Supervisor负责调度Worker的执行，因此在集群服务中，需要1个Supervisor和1个及以上的Worker来组成多机服务。"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:54
+msgid "架构说明"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:56
+msgid "**Supervisor节点**：负责任务调度和管理，提供Web界面访问"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:57
+msgid "**Worker节点**：负责实际的模型推理计算"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:58
+msgid "**集群要求**：1个Supervisor + 1个或多个Worker"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:61
+msgid "启动Supervisor"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:63
+msgid "以nvidia系列镜像为例，如要启动Supervisor，需要通过以下命令来启动容器。"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:66
+msgid "拉取镜像"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:68
+msgid "首先登录镜像仓库并拉取所需的镜像："
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:77
+msgid "**镜像仓库访问说明**："
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:79
+msgid "用户名：``qin@qinxuye.me``"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:80
+msgid "密码：``cre.uwd3nyn4UDM6fzm``"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:81
+msgid "仓库地址：``registry.cn-hangzhou.aliyuncs.com``"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:83
+msgid "这是访问Xinference企业版镜像仓库的凭据。登录成功后即可拉取相应的镜像。"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:86
+msgid "启动Supervisor容器"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:104
+#: ../../source/xinference_images/multi_deployment.rst:206
+msgid "**路径配置说明**："
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:106
+msgid "请将 ``</your/home/path>`` 替换为你的实际存储路径。可以选择："
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:108
+msgid "**主目录**：``/home/username`` 或 ``/Users/username``"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:109
+msgid "**数据盘**：``/data`` 或 ``/mnt/data`` (推荐用于大容量存储)"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:110
+msgid "**自定义路径**：任何有足够空间的目录"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:112
+msgid "详细配置示例请参考 :doc:`nvidia` 文档中的\"路径配置说明\"部分。"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:115
+msgid "启动Supervisor服务"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:117
+msgid "在进入容器xinference-supervisor后，可以执行以下两种方式来启动Supervisor服务。"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:120
+msgid "方法一：机器上只启动Supervisor节点"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:128
+#: ../../source/xinference_images/multi_deployment.rst:163
+#: ../../source/xinference_images/multi_deployment.rst:221
+msgid "**参数配置说明**："
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:130
+#: ../../source/xinference_images/multi_deployment.rst:223
+msgid "请将上述命令中的占位符替换为实际值："
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:132
+#: ../../source/xinference_images/multi_deployment.rst:225
+msgid "``<supervisor-ip>``：Supervisor节点的IP地址"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:133
+#: ../../source/xinference_images/multi_deployment.rst:226
+msgid "``<supervisor-port>``：Supervisor服务端口号"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:135
+#: ../../source/xinference_images/multi_deployment.rst:167
+#: ../../source/xinference_images/multi_deployment.rst:229
+msgid "**配置示例**："
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:148
+msgid "**访问说明**："
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:150
+msgid "Supervisor服务启动成功后，可通过 ``http://<supervisor-ip>:8000`` 访问WebUI界面"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:151
+msgid "确保防火墙已开放相应端口（Supervisor端口 + 8000端口）"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:152
+msgid "其他Worker节点需要能够访问Supervisor的IP地址和端口"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:155
+msgid "方法二：机器上同时启动Supervisor和Worker节点"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:165
+msgid "此方法在单台机器上同时运行Supervisor和Worker功能，适用于单机多GPU场景。"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:176
+msgid "**使用场景**："
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:178
+msgid "适用于单台高性能服务器，具有多个GPU"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:179
+msgid "既提供调度管理功能，又直接参与模型推理"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:180
+msgid "简化部署，减少网络通信开销"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:183
+msgid "启动Worker"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:185
+msgid "同样以nvidia系列镜像为例，如要启动Worker，启动命令与Supervisor类似。"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:188
+msgid "启动Worker容器"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:208
+msgid ""
+"Worker节点的路径配置与Supervisor节点相同。请将 ``</your/home/path>`` 替换为你的实际存储路径。 "
+"详细配置示例请参考 :doc:`nvidia` 文档中的\"路径配置说明\"部分。"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:212
+msgid "启动Worker服务"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:214
+msgid "在进入容器xinference-worker-01后，需要通过以下命令启动Worker服务。"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:227
+msgid "``<worker-ip>``：当前Worker节点的IP地址"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:244
+msgid "**网络要求**："
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:246
+msgid "Worker节点必须能够访问Supervisor节点的IP和端口"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:247
+msgid "确保网络连通性和防火墙配置正确"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:248
+msgid "建议在同一局域网内部署，减少网络延迟"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:251
+msgid "部署验证"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:253
+msgid "完成上述操作以后，就实现了Xinf的多机部署。以下步骤帮助您验证部署是否成功。"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:256
+msgid "服务状态检查"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:258
+msgid "**检查容器状态**："
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:270
+msgid "**检查网络连通性**："
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:282
+msgid "访问Web界面"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:284
+msgid "**打开浏览器**，访问：``http://<supervisor-ip>:8000``"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:285
+msgid "**登录界面**：如果配置了认证，请使用相应凭据登录"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:286
+msgid "**验证功能**：确认可以正常访问各个功能模块"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:289
+msgid "检查集群状态"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:291
+msgid "在Web界面中验证以下内容："
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:293
+msgid ""
+"**节点管理页面**： * Supervisor节点状态显示为\"在线\" * 所有Worker节点都显示在节点列表中 * "
+"各节点的资源使用情况正常显示 * 节点连接状态为\"已连接\""
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:299
+msgid "**模型管理**： * 可以查看可用模型列表 * 尝试在不同Worker节点上加载模型 * 验证模型负载均衡功能"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:304
+msgid "**API测试**："
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:317
+msgid "部署架构示例"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:319
+msgid "典型的多机部署架构如下："
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:331
+msgid "部署流程总结"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:333
+msgid "完整的多机部署流程如下："
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:335
+msgid "**准备阶段**： 1. 确认所有节点满足系统要求 2. 规划IP地址和端口分配 3. 配置防火墙和网络连通性"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:340
+msgid "**部署阶段**： 1. 在所有节点上拉取镜像 2. 启动Supervisor容器和服务 3. 启动Worker容器和服务 4. 验证节点连接状态"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:346
+msgid "**验证阶段**： 1. 检查容器和服务状态 2. 访问WebUI界面 3. 验证集群功能 4. 进行API测试"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:352
+msgid "**运维建议**： * 定期检查节点状态和资源使用情况 * 监控网络连接质量 * 及时处理异常节点 * 参考故障排除文档解决问题"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:359
+msgid "相关文档"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:361
+msgid ":doc:`index` - 镜像使用总览"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:362
+msgid ":doc:`nvidia` - Nvidia系列镜像使用"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:363
+msgid ":doc:`kubernetes` - K8s部署配置"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:364
+msgid ":doc:`troubleshooting` - 故障排除指南"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:367
+msgid "如需单机部署，请参考文档：:doc:`index`"
+msgstr ""
+
+#: ../../source/xinference_images/multi_deployment.rst:368
+msgid "如遇到部署问题，请参考：:doc:`troubleshooting`"
+msgstr ""
+
+#~ msgid "``-v /data:/root/.cache`` 可以将data目录挂载到容器中，后续通过Xinf下载的模型文件都会存储到/data目录下。"
+#~ msgstr ""
+
+#~ msgid "**示例：**"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "``${supervisor_host}`` 和 ``${supervisor_port}`` "
+#~ "参数请根据宿主机IP地址自行调整。命令执行结束后，即可通过 ``http://${supervisor_host}:8000``"
+#~ " 访问Xinf的前端页面。"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "``http://${supervisor_host}:${supervisor_port}`` "
+#~ "参数请根据启动的Supervisor服务IP地址以及端口自行调整。"
+#~ msgstr ""
+
+#~ msgid "``${worker_host}`` 参数请根据worker服务的宿主机IP地址。"
+#~ msgstr ""
+
+#~ msgid "故障排除"
+#~ msgstr ""
+
+#~ msgid "常见问题"
+#~ msgstr ""
+
+#~ msgid "**Worker无法连接到Supervisor**"
+#~ msgstr ""
+
+#~ msgid "检查网络连通性"
+#~ msgstr ""
+
+#~ msgid "确认Supervisor的IP地址和端口配置正确"
+#~ msgstr ""
+
+#~ msgid "检查防火墙设置"
+#~ msgstr ""
+
+#~ msgid "**Web界面无法访问**"
+#~ msgstr ""
+
+#~ msgid "确认Supervisor服务已正常启动"
+#~ msgstr ""
+
+#~ msgid "检查8000端口是否被占用"
+#~ msgstr ""
+
+#~ msgid "验证IP地址配置"
+#~ msgstr ""
+
+#~ msgid "**节点资源不足**"
+#~ msgstr ""
+
+#~ msgid "检查GPU资源分配"
+#~ msgstr ""
+
+#~ msgid "确认内存配置充足"
+#~ msgstr ""
+
+#~ msgid "监控磁盘空间使用"
+#~ msgstr ""
+
+#~ msgid "在进入容器Xinf-Supervisor后，可以执行以下两种方式来启动Supervisor服务。"
+#~ msgstr ""
+
+#~ msgid "在进入容器Xinf-Worker后，需要通过以下命令启动Worker服务。"
+#~ msgstr ""
+
+#~ msgid "完成上述操作以后，就实现了Xinf的多机部署，可以在节点管理页面看到对应的Worker节点以及信息。"
+#~ msgstr ""
+
+#~ msgid "通过浏览器访问 ``http://${supervisor_host}:8000`` 即可打开Xinference的管理界面。"
+#~ msgstr ""
+
+#~ msgid "检查节点状态"
+#~ msgstr ""
+
+#~ msgid "在Web界面的节点管理页面中，可以查看："
+#~ msgstr ""
+
+#~ msgid "Supervisor节点状态"
+#~ msgstr ""
+
+#~ msgid "所有Worker节点列表"
+#~ msgstr ""
+
+#~ msgid "各节点的资源使用情况"
+#~ msgstr ""
+
+#~ msgid "节点连接状态"
+#~ msgstr ""
+

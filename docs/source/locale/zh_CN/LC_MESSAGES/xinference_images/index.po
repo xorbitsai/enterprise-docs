@@ -1,0 +1,182 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, Xorbits Inc.
+# This file is distributed under the same license as the Xinference package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-26 13:22+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../source/xinference_images/index.rst:5
+msgid "Xinference 镜像使用"
+msgstr ""
+
+#: ../../source/xinference_images/index.rst:7
+msgid "本文档介绍了如何使用Xinference的各种镜像版本，包括Nvidia系列、MindIE系列和海光系列。"
+msgstr ""
+
+#: ../../source/xinference_images/index.rst:11
+msgid "目录"
+msgstr ""
+
+#: ../../source/xinference_images/index.rst:14
+msgid "概述"
+msgstr ""
+
+#: ../../source/xinference_images/index.rst:16
+msgid "Xinference提供了针对不同硬件平台优化的镜像版本："
+msgstr ""
+
+#: ../../source/xinference_images/index.rst:18
+msgid "**Nvidia系列**：适用于CUDA环境的GPU加速推理"
+msgstr ""
+
+#: ../../source/xinference_images/index.rst:19
+msgid "**MindIE系列**：适用于华为昇腾NPU环境"
+msgstr ""
+
+#: ../../source/xinference_images/index.rst:20
+msgid "**海光系列**：适用于海光DCU环境"
+msgstr ""
+
+#: ../../source/xinference_images/index.rst:22
+msgid "每个系列都提供了完整的部署和使用指南。"
+msgstr ""
+
+#: ../../source/xinference_images/index.rst:25
+msgid "快速导航"
+msgstr ""
+
+#: ../../source/xinference_images/index.rst:28
+#: ../../source/xinference_images/index.rst:56
+msgid "硬件平台"
+msgstr ""
+
+#: ../../source/xinference_images/index.rst:38
+msgid "管理和配置"
+msgstr ""
+
+#: ../../source/xinference_images/index.rst:51
+msgid "选择指南"
+msgstr ""
+
+#: ../../source/xinference_images/index.rst:53
+msgid "根据你的硬件环境选择合适的镜像："
+msgstr ""
+
+#: ../../source/xinference_images/index.rst:56
+msgid "推荐镜像"
+msgstr ""
+
+#: ../../source/xinference_images/index.rst:56
+msgid "适用场景"
+msgstr ""
+
+#: ../../source/xinference_images/index.rst:58
+msgid "NVIDIA GPU"
+msgstr ""
+
+#: ../../source/xinference_images/index.rst:58
+msgid ":doc:`nvidia`"
+msgstr ""
+
+#: ../../source/xinference_images/index.rst:58
+msgid "CUDA环境， 高性能GPU推理"
+msgstr ""
+
+#: ../../source/xinference_images/index.rst:61
+msgid "华为昇腾NPU"
+msgstr ""
+
+#: ../../source/xinference_images/index.rst:61
+msgid ":doc:`mindie`"
+msgstr ""
+
+#: ../../source/xinference_images/index.rst:61
+msgid "昇腾310/910系列 NPU推理"
+msgstr ""
+
+#: ../../source/xinference_images/index.rst:64
+msgid "海光DCU"
+msgstr ""
+
+#: ../../source/xinference_images/index.rst:64
+msgid ":doc:`hygon`"
+msgstr ""
+
+#: ../../source/xinference_images/index.rst:64
+msgid "海光DCU环境"
+msgstr ""
+
+#: ../../source/xinference_images/index.rst:68
+msgid "常见任务"
+msgstr ""
+
+#: ../../source/xinference_images/index.rst:70
+msgid "**首次部署**：选择对应硬件平台的镜像文档，按照步骤进行部署"
+msgstr ""
+
+#: ../../source/xinference_images/index.rst:71
+msgid "**证书管理**：参考 :doc:`license` 进行证书更新"
+msgstr ""
+
+#: ../../source/xinference_images/index.rst:72
+msgid "**性能测试**：使用 :doc:`performance` 中的工具进行性能评估"
+msgstr ""
+
+#: ../../source/xinference_images/index.rst:73
+msgid "**多机部署**：参考 :doc:`multi_deployment` 进行集群部署"
+msgstr ""
+
+#: ../../source/xinference_images/index.rst:74
+msgid "**链路监控**：参考 :doc:`langfuse` 配置调用链路追踪"
+msgstr ""
+
+#: ../../source/xinference_images/index.rst:75
+msgid "**生产部署**：参考 :doc:`kubernetes` 进行K8s环境部署"
+msgstr ""
+
+#: ../../source/xinference_images/index.rst:76
+msgid "**故障排除**：参考 :doc:`troubleshooting` 解决常见问题"
+msgstr ""
+
+#: ../../source/xinference_images/index.rst:79
+msgid "支持与帮助"
+msgstr ""
+
+#: ../../source/xinference_images/index.rst:81
+msgid "如果在使用过程中遇到问题，请："
+msgstr ""
+
+#: ../../source/xinference_images/index.rst:83
+msgid "首先查看对应硬件平台的文档"
+msgstr ""
+
+#: ../../source/xinference_images/index.rst:84
+msgid "参考 :doc:`troubleshooting` 查找解决方案"
+msgstr ""
+
+#: ../../source/xinference_images/index.rst:85
+msgid "检查证书是否正确配置"
+msgstr ""
+
+#: ../../source/xinference_images/index.rst:86
+msgid "运行性能测试验证环境配置"
+msgstr ""
+
+#: ../../source/xinference_images/index.rst:87
+msgid "联系技术支持获取帮助"
+msgstr ""
+

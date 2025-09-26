@@ -53,6 +53,9 @@ exclude_patterns = []
 locale_dirs = ["locale/"]  # path is example but recommended.
 gettext_compact = False  # optional
 
+# Language settings
+language = os.environ.get('SPHINX_LANGUAGE', 'zh_CN')  # Default to Chinese
+
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -67,11 +70,11 @@ html_title = "Xinference"
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-# Define the json_url for our version switcher.
+# Define the version for our local documentation
 version_match = os.environ.get("READTHEDOCS_LANGUAGE")
-json_url = "https://inference.readthedocs.io/en/latest/_static/switcher.json"
+json_url = "_static/switcher.json"
 if not version_match:
-    version_match = 'en'
+    version_match = 'zh-cn'  # Default to Chinese for local documentation
 
 html_theme_options = {
     "show_toc_level": 2,

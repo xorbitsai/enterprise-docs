@@ -1,0 +1,13 @@
+[
+  {
+    "name": "简体中文(Chinese)",
+    "version": "zh_CN",
+    "url": "/",
+    "preferred": true
+  },
+  {
+    "name": "English",
+    "version": "en",
+    "url": "/en/"
+  }
+]
