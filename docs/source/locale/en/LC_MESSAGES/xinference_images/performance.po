@@ -1,0 +1,167 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, Xorbits Inc.
+# This file is distributed under the same license as the Xinference package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-26 11:49+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../source/xinference_images/performance.rst:5
+msgid "性能测试"
+msgstr "Performance Testing"
+
+#: ../../source/xinference_images/performance.rst:7
+msgid "本文档介绍如何使用Xinference的性能测试工具。"
+msgstr ""
+
+#: ../../source/xinference_images/performance.rst:11
+msgid "目录"
+msgstr "Contents"
+
+#: ../../source/xinference_images/performance.rst:14
+msgid "测试工具概述"
+msgstr ""
+
+#: ../../source/xinference_images/performance.rst:16
+msgid "使用 https://github.com/xorbitsai/inference/tree/main/benchmark 提供的测试集。"
+msgstr ""
+
+#: ../../source/xinference_images/performance.rst:18
+msgid "测试工具包括："
+msgstr ""
+
+#: ../../source/xinference_images/performance.rst:20
+msgid "``benchmark_serving``：测试整体服务指标。"
+msgstr ""
+
+#: ../../source/xinference_images/performance.rst:21
+msgid "``benchmark_latency``：测试延迟指标。"
+msgstr ""
+
+#: ../../source/xinference_images/performance.rst:22
+msgid "``benchmark_long``：测试长上下文的推理效果。"
+msgstr ""
+
+#: ../../source/xinference_images/performance.rst:25
+msgid "测试数据集"
+msgstr ""
+
+#: ../../source/xinference_images/performance.rst:27
+msgid ""
+"对于 serving 和 latency 的测试，需要使用数据集。默认使用的数据集在 https://hf-"
+"mirror.com/datasets/anon8231489123/ShareGPT_Vicuna_unfiltered/tree/main "
+"，下载 ``ShareGPT_V3_unfiltered_cleaned_split.json``"
+msgstr ""
+
+#: ../../source/xinference_images/performance.rst:30
+msgid "运行测试集"
+msgstr ""
+
+#: ../../source/xinference_images/performance.rst:33
+msgid "基本命令"
+msgstr ""
+
+#: ../../source/xinference_images/performance.rst:43
+msgid "参数说明"
+msgstr "Parameter Description"
+
+#: ../../source/xinference_images/performance.rst:45
+msgid "``--dataset`` 为刚刚下载的数据集路径。"
+msgstr ""
+
+#: ../../source/xinference_images/performance.rst:46
+msgid "``--tokenizer`` 指定为模型的下载路径。"
+msgstr ""
+
+#: ../../source/xinference_images/performance.rst:47
+msgid "``--model-uid`` 指定为模型的 ID，在运行的模型列表里可以找到。"
+msgstr ""
+
+#: ../../source/xinference_images/performance.rst:48
+msgid "``--num-prompt`` 为测试的 prompt 个数，默认 100。"
+msgstr ""
+
+#: ../../source/xinference_images/performance.rst:49
+msgid "``--concurrency`` 同时并发的请求，默认100。"
+msgstr ""
+
+#: ../../source/xinference_images/performance.rst:52
+msgid "结果说明"
+msgstr "Result Description"
+
+#: ../../source/xinference_images/performance.rst:55
+msgid "测试结果示例"
+msgstr ""
+
+#: ../../source/xinference_images/performance.rst:74
+msgid "指标含义"
+msgstr ""
+
+#: ../../source/xinference_images/performance.rst:76
+msgid "``Successful requests``：成功的请求数。"
+msgstr ""
+
+#: ../../source/xinference_images/performance.rst:77
+msgid "``Benchmark duration (s)``：Benchmark 时长。"
+msgstr ""
+
+#: ../../source/xinference_images/performance.rst:78
+msgid "``Total input tokens``：总输入 token 数。"
+msgstr ""
+
+#: ../../source/xinference_images/performance.rst:79
+msgid "``Total generated tokens``：总生成 token 数。"
+msgstr ""
+
+#: ../../source/xinference_images/performance.rst:80
+msgid "``Request throughput (req/s)``：请求吞吐（每秒处理的请求）。"
+msgstr ""
+
+#: ../../source/xinference_images/performance.rst:81
+msgid "``Input token throughput (tok/s)``：输入 token 吞吐（每秒处理的输入 token）。"
+msgstr ""
+
+#: ../../source/xinference_images/performance.rst:82
+msgid "``Output token throughput (tok/s)``：输出的 token 吞吐（每秒生成的 token）。"
+msgstr ""
+
+#: ../../source/xinference_images/performance.rst:83
+msgid "``Mean latency (s)``：平均延迟。"
+msgstr ""
+
+#: ../../source/xinference_images/performance.rst:84
+msgid "``Mean latency per token (s)``：平均每 token 延迟。"
+msgstr ""
+
+#: ../../source/xinference_images/performance.rst:85
+msgid "``Mean latency per output token (s)``：平均每输出 token 延迟。"
+msgstr ""
+
+#: ../../source/xinference_images/performance.rst:88
+msgid "相关文档"
+msgstr "Related Documentation"
+
+#: ../../source/xinference_images/performance.rst:90
+msgid ":doc:`nvidia` - Nvidia系列镜像使用"
+msgstr ""
+
+#: ../../source/xinference_images/performance.rst:91
+msgid ":doc:`mindie` - MindIE系列镜像使用"
+msgstr ""
+
+#: ../../source/xinference_images/performance.rst:92
+msgid ":doc:`hygon` - 海光系列镜像使用"
+msgstr ""
+

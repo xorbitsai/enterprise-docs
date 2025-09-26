@@ -1,0 +1,299 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, Xorbits Inc.
+# This file is distributed under the same license as the Xinference package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-26 13:38+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/xinference_images/nvidia.rst:5
+msgid "Nvidia系列"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:7
+msgid "本文档介绍如何使用Xinference的Nvidia系列镜像，适用于CUDA环境。"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:11
+msgid "目录"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:14
+msgid "系统要求"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:17
+msgid "硬件要求"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:19
+msgid "**GPU**：NVIDIA GPU（支持CUDA计算能力3.5+）"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:20
+msgid "**内存**：建议16GB以上系统内存"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:21
+msgid "**存储**：至少50GB可用磁盘空间（用于模型存储）"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:22
+msgid "**网络**：稳定的网络连接（用于模型下载）"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:25
+msgid "软件要求"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:27
+msgid "**操作系统**：Linux (Ubuntu 20.04+, CentOS 7+) 或 macOS"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:28
+msgid "**Docker**：Docker 20.10+"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:29
+msgid "**NVIDIA Driver**：版本450+"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:30
+msgid "**NVIDIA Container Toolkit**：用于Docker GPU支持"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:39
+msgid "使用说明"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:42
+msgid "拉取镜像"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:51
+msgid "**镜像仓库访问说明**："
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:53
+msgid "用户名：``qin@qinxuye.me``"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:54
+msgid "密码：``cre.uwd3nyn4UDM6fzm``"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:55
+msgid "仓库地址：``registry.cn-hangzhou.aliyuncs.com``"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:57
+msgid "这是访问Xinference企业版镜像仓库的凭据。登录成功后即可拉取相应的镜像。"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:60
+msgid "启动指令示例"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:78
+msgid "**路径配置说明**："
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:80
+msgid "请将 ``</your/home/path>`` 替换为你的实际存储路径。可以选择以下位置："
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:82
+msgid "**主目录**：``/home/username`` 或 ``/Users/username``"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:83
+msgid "**数据盘**：``/data`` 或 ``/mnt/data`` (推荐用于大容量存储)"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:84
+msgid "**自定义路径**：任何有足够空间的目录"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:86
+#: ../../source/xinference_images/nvidia.rst:130
+#: ../../source/xinference_images/nvidia.rst:168
+msgid "**配置示例**："
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:106
+msgid "**存储建议**："
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:108
+msgid "模型文件通常较大(几GB到几十GB)，建议使用容量充足的磁盘"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:109
+msgid "如果有专门的数据盘(如 ``/data``)，优先使用数据盘存储"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:110
+msgid "确保选择的目录有足够的读写权限"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:113
+msgid "启动Xinference"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:115
+msgid "启动容器后，进入容器/opt/projects目录下，执行以下命令："
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:123
+msgid "**IP地址和端口配置**："
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:125
+msgid "请将上述命令中的占位符替换为实际值："
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:127
+msgid "``<your-machine-ip>``：替换为你的机器IP地址"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:128
+msgid "``<your-port>``：替换为你要使用的端口号"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:147
+msgid "xinf-enterprise.sh 脚本参数说明"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:149
+msgid "``xinf-enterprise.sh`` 脚本用于启动nginx服务并配置Xinf服务地址。使用方法："
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:162
+msgid "**参数说明**："
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:164
+msgid "``--host`` / ``-H``：指定Xinference服务的主机地址"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:165
+msgid "``--port`` / ``-P``：指定Xinference服务的端口号"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:166
+msgid "``--listen-port`` / ``-L``：指定nginx监听端口（可选，默认8000）"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:182
+msgid "``./xinf-enterprise.sh`` 脚本用于启动nginx服务，以及将Xinf服务启动地址写入配置文件"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:183
+msgid "Xinf服务启动命令可以根据实际需求进行调整"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:184
+msgid "host和port请根据自己设备的实际IP地址和端口配置"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:185
+msgid "nginx默认监听8000端口，可通过 ``--listen-port`` 参数自定义"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:187
+msgid "Xinf服务启动完成后，即可通过访问nginx监听端口(默认8000)进入Xinf WebUI界面。"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:190
+msgid "验证部署"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:193
+msgid "服务状态检查"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:207
+msgid "访问WebUI界面"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:209
+msgid "**打开浏览器**，访问：``http://<your-machine-ip>:8000``"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:210
+msgid "**验证功能**："
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:212
+msgid "查看模型列表"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:213
+msgid "尝试加载一个小模型进行测试"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:214
+msgid "检查节点状态和资源使用情况"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:216
+msgid "**API测试**："
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:229
+msgid "常见问题"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:231
+msgid "如果遇到问题，请参考："
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:233
+msgid ":doc:`troubleshooting` - 详细的故障排除指南"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:234
+msgid "检查GPU驱动和Docker配置"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:235
+msgid "确认网络端口配置正确"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:238
+msgid "相关文档"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:240
+msgid ":doc:`license` - 证书更新说明"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:241
+msgid ":doc:`performance` - 性能测试指南"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:242
+msgid ":doc:`multi_deployment` - 多机部署配置"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:243
+msgid ":doc:`langfuse` - 企业版链路日志使用"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:244
+msgid ":doc:`kubernetes` - K8s部署配置"
+msgstr ""
+
+#: ../../source/xinference_images/nvidia.rst:245
+msgid ":doc:`troubleshooting` - 故障排除指南"
+msgstr ""

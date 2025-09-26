@@ -1,0 +1,160 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, Xorbits Inc.
+# This file is distributed under the same license as the Xinference package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-26 13:22+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../source/xinference_images/hygon.rst:5
+msgid "海光系列"
+msgstr "Hygon Series"
+
+#: ../../source/xinference_images/hygon.rst:7
+msgid "本文档介绍如何使用Xinference的海光系列镜像，适用于海光DCU环境。"
+msgstr ""
+
+#: ../../source/xinference_images/hygon.rst:11
+msgid "目录"
+msgstr "Contents"
+
+#: ../../source/xinference_images/hygon.rst:14
+msgid "使用说明"
+msgstr "Usage Instructions"
+
+#: ../../source/xinference_images/hygon.rst:17
+msgid "拉取镜像"
+msgstr "Pull Image"
+
+#: ../../source/xinference_images/hygon.rst:26
+msgid "**镜像仓库访问说明**："
+msgstr ""
+
+#: ../../source/xinference_images/hygon.rst:28
+msgid "用户名：``qin@qinxuye.me``"
+msgstr ""
+
+#: ../../source/xinference_images/hygon.rst:29
+msgid "密码：``cre.uwd3nyn4UDM6fzm``"
+msgstr ""
+
+#: ../../source/xinference_images/hygon.rst:30
+msgid "仓库地址：``registry.cn-hangzhou.aliyuncs.com``"
+msgstr ""
+
+#: ../../source/xinference_images/hygon.rst:32
+msgid "这是访问Xinference企业版镜像仓库的凭据。登录成功后即可拉取相应的镜像。"
+msgstr ""
+
+#: ../../source/xinference_images/hygon.rst:35
+msgid "启动指令示例"
+msgstr "Startup Command Examples"
+
+#: ../../source/xinference_images/hygon.rst:57
+msgid "**路径配置说明**："
+msgstr ""
+
+#: ../../source/xinference_images/hygon.rst:59
+msgid "请将 ``</your/home/path>`` 替换为你的实际存储路径。可以选择："
+msgstr ""
+
+#: ../../source/xinference_images/hygon.rst:61
+msgid "**主目录**：``/home/username`` (默认)"
+msgstr ""
+
+#: ../../source/xinference_images/hygon.rst:62
+msgid "**数据盘**：``/data`` (推荐用于大容量存储)"
+msgstr ""
+
+#: ../../source/xinference_images/hygon.rst:63
+msgid "**自定义路径**：任何有足够空间的目录"
+msgstr ""
+
+#: ../../source/xinference_images/hygon.rst:65
+msgid "参考Nvidia系列文档中的详细配置示例。"
+msgstr ""
+
+#: ../../source/xinference_images/hygon.rst:68
+msgid "启动Xinference"
+msgstr "Start Xinference"
+
+#: ../../source/xinference_images/hygon.rst:70
+msgid "启动容器后，进入容器/opt/projects目录下，执行以下命令："
+msgstr "After starting the container, enter the /opt/projects directory and execute the following commands:"
+"After starting the container, enter the /opt/projects directory and "
+"execute the following commands:"
+
+#: ../../source/xinference_images/hygon.rst:78
+msgid "**IP地址和端口配置**："
+msgstr ""
+
+#: ../../source/xinference_images/hygon.rst:80
+msgid ""
+"请将 ``<your-machine-ip>`` 和 ``<your-port>`` 替换为你的实际机器IP地址和端口号。 详细配置示例请参考 "
+":doc:`nvidia` 文档中的\"IP地址和端口配置\"部分。"
+msgstr ""
+
+#: ../../source/xinference_images/hygon.rst:84
+msgid "``./xinf-enterprise.sh`` 脚本用于启动nginx服务，以及将Xinf服务启动地址写入配置文件"
+msgstr ""
+
+#: ../../source/xinference_images/hygon.rst:85
+msgid "脚本详细参数说明请参考 :doc:`nvidia` 文档中的\"xinf-enterprise.sh 脚本参数说明\"部分"
+msgstr ""
+
+#: ../../source/xinference_images/hygon.rst:86
+msgid "Xinf服务启动命令可以根据实际需求进行调整"
+msgstr ""
+
+#: ../../source/xinference_images/hygon.rst:87
+msgid "host和port请根据自己设备情况自行调整"
+msgstr ""
+
+#: ../../source/xinference_images/hygon.rst:89
+msgid "Xinf服务启动完成后，即可通过访问8000端口进入Xinf WebUI界面。"
+msgstr "After the Xinf service starts successfully, you can access the Xinf WebUI interface through port 8000."
+"After the Xinf service starts successfully, you can access the Xinf WebUI"
+" interface through port 8000."
+
+#: ../../source/xinference_images/hygon.rst:92
+msgid "相关文档"
+msgstr "Related Documentation"
+
+#: ../../source/xinference_images/hygon.rst:94
+msgid ":doc:`license` - 证书更新说明"
+msgstr ""
+
+#: ../../source/xinference_images/hygon.rst:95
+msgid ":doc:`performance` - 性能测试指南"
+msgstr ""
+
+#: ../../source/xinference_images/hygon.rst:96
+msgid ":doc:`multi_deployment` - 多机部署配置"
+msgstr ""
+
+#: ../../source/xinference_images/hygon.rst:97
+msgid ":doc:`langfuse` - 企业版链路日志使用"
+msgstr ""
+
+#: ../../source/xinference_images/hygon.rst:98
+msgid ":doc:`kubernetes` - K8s部署配置"
+msgstr ""
+
+#~ msgid "``./xinf-enterprise.sh`` 脚本用于启动nginx服务，以及将Xinf服务启动地址写入配置文件。"
+#~ msgstr ""
+
+#~ msgid "Xinf服务启动命令可以根据实际需求进行调整。"
+#~ msgstr ""
+

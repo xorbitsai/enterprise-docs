@@ -1,0 +1,978 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Xinference Multi-Machine Deployment &#8212; Xinference</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'xinference_images/multi_deployment';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.16.1';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = '_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'zh-cn';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Deploy on K8s" href="kubernetes.html" />
+    <link rel="prev" title="Performance Testing" href="performance.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Xinference</p>
+  
+</a></div>
+    
+      <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting_started/index.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Xinference Image Usage
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://xorbits.cn">
+    产品官网
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/xorbitsai/inference" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://xorbits.cn/assets/images/wechat_work_qr.png" title="WeChat" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-weixin fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">WeChat</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://zhihu.com/org/xorbits" title="Zhihu" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-zhihu fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Zhihu</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting_started/index.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    Xinference Image Usage
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://xorbits.cn">
+    产品官网
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/xorbitsai/inference" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://xorbits.cn/assets/images/wechat_work_qr.png" title="WeChat" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-weixin fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">WeChat</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://zhihu.com/org/xorbits" title="Zhihu" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-zhihu fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">Zhihu</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="nvidia.html">NVIDIA Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mindie.html">MindIE Series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="hygon.html">Hygon Series</a></li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="license.html">Xinf证书更新</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance.html">Performance Testing</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Xinference Multi-Machine Deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="kubernetes.html">Deploy on K8s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="langfuse.html">Enterprise Chain Logging Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Xinference Image Usage</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Xinference Multi-Machine Deployment</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="xinference">
+<span id="multi-deployment"></span><h1>Xinference Multi-Machine Deployment<a class="headerlink" href="#xinference" title="Link to this heading">#</a></h1>
+<p>本文档介绍如何在多台机器上部署Xinference集群服务。</p>
+<nav class="contents local" id="id1">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#id2" id="id19">前置要求</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id3" id="id20">系统要求</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id21">网络规划</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id5" id="id22">Overview</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id6" id="id23">架构说明</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#supervisor" id="id24">Start Supervisor</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id7" id="id25">Pull Image</a></p></li>
+<li><p><a class="reference internal" href="#id8" id="id26">启动Supervisor容器</a></p></li>
+<li><p><a class="reference internal" href="#id9" id="id27">启动Supervisor服务</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#worker" id="id28">Start Worker</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id11" id="id29">启动Worker容器</a></p></li>
+<li><p><a class="reference internal" href="#id12" id="id30">启动Worker服务</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id13" id="id31">Deployment Verification</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id14" id="id32">服务状态检查</a></p></li>
+<li><p><a class="reference internal" href="#web" id="id33">访问Web界面</a></p></li>
+<li><p><a class="reference internal" href="#id15" id="id34">检查集群状态</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#id16" id="id35">部署架构示例</a></p></li>
+<li><p><a class="reference internal" href="#id17" id="id36">部署流程总结</a></p></li>
+<li><p><a class="reference internal" href="#id18" id="id37">Related Documentation</a></p></li>
+</ul>
+</nav>
+<section id="id2">
+<h2><a class="toc-backref" href="#id19" role="doc-backlink">前置要求</a><a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="id3">
+<h3><a class="toc-backref" href="#id20" role="doc-backlink">系统要求</a><a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p><strong>每台机器都需要满足</strong>：</p>
+<ul class="simple">
+<li><p><strong>硬件</strong>：NVIDIA GPU（支持CUDA计算能力3.5+）</p></li>
+<li><p><strong>内存</strong>：建议16GB以上系统内存</p></li>
+<li><p><strong>存储</strong>：至少50GB可用磁盘空间</p></li>
+<li><p><strong>网络</strong>：稳定的局域网连接，各节点间可互相访问</p></li>
+</ul>
+<p><strong>软件要求</strong>：</p>
+<ul class="simple">
+<li><p><strong>操作系统</strong>：Linux (Ubuntu 20.04+, CentOS 7+)</p></li>
+<li><p><strong>Docker</strong>：Docker 20.10+</p></li>
+<li><p><strong>NVIDIA Driver</strong>：版本450+</p></li>
+<li><p><strong>NVIDIA Container Toolkit</strong>：用于Docker GPU支持</p></li>
+</ul>
+</section>
+<section id="id4">
+<h3><a class="toc-backref" href="#id21" role="doc-backlink">网络规划</a><a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p><strong>端口规划</strong>：</p>
+<ul class="simple">
+<li><p><strong>Supervisor节点</strong>：需要开放服务端口（如9997）和WebUI端口（8000）</p></li>
+<li><p><strong>Worker节点</strong>：需要能够访问Supervisor的服务端口</p></li>
+<li><p><strong>防火墙</strong>：确保相关端口在防火墙中开放</p></li>
+</ul>
+<p><strong>IP地址规划示例</strong>：</p>
+<ul class="simple">
+<li><p>Supervisor：192.168.1.100</p></li>
+<li><p>Worker-01：192.168.1.101</p></li>
+<li><p>Worker-02：192.168.1.102</p></li>
+</ul>
+</section>
+</section>
+<section id="id5">
+<h2><a class="toc-backref" href="#id22" role="doc-backlink">Overview</a><a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<p>在Xinf服务中，Supervisor负责调度Worker的执行，因此在集群服务中，需要1个Supervisor和1个及以上的Worker来组成多机服务。</p>
+<section id="id6">
+<h3><a class="toc-backref" href="#id23" role="doc-backlink">架构说明</a><a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Supervisor节点</strong>：负责任务调度和管理，提供Web界面访问</p></li>
+<li><p><strong>Worker节点</strong>：负责实际的模型推理计算</p></li>
+<li><p><strong>集群要求</strong>：1个Supervisor + 1个或多个Worker</p></li>
+</ul>
+</section>
+</section>
+<section id="supervisor">
+<h2><a class="toc-backref" href="#id24" role="doc-backlink">Start Supervisor</a><a class="headerlink" href="#supervisor" title="Link to this heading">#</a></h2>
+<p>以nvidia系列镜像为例，如要启动Supervisor，需要通过以下命令来启动容器。</p>
+<section id="id7">
+<h3><a class="toc-backref" href="#id25" role="doc-backlink">Pull Image</a><a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<p>首先登录镜像仓库并拉取所需的镜像：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>login<span class="w"> </span>--username<span class="o">=</span>qin@qinxuye.me<span class="w"> </span>registry.cn-hangzhou.aliyuncs.com
+<span class="c1"># 镜像仓库密码: cre.uwd3nyn4UDM6fzm</span>
+docker<span class="w"> </span>pull<span class="w"> </span>registry.cn-hangzhou.aliyuncs.com/xinference-prod/xinference-prod:0.2.2-nvidia
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>镜像仓库访问说明</strong>：</p>
+<ul class="simple">
+<li><p>用户名：<code class="docutils literal notranslate"><span class="pre">qin&#64;qinxuye.me</span></code></p></li>
+<li><p>密码：<code class="docutils literal notranslate"><span class="pre">cre.uwd3nyn4UDM6fzm</span></code></p></li>
+<li><p>仓库地址：<code class="docutils literal notranslate"><span class="pre">registry.cn-hangzhou.aliyuncs.com</span></code></p></li>
+</ul>
+<p>这是访问Xinference企业版镜像仓库的凭据。登录成功后即可拉取相应的镜像。</p>
+</div>
+</section>
+<section id="id8">
+<h3><a class="toc-backref" href="#id26" role="doc-backlink">启动Supervisor容器</a><a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span><span class="se">\</span>
+--name<span class="w"> </span>xinference-supervisor<span class="w"> </span><span class="se">\</span>
+--network<span class="w"> </span>host<span class="w"> </span><span class="se">\</span>
+--gpus<span class="w"> </span>all<span class="w"> </span><span class="se">\</span>
+--shm-size<span class="o">=</span>128g<span class="w"> </span><span class="se">\</span>
+--restart<span class="w"> </span>unless-stopped<span class="w"> </span><span class="se">\</span>
+-v<span class="w"> </span>&lt;/your/home/path&gt;/.xinference:/root/.xinference<span class="w"> </span><span class="se">\</span>
+-v<span class="w"> </span>&lt;/your/home/path&gt;/.cache/huggingface:/root/.cache/huggingface<span class="w"> </span><span class="se">\</span>
+-v<span class="w"> </span>&lt;/your/home/path&gt;/.cache/modelscope:/root/.cache/modelscope<span class="w"> </span><span class="se">\</span>
+-e<span class="w"> </span><span class="nv">XINFERENCE_PROCESS_START_METHOD</span><span class="o">=</span>spawn<span class="w"> </span><span class="se">\</span>
+-e<span class="w"> </span><span class="nv">XINFERENCE_PROMETHEUS_SRC</span><span class="o">=</span>/opt/projects/prometheus<span class="w"> </span><span class="se">\</span>
+registry.cn-hangzhou.aliyuncs.com/xinference-prod/xinference-prod:0.2.2-nvidia<span class="w"> </span>/bin/bash
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>路径配置说明</strong>：</p>
+<p>请将 <code class="docutils literal notranslate"><span class="pre">&lt;/your/home/path&gt;</span></code> 替换为你的实际存储路径。可以选择：</p>
+<ul class="simple">
+<li><p><strong>主目录</strong>：<code class="docutils literal notranslate"><span class="pre">/home/username</span></code> 或 <code class="docutils literal notranslate"><span class="pre">/Users/username</span></code></p></li>
+<li><p><strong>数据盘</strong>：<code class="docutils literal notranslate"><span class="pre">/data</span></code> 或 <code class="docutils literal notranslate"><span class="pre">/mnt/data</span></code> (推荐用于大容量存储)</p></li>
+<li><p><strong>自定义路径</strong>：任何有足够空间的目录</p></li>
+</ul>
+<p>详细配置示例请参考 <a class="reference internal" href="nvidia.html"><span class="doc">NVIDIA Series</span></a> 文档中的”路径配置说明”部分。</p>
+</div>
+</section>
+<section id="id9">
+<h3><a class="toc-backref" href="#id27" role="doc-backlink">启动Supervisor服务</a><a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<p>在进入容器xinference-supervisor后，可以执行以下两种方式来启动Supervisor服务。</p>
+<section id="id10">
+<h4>方法一：机器上只启动Supervisor节点<a class="headerlink" href="#id10" title="Link to this heading">#</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./xinf-enterprise.sh<span class="w"> </span>--host<span class="w"> </span>&lt;supervisor-ip&gt;<span class="w"> </span>--port<span class="w"> </span>&lt;supervisor-port&gt;<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+xinference-supervisor<span class="w"> </span>--host<span class="w"> </span>&lt;supervisor-ip&gt;<span class="w"> </span>--port<span class="w"> </span>&lt;supervisor-port&gt;<span class="w"> </span>--log-level<span class="w"> </span>debug
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>参数配置说明</strong>：</p>
+<p>请将上述命令中的占位符替换为实际值：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;supervisor-ip&gt;</span></code>：Supervisor节点的IP地址</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;supervisor-port&gt;</span></code>：Supervisor服务端口号</p></li>
+</ul>
+<p><strong>配置示例</strong>：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 局域网部署示例</span>
+./xinf-enterprise.sh<span class="w"> </span>--host<span class="w"> </span><span class="m">192</span>.168.1.100<span class="w"> </span>--port<span class="w"> </span><span class="m">9997</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+xinference-supervisor<span class="w"> </span>--host<span class="w"> </span><span class="m">192</span>.168.1.100<span class="w"> </span>--port<span class="w"> </span><span class="m">9997</span><span class="w"> </span>--log-level<span class="w"> </span>debug
+
+<span class="c1"># 使用自定义端口</span>
+./xinf-enterprise.sh<span class="w"> </span>--host<span class="w"> </span><span class="m">192</span>.168.1.100<span class="w"> </span>--port<span class="w"> </span><span class="m">8888</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+xinference-supervisor<span class="w"> </span>--host<span class="w"> </span><span class="m">192</span>.168.1.100<span class="w"> </span>--port<span class="w"> </span><span class="m">8888</span><span class="w"> </span>--log-level<span class="w"> </span>debug
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>访问说明</strong>：</p>
+<ul class="simple">
+<li><p>Supervisor服务启动成功后，可通过 <code class="docutils literal notranslate"><span class="pre">http://&lt;supervisor-ip&gt;:8000</span></code> 访问WebUI界面</p></li>
+<li><p>确保防火墙已开放相应端口（Supervisor端口 + 8000端口）</p></li>
+<li><p>其他Worker节点需要能够访问Supervisor的IP地址和端口</p></li>
+</ul>
+</div>
+</section>
+<section id="supervisorworker">
+<h4>方法二：机器上同时启动Supervisor和Worker节点<a class="headerlink" href="#supervisorworker" title="Link to this heading">#</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./xinf-enterprise.sh<span class="w"> </span>--host<span class="w"> </span>&lt;supervisor-ip&gt;<span class="w"> </span>--port<span class="w"> </span>&lt;supervisor-port&gt;<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+xinference-local<span class="w"> </span>--host<span class="w"> </span>&lt;supervisor-ip&gt;<span class="w"> </span>--port<span class="w"> </span>&lt;supervisor-port&gt;<span class="w"> </span>--log-level<span class="w"> </span>debug
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>参数配置说明</strong>：</p>
+<p>此方法在单台机器上同时运行Supervisor和Worker功能，适用于单机多GPU场景。</p>
+<p><strong>配置示例</strong>：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 单机部署示例</span>
+./xinf-enterprise.sh<span class="w"> </span>--host<span class="w"> </span><span class="m">192</span>.168.1.100<span class="w"> </span>--port<span class="w"> </span><span class="m">9997</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+xinference-local<span class="w"> </span>--host<span class="w"> </span><span class="m">192</span>.168.1.100<span class="w"> </span>--port<span class="w"> </span><span class="m">9997</span><span class="w"> </span>--log-level<span class="w"> </span>debug
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>使用场景</strong>：</p>
+<ul class="simple">
+<li><p>适用于单台高性能服务器，具有多个GPU</p></li>
+<li><p>既提供调度管理功能，又直接参与模型推理</p></li>
+<li><p>简化部署，减少网络通信开销</p></li>
+</ul>
+</div>
+</section>
+</section>
+</section>
+<section id="worker">
+<h2><a class="toc-backref" href="#id28" role="doc-backlink">Start Worker</a><a class="headerlink" href="#worker" title="Link to this heading">#</a></h2>
+<p>同样以nvidia系列镜像为例，如要启动Worker，启动命令与Supervisor类似。</p>
+<section id="id11">
+<h3><a class="toc-backref" href="#id29" role="doc-backlink">启动Worker容器</a><a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span><span class="se">\</span>
+--name<span class="w"> </span>xinference-worker-01<span class="w"> </span><span class="se">\</span>
+--network<span class="w"> </span>host<span class="w"> </span><span class="se">\</span>
+--gpus<span class="w"> </span>all<span class="w"> </span><span class="se">\</span>
+--shm-size<span class="o">=</span>128g<span class="w"> </span><span class="se">\</span>
+--restart<span class="w"> </span>unless-stopped<span class="w"> </span><span class="se">\</span>
+-v<span class="w"> </span>&lt;/your/home/path&gt;/.xinference:/root/.xinference<span class="w"> </span><span class="se">\</span>
+-v<span class="w"> </span>&lt;/your/home/path&gt;/.cache/huggingface:/root/.cache/huggingface<span class="w"> </span><span class="se">\</span>
+-v<span class="w"> </span>&lt;/your/home/path&gt;/.cache/modelscope:/root/.cache/modelscope<span class="w"> </span><span class="se">\</span>
+-e<span class="w"> </span><span class="nv">XINFERENCE_PROCESS_START_METHOD</span><span class="o">=</span>spawn<span class="w"> </span><span class="se">\</span>
+-e<span class="w"> </span><span class="nv">XINFERENCE_PROMETHEUS_SRC</span><span class="o">=</span>/opt/projects/prometheus<span class="w"> </span><span class="se">\</span>
+registry.cn-hangzhou.aliyuncs.com/xinference-prod/xinference-prod:0.2.2-nvidia<span class="w"> </span>/bin/bash
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>路径配置说明</strong>：</p>
+<p>Worker节点的路径配置与Supervisor节点相同。请将 <code class="docutils literal notranslate"><span class="pre">&lt;/your/home/path&gt;</span></code> 替换为你的实际存储路径。
+详细配置示例请参考 <a class="reference internal" href="nvidia.html"><span class="doc">NVIDIA Series</span></a> 文档中的”路径配置说明”部分。</p>
+</div>
+</section>
+<section id="id12">
+<h3><a class="toc-backref" href="#id30" role="doc-backlink">启动Worker服务</a><a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
+<p>在进入容器xinference-worker-01后，需要通过以下命令启动Worker服务。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xinference-worker<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;http://&lt;supervisor-ip&gt;:&lt;supervisor-port&gt;&quot;</span><span class="w"> </span>--host<span class="w"> </span>&lt;worker-ip&gt;<span class="w"> </span>--log-level<span class="w"> </span>debug
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>参数配置说明</strong>：</p>
+<p>请将上述命令中的占位符替换为实际值：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;supervisor-ip&gt;</span></code>：Supervisor节点的IP地址</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;supervisor-port&gt;</span></code>：Supervisor服务端口号</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&lt;worker-ip&gt;</span></code>：当前Worker节点的IP地址</p></li>
+</ul>
+<p><strong>配置示例</strong>：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Worker节点连接到Supervisor</span>
+xinference-worker<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;http://192.168.1.100:9997&quot;</span><span class="w"> </span>--host<span class="w"> </span><span class="m">192</span>.168.1.101<span class="w"> </span>--log-level<span class="w"> </span>debug
+
+<span class="c1"># 多个Worker节点示例</span>
+<span class="c1"># Worker-01: 192.168.1.101</span>
+xinference-worker<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;http://192.168.1.100:9997&quot;</span><span class="w"> </span>--host<span class="w"> </span><span class="m">192</span>.168.1.101<span class="w"> </span>--log-level<span class="w"> </span>debug
+
+<span class="c1"># Worker-02: 192.168.1.102</span>
+xinference-worker<span class="w"> </span>-e<span class="w"> </span><span class="s2">&quot;http://192.168.1.100:9997&quot;</span><span class="w"> </span>--host<span class="w"> </span><span class="m">192</span>.168.1.102<span class="w"> </span>--log-level<span class="w"> </span>debug
+</pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>网络要求</strong>：</p>
+<ul class="simple">
+<li><p>Worker节点必须能够访问Supervisor节点的IP和端口</p></li>
+<li><p>确保网络连通性和防火墙配置正确</p></li>
+<li><p>建议在同一局域网内部署，减少网络延迟</p></li>
+</ul>
+</div>
+</section>
+</section>
+<section id="id13">
+<h2><a class="toc-backref" href="#id31" role="doc-backlink">Deployment Verification</a><a class="headerlink" href="#id13" title="Link to this heading">#</a></h2>
+<p>完成上述操作以后，就实现了Xinf的多机部署。以下步骤帮助您验证部署是否成功。</p>
+<section id="id14">
+<h3><a class="toc-backref" href="#id32" role="doc-backlink">服务状态检查</a><a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
+<p><strong>检查容器状态</strong>：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 在Supervisor节点上</span>
+docker<span class="w"> </span>ps<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>xinference-supervisor
+docker<span class="w"> </span>logs<span class="w"> </span>xinference-supervisor
+
+<span class="c1"># 在Worker节点上</span>
+docker<span class="w"> </span>ps<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>xinference-worker
+docker<span class="w"> </span>logs<span class="w"> </span>xinference-worker-01
+</pre></div>
+</div>
+<p><strong>检查网络连通性</strong>：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 从Worker节点测试到Supervisor的连通性</span>
+curl<span class="w"> </span>http://&lt;supervisor-ip&gt;:&lt;supervisor-port&gt;/v1/cluster/workers
+
+<span class="c1"># 检查端口是否正常监听</span>
+netstat<span class="w"> </span>-tlnp<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="m">9997</span><span class="w">  </span><span class="c1"># Supervisor端口</span>
+netstat<span class="w"> </span>-tlnp<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="m">8000</span><span class="w">  </span><span class="c1"># WebUI端口</span>
+</pre></div>
+</div>
+</section>
+<section id="web">
+<h3><a class="toc-backref" href="#id33" role="doc-backlink">访问Web界面</a><a class="headerlink" href="#web" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>打开浏览器</strong>，访问：<code class="docutils literal notranslate"><span class="pre">http://&lt;supervisor-ip&gt;:8000</span></code></p></li>
+<li><p><strong>登录界面</strong>：如果配置了认证，请使用相应凭据登录</p></li>
+<li><p><strong>验证功能</strong>：确认可以正常访问各个功能模块</p></li>
+</ol>
+</section>
+<section id="id15">
+<h3><a class="toc-backref" href="#id34" role="doc-backlink">检查集群状态</a><a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
+<p>在Web界面中验证以下内容：</p>
+<p><strong>节点管理页面</strong>：
+* Supervisor节点状态显示为”在线”
+* 所有Worker节点都显示在节点列表中
+* 各节点的资源使用情况正常显示
+* 节点连接状态为”已连接”</p>
+<p><strong>模型管理</strong>：
+* 可以查看可用模型列表
+* 尝试在不同Worker节点上加载模型
+* 验证模型负载均衡功能</p>
+<p><strong>API测试</strong>：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 测试集群API</span>
+curl<span class="w"> </span>http://&lt;supervisor-ip&gt;:9997/v1/cluster/workers
+
+<span class="c1"># 测试模型推理</span>
+curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://&lt;supervisor-ip&gt;:9997/v1/chat/completions<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;model&quot;: &quot;model-name&quot;, &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;Hello&quot;}]}&#39;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id16">
+<h2><a class="toc-backref" href="#id35" role="doc-backlink">部署架构示例</a><a class="headerlink" href="#id16" title="Link to this heading">#</a></h2>
+<p>典型的多机部署架构如下：</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Supervisor    │    │    Worker-01    │    │    Worker-02    │
+│  192.168.1.100  │    │  192.168.1.101  │    │  192.168.1.102  │
+│   Port: 9997    │◄──►│                 │    │                 │
+│   Web: 8000     │    │                 │    │                 │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+</pre></div>
+</div>
+</section>
+<section id="id17">
+<h2><a class="toc-backref" href="#id36" role="doc-backlink">部署流程总结</a><a class="headerlink" href="#id17" title="Link to this heading">#</a></h2>
+<p>完整的多机部署流程如下：</p>
+<p><strong>准备阶段</strong>：
+1. 确认所有节点满足系统要求
+2. 规划IP地址和端口分配
+3. 配置防火墙和网络连通性</p>
+<p><strong>部署阶段</strong>：
+1. 在所有节点上拉取镜像
+2. 启动Supervisor容器和服务
+3. 启动Worker容器和服务
+4. 验证节点连接状态</p>
+<p><strong>验证阶段</strong>：
+1. 检查容器和服务状态
+2. 访问WebUI界面
+3. 验证集群功能
+4. 进行API测试</p>
+<p><strong>运维建议</strong>：
+* 定期检查节点状态和资源使用情况
+* 监控网络连接质量
+* 及时处理异常节点
+* 参考故障排除文档解决问题</p>
+</section>
+<section id="id18">
+<h2><a class="toc-backref" href="#id37" role="doc-backlink">Related Documentation</a><a class="headerlink" href="#id18" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="index.html"><span class="doc">Xinference Image Usage</span></a> - 镜像使用总览</p></li>
+<li><p><a class="reference internal" href="nvidia.html"><span class="doc">NVIDIA Series</span></a> - Nvidia系列镜像使用</p></li>
+<li><p><a class="reference internal" href="kubernetes.html"><span class="doc">Deploy on K8s</span></a> - K8s部署配置</p></li>
+<li><p><a class="reference internal" href="troubleshooting.html"><span class="doc">Troubleshooting</span></a> - 故障排除指南</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>如需单机部署，请参考文档：<a class="reference internal" href="index.html"><span class="doc">Xinference Image Usage</span></a></p></li>
+<li><p>如遇到部署问题，请参考：<a class="reference internal" href="troubleshooting.html"><span class="doc">Troubleshooting</span></a></p></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="performance.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Performance Testing</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="kubernetes.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Deploy on K8s</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">前置要求</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">系统要求</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">网络规划</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Overview</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">架构说明</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#supervisor">Start Supervisor</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">Pull Image</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">启动Supervisor容器</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">启动Supervisor服务</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">方法一：机器上只启动Supervisor节点</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#supervisorworker">方法二：机器上同时启动Supervisor和Worker节点</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#worker">Start Worker</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">启动Worker容器</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">启动Worker服务</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">Deployment Verification</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">服务状态检查</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#web">访问Web界面</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">检查集群状态</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">部署架构示例</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">部署流程总结</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">Related Documentation</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/xinference_images/multi_deployment.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2023, Xorbits Inc..
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

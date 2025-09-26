@@ -1,0 +1,699 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, Xorbits Inc.
+# This file is distributed under the same license as the Xinference package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-26 13:38+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/xinference_images/langfuse.rst:5
+msgid "企业版链路日志使用"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:7
+msgid "本文档介绍如何使用Xinference企业版的链路日志功能，基于Langfuse服务实现调用链路追踪和监控。"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:11
+msgid "目录"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:14
+msgid "前置要求"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:17
+msgid "系统要求"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:19
+msgid "在部署Langfuse服务之前，请确保："
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:21
+msgid "**Docker**：Docker 20.10+ 和 Docker Compose v2+"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:22
+msgid "**内存**：建议至少4GB可用内存"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:23
+msgid "**存储**：至少10GB可用磁盘空间"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:24
+msgid "**网络**：确保相关端口未被占用"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:27
+msgid "端口要求"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:29
+msgid "Langfuse服务需要以下端口："
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:31
+msgid "**3000**：Langfuse Web界面"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:32
+msgid "**5432**：PostgreSQL数据库"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:33
+msgid "**6379**：Redis缓存"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:34
+msgid "**8123/9000**：ClickHouse数据库"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:35
+msgid "**9090/9091**：MinIO对象存储"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:43
+msgid "概览"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:45
+msgid "链路以及模型使用情况等相关的功能依赖于Langfuse服务，因此在启动Xinference后，还需要启动Langfuse服务。"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:47
+msgid "Langfuse是一个开源的LLM工程平台，提供："
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:49
+msgid "**链路追踪**：完整的模型调用链路记录"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:50
+msgid "**性能监控**：延迟、Token使用量等指标统计"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:51
+msgid "**调用分析**：模型使用情况和趋势分析"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:52
+msgid "**调试支持**：详细的输入输出日志"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:55
+msgid "服务启动"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:57
+msgid "使用Docker Compose启动Langfuse服务。将以下代码保存为 ``docker-compose.yaml`` 文件，xinference即可自动接入Langfuse服务。"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:60
+msgid "**安全配置重要提醒**："
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:62
+msgid "配置文件中包含多个需要修改的安全参数，标记为 ``# CHANGEME``："
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:64
+msgid "数据库密码"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:65
+msgid "Redis认证密码"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:66
+msgid "MinIO访问密钥"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:67
+msgid "ClickHouse密码"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:68
+msgid "加密密钥等"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:70
+msgid "**生产环境部署前务必修改这些默认值！**"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:73
+msgid "Docker Compose配置"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:246
+msgid "启动服务"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:260
+msgid "验证部署"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:262
+msgid "**检查服务状态**："
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:274
+msgid "**访问Web界面**："
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:276
+msgid "**打开浏览器**：访问 ``http://localhost:3000``"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:277
+msgid "**首次登录**：使用配置的默认凭据"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:279
+msgid "邮箱：``administrator@orbitai.com``"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:280
+msgid "密码：``administrator``"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:282
+msgid "**验证功能**："
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:284
+msgid "确认可以正常登录"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:285
+msgid "检查项目配置是否正确"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:286
+msgid "验证数据库连接状态"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:289
+msgid "服务完全启动可能需要1-2分钟，请耐心等待所有容器状态变为健康。"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:292
+msgid "设置Langfuse"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:295
+msgid "配置连接"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:297
+msgid "在Xinference WebUI中配置Langfuse连接参数："
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:300
+msgid "配置步骤"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:302
+msgid "**访问Xinference WebUI**：打开浏览器访问 ``http://<xinference-ip>:8000``"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:303
+msgid "**进入设置页面**：点击右上角设置按钮"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:304
+msgid "**选择链路配置**：选择\"链路\"标签页"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:305
+msgid "**配置连接参数**：填写Langfuse服务信息"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:308
+msgid "配置参数"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:310
+msgid "**同机部署（默认配置）**："
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:312
+msgid "**主机地址**：``http://localhost:3000``"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:313
+msgid "**项目公钥**：``pk-lf-8a79d84e-5537-47b7-86bb-ba36257684f2``"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:314
+msgid "**项目私钥**：``sk-lf-d1d41a0b-672e-49c9-aece-f9a2b40828de``"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:316
+msgid "**跨机部署配置**："
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:318
+msgid "如果Langfuse与Xinference不在同一台机器："
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:320
+msgid "**主机地址**：``http://<langfuse-server-ip>:3000``"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:321
+msgid "**项目公钥**：保持不变或使用自定义项目的公钥"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:322
+msgid "**项目私钥**：保持不变或使用自定义项目的私钥"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:325
+msgid "**配置注意事项**："
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:327
+msgid "确保Xinference服务可以访问Langfuse服务地址"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:328
+msgid "如果修改了Docker Compose中的端口，需要相应调整主机地址"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:329
+msgid "生产环境建议创建专用的项目和密钥对"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:332
+msgid "测试连接"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:334
+msgid "配置完成后，可以通过以下方式验证连接："
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:336
+msgid "**保存配置**：点击保存按钮"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:337
+msgid "**执行模型调用**：进行一次模型推理测试"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:338
+msgid "**检查Langfuse**：在Langfuse界面查看是否有新的调用记录"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:341
+msgid "模型调用监控"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:344
+msgid "概览页面"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:346
+msgid "模型调用监控页面提供以下功能："
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:349
+msgid "页面已实现轮询逻辑，无需手动刷新"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:350
+msgid "模型调用显示的是今日各个模型调用次数"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:351
+msgid "tokens每日总数变化为最近一周，如需查看往日数据，请移步至 监控运维->模型调用"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:354
+msgid "主要指标"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:357
+msgid "右上角支持日期筛选"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:358
+msgid "提供指标：大模型调用次数总数及各个模型调用次数、输入/输出tokens总数及各个模型输入/输出tokens总数、大模型每日调用次数变化、tokens每日总数变化"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:360
+msgid "监控指标包括："
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:362
+msgid "**调用统计**"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:363
+msgid "大模型调用次数总数"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:364
+msgid "各个模型调用次数分布"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:365
+msgid "大模型每日调用次数变化趋势"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:367
+msgid "**Token统计**"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:368
+msgid "输入tokens总数"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:369
+msgid "输出tokens总数"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:370
+msgid "各个模型输入/输出tokens分布"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:371
+msgid "tokens每日总数变化趋势"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:374
+msgid "链路状态"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:376
+msgid "链路追踪功能提供详细的调用链路信息："
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:379
+msgid "数据来源：运行实例详情 / 批处理"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:380
+msgid "链路列表：支持日期/User筛选，查看某链路详情"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:382
+msgid "功能特性："
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:384
+msgid "**日期筛选**：按时间范围查看链路记录"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:385
+msgid "**用户筛选**：按用户维度分析调用情况"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:386
+msgid "**详情查看**：点击链路可查看完整调用详情"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:389
+msgid "链路详情"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:391
+msgid "链路详情页面提供两种展示格式："
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:394
+msgid "展示格式"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:396
+msgid "**Tree格式**"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:397
+msgid "以树状结构展示调用链路层次关系"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:399
+msgid "**Timeline格式**"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:400
+msgid "以时间线形式展示调用的时序关系"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:403
+msgid "详情信息"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:406
+msgid "两种展示方式Tree/Timeline"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:407
+msgid "详情数据：Latency，tokens输入/输出/总计，模型实例名称，对话的输入/输出，Metadata等"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:408
+msgid "支持Pretty/JSON格式转换"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:410
+msgid "每个链路详情包含："
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:412
+msgid "**性能指标**"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:413
+msgid "**Latency**：调用延迟时间"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:414
+msgid "**Tokens**：输入/输出/总计token数量"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:416
+msgid "**调用信息**"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:417
+msgid "**模型实例名称**：使用的具体模型实例"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:418
+msgid "**输入内容**：用户的输入prompt"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:419
+msgid "**输出内容**：模型的响应结果"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:421
+msgid "**元数据**"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:422
+msgid "**Metadata**：调用的附加信息"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:423
+msgid "**时间戳**：精确的调用时间"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:424
+msgid "**用户信息**：调用者标识"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:427
+msgid "数据格式"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:429
+msgid "支持两种数据展示格式："
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:431
+msgid "**Pretty格式**：格式化的易读显示"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:432
+msgid "**JSON格式**：原始的JSON数据结构"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:435
+msgid "使用场景"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:438
+msgid "性能优化"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:440
+msgid "通过延迟统计识别性能瓶颈"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:441
+msgid "分析token使用效率"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:442
+msgid "监控模型响应时间趋势"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:445
+msgid "调试分析"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:447
+msgid "查看完整的输入输出内容"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:448
+msgid "分析调用链路中的异常"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:449
+msgid "追踪特定用户的使用模式"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:452
+msgid "成本管理"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:454
+msgid "统计各模型的token消耗"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:455
+msgid "分析成本分布和趋势"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:456
+msgid "优化模型选择策略"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:459
+msgid "故障排除"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:462
+msgid "常见问题"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:464
+msgid "**Langfuse服务无法启动**"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:466
+msgid "**可能原因**： * Docker或Docker Compose版本过低 * 端口被占用 * 磁盘空间不足 * 内存不足"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:472
+#: ../../source/xinference_images/langfuse.rst:497
+#: ../../source/xinference_images/langfuse.rst:514
+msgid "**解决方案**："
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:490
+msgid "**Xinference无法连接Langfuse**"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:492
+msgid "**可能原因**： * 网络连通性问题 * 配置参数错误 * 防火墙阻拦"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:507
+msgid "**链路数据不显示**"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:509
+msgid "**可能原因**： * Langfuse配置未生效 * 模型调用异常 * 数据库连接问题"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:526
+msgid "**性能问题**"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:528
+msgid "**可能原因**： * 资源不足 * 数据库性能瓶颈 * 网络延迟"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:533
+msgid "**解决方案**： * 增加系统内存 * 优化数据库配置 * 使用本地部署减少网络延迟"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:539
+msgid "维护建议"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:541
+msgid "**定期维护**： * 定期清理旧的链路数据 * 监控磁盘使用情况 * 备份重要的配置和数据"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:546
+msgid "**性能优化**： * 根据使用量调整数据库配置 * 考虑使用外部高性能数据库 * 定期更新到最新版本"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:551
+msgid "更多详细的故障排除方案请参考：:doc:`troubleshooting`"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:554
+msgid "相关文档"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:556
+msgid ":doc:`index` - 镜像使用总览"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:557
+msgid ":doc:`nvidia` - Nvidia系列镜像使用"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:558
+msgid ":doc:`multi_deployment` - 多机部署配置"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:559
+msgid ":doc:`kubernetes` - K8s部署配置"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:560
+msgid ":doc:`performance` - 性能测试指南"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:561
+msgid ":doc:`troubleshooting` - 故障排除指南"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:564
+msgid "**部署建议**："
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:566
+msgid "建议在Xinference服务稳定运行后再部署Langfuse"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:567
+msgid "生产环境请修改所有默认密码和密钥"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:568
+msgid "定期备份Langfuse数据以防数据丢失"
+msgstr ""
+
+#: ../../source/xinference_images/langfuse.rst:569
+msgid "如遇问题，请优先查看容器日志进行排查"
+msgstr ""
