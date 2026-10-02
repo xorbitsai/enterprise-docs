@@ -1,0 +1,121 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, Xorbits Inc.
+# This file is distributed under the same license as the Xinference package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-02 16:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_310p_qwen35.rst:3
+msgid "Ascend 310P: Qwen3.5 context length"
+msgstr "昇腾 310P：Qwen3.5 上下文长度"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_310p_qwen35.rst
+msgid "Hardware"
+msgstr "硬件"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_310p_qwen35.rst:7
+msgid "Ascend 310P"
+msgstr "昇腾 310P"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_310p_qwen35.rst
+msgid "Backend"
+msgstr "后端"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_310p_qwen35.rst:8
+msgid "vLLM-Ascend"
+msgstr "vLLM-Ascend"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_310p_qwen35.rst
+msgid "Model"
+msgstr "模型"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_310p_qwen35.rst:9
+msgid "Qwen3.5"
+msgstr "Qwen3.5"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_310p_qwen35.rst:12
+msgid "Symptom and recorded configuration"
+msgstr "现象与记录中的配置"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_310p_qwen35.rst:14
+msgid ""
+"The deployment notes require an explicit context-length setting in addition to the "
+"Qwen3 precision and eager parameters. The exact failure log and backend version were "
+"not recorded."
+msgstr "部署记录要求在 Qwen3 的精度与 eager 参数之外，明确设置上下文长度。准确的失败日志及后端版本未被记录。"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_310p_qwen35.rst:16
+msgid "Recorded engine parameters"
+msgstr "记录中的引擎参数"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_310p_qwen35.rst
+msgid "Observed"
+msgstr "已观察到"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_310p_qwen35.rst:25
+msgid "The supplied notes record this parameter combination for Qwen3.5 on 310P."
+msgstr "原始记录在 310P 上使用以下参数组合运行 Qwen3.5。"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_310p_qwen35.rst
+msgid "Hypothesis"
+msgstr "推测"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_310p_qwen35.rst:26
+msgid ""
+"The attention operator may require a large uncompressed mask. This explanation is "
+"unconfirmed; it is not evidence of a universal model or hardware limit."
+msgstr "注意力算子可能需要较大的未压缩掩码。这一解释尚未确认，不能据此认定模型或硬件存在通用限制。"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_310p_qwen35.rst:29
+msgid "Verification and reference"
+msgstr "验证与参考"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_310p_qwen35.rst:31
+msgid ""
+"Check the effective context limit after startup and verify inference within that "
+"limit. Record the exact backend and image versions when reproducing the case."
+msgstr "启动后检查实际生效的上下文长度，并在此范围内验证推理。复现时记录准确的后端和镜像版本。"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_310p_qwen35.rst:33
+msgid ""
+"The original notes reference `vLLM-Ascend issue 7394 <https://github.com/vllm-project"
+"/vllm-ascend/issues/7394>`_."
+msgstr ""
+"原始记录参考了  `vLLM-Ascend issue 7394 <https://github.com/vllm-project/vllm-"
+"ascend/issues/7394>`_ 。"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_310p_qwen35.rst:35
+msgid ":doc:`ascend_310p_qwen3`"
+msgstr ":doc:`ascend_310p_qwen3`"

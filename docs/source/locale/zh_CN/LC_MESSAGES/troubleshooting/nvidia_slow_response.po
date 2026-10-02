@@ -1,0 +1,156 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, Xorbits Inc.
+# This file is distributed under the same license as the Xinference package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-02 16:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:3
+msgid "NVIDIA: GPU at 100% with long response delays"
+msgstr "NVIDIA：GPU 满载但响应长时间未返回"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/nvidia_slow_response.rst
+msgid "Hardware"
+msgstr "硬件"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:7
+msgid "NVIDIA GPU"
+msgstr "NVIDIA GPU"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/nvidia_slow_response.rst
+msgid "Model"
+msgstr "模型"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:8
+msgid "Qwen3-32B"
+msgstr "Qwen3-32B"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/nvidia_slow_response.rst
+msgid "Log context"
+msgstr "日志环境"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:9
+msgid "Xinference 1.0.3"
+msgstr "Xinference 1.0.3"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:12
+msgid "Symptom"
+msgstr "故障现象"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:14
+msgid ""
+"Qwen3-32B on one GPU keeps its memory allocated and utilization near 100%, while "
+"Qwen2.5-VL on another GPU responds normally. Even a short probe waits; one recorded "
+"greeting returned about 40 minutes later as GPU utilization fell."
+msgstr ""
+"一个 GPU 上的 Qwen3-32B 持续占用显存，利用率接近 100%；另一个 GPU 上的 Qwen2.5-VL "
+"可以正常响应。即使短请求也会等待；记录中的一次问候请求约 40 分钟后才返回，随后 GPU 利用率下降。"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/nvidia_slow_response.rst
+msgid "Observed"
+msgstr "已观察到"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:18
+msgid ""
+"Another model on the same machine remained responsive. High GPU utilization shows "
+"active computation but does not distinguish many requests from one long-running "
+"request."
+msgstr "同一台机器上的另一个模型仍可正常响应。GPU 高利用率说明正在计算，但无法据此区分是多个请求积压，还是单个请求执行时间过长。"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/nvidia_slow_response.rst
+msgid "Hypothesis"
+msgstr "推测"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:19
+msgid ""
+"Long prompts, large token budgets, thinking output or a queue may occupy this model "
+"instance. The root cause was not confirmed in the record."
+msgstr "长提示词、大 token 预算、思考输出或队列积压都可能占用该模型实例。原始记录未确认根因。"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:22
+msgid "Logs and request correlation"
+msgstr "日志与请求关联"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:24
+msgid ""
+"In the recorded Xinference 1.0.3 context, chat entry and exit messages use DEBUG "
+"logging. Model subprocess logs may differ from the worker's main log; absent chat "
+"messages in that file do not prove the request never reached the model."
+msgstr ""
+"在记录中的 Xinference 1.0.3 环境里，对话入口与退出信息使用 DEBUG 级别。模型子进程日志可能不同于 worker "
+"主日志；该文件没有对话信息，不代表请求未到达模型。"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:27
+msgid "Mitigation and diagnostics"
+msgstr "缓解措施与诊断"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:29
+msgid ""
+"The notes recommend streaming, a bounded token budget, a unique request identifier "
+"and disabling thinking where the engine supports it. The following is the recorded "
+"client request configuration; keep client-specific fields in the format expected by "
+"your SDK."
+msgstr "原记录建议使用流式请求、限制 token 预算、设置唯一请求标识，并在引擎支持时关闭思考输出。下面是记录中的客户端请求配置；客户端特有字段应按所用 SDK 的格式传入。"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:42
+msgid ""
+"Use a small ``request_limits`` value, such as 1 or 2, when reproducing the case. Add "
+"concurrency, timeout and queue limits at the entry layer so short requests do not "
+"wait indefinitely behind long ones."
+msgstr "复现时使用较小的  ``request_limits`` ，例如 1 或 2。在入口层配置并发、超时和队列限制，避免短请求无限等待长请求完成。"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:45
+msgid "Verification"
+msgstr "验证"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:47
+msgid ""
+"Compare the same prompt on an idle instance and under load. Correlate request "
+"identifiers with model logs and record first-token latency, total latency and whether"
+" output completes. Treat these measures as diagnostic evidence, not confirmation of "
+"the proposed cause."
+msgstr "在空闲实例与有负载的情况下比较相同提示词。通过请求标识关联模型日志，记录首 token 延迟、总延迟以及输出是否完成。这些指标是诊断证据，不能直接证明推测的根因。"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:49
+msgid ":doc:`../xinference_images/performance`"
+msgstr ":doc:`../xinference_images/performance`"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:50
+msgid ":doc:`../xinference_images/langfuse`"
+msgstr ":doc:`../xinference_images/langfuse`"

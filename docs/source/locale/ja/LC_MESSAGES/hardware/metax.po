@@ -1,0 +1,233 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, Xorbits Inc.
+# This file is distributed under the same license as the Xinference package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-02 16:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:3
+msgid "MetaX GPU deployment"
+msgstr "MetaX GPU へのデプロイ"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:5
+msgid "Run the Enterprise image on a host with MetaX drivers and device files available."
+msgstr "MetaX ドライバーとデバイスファイルが利用可能なホストで Enterprise イメージを実行します。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst
+msgid "Hardware"
+msgstr "ハードウェア"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:9
+msgid "MetaX GPU"
+msgstr "MetaX GPU"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst
+msgid "Runtime"
+msgstr "ランタイム"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:10
+msgid "Docker"
+msgstr "Docker"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst
+msgid "Devices"
+msgstr "デバイス"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:11
+msgid "``/dev/dri``, ``/dev/mem``, ``/dev/mxcd``"
+msgstr "``/dev/dri`` ,  ``/dev/mem`` ,  ``/dev/mxcd``"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:15
+msgid ""
+"The original deployment record does not specify driver, image or backend versions. "
+"Confirm a compatible combination for your environment before using this "
+"configuration."
+msgstr "元のデプロイ記録には、ドライバー、イメージ、バックエンドのバージョンが明記されていません。この構成を使用する前に、ご利用の環境で互換性のある組み合わせを確認してください。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:18
+msgid "Prerequisites"
+msgstr "前提条件"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:20
+msgid ""
+"Install the MetaX driver and Docker on the host. Check that all three device paths "
+"listed above exist and choose the appropriate Enterprise image."
+msgstr ""
+"ホストに MetaX ドライバーと Docker をインストールします。上記の 3 つのデバイスパスがすべて存在することを確認し、適切な Enterprise "
+"イメージを選択します。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:23
+msgid "Start the container"
+msgstr "コンテナを起動する"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:25
+msgid ""
+"Replace the image placeholder with your MetaX Enterprise image. The shared-memory "
+"allocation below is the value from the deployment record; size it for the host and "
+"workload."
+msgstr ""
+"イメージのプレースホルダーを MetaX Enterprise "
+"イメージに置き換えます。以下の共有メモリ割り当てはデプロイ記録の値です。ホストとワークロードに合わせてサイズを決めてください。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:27
+msgid "Container startup"
+msgstr "コンテナの起動"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:44
+msgid "Container parameters"
+msgstr "コンテナパラメータ"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:48
+msgid "Parameter"
+msgstr "パラメータ"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:49
+msgid "Purpose"
+msgstr "目的"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:50
+msgid "``--network host``"
+msgstr "``--network host``"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:51
+msgid "Use host ports directly without port mapping."
+msgstr "ポートマッピングを使わず、ホストのポートを直接使用します。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:52
+msgid "``--device``"
+msgstr "``--device``"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:53
+msgid "Expose the DRI, physical-memory and MetaX compute devices."
+msgstr "DRI、物理メモリ、MetaX コンピュートデバイスを公開します。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:54
+msgid "``--group-add video``"
+msgstr "``--group-add video``"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:55
+msgid "Grant access through the video group."
+msgstr "video グループを通じてアクセスを許可します。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:56
+msgid "``--shm-size=128g``"
+msgstr "``--shm-size=128g``"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:57
+msgid "Configure the container's shared-memory limit."
+msgstr "コンテナの共有メモリ上限を構成します。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:58
+msgid "``--security-opt``"
+msgstr "``--security-opt``"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:59
+msgid "Use the seccomp and AppArmor settings from the recorded configuration."
+msgstr "記録された構成の seccomp と AppArmor の設定を使用します。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:60
+msgid "``--ulimit memlock=-1``"
+msgstr "``--ulimit memlock=-1``"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:61
+msgid "Remove the locked-memory limit."
+msgstr "ロックメモリの制限を解除します。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:62
+msgid "``--restart unless-stopped``"
+msgstr "``--restart unless-stopped``"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:63
+msgid "Restart after an unexpected stop, except when manually stopped."
+msgstr "手動で停止した場合を除き、予期せず停止した後に再起動します。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:66
+msgid "Persistent model storage"
+msgstr "永続的なモデルストレージ"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:68
+msgid ""
+"Add these options to the container command to keep downloaded models on the host. "
+"Replace the host path with an existing directory."
+msgstr "ダウンロードしたモデルをホスト上に保持するには、コンテナコマンドに次のオプションを追加します。ホストパスは既存のディレクトリに置き換えてください。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:76
+msgid "Start and verify the service"
+msgstr "サービスを起動して検証する"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:78
+msgid ""
+"Enter the container, replace the host placeholder with the machine's reachable "
+"address, and start the web entry and inference service."
+msgstr "コンテナに入り、ホストのプレースホルダーをマシンの到達可能なアドレスに置き換えて、Web エントリと推論サービスを起動します。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:85
+msgid ""
+"Check the container logs, access the web interface on port 8091 and launch a model. "
+"Validate actual inference output as well as API availability."
+msgstr "コンテナログを確認し、ポート 8091 で Web インターフェースにアクセスしてモデルを起動します。API の可用性だけでなく、実際の推論出力も検証してください。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:88
+msgid "Related guides"
+msgstr "関連ガイド"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:90
+msgid ":doc:`../getting_started/environments`"
+msgstr ":doc:`../getting_started/environments`"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:91
+msgid ":doc:`../xinference_images/troubleshooting`"
+msgstr ":doc:`../xinference_images/troubleshooting`"

@@ -1,0 +1,424 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, Xorbits Inc.
+# This file is distributed under the same license as the Xinference package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-02 16:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:3
+msgid "High availability deployment"
+msgstr "高可用性デプロイ"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:5
+msgid ""
+"Deploy primary and secondary supervisors, workers, a shared database and a unified "
+"Nginx entry. This guide assumes containers with Xinference and the Enterprise HA "
+"script already installed."
+msgstr ""
+"プライマリとセカンダリの supervisor、worker、共有データベース、統合 Nginx エントリをデプロイします。このガイドでは、Xinference と "
+"Enterprise HA スクリプトがインストール済みのコンテナを前提としています。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst
+msgid "Control plane"
+msgstr "コントロールプレーン"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:9
+msgid "Primary and secondary supervisors"
+msgstr "プライマリとセカンダリの supervisor"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst
+msgid "Database"
+msgstr "データベース"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:10
+msgid "Shared MySQL or PostgreSQL"
+msgstr "共有 MySQL または PostgreSQL"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst
+msgid "Entry"
+msgstr "エントリ"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:11
+msgid "Nginx / OpenResty"
+msgstr "Nginx / OpenResty"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:15
+msgid ""
+"All addresses below are example private-network addresses from the supplied guide. "
+"Replace them with reachable addresses in your deployment. The original guide does not"
+" specify an image version; confirm that your image provides the HA options and script"
+" shown here."
+msgstr ""
+"以下のアドレスはすべて、提供されたガイドに記載されたプライベートネットワークのアドレス例です。デプロイ環境で到達可能なアドレスに置き換えてください。元のガイドにはイメージバージョンが明記されていません。使用するイメージに、ここで示す"
+" HA オプションとスクリプトが含まれていることを確認してください。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:18
+msgid "Topology and ports"
+msgstr "トポロジーとポート"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:20
+msgid "Control-plane topology"
+msgstr "コントロールプレーンのトポロジー"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:27
+msgid "Example node and port allocation"
+msgstr "ノードとポート割り当ての例"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:31
+msgid "Component"
+msgstr "コンポーネント"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:32
+msgid "Example address"
+msgstr "アドレス例"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:33
+msgid "Ports"
+msgstr "ポート"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:34
+msgid "Nginx entry"
+msgstr "Nginx エントリ"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:35
+msgid "``10.1.0.10``"
+msgstr "``10.1.0.10``"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:36
+msgid "8008 (external entry)"
+msgstr "8008 (外部エントリ)"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:37
+msgid "Primary supervisor"
+msgstr "プライマリ supervisor"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:38
+msgid "``10.1.0.11``"
+msgstr "``10.1.0.11``"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:39
+msgid "9991 (API), 9911 (actor), 9551 (binlog), 9651 (checkpoint)"
+msgstr "9991 (API), 9911 (actor), 9551 (binlog), 9651 (checkpoint)"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:40
+msgid "Secondary supervisor"
+msgstr "セカンダリ supervisor"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:41
+msgid "``10.1.0.12``"
+msgstr "``10.1.0.12``"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:42
+msgid "9992 (API), 9912 (actor), 9552 (binlog), 9652 (checkpoint)"
+msgstr "9992 (API), 9912 (actor), 9552 (binlog), 9652 (checkpoint)"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst
+#: ../../source/cluster/high_availability.rst:43
+msgid "Worker"
+msgstr "Worker"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:44
+msgid "``10.1.0.13``"
+msgstr "``10.1.0.13``"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:45
+msgid "9921 (actor)"
+msgstr "9921 (actor)"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:46
+msgid "Shared database"
+msgstr "共有データベース"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:47
+msgid "``10.1.0.20``"
+msgstr "``10.1.0.20``"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:48
+msgid "3306 (MySQL) or 5432 (PostgreSQL)"
+msgstr "3306 (MySQL) または 5432 (PostgreSQL)"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:50
+msgid ""
+"Allow both supervisors to reach the database and each other's actor, binlog and "
+"checkpoint ports. Nginx must reach both supervisor APIs. Workers must reach the "
+"primary API, and both supervisors must reach worker actor ports. Do not use loopback "
+"addresses for communication between hosts."
+msgstr ""
+"両方の supervisor がデータベースに到達でき、互いの actor、binlog、checkpoint ポートに到達できるようにします。Nginx は両方の "
+"supervisor API に到達できる必要があります。worker はプライマリ API に到達でき、両方の supervisor は worker の actor "
+"ポートに到達できる必要があります。ホスト間の通信にループバックアドレスを使用しないでください。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:53
+msgid "Prepare the database and nodes"
+msgstr "データベースとノードを準備する"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:55
+msgid ""
+"Both supervisors must use the same shared database, not separate local SQLite "
+"databases. The database stores API, permission, task and instance records; binlog and"
+" checkpoint synchronize supervisor runtime metadata. These mechanisms have different "
+"responsibilities."
+msgstr ""
+"両方の supervisor は、個別のローカル SQLite データベースではなく、同じ共有データベースを使用する必要があります。データベースには "
+"API、権限、タスク、インスタンスのレコードが保存され、binlog と checkpoint は supervisor "
+"のランタイムメタデータを同期します。これらの仕組みはそれぞれ異なる役割を担います。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:57
+msgid ""
+"Configure one database URL on both supervisors. Using the same configuration on "
+"workers keeps the environment consistent. The image must include the corresponding "
+"database driver."
+msgstr ""
+"両方の supervisor に同じデータベース URL を 1 つ設定します。worker "
+"にも同じ設定を使用すると、環境の一貫性が保たれます。イメージには対応するデータベースドライバーが含まれている必要があります。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst
+msgid "MySQL"
+msgstr "MySQL"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst
+msgid "PostgreSQL"
+msgstr "PostgreSQL"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:73
+msgid ""
+"Confirm the supervisor and worker commands exist, inspect the supervisor's supported "
+"options, and choose the working directory used by the image."
+msgstr ""
+"supervisor と worker のコマンドが存在することを確認し、supervisor "
+"がサポートするオプションを確認して、イメージで使用される作業ディレクトリを選択します。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:82
+msgid ""
+"Before starting processes, check the ports allocated to that node. For the secondary "
+"use ports 9992, 9912, 9552 and 9652; for the worker use port 9921."
+msgstr ""
+"プロセスを起動する前に、そのノードに割り当てられたポートを確認します。セカンダリではポート 9992、9912、9552、9652 を、worker ではポート 9921"
+" を使用します。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:84
+msgid "Primary-node port check"
+msgstr "プライマリノードのポートチェック"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:101
+msgid "Start the cluster"
+msgstr "クラスターを起動する"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:103
+msgid ""
+"Run each command on its designated node, after exporting the shared database URL. "
+"Logs are written to the working directory."
+msgstr "共有データベース URL をエクスポートした後、各コマンドを指定されたノードで実行します。ログは作業ディレクトリに書き込まれます。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst
+msgid "Primary"
+msgstr "プライマリ"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst
+msgid "Secondary"
+msgstr "セカンダリ"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:150
+msgid "Configure the unified entry"
+msgstr "統合エントリを構成する"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:152
+msgid ""
+"Run the HA script on the Nginx node. It renders the OpenResty configuration and "
+"starts or reloads Nginx. The supplied script supports two supervisor backends; "
+"additional backends need a separate load-balancer configuration."
+msgstr ""
+"Nginx ノードで HA スクリプトを実行します。このスクリプトは OpenResty の構成を生成し、Nginx を起動またはリロードします。提供されたスクリプトは "
+"2 つの supervisor バックエンドをサポートします。それ以上のバックエンドには別のロードバランサー構成が必要です。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:163
+msgid ""
+"The entry checks both supervisors' status endpoints and routes requests to the "
+"available primary. Use the unified entry for model deployment and client requests."
+msgstr ""
+"エントリは両方の supervisor "
+"のステータスエンドポイントをチェックし、利用可能なプライマリにリクエストをルーティングします。モデルのデプロイとクライアントリクエストには統合エントリを使用してください。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:175
+msgid "Acceptance checks"
+msgstr "受け入れチェック"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:177
+msgid "Check both supervisors directly and then check the unified entry."
+msgstr "両方の supervisor を直接確認してから、統合エントリを確認します。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:189
+msgid ""
+"Expect version information from the primary, ``it is a secondary supervisor`` from "
+"the secondary version endpoint, and the worker in both status responses. Initially "
+"the unified entry reports ``has_transfered=false`` and ``active_node=primary``."
+msgstr ""
+"プライマリからはバージョン情報、セカンダリのバージョンエンドポイントからは  ``it is a secondary supervisor``  "
+"が返され、両方のステータスレスポンスに worker が含まれることを想定します。最初は、統合エントリは  ``has_transfered=false``  と  "
+"``active_node=primary``  を報告します。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:191
+msgid ""
+"Deploy a model through the unified entry and test actual inference. Inspect both "
+"supervisor logs for synchronized replica routing metadata before testing failover."
+msgstr ""
+"統合エントリを通じてモデルをデプロイし、実際の推論をテストします。フェイルオーバーをテストする前に、両方の supervisor "
+"のログで、レプリカのルーティングメタデータが同期されていることを確認します。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:198
+msgid ""
+"Successful secondary replay of ``META_REPLICA_MAP_INFO`` indicates that replica-to-"
+"worker routes were synchronized."
+msgstr "セカンダリで  ``META_REPLICA_MAP_INFO``  のリプレイが成功した場合、レプリカから worker へのルートが同期されたことを示します。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:201
+msgid "Optional failover drill and recovery"
+msgstr "任意のフェイルオーバー訓練と復旧"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst
+msgid "Test a primary failure in a test environment"
+msgstr "テスト環境でプライマリの障害をテストする"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:205
+msgid ""
+"This drill intentionally stops the primary supervisor. Run it separately from routine"
+" installation and only in the environment chosen for failure testing."
+msgstr "この訓練では、意図的にプライマリ supervisor を停止します。通常のインストールとは別に、障害テスト用に選んだ環境でのみ実行してください。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:207
+msgid "On the example primary node:"
+msgstr "プライマリノードの例:"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:215
+msgid ""
+"Poll the secondary version endpoint. Once it returns version information instead of "
+"the secondary-role message, inspect promotion and worker-reconnection logs."
+msgstr ""
+"セカンダリのバージョンエンドポイントをポーリングします。セカンダリロールのメッセージではなくバージョン情報が返されるようになったら、昇格と worker "
+"の再接続のログを確認します。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:223
+msgid "Expected log indicators"
+msgstr "想定されるログ指標"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:230
+msgid ""
+"Check the unified entry again. The recorded configuration checks approximately every "
+"two seconds and switches after five failures; this is a configuration-specific "
+"timing, not a guaranteed recovery time."
+msgstr ""
+"統合エントリを再度確認します。記録された構成では約 2 秒ごとにチェックし、5 "
+"回失敗すると切り替わります。これは構成固有のタイミングであり、復旧時間を保証するものではありません。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:238
+msgid ""
+"Expect ``has_transfered=true`` and ``active_node=backup``, with the old primary down "
+"and the backup up. Send a real chat request to the already deployed model through the"
+" same entry."
+msgstr ""
+"``has_transfered=true``  と  ``active_node=backup``  "
+"が返され、旧プライマリがダウン、バックアップがアップになっていることを想定します。同じエントリを通じて、デプロイ済みのモデルに実際のチャットリクエストを送信します。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:240
+msgid ""
+"If inference cannot find the model, inspect the new primary's routing logs and the "
+"earlier replica-map replay. A successful role change alone does not establish that "
+"the model is still reachable."
+msgstr "推論でモデルが見つからない場合は、新しいプライマリのルーティングログと、それ以前のレプリカマップのリプレイを確認します。ロールの変更が成功しただけでは、モデルに引き続き到達可能であるとは言えません。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:246
+msgid ""
+"After recovering the former primary, rejoin it as a secondary with the current "
+"primary's addresses and the same shared database. Avoid automatically reclaiming the "
+"primary role. Verify metadata synchronization, node status and inference again."
+msgstr "元のプライマリを復旧した後、現在のプライマリのアドレスと同じ共有データベースを使用して、セカンダリとして再参加させます。プライマリロールを自動的に取り戻すことは避けてください。メタデータの同期、ノードの状態、推論を再度確認します。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:249
+msgid "Related guides"
+msgstr "関連ガイド"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:251
+msgid ":doc:`../xinference_images/multi_deployment`"
+msgstr ":doc:`../xinference_images/multi_deployment`"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/high_availability.rst:252
+msgid ":doc:`../xinference_images/troubleshooting`"
+msgstr ":doc:`../xinference_images/troubleshooting`"

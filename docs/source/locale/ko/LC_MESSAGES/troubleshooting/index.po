@@ -1,0 +1,55 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, Xorbits Inc.
+# This file is distributed under the same license as the Xinference package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-02 16:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ko\n"
+"Language-Team: ko <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/index.rst:3
+msgid "Troubleshooting"
+msgstr "문제 해결"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/index.rst:5
+msgid ""
+"Start with :doc:`../xinference_images/troubleshooting` for connectivity, containers, "
+"model loading and logs. The cases below describe particular hardware, backend and "
+"model combinations; their workarounds are not universal version requirements."
+msgstr ""
+"연결, 컨테이너, 모델 로딩 및 로그에 대해서는 먼저  :doc:`../xinference_images/troubleshooting`  을 참조하십시오."
+" 아래 사례는 특정 하드웨어, 백엔드 및 모델 조합을 설명하며, 해당 해결 방법은 보편적인 버전 요구 사항이 아닙니다."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/index.rst:8
+msgid "Ascend 310P"
+msgstr "Ascend 310P"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/index.rst:17
+msgid "Ascend 910B"
+msgstr "Ascend 910B"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/index.rst:25
+msgid "NVIDIA / CUDA"
+msgstr "NVIDIA / CUDA"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/index.rst:34
+msgid "General checks"
+msgstr "일반 점검"

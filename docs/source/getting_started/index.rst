@@ -1,12 +1,16 @@
 .. _getting_started_index:
 
-===============
+=================
 Getting Started
-===============
+=================
 
+Install Xinference Enterprise, configure its environment and activate a license.
 
-.. toctree::
-   :maxdepth: 2
+.. container:: docs-category
 
-   installation
-   environments
+   .. toctree::
+      :maxdepth: 2
+
+      installation
+      environments
+      ../xinference_images/license

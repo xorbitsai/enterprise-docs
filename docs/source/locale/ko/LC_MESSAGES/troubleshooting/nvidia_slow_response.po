@@ -1,0 +1,164 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, Xorbits Inc.
+# This file is distributed under the same license as the Xinference package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-02 16:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ko\n"
+"Language-Team: ko <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:3
+msgid "NVIDIA: GPU at 100% with long response delays"
+msgstr "NVIDIA: GPU 100% 및 긴 응답 지연"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst
+msgid "Hardware"
+msgstr "하드웨어"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:7
+msgid "NVIDIA GPU"
+msgstr "NVIDIA GPU"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst
+msgid "Model"
+msgstr "모델"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:8
+msgid "Qwen3-32B"
+msgstr "Qwen3-32B"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst
+msgid "Log context"
+msgstr "로그 컨텍스트"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:9
+msgid "Xinference 1.0.3"
+msgstr "Xinference 1.0.3"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:12
+msgid "Symptom"
+msgstr "증상"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:14
+msgid ""
+"Qwen3-32B on one GPU keeps its memory allocated and utilization near 100%, while "
+"Qwen2.5-VL on another GPU responds normally. Even a short probe waits; one recorded "
+"greeting returned about 40 minutes later as GPU utilization fell."
+msgstr ""
+"한 GPU의 Qwen3-32B는 메모리를 할당한 채 사용률이 100% 가까이 유지되는 반면, 다른 GPU의 Qwen2.5-VL은 정상적으로 응답합니다. "
+"짧은 프로브도 대기하며, 기록된 한 인사말은 GPU 사용률이 떨어지면서 약 40분 후에 반환되었습니다."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst
+msgid "Observed"
+msgstr "관찰 결과"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:18
+msgid ""
+"Another model on the same machine remained responsive. High GPU utilization shows "
+"active computation but does not distinguish many requests from one long-running "
+"request."
+msgstr "같은 머신의 다른 모델은 계속 응답했습니다. 높은 GPU 사용률은 활발한 연산을 보여 주지만, 많은 요청과 하나의 장시간 실행 요청을 구별하지는 못합니다."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst
+msgid "Hypothesis"
+msgstr "가설"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:19
+msgid ""
+"Long prompts, large token budgets, thinking output or a queue may occupy this model "
+"instance. The root cause was not confirmed in the record."
+msgstr ""
+"긴 프롬프트, 큰 토큰 예산, 사고(thinking) 출력 또는 대기열이 이 모델 인스턴스를 점유하고 있을 수 있습니다. 기록에서 근본 원인은 확인되지 "
+"않았습니다."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:22
+msgid "Logs and request correlation"
+msgstr "로그 및 요청 연관"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:24
+msgid ""
+"In the recorded Xinference 1.0.3 context, chat entry and exit messages use DEBUG "
+"logging. Model subprocess logs may differ from the worker's main log; absent chat "
+"messages in that file do not prove the request never reached the model."
+msgstr ""
+"기록된 Xinference 1.0.3 환경에서는 채팅 진입 및 종료 메시지가 DEBUG 로깅을 사용합니다. 모델 하위 프로세스 로그는 worker의 메인"
+" 로그와 다를 수 있으며, 해당 파일에 채팅 메시지가 없다고 해서 요청이 모델에 도달하지 않았다는 증거가 되지는 않습니다."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:27
+msgid "Mitigation and diagnostics"
+msgstr "완화 및 진단"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:29
+msgid ""
+"The notes recommend streaming, a bounded token budget, a unique request identifier "
+"and disabling thinking where the engine supports it. The following is the recorded "
+"client request configuration; keep client-specific fields in the format expected by "
+"your SDK."
+msgstr ""
+"노트에서는 스트리밍, 제한된 토큰 예산, 고유한 요청 식별자 사용과 엔진이 지원하는 경우 사고(thinking) 비활성화를 권장합니다. 다음은 기록된 "
+"클라이언트 요청 구성입니다. 클라이언트별 필드는 사용하는 SDK가 기대하는 형식으로 유지하십시오."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:42
+msgid ""
+"Use a small ``request_limits`` value, such as 1 or 2, when reproducing the case. Add "
+"concurrency, timeout and queue limits at the entry layer so short requests do not "
+"wait indefinitely behind long ones."
+msgstr ""
+"사례를 재현할 때는 1 또는 2와 같은 작은  ``request_limits``  값을 사용합니다. 짧은 요청이 긴 요청 뒤에서 무기한 대기하지 않도록 "
+"진입 계층에 동시성, 타임아웃 및 대기열 제한을 추가하십시오."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:45
+msgid "Verification"
+msgstr "검증"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:47
+msgid ""
+"Compare the same prompt on an idle instance and under load. Correlate request "
+"identifiers with model logs and record first-token latency, total latency and whether"
+" output completes. Treat these measures as diagnostic evidence, not confirmation of "
+"the proposed cause."
+msgstr ""
+"유휴 인스턴스와 부하 상태에서 동일한 프롬프트를 비교합니다. 요청 식별자를 모델 로그와 연관 짓고, 첫 토큰 지연 시간, 전체 지연 시간 및 출력 완료 "
+"여부를 기록합니다. 이 측정값은 제시된 원인을 확인하는 것이 아니라 진단 증거로 취급하십시오."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:49
+msgid ":doc:`../xinference_images/performance`"
+msgstr ":doc:`../xinference_images/performance`"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:50
+msgid ":doc:`../xinference_images/langfuse`"
+msgstr ":doc:`../xinference_images/langfuse`"

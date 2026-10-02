@@ -1,0 +1,518 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, Xorbits Inc.
+# This file is distributed under the same license as the Xinference package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-02 16:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: pt_BR\n"
+"Language-Team: pt_BR <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:3
+msgid "High availability deployment"
+msgstr "Implantação com alta disponibilidade"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:5
+msgid ""
+"Deploy primary and secondary supervisors, workers, a shared database and a unified "
+"Nginx entry. This guide assumes containers with Xinference and the Enterprise HA "
+"script already installed."
+msgstr ""
+"Implante os supervisors primário e secundário, os workers, um banco de dados "
+"compartilhado e um ponto de entrada Nginx unificado. Esta guia pressupõe contêineres "
+"com Xinference e o script Enterprise HA já instalados."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst
+msgid "Control plane"
+msgstr "Plano de controle"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:9
+msgid "Primary and secondary supervisors"
+msgstr "Supervisors primário e secundário"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst
+msgid "Database"
+msgstr "Banco de dados"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:10
+msgid "Shared MySQL or PostgreSQL"
+msgstr "MySQL ou PostgreSQL compartilhado"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst
+msgid "Entry"
+msgstr "Ponto de entrada"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:11
+msgid "Nginx / OpenResty"
+msgstr "Nginx / OpenResty"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:15
+msgid ""
+"All addresses below are example private-network addresses from the supplied guide. "
+"Replace them with reachable addresses in your deployment. The original guide does not"
+" specify an image version; confirm that your image provides the HA options and script"
+" shown here."
+msgstr ""
+"Todos os endereços abaixo são, por exemplo, endereços de rede privada do guia "
+"fornecido. Substitua-os por endereços acessíveis na sua implantação. O guia original "
+"não especifica uma versão da imagem; confirme que a sua imagem fornece a HA  opções e"
+" script mostrados aqui."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:18
+msgid "Topology and ports"
+msgstr "Topologia e portas"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:20
+msgid "Control-plane topology"
+msgstr "Topologia do plano de controle"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:27
+msgid "Example node and port allocation"
+msgstr "Exemplo de atribuição de nós e portas"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:31
+msgid "Component"
+msgstr "Componente"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:32
+msgid "Example address"
+msgstr "Endereço de exemplo"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:33
+msgid "Ports"
+msgstr "Portas"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:34
+msgid "Nginx entry"
+msgstr "Ponto de entrada Nginx"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:35
+msgid "``10.1.0.10``"
+msgstr "``10.1.0.10``"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:36
+msgid "8008 (external entry)"
+msgstr "8008 (entrada externa)"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:37
+msgid "Primary supervisor"
+msgstr "Supervisor primário"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:38
+msgid "``10.1.0.11``"
+msgstr "``10.1.0.11``"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:39
+msgid "9991 (API), 9911 (actor), 9551 (binlog), 9651 (checkpoint)"
+msgstr "9991 (API), 9911 (actor), 9551 (binlog), 9651 (checkpoint)"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:40
+msgid "Secondary supervisor"
+msgstr "Supervisor secundário"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:41
+msgid "``10.1.0.12``"
+msgstr "``10.1.0.12``"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:42
+msgid "9992 (API), 9912 (actor), 9552 (binlog), 9652 (checkpoint)"
+msgstr "9992 (API), 9912 (actor), 9552 (binlog), 9652 (checkpoint)"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst
+#: ../../source/cluster/high_availability.rst:43
+msgid "Worker"
+msgstr "Worker"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:44
+msgid "``10.1.0.13``"
+msgstr "``10.1.0.13``"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:45
+msgid "9921 (actor)"
+msgstr "9921 (actor)"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:46
+msgid "Shared database"
+msgstr "Banco de dados compartilhado"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:47
+msgid "``10.1.0.20``"
+msgstr "``10.1.0.20``"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:48
+msgid "3306 (MySQL) or 5432 (PostgreSQL)"
+msgstr "3306 (MySQL) ou 5432 (PostgreSQL)"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:50
+msgid ""
+"Allow both supervisors to reach the database and each other's actor, binlog and "
+"checkpoint ports. Nginx must reach both supervisor APIs. Workers must reach the "
+"primary API, and both supervisors must reach worker actor ports. Do not use loopback "
+"addresses for communication between hosts."
+msgstr ""
+"Permitir que ambos os supervisores cheguem ao banco de dados e ao ator, binlog e "
+"portas de checkpoint um do outro. Nginx  deve alcançar ambas as APIs de supervisor. "
+"Workers  deve atingir o primário API, e ambos os supervisores devem chegar às portas "
+"do ator trabalhador. Não use endereços loopback para comunicação entre hosts."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:53
+msgid "Prepare the database and nodes"
+msgstr "Preparar o banco de dados e os nós"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:55
+msgid ""
+"Both supervisors must use the same shared database, not separate local SQLite "
+"databases. The database stores API, permission, task and instance records; binlog and"
+" checkpoint synchronize supervisor runtime metadata. These mechanisms have different "
+"responsibilities."
+msgstr ""
+"Os dois supervisors devem usar o mesmo banco de dados compartilhado, e não bancos "
+"SQLite locais separados. O banco armazena registros de API, permissões, tarefas e "
+"instâncias; binlog e checkpoint sincronizam os metadados de execução dos supervisors."
+" Esses mecanismos têm responsabilidades diferentes."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:57
+msgid ""
+"Configure one database URL on both supervisors. Using the same configuration on "
+"workers keeps the environment consistent. The image must include the corresponding "
+"database driver."
+msgstr ""
+"Configure um URL de banco de dados em ambos os supervisores. Usando a mesma "
+"configuração nos trabalhadores, o ambiente será consistente. A imagem deverá incluir "
+"o controlador correspondente."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst
+msgid "MySQL"
+msgstr "MySQL"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst
+msgid "PostgreSQL"
+msgstr "PostgreSQL"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:73
+msgid ""
+"Confirm the supervisor and worker commands exist, inspect the supervisor's supported "
+"options, and choose the working directory used by the image."
+msgstr ""
+"Confirmar a existência dos comandos supervisor e worker, inspecionar as opções "
+"suportadas pelo supervisor e escolher o diretório de trabalho usado pela imagem."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:82
+msgid ""
+"Before starting processes, check the ports allocated to that node. For the secondary "
+"use ports 9992, 9912, 9552 and 9652; for the worker use port 9921."
+msgstr ""
+"Antes de iniciar os processos, verifique as portas alocadas nesse nó. Para as portas "
+"de uso secundário 9992, 9912, 9552 e 9652; para o porto de uso do trabalhador 9921."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:84
+msgid "Primary-node port check"
+msgstr "Verificação de portas do nó primário"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:101
+msgid "Start the cluster"
+msgstr "Iniciar o cluster"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:103
+msgid ""
+"Run each command on its designated node, after exporting the shared database URL. "
+"Logs are written to the working directory."
+msgstr ""
+"Execute cada comando no seu nó designado, depois de exportar o URL do banco de dados "
+"partilhado. Os registos são gravados na pasta de trabalho."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst
+msgid "Primary"
+msgstr "Primário"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst
+msgid "Secondary"
+msgstr "Secundário"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:150
+msgid "Configure the unified entry"
+msgstr "Configurar o ponto de entrada unificado"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:152
+msgid ""
+"Run the HA script on the Nginx node. It renders the OpenResty configuration and "
+"starts or reloads Nginx. The supplied script supports two supervisor backends; "
+"additional backends need a separate load-balancer configuration."
+msgstr ""
+"Executar o HA o programa no Nginx  nó. Ele renderiza o OpenResty  configuração e "
+"inicia ou recarrega Nginx. O script fornecido suporta duas infra- estruturas de "
+"supervisor; as infra- estruturas adicionais precisam de uma configuração de "
+"balanceador de carga separada."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:163
+msgid ""
+"The entry checks both supervisors' status endpoints and routes requests to the "
+"available primary. Use the unified entry for model deployment and client requests."
+msgstr ""
+"O ponto de entrada verifica o status dos dois supervisors e encaminha as solicitações"
+" ao primário disponível. Use o ponto de entrada unificado para implantação de modelos"
+" e solicitações dos clientes."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:175
+msgid "Acceptance checks"
+msgstr "Verificações de aceitação"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:177
+msgid "Check both supervisors directly and then check the unified entry."
+msgstr ""
+"Verifique ambos os supervisores diretamente e, em seguida, verifique a entrada "
+"unificada."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:189
+msgid ""
+"Expect version information from the primary, ``it is a secondary supervisor`` from "
+"the secondary version endpoint, and the worker in both status responses. Initially "
+"the unified entry reports ``has_transfered=false`` and ``active_node=primary``."
+msgstr ""
+"Espere informações de versão do primário,  ``it is a secondary supervisor``  do "
+"endpoint de versão do secundário e o worker nas duas respostas de status. "
+"Inicialmente, o ponto de entrada unificado informa  ``has_transfered=false``  e  "
+"``active_node=primary`` ."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:191
+msgid ""
+"Deploy a model through the unified entry and test actual inference. Inspect both "
+"supervisor logs for synchronized replica routing metadata before testing failover."
+msgstr ""
+"Implantar um modelo através da entrada unificada e testar a inferência real. "
+"Inspecione ambos os registros de supervisores para os metadados sincronizados de "
+"roteamento de réplicas antes de testar o failover."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:198
+msgid ""
+"Successful secondary replay of ``META_REPLICA_MAP_INFO`` indicates that replica-to-"
+"worker routes were synchronized."
+msgstr ""
+"A reprodução bem-sucedida de  ``META_REPLICA_MAP_INFO``  no secundário indica que as "
+"rotas das réplicas para os workers foram sincronizadas."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:201
+msgid "Optional failover drill and recovery"
+msgstr "Exercício opcional de troca em caso de falha e recuperação"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst
+msgid "Test a primary failure in a test environment"
+msgstr "Testar uma falha do primário em um ambiente de testes"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:205
+msgid ""
+"This drill intentionally stops the primary supervisor. Run it separately from routine"
+" installation and only in the environment chosen for failure testing."
+msgstr ""
+"Este exercício interrompe intencionalmente o supervisor primário. Execute-o "
+"separadamente da instalação rotineira e apenas no ambiente escolhido para testes de "
+"falha."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:207
+msgid "On the example primary node:"
+msgstr "No nó primário do exemplo:"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:215
+msgid ""
+"Poll the secondary version endpoint. Once it returns version information instead of "
+"the secondary-role message, inspect promotion and worker-reconnection logs."
+msgstr ""
+"Consulte periodicamente o endpoint de versão do secundário. Quando ele retornar "
+"informações de versão em vez da mensagem de papel secundário, examine os logs de "
+"promoção e reconexão dos workers."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:223
+msgid "Expected log indicators"
+msgstr "Indicadores esperados nos logs"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:230
+msgid ""
+"Check the unified entry again. The recorded configuration checks approximately every "
+"two seconds and switches after five failures; this is a configuration-specific "
+"timing, not a guaranteed recovery time."
+msgstr ""
+"Verifique novamente o ponto de entrada unificado. A configuração documentada faz uma "
+"verificação aproximadamente a cada dois segundos e troca de nó após cinco falhas. "
+"Esse intervalo depende da configuração e não é um tempo de recuperação garantido."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:238
+msgid ""
+"Expect ``has_transfered=true`` and ``active_node=backup``, with the old primary down "
+"and the backup up. Send a real chat request to the already deployed model through the"
+" same entry."
+msgstr ""
+"Espere  ``has_transfered=true``  e  ``active_node=backup`` , com o antigo primário "
+"parado e o backup ativo. Envie uma solicitação real de chat ao modelo já implantado "
+"pelo mesmo ponto de entrada."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:240
+msgid ""
+"If inference cannot find the model, inspect the new primary's routing logs and the "
+"earlier replica-map replay. A successful role change alone does not establish that "
+"the model is still reachable."
+msgstr ""
+"Se a inferência não encontrar o modelo, examine os logs de roteamento do novo "
+"primário e a reprodução anterior do mapa de réplicas. Uma mudança de papel bem-"
+"sucedida, por si só, não comprova que o modelo ainda esteja acessível."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:246
+msgid ""
+"After recovering the former primary, rejoin it as a secondary with the current "
+"primary's addresses and the same shared database. Avoid automatically reclaiming the "
+"primary role. Verify metadata synchronization, node status and inference again."
+msgstr ""
+"Depois de recuperar o primário anterior, volte a reuni- lo como secundário com os "
+"endereços primários atuais e o mesmo banco de dados compartilhado. Evite recuperar "
+"automaticamente o papel primário. Verifique a sincronização de metadados, o estado do"
+" nó e a inferência novamente."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:249
+msgid "Related guides"
+msgstr "Guias relacionadas"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:251
+msgid ":doc:`../xinference_images/multi_deployment`"
+msgstr ":doc:`../xinference_images/multi_deployment`"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/cluster/high_availability.rst:252
+msgid ":doc:`../xinference_images/troubleshooting`"
+msgstr ":doc:`../xinference_images/troubleshooting`"

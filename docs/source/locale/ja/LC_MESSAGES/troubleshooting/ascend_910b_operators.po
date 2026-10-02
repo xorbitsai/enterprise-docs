@@ -1,0 +1,157 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, Xorbits Inc.
+# This file is distributed under the same license as the Xinference package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-02 16:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_910b_operators.rst:3
+msgid "Ascend 910B: custom operator environment missing"
+msgstr "Ascend 910B: カスタムオペレーター環境の欠落"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_910b_operators.rst
+msgid "Hardware"
+msgstr "ハードウェア"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_910b_operators.rst:7
+msgid "Ascend 910B"
+msgstr "Ascend 910B"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_910b_operators.rst
+msgid "Backend"
+msgstr "バックエンド"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_910b_operators.rst:8
+msgid "vLLM-Ascend"
+msgstr "vLLM-Ascend"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_910b_operators.rst
+msgid "Model"
+msgstr "モデル"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_910b_operators.rst:9
+msgid "Qwen3.6-35B-A3B"
+msgstr "Qwen3.6-35B-A3B"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_910b_operators.rst:12
+msgid "Symptom"
+msgstr "症状"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_910b_operators.rst:14
+msgid ""
+"Native vLLM starts and chats successfully, but the same model launched through "
+"Xinference fails with a recurrent-state dtype error."
+msgstr "ネイティブ vLLM では起動とチャットが成功しますが、同じモデルを Xinference から起動すると、リカレント状態の dtype エラーで失敗します。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_910b_operators.rst:22
+msgid "Evidence and diagnosis"
+msgstr "証拠と診断"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_910b_operators.rst
+msgid "Observed"
+msgstr "観測結果"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_910b_operators.rst:26
+msgid ""
+"The recorded Xinference-launched process did not inherit the custom operator paths "
+"that were present in the working native vLLM environment."
+msgstr "記録では、Xinference から起動されたプロセスは、動作していたネイティブ vLLM 環境に存在したカスタムオペレーターのパスを継承していませんでした。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_910b_operators.rst
+msgid "Diagnosis"
+msgstr "診断"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_910b_operators.rst:27
+msgid ""
+"The missing custom GDN/Mamba operator environment caused a fallback to the built-in "
+"CANN operator, which rejected the model's float32 state in this case."
+msgstr ""
+"この事例では、カスタム GDN/Mamba オペレーター環境が欠落していたため、組み込みの CANN オペレーターへのフォールバックが発生し、そのオペレーターがモデルの "
+"float32 状態を拒否しました。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_910b_operators.rst:29
+msgid ""
+"Check both ``ASCEND_CUSTOM_OPP_PATH`` and the custom ``op_api/lib`` entry in "
+"``LD_LIBRARY_PATH`` before changing model precision."
+msgstr ""
+"モデルの精度を変更する前に、  ``ASCEND_CUSTOM_OPP_PATH``  と  ``LD_LIBRARY_PATH``  内のカスタム  "
+"``op_api/lib``  エントリの両方を確認してください。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_910b_operators.rst:32
+msgid "Load the operator environment"
+msgstr "オペレーター環境を読み込む"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_910b_operators.rst:34
+msgid ""
+"Source the vLLM-Ascend custom environment in the same shell that starts Xinference. "
+"Adjust the installation path for your image."
+msgstr "Xinference を起動するのと同じシェルで、vLLM-Ascend のカスタム環境を source します。インストールパスはイメージに合わせて調整してください。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_910b_operators.rst:42
+msgid ""
+"Align model parameters with the working native launch. These are the values from the "
+"original test, not defaults for every deployment."
+msgstr "モデルパラメータを、動作しているネイティブ起動に合わせます。これらは元のテストの値であり、すべてのデプロイのデフォルトではありません。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_910b_operators.rst:44
+msgid "Parameters from the recorded deployment"
+msgstr "記録されたデプロイのパラメータ"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_910b_operators.rst:57
+msgid "Verification"
+msgstr "検証"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_910b_operators.rst:59
+msgid ""
+"Launch through Xinference again, inspect the inherited operator environment and "
+"confirm that the dtype error is gone and chat output is coherent. Record CANN, torch-"
+"npu, vLLM and vLLM-Ascend versions alongside the image tag."
+msgstr ""
+"Xinference から再度起動し、継承されたオペレーター環境を確認して、dtype "
+"エラーが解消され、チャット出力が首尾一貫していることを確認します。イメージタグとともに、CANN、torch-npu、vLLM、vLLM-Ascend "
+"のバージョンを記録してください。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_910b_operators.rst:61
+msgid ":doc:`../getting_started/environments`"
+msgstr ":doc:`../getting_started/environments`"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_910b_operators.rst:62
+msgid ":doc:`../xinference_images/mindie`"
+msgstr ":doc:`../xinference_images/mindie`"

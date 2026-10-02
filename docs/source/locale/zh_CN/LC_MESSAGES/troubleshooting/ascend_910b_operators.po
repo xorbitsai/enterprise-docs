@@ -1,0 +1,154 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, Xorbits Inc.
+# This file is distributed under the same license as the Xinference package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-02 16:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_910b_operators.rst:3
+msgid "Ascend 910B: custom operator environment missing"
+msgstr "昇腾 910B：自定义算子环境未加载"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_910b_operators.rst
+msgid "Hardware"
+msgstr "硬件"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_910b_operators.rst:7
+msgid "Ascend 910B"
+msgstr "昇腾 910B"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_910b_operators.rst
+msgid "Backend"
+msgstr "后端"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_910b_operators.rst:8
+msgid "vLLM-Ascend"
+msgstr "vLLM-Ascend"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_910b_operators.rst
+msgid "Model"
+msgstr "模型"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_910b_operators.rst:9
+msgid "Qwen3.6-35B-A3B"
+msgstr "Qwen3.6-35B-A3B"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_910b_operators.rst:12
+msgid "Symptom"
+msgstr "故障现象"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_910b_operators.rst:14
+msgid ""
+"Native vLLM starts and chats successfully, but the same model launched through "
+"Xinference fails with a recurrent-state dtype error."
+msgstr "原生 vLLM 可以成功启动并对话，但通过 Xinference 启动同一模型时，出现循环状态的 dtype 错误。"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_910b_operators.rst:22
+msgid "Evidence and diagnosis"
+msgstr "证据与诊断"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_910b_operators.rst
+msgid "Observed"
+msgstr "已观察到"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_910b_operators.rst:26
+msgid ""
+"The recorded Xinference-launched process did not inherit the custom operator paths "
+"that were present in the working native vLLM environment."
+msgstr "记录中由 Xinference 启动的进程，没有继承正常运行的原生 vLLM 环境中的自定义算子路径。"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_910b_operators.rst
+msgid "Diagnosis"
+msgstr "诊断"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_910b_operators.rst:27
+msgid ""
+"The missing custom GDN/Mamba operator environment caused a fallback to the built-in "
+"CANN operator, which rejected the model's float32 state in this case."
+msgstr "自定义 GDN/Mamba 算子环境缺失，导致回退至内置 CANN 算子；在本案例中，该算子拒绝模型的 float32 状态。"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_910b_operators.rst:29
+msgid ""
+"Check both ``ASCEND_CUSTOM_OPP_PATH`` and the custom ``op_api/lib`` entry in "
+"``LD_LIBRARY_PATH`` before changing model precision."
+msgstr ""
+"调整模型精度前，先检查  ``ASCEND_CUSTOM_OPP_PATH`` ，以及  ``LD_LIBRARY_PATH``  中自定义的  "
+"``op_api/lib``  路径。"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_910b_operators.rst:32
+msgid "Load the operator environment"
+msgstr "加载算子环境"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_910b_operators.rst:34
+msgid ""
+"Source the vLLM-Ascend custom environment in the same shell that starts Xinference. "
+"Adjust the installation path for your image."
+msgstr "在启动 Xinference 的同一个 shell 中加载 vLLM-Ascend 自定义环境脚本，并按镜像调整安装路径。"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_910b_operators.rst:42
+msgid ""
+"Align model parameters with the working native launch. These are the values from the "
+"original test, not defaults for every deployment."
+msgstr "将模型参数与能够正常运行的原生启动配置对齐。以下数值来自原始测试，并非适用于所有部署的默认值。"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_910b_operators.rst:44
+msgid "Parameters from the recorded deployment"
+msgstr "部署记录中的参数"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_910b_operators.rst:57
+msgid "Verification"
+msgstr "验证"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_910b_operators.rst:59
+msgid ""
+"Launch through Xinference again, inspect the inherited operator environment and "
+"confirm that the dtype error is gone and chat output is coherent. Record CANN, torch-"
+"npu, vLLM and vLLM-Ascend versions alongside the image tag."
+msgstr ""
+"再次通过 Xinference 启动模型，检查进程继承的算子环境，确认 dtype 错误消失且对话输出连贯。同时记录镜像标签及 CANN、torch-npu、vLLM"
+"、vLLM-Ascend 版本。"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_910b_operators.rst:61
+msgid ":doc:`../getting_started/environments`"
+msgstr ":doc:`../getting_started/environments`"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_910b_operators.rst:62
+msgid ":doc:`../xinference_images/mindie`"
+msgstr ":doc:`../xinference_images/mindie`"

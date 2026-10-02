@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xinference VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-10-02 15:10+0800\n"
+"POT-Creation-Date: 2026-10-02 16:45+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -19,22 +19,227 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
+#. Machine-translated technical prose; navigation reviewed and references preserved.
 #: ../../source/index.rst:5
-msgid "Welcome to Xinference!"
-msgstr "Willkommen bei Xinference!"
+msgid "Deploy and operate Xinference Enterprise"
+msgstr "Xinference Enterprise bereitstellen und betreiben"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
-#: ../../source/index.rst:15
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/index.rst:9
 msgid ""
-"Xorbits Inference (Xinference) is an open-source platform to streamline the operation"
-" and integration of a wide array of AI models. With Xinference, you're empowered to "
-"run inference using any open-source LLMs, embedding models, and multimodal models "
-"either in the cloud or on your own premises, and create robust AI-driven "
-"applications."
+"Guides for installing on your hardware, running models across nodes and diagnosing "
+"issues, with cases from recorded deployments."
 msgstr ""
-"Xorbits Inference (Xinference) ist eine Open-Source-Plattform zur Optimierung des "
-"Betriebs und der Integration einer breiten Palette von KI-Modellen. Mit Xinference "
-"sind Sie in der Lage, Inferenzen mit beliebigen Open-Source-LLMs, Einbettungsmodellen"
-" und multimodalen Modellen entweder in der Cloud oder bei Ihnen vor Ort durchzuführen"
-" und robuste KI-gesteuerte Anwendungen zu erstellen."
+"Anleitungen zur Installation auf Ihrer Hardware, zum knotenübergreifenden Betrieb von"
+" Modellen und zur Fehlerdiagnose, mit Fällen aus aufgezeichneten Bereitstellungen."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/index.rst:12
+msgid "Common tasks"
+msgstr "Häufige Aufgaben"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/index.rst:16
+msgid ":doc:`getting_started/installation`"
+msgstr ":doc:`getting_started/installation`"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/index.rst:18
+msgid "Choose a deployment option and prepare the runtime environment."
+msgstr "Wählen Sie eine Bereitstellungsoption und bereiten Sie die Laufzeitumgebung vor."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/index.rst:20
+msgid ":doc:`hardware/index`"
+msgstr ":doc:`hardware/index`"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/index.rst:22
+msgid "Set up NVIDIA, Ascend, Hygon or MetaX accelerators."
+msgstr "NVIDIA-, Ascend-, Hygon- oder MetaX-Beschleuniger einrichten."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/index.rst:24
+msgid ":doc:`xinference_images/license`"
+msgstr ":doc:`xinference_images/license`"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/index.rst:26
+msgid "Activate and manage an Enterprise license."
+msgstr "Eine Enterprise-Lizenz aktivieren und verwalten."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/index.rst:28
+msgid ":doc:`xinference_images/multi_deployment`"
+msgstr ":doc:`xinference_images/multi_deployment`"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/index.rst:30
+msgid "Connect supervisors and workers across hosts."
+msgstr "Hostübergreifend supervisor und worker verbinden."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/index.rst:32
+#: ../../source/index.rst:50
+msgid ":doc:`cluster/high_availability`"
+msgstr ":doc:`cluster/high_availability`"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/index.rst:34
+msgid "Deploy primary and secondary supervisors and verify failover."
+msgstr "Primäre und sekundäre supervisor bereitstellen und Failover verifizieren."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/index.rst:36
+msgid ":doc:`troubleshooting/index`"
+msgstr ":doc:`troubleshooting/index`"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/index.rst:38
+msgid "Start from a symptom and compare recorded cases."
+msgstr "Gehen Sie von einem Symptom aus und vergleichen Sie es mit aufgezeichneten Fällen."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/index.rst
+msgid "New guides"
+msgstr "Neue Anleitungen"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/index.rst:48
+msgid ":doc:`hardware/metax`"
+msgstr ":doc:`hardware/metax`"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/index.rst:49
+msgid ":doc:`deployment/pd_disaggregation`"
+msgstr ":doc:`deployment/pd_disaggregation`"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/index.rst
+msgid "Recorded troubleshooting cases"
+msgstr "Aufgezeichnete Fehlerbehebungsfälle"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/index.rst:56
+msgid ":doc:`troubleshooting/ascend_310p_qwen3`"
+msgstr ":doc:`troubleshooting/ascend_310p_qwen3`"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/index.rst:57
+msgid ":doc:`troubleshooting/ascend_310p_qwen35`"
+msgstr ":doc:`troubleshooting/ascend_310p_qwen35`"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/index.rst:58
+msgid ":doc:`troubleshooting/ascend_910b_operators`"
+msgstr ":doc:`troubleshooting/ascend_910b_operators`"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/index.rst:59
+msgid ":doc:`troubleshooting/nvidia_slow_response`"
+msgstr ":doc:`troubleshooting/nvidia_slow_response`"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/index.rst:60
+msgid ":doc:`troubleshooting/gb10_multinode`"
+msgstr ":doc:`troubleshooting/gb10_multinode`"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/index.rst:63
+msgid "All guides"
+msgstr "Alle Anleitungen"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/index.rst:67
+msgid "Getting started"
+msgstr "Erste Schritte"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/index.rst:68
+msgid ""
+":doc:`getting_started/installation` · :doc:`getting_started/environments` · "
+":doc:`xinference_images/license`"
+msgstr ""
+":doc:`getting_started/installation`  ·  :doc:`getting_started/environments`  ·  "
+":doc:`xinference_images/license`"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/index.rst:70
+msgid "Hardware & installation"
+msgstr "Hardware und Installation"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/index.rst:71
+msgid ""
+":doc:`xinference_images/nvidia` · :doc:`xinference_images/mindie` · "
+":doc:`xinference_images/hygon` · :doc:`hardware/metax`"
+msgstr ""
+":doc:`xinference_images/nvidia`  ·  :doc:`xinference_images/mindie`  ·  "
+":doc:`xinference_images/hygon`  ·  :doc:`hardware/metax`"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/index.rst:73
+msgid "Models & performance"
+msgstr "Modelle und Leistung"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/index.rst:74
+msgid ":doc:`deployment/pd_disaggregation` · :doc:`xinference_images/performance`"
+msgstr ":doc:`deployment/pd_disaggregation`  ·  :doc:`xinference_images/performance`"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/index.rst:76
+msgid "Clusters & availability"
+msgstr "Cluster und Hochverfügbarkeit"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/index.rst:77
+msgid ""
+":doc:`xinference_images/multi_deployment` · :doc:`cluster/high_availability` · "
+":doc:`xinference_images/kubernetes`"
+msgstr ""
+":doc:`xinference_images/multi_deployment`  ·  :doc:`cluster/high_availability`  ·  "
+":doc:`xinference_images/kubernetes`"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/index.rst:79
+msgid "Observability"
+msgstr "Beobachtbarkeit"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/index.rst:80
+msgid ":doc:`xinference_images/langfuse`"
+msgstr ":doc:`xinference_images/langfuse`"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/index.rst:82
+msgid "Troubleshooting"
+msgstr "Fehlerbehebung"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/index.rst:83
+msgid ":doc:`xinference_images/troubleshooting` · :doc:`troubleshooting/index`"
+msgstr ":doc:`xinference_images/troubleshooting`  ·  :doc:`troubleshooting/index`"
+
+#~ msgid "Welcome to Xinference!"
+#~ msgstr "Willkommen bei Xinference!"
+
+#~ msgid ""
+#~ "Xorbits Inference (Xinference) is an open-"
+#~ "source platform to streamline the operation "
+#~ "and integration of a wide array of AI"
+#~ " models. With Xinference, you're empowered to "
+#~ "run inference using any open-source LLMs, "
+#~ "embedding models, and multimodal models either "
+#~ "in the cloud or on your own premises,"
+#~ " and create robust AI-driven applications."
+#~ msgstr ""
+#~ "Xorbits Inference (Xinference) ist eine Open-"
+#~ "Source-Plattform zur Optimierung des Betriebs und"
+#~ " der Integration einer breiten Palette von "
+#~ "KI-Modellen. Mit Xinference sind Sie in der"
+#~ " Lage, Inferenzen mit beliebigen Open-Source-"
+#~ "LLMs, Einbettungsmodellen und multimodalen Modellen "
+#~ "entweder in der Cloud oder bei Ihnen vor"
+#~ " Ort durchzuführen und robuste KI-gesteuerte "
+#~ "Anwendungen zu erstellen."

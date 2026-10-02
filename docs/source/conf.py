@@ -75,6 +75,11 @@ html_title = "Xinference"
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+html_css_files = ['enterprise.css']
+html_sidebars = {'**': ['enterprise-nav']}
+if language.startswith('zh'):
+    # Sphinx's Chinese index needs jieba and a dictionary for accelerator names.
+    html_search_options = {'dict': str(Path(__file__).with_name('search-zh.txt'))}
 
 # Define the version for our local documentation
 version_match = language_slug(language)
@@ -92,8 +97,15 @@ html_theme_options = {
         },
     ],
     "navbar_align": "content",  # [left, content, right] For testing that the navbar items align properly
-    "navbar_start": ["navbar-logo", "version-switcher"],
-    "navbar_center": ["navbar-nav"],
+    "navbar_start": ["enterprise-logo", "version-switcher"],
+    "navbar_center": [],
+    "navbar_end": [],
+    "navbar_persistent": ["search-button-field", "theme-switcher"],
+    "navigation_depth": 2,
+    "show_nav_level": 1,
+    "collapse_navigation": True,
+    "show_prev_next": True,
+    "secondary_sidebar_items": ["page-toc"],
     "switcher": {
         "json_url": json_url,
         "version_match": version_match,

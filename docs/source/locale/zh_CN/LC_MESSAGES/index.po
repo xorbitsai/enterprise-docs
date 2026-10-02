@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xinference VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-10-02 15:08+0800\n"
+"POT-Creation-Date: 2026-10-02 16:45+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_CN\n"
@@ -19,19 +19,219 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
+#. Reviewed technical translation.
 #: ../../source/index.rst:5
-msgid "Welcome to Xinference!"
-msgstr "欢迎来到Xinference！"
+msgid "Deploy and operate Xinference Enterprise"
+msgstr "部署与运维 Xinference 企业版"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
-#: ../../source/index.rst:15
+#. Reviewed technical translation.
+#: ../../source/index.rst:9
 msgid ""
-"Xorbits Inference (Xinference) is an open-source platform to streamline the operation"
-" and integration of a wide array of AI models. With Xinference, you're empowered to "
-"run inference using any open-source LLMs, embedding models, and multimodal models "
-"either in the cloud or on your own premises, and create robust AI-driven "
-"applications."
+"Guides for installing on your hardware, running models across nodes and diagnosing "
+"issues, with cases from recorded deployments."
+msgstr "按硬件安装、多节点运行模型与问题诊断的操作指南，附实际部署记录中的案例。"
+
+#. Reviewed technical translation.
+#: ../../source/index.rst:12
+msgid "Common tasks"
+msgstr "常见任务"
+
+#. Reviewed technical translation.
+#: ../../source/index.rst:16
+msgid ":doc:`getting_started/installation`"
+msgstr ":doc:`getting_started/installation`"
+
+#. Reviewed technical translation.
+#: ../../source/index.rst:18
+msgid "Choose a deployment option and prepare the runtime environment."
+msgstr "选择部署方式，准备运行环境。"
+
+#. Reviewed technical translation.
+#: ../../source/index.rst:20
+msgid ":doc:`hardware/index`"
+msgstr ":doc:`hardware/index`"
+
+#. Reviewed technical translation.
+#: ../../source/index.rst:22
+msgid "Set up NVIDIA, Ascend, Hygon or MetaX accelerators."
+msgstr "配置 NVIDIA、昇腾、海光或沐曦加速卡。"
+
+#. Reviewed technical translation.
+#: ../../source/index.rst:24
+msgid ":doc:`xinference_images/license`"
+msgstr ":doc:`xinference_images/license`"
+
+#. Reviewed technical translation.
+#: ../../source/index.rst:26
+msgid "Activate and manage an Enterprise license."
+msgstr "激活和管理企业版许可证。"
+
+#. Reviewed technical translation.
+#: ../../source/index.rst:28
+msgid ":doc:`xinference_images/multi_deployment`"
+msgstr ":doc:`xinference_images/multi_deployment`"
+
+#. Reviewed technical translation.
+#: ../../source/index.rst:30
+msgid "Connect supervisors and workers across hosts."
+msgstr "跨主机连接 supervisor 与 worker。"
+
+#. Reviewed technical translation.
+#: ../../source/index.rst:32
+#: ../../source/index.rst:50
+msgid ":doc:`cluster/high_availability`"
+msgstr ":doc:`cluster/high_availability`"
+
+#. Reviewed technical translation.
+#: ../../source/index.rst:34
+msgid "Deploy primary and secondary supervisors and verify failover."
+msgstr "部署主备 supervisor，验证故障切换。"
+
+#. Reviewed technical translation.
+#: ../../source/index.rst:36
+msgid ":doc:`troubleshooting/index`"
+msgstr ":doc:`troubleshooting/index`"
+
+#. Reviewed technical translation.
+#: ../../source/index.rst:38
+msgid "Start from a symptom and compare recorded cases."
+msgstr "从故障现象入手，对照已记录的案例。"
+
+#. Reviewed technical translation.
+#: ../../source/index.rst
+msgid "New guides"
+msgstr "新增指南"
+
+#. Reviewed technical translation.
+#: ../../source/index.rst:48
+msgid ":doc:`hardware/metax`"
+msgstr ":doc:`hardware/metax`"
+
+#. Reviewed technical translation.
+#: ../../source/index.rst:49
+msgid ":doc:`deployment/pd_disaggregation`"
+msgstr ":doc:`deployment/pd_disaggregation`"
+
+#. Reviewed technical translation.
+#: ../../source/index.rst
+msgid "Recorded troubleshooting cases"
+msgstr "已记录的故障案例"
+
+#. Reviewed technical translation.
+#: ../../source/index.rst:56
+msgid ":doc:`troubleshooting/ascend_310p_qwen3`"
+msgstr ":doc:`troubleshooting/ascend_310p_qwen3`"
+
+#. Reviewed technical translation.
+#: ../../source/index.rst:57
+msgid ":doc:`troubleshooting/ascend_310p_qwen35`"
+msgstr ":doc:`troubleshooting/ascend_310p_qwen35`"
+
+#. Reviewed technical translation.
+#: ../../source/index.rst:58
+msgid ":doc:`troubleshooting/ascend_910b_operators`"
+msgstr ":doc:`troubleshooting/ascend_910b_operators`"
+
+#. Reviewed technical translation.
+#: ../../source/index.rst:59
+msgid ":doc:`troubleshooting/nvidia_slow_response`"
+msgstr ":doc:`troubleshooting/nvidia_slow_response`"
+
+#. Reviewed technical translation.
+#: ../../source/index.rst:60
+msgid ":doc:`troubleshooting/gb10_multinode`"
+msgstr ":doc:`troubleshooting/gb10_multinode`"
+
+#. Reviewed technical translation.
+#: ../../source/index.rst:63
+msgid "All guides"
+msgstr "全部指南"
+
+#. Reviewed technical translation.
+#: ../../source/index.rst:67
+msgid "Getting started"
+msgstr "快速开始"
+
+#. Reviewed technical translation.
+#: ../../source/index.rst:68
+msgid ""
+":doc:`getting_started/installation` · :doc:`getting_started/environments` · "
+":doc:`xinference_images/license`"
 msgstr ""
-"Xorbits Inference (Xinference) 是一个开源平台，用于简化各种人工智能模型的操作和集成。借助 Xinference ，您可以使用任何开源 "
-"LLM、嵌入模型和多模态模型在云端或自己的场所运行推理，并创建强大的 AI 驱动应用程序。"
+":doc:`getting_started/installation`  ·  :doc:`getting_started/environments`  ·  "
+":doc:`xinference_images/license`"
+
+#. Reviewed technical translation.
+#: ../../source/index.rst:70
+msgid "Hardware & installation"
+msgstr "安装与硬件"
+
+#. Reviewed technical translation.
+#: ../../source/index.rst:71
+msgid ""
+":doc:`xinference_images/nvidia` · :doc:`xinference_images/mindie` · "
+":doc:`xinference_images/hygon` · :doc:`hardware/metax`"
+msgstr ""
+":doc:`xinference_images/nvidia`  ·  :doc:`xinference_images/mindie`  ·  "
+":doc:`xinference_images/hygon`  ·  :doc:`hardware/metax`"
+
+#. Reviewed technical translation.
+#: ../../source/index.rst:73
+msgid "Models & performance"
+msgstr "模型部署与性能"
+
+#. Reviewed technical translation.
+#: ../../source/index.rst:74
+msgid ":doc:`deployment/pd_disaggregation` · :doc:`xinference_images/performance`"
+msgstr ":doc:`deployment/pd_disaggregation`  ·  :doc:`xinference_images/performance`"
+
+#. Reviewed technical translation.
+#: ../../source/index.rst:76
+msgid "Clusters & availability"
+msgstr "集群与高可用"
+
+#. Reviewed technical translation.
+#: ../../source/index.rst:77
+msgid ""
+":doc:`xinference_images/multi_deployment` · :doc:`cluster/high_availability` · "
+":doc:`xinference_images/kubernetes`"
+msgstr ""
+":doc:`xinference_images/multi_deployment`  ·  :doc:`cluster/high_availability`  ·  "
+":doc:`xinference_images/kubernetes`"
+
+#. Reviewed technical translation.
+#: ../../source/index.rst:79
+msgid "Observability"
+msgstr "监控与可观测性"
+
+#. Reviewed technical translation.
+#: ../../source/index.rst:80
+msgid ":doc:`xinference_images/langfuse`"
+msgstr ":doc:`xinference_images/langfuse`"
+
+#. Reviewed technical translation.
+#: ../../source/index.rst:82
+msgid "Troubleshooting"
+msgstr "故障排查"
+
+#. Reviewed technical translation.
+#: ../../source/index.rst:83
+msgid ":doc:`xinference_images/troubleshooting` · :doc:`troubleshooting/index`"
+msgstr ":doc:`xinference_images/troubleshooting`  ·  :doc:`troubleshooting/index`"
+
+#~ msgid "Welcome to Xinference!"
+#~ msgstr "欢迎来到Xinference！"
+
+#~ msgid ""
+#~ "Xorbits Inference (Xinference) is an open-"
+#~ "source platform to streamline the operation "
+#~ "and integration of a wide array of AI"
+#~ " models. With Xinference, you're empowered to "
+#~ "run inference using any open-source LLMs, "
+#~ "embedding models, and multimodal models either "
+#~ "in the cloud or on your own premises,"
+#~ " and create robust AI-driven applications."
+#~ msgstr ""
+#~ "Xorbits Inference (Xinference) 是一个开源平台，用于简化各种人工智能模型的操作和集成。借助 "
+#~ "Xinference ，您可以使用任何开源 LLM、嵌入模型和多模态模型在云端或自己的场所运行推理，并创建强大的 AI "
+#~ "驱动应用程序。"

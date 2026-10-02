@@ -1,0 +1,233 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, Xorbits Inc.
+# This file is distributed under the same license as the Xinference package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-02 16:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ko\n"
+"Language-Team: ko <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:3
+msgid "MetaX GPU deployment"
+msgstr "MetaX GPU 배포"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:5
+msgid "Run the Enterprise image on a host with MetaX drivers and device files available."
+msgstr "MetaX 드라이버와 장치 파일을 사용할 수 있는 호스트에서 Enterprise 이미지를 실행합니다."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst
+msgid "Hardware"
+msgstr "하드웨어"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:9
+msgid "MetaX GPU"
+msgstr "MetaX GPU"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst
+msgid "Runtime"
+msgstr "런타임"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:10
+msgid "Docker"
+msgstr "Docker"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst
+msgid "Devices"
+msgstr "장치"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:11
+msgid "``/dev/dri``, ``/dev/mem``, ``/dev/mxcd``"
+msgstr "``/dev/dri`` ,  ``/dev/mem`` ,  ``/dev/mxcd``"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:15
+msgid ""
+"The original deployment record does not specify driver, image or backend versions. "
+"Confirm a compatible combination for your environment before using this "
+"configuration."
+msgstr "원래 배포 기록에는 드라이버, 이미지 또는 백엔드 버전이 명시되어 있지 않습니다. 이 구성을 사용하기 전에 사용자 환경에 호환되는 조합을 확인하십시오."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:18
+msgid "Prerequisites"
+msgstr "사전 요구 사항"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:20
+msgid ""
+"Install the MetaX driver and Docker on the host. Check that all three device paths "
+"listed above exist and choose the appropriate Enterprise image."
+msgstr ""
+"호스트에 MetaX 드라이버와 Docker를 설치합니다. 위에 나열된 세 개의 장치 경로가 모두 존재하는지 확인하고 적절한 Enterprise 이미지를 "
+"선택합니다."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:23
+msgid "Start the container"
+msgstr "컨테이너 시작"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:25
+msgid ""
+"Replace the image placeholder with your MetaX Enterprise image. The shared-memory "
+"allocation below is the value from the deployment record; size it for the host and "
+"workload."
+msgstr ""
+"이미지 자리 표시자를 MetaX Enterprise 이미지로 바꾸십시오. 아래 공유 메모리 할당은 배포 기록의 값이므로 호스트와 워크로드에 맞게 크기를 "
+"정하십시오."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:27
+msgid "Container startup"
+msgstr "컨테이너 시작"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:44
+msgid "Container parameters"
+msgstr "컨테이너 파라미터"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:48
+msgid "Parameter"
+msgstr "파라미터"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:49
+msgid "Purpose"
+msgstr "목적"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:50
+msgid "``--network host``"
+msgstr "``--network host``"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:51
+msgid "Use host ports directly without port mapping."
+msgstr "포트 매핑 없이 호스트 포트를 직접 사용합니다."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:52
+msgid "``--device``"
+msgstr "``--device``"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:53
+msgid "Expose the DRI, physical-memory and MetaX compute devices."
+msgstr "DRI, 물리 메모리 및 MetaX 연산 장치를 노출합니다."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:54
+msgid "``--group-add video``"
+msgstr "``--group-add video``"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:55
+msgid "Grant access through the video group."
+msgstr "video 그룹을 통해 액세스 권한을 부여합니다."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:56
+msgid "``--shm-size=128g``"
+msgstr "``--shm-size=128g``"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:57
+msgid "Configure the container's shared-memory limit."
+msgstr "컨테이너의 공유 메모리 한도를 구성합니다."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:58
+msgid "``--security-opt``"
+msgstr "``--security-opt``"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:59
+msgid "Use the seccomp and AppArmor settings from the recorded configuration."
+msgstr "기록된 구성의 seccomp 및 AppArmor 설정을 사용합니다."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:60
+msgid "``--ulimit memlock=-1``"
+msgstr "``--ulimit memlock=-1``"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:61
+msgid "Remove the locked-memory limit."
+msgstr "잠금 메모리 제한을 해제합니다."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:62
+msgid "``--restart unless-stopped``"
+msgstr "``--restart unless-stopped``"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:63
+msgid "Restart after an unexpected stop, except when manually stopped."
+msgstr "수동으로 중지한 경우를 제외하고 예기치 않게 중지된 후 다시 시작합니다."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:66
+msgid "Persistent model storage"
+msgstr "영구 모델 스토리지"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:68
+msgid ""
+"Add these options to the container command to keep downloaded models on the host. "
+"Replace the host path with an existing directory."
+msgstr "다운로드한 모델을 호스트에 유지하려면 컨테이너 명령에 다음 옵션을 추가합니다. 호스트 경로는 기존 디렉터리로 바꾸십시오."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:76
+msgid "Start and verify the service"
+msgstr "서비스 시작 및 검증"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:78
+msgid ""
+"Enter the container, replace the host placeholder with the machine's reachable "
+"address, and start the web entry and inference service."
+msgstr "컨테이너에 들어가 호스트 자리 표시자를 머신의 도달 가능한 주소로 바꾸고, 웹 진입점과 추론 서비스를 시작합니다."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:85
+msgid ""
+"Check the container logs, access the web interface on port 8091 and launch a model. "
+"Validate actual inference output as well as API availability."
+msgstr "컨테이너 로그를 확인하고 포트 8091에서 웹 인터페이스에 접속하여 모델을 실행합니다. API 가용성뿐 아니라 실제 추론 출력도 검증하십시오."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:88
+msgid "Related guides"
+msgstr "관련 가이드"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:90
+msgid ":doc:`../getting_started/environments`"
+msgstr ":doc:`../getting_started/environments`"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:91
+msgid ":doc:`../xinference_images/troubleshooting`"
+msgstr ":doc:`../xinference_images/troubleshooting`"

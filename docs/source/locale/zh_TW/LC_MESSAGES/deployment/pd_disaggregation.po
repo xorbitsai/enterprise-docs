@@ -1,0 +1,305 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, Xorbits Inc.
+# This file is distributed under the same license as the Xinference package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-02 16:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_TW\n"
+"Language-Team: zh_TW <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:3
+msgid "Prefill–Decode disaggregation"
+msgstr "PD 分離部署"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:5
+msgid ""
+"Separate prompt processing from token generation so long prefill work does not "
+"repeatedly interrupt decode batches. Xavier transfers the KV cache between replicas "
+"and maintains a shared per-model block tracker for cross-replica prefix reuse."
+msgstr ""
+"將提示詞處理與 token 生成分開，避免耗時的 prefill 反覆打斷 decode 批次。Xavier 在副本間傳輸 KV 快取，並維護每個模型共享的 block "
+"tracker，以跨副本複用字首。"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst
+msgid "Backend"
+msgstr "後端"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:9
+msgid "vLLM 0.23"
+msgstr "vLLM 0.23"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst
+msgid "Connector"
+msgstr "聯結器"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:10
+msgid "Xavier V1"
+msgstr "Xavier V1"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst
+msgid "Validated model"
+msgstr "已驗證模型"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:11
+msgid "Qwen3"
+msgstr "Qwen3"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:14
+msgid "Compatibility scope"
+msgstr "相容範圍"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:18
+msgid ""
+"This guide describes the supplied validation record, not a promise of support in "
+"every release. Qwen3 was tested on hardware with the backend and connector versions "
+"above."
+msgstr "本指南描述提供的驗證記錄，不承諾所有版本都支援。Qwen3 使用上述後端與聯結器版本在硬體上完成了測試。"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:20
+msgid "Recorded compatibility"
+msgstr "記錄中的相容性"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:23
+msgid "Model architecture"
+msgstr "模型架構"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:24
+msgid "Recorded result"
+msgstr "記錄中的結果"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:25
+msgid "Attention-only models"
+msgstr "純注意力模型"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:26
+msgid ""
+"Qwen3 was validated. The record also lists Qwen2.5, Llama-3.1, GLM-4, QwQ and "
+"DeepSeek-R1-Distill as applicable model families; they were not all individually "
+"validated in this record."
+msgstr "已驗證 Qwen3。記錄還列出 Qwen2.5、Llama-3.1、GLM-4、QwQ 和 DeepSeek-R1-Distill 等適用模型系列，但並未逐一驗證。"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:27
+msgid "Hybrid linear-attention / SSM models"
+msgstr "混合線性注意力 / SSM 模型"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:28
+msgid ""
+"Qwen3.5 and Qwen3.6 produced garbled output in this configuration. Do not use them "
+"with this recorded Xavier V1 setup."
+msgstr "在此配置下，Qwen3.5 和 Qwen3.6 輸出亂碼。不要在記錄中的 Xavier V1 配置上使用它們。"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:30
+msgid ""
+"Check the model configuration for ``linear_attention`` entries in ``layer_types`` or "
+"a ``full_attention_interval`` field. The recorded Xavier path moves token-block KV "
+"data; hybrid models also have recurrent state that needs different handling."
+msgstr ""
+"檢查模型配置的  ``layer_types``  中是否包含  ``linear_attention`` ，或是否存在  "
+"``full_attention_interval``  欄位。記錄中的 Xavier 路徑傳輸 token block 的 KV "
+"資料，混合架構還包含需要另行處理的迴圈狀態。"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:33
+msgid "Configure replica roles"
+msgstr "配置副本角色"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:35
+msgid ""
+"Open the model registry and select the rocket icon on the model card to create an "
+"instance."
+msgstr "開啟模型註冊頁，點選模型卡片上的火箭圖示建立例項。"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:36
+msgid "Choose the vLLM engine, model version and model source."
+msgstr "選擇 vLLM 引擎、模型版本和模型來源。"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:37
+msgid ""
+"Add at least two device rows under replica configuration. Assign one Prefill role and"
+" one Decode role, with explicit worker addresses and different GPU indices."
+msgstr "在副本配置中至少新增兩行裝置，分別設定為 Prefill 和 Decode，並明確填寫 worker 地址及不同的 GPU 編號。"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:38
+msgid "Review advanced engine parameters and deploy the instance."
+msgstr "檢查高階引擎引數並部署例項。"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:40
+msgid "Xinference deployment form with replica device and advanced settings"
+msgstr "Xinference 部署表單，包含副本裝置與高階配置"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:43
+msgid "Replica configuration and advanced engine settings in the deployment form."
+msgstr "部署表單中的副本配置與高階引擎引數。"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:45
+msgid "Device role selector showing None, Prefill and Decode"
+msgstr "裝置角色下拉框，包含 None、Prefill 和 Decode"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:48
+msgid "Choose a role for each device row."
+msgstr "為每一行裝置選擇角色。"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:50
+msgid "Device roles"
+msgstr "裝置角色"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:53
+msgid "Role"
+msgstr "角色"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:54
+msgid "Responsibility"
+msgstr "職責"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:55
+msgid "None"
+msgstr "None"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:56
+msgid "Ordinary deployment without PD disaggregation."
+msgstr "不使用 PD 分離的常規部署。"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:57
+msgid "Prefill"
+msgstr "Prefill"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:58
+msgid "Process the prompt and produce the initial KV cache."
+msgstr "處理提示詞並生成初始 KV 快取。"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:59
+msgid "Decode"
+msgstr "Decode"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:60
+msgid "Generate subsequent tokens using the transferred state."
+msgstr "利用傳輸的狀態生成後續 token。"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:62
+msgid "Two-device example"
+msgstr "雙裝置示例"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:68
+msgid "Engine settings"
+msgstr "引擎配置"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:70
+msgid ""
+"Keep Prefill and Decode on separate GPUs. The recorded shared-GPU environment used "
+"``gpu_memory_utilization=0.8`` to leave room for other containers; choose the value "
+"from available memory rather than treating it as a universal default. The Xavier V1 "
+"path in this record enables ``enforce_eager=True`` automatically."
+msgstr ""
+"Prefill 和 Decode 應使用不同 GPU。記錄中的共享 GPU 環境使用  ``gpu_memory_utilization=0.8``  "
+"為其他容器保留空間；請按可用視訊記憶體選擇數值，而非將其視為通用預設值。該記錄中的 Xavier V1 路徑會自動啟用  ``enforce_eager=True`` 。"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:73
+msgid "Validate inference and transfers"
+msgstr "驗證推理與傳輸"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:75
+msgid ""
+"Confirm both roles are running, then use greedy decoding to inspect coherent output. "
+"A successful HTTP response alone does not establish that KV transfer is correct."
+msgstr "確認兩個角色均已執行，再使用貪心解碼檢查輸出是否連貫。僅 HTTP 請求成功不能證明 KV 傳輸正確。"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:77
+msgid "Greedy decoding check"
+msgstr "貪心解碼檢查"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:91
+msgid ""
+"Inspect logs for Xavier block staging, sending and receiving, and for the remote "
+"decode/prefill flags. Repeated newlines or garbled text in the recorded hybrid-model "
+"setup indicate invalid transferred state; sampling can obscure the symptom."
+msgstr ""
+"檢查 Xavier block 暫存、傳送、接收以及遠端 decode/prefill "
+"標誌。記錄中的混合模型配置出現重複換行或亂碼，說明傳輸狀態異常；取樣可能掩蓋這一現象。"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:93
+msgid "Transfer indicators from the validation record"
+msgstr "驗證記錄中的傳輸標誌"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:101
+msgid "Known limitations"
+msgstr "已知限制"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:103
+msgid ""
+"The original record mentions fixes for non-streaming responses, BF16 transfer "
+"precision and stale block registrations. It does not identify their released image "
+"version. Confirm the deployed version contains those fixes before relying on the "
+"corresponding behavior."
+msgstr "原始記錄提到非流式響應、BF16 傳輸精度及過期 block 註冊的修復，但未註明修復釋出於哪個映象版本。依賴相應行為前，請確認部署版本包含這些修復。"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:106
+msgid "Related guides"
+msgstr "相關指南"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:108
+msgid ":doc:`../xinference_images/performance`"
+msgstr ":doc:`../xinference_images/performance`"
+
+#. Reviewed technical translation.
+#: ../../source/deployment/pd_disaggregation.rst:109
+msgid ":doc:`../troubleshooting/index`"
+msgstr ":doc:`../troubleshooting/index`"

@@ -1,0 +1,106 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, Xorbits Inc.
+# This file is distributed under the same license as the Xinference package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-02 16:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/troubleshooting/gb10_multinode.rst:3
+msgid "GB10: multi-node communication dependency"
+msgstr "GB10: multi-node communication dependency"
+
+#: ../../source/troubleshooting/gb10_multinode.rst
+msgid "Hardware"
+msgstr "Hardware"
+
+#: ../../source/troubleshooting/gb10_multinode.rst:7
+msgid "Two NVIDIA GB10 hosts"
+msgstr "Two NVIDIA GB10 hosts"
+
+#: ../../source/troubleshooting/gb10_multinode.rst
+msgid "Architecture"
+msgstr "Architecture"
+
+#: ../../source/troubleshooting/gb10_multinode.rst:8
+msgid "aarch64"
+msgstr "aarch64"
+
+#: ../../source/troubleshooting/gb10_multinode.rst
+msgid "Xinference"
+msgstr "Xinference"
+
+#: ../../source/troubleshooting/gb10_multinode.rst:9
+msgid "1.0.4"
+msgstr "1.0.4"
+
+#: ../../source/troubleshooting/gb10_multinode.rst:12
+msgid "Symptom and evidence"
+msgstr "Symptom and evidence"
+
+#: ../../source/troubleshooting/gb10_multinode.rst:14
+msgid ""
+"A single-node deployment chats normally, but one replica spread across two workers "
+"waits without output and eventually encounters an engine error. GPU activity "
+"fluctuates during the distributed request. The deployment logs in the supplied record"
+" pointed to an outdated CuPy version."
+msgstr ""
+"A single-node deployment chats normally, but one replica spread across two workers "
+"waits without output and eventually encounters an engine error. GPU activity "
+"fluctuates during the distributed request. The deployment logs in the supplied record"
+" pointed to an outdated CuPy version."
+
+#: ../../source/troubleshooting/gb10_multinode.rst:17
+msgid "Recorded dependency change"
+msgstr "Recorded dependency change"
+
+#: ../../source/troubleshooting/gb10_multinode.rst:19
+msgid ""
+"The case used these versions. Apply them consistently to the affected worker "
+"environments and check their compatibility with the rest of the image rather than "
+"adopting them as requirements for other releases."
+msgstr ""
+"The case used these versions. Apply them consistently to the affected worker "
+"environments and check their compatibility with the rest of the image rather than "
+"adopting them as requirements for other releases."
+
+#: ../../source/troubleshooting/gb10_multinode.rst:29
+msgid ""
+"The original installation upgraded NumPy to 2.2.6 when CuPy was installed separately."
+" The recorded environment needed NumPy 1.26.4, so the command pins both dependencies "
+"together."
+msgstr ""
+"The original installation upgraded NumPy to 2.2.6 when CuPy was installed separately."
+" The recorded environment needed NumPy 1.26.4, so the command pins both dependencies "
+"together."
+
+#: ../../source/troubleshooting/gb10_multinode.rst:32
+msgid "Verification"
+msgstr "Verification"
+
+#: ../../source/troubleshooting/gb10_multinode.rst:34
+msgid ""
+"Restart the affected model processes after updating the environment. Confirm the "
+"versions on both workers, launch the distributed replica and verify coherent chat "
+"output. Retain the image tag and engine logs with the case."
+msgstr ""
+"Restart the affected model processes after updating the environment. Confirm the "
+"versions on both workers, launch the distributed replica and verify coherent chat "
+"output. Retain the image tag and engine logs with the case."
+
+#: ../../source/troubleshooting/gb10_multinode.rst:36
+msgid ":doc:`../xinference_images/multi_deployment`"
+msgstr ":doc:`../xinference_images/multi_deployment`"

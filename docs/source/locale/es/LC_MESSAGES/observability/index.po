@@ -1,0 +1,35 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, Xorbits Inc.
+# This file is distributed under the same license as the Xinference package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-02 16:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/observability/index.rst:3
+msgid "Observability"
+msgstr "Observabilidad"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/observability/index.rst:5
+msgid ""
+"Trace inference requests and inspect their behavior with Langfuse. For process logs "
+"and debugging commands, see :doc:`../xinference_images/troubleshooting`."
+msgstr ""
+"Rastrear las solicitudes de inferencia y examinar su comportamiento con Langfuse. "
+"Para los registros de procesos y los comandos de depuración, consulte  "
+":doc:`../xinference_images/troubleshooting` ."

@@ -22,7 +22,7 @@ msgstr ""
 #. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/getting_started/environments.rst:5
 msgid "Environments Requirement"
-msgstr "環境要求"
+msgstr "環境設定"
 
 #. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/getting_started/environments.rst:9

@@ -1,0 +1,177 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, Xorbits Inc.
+# This file is distributed under the same license as the Xinference package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-02 16:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:3
+msgid "NVIDIA: GPU at 100% with long response delays"
+msgstr "NVIDIA: GPU al 100 % con largos retrasos en las respuestas"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst
+msgid "Hardware"
+msgstr "Hardware"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:7
+msgid "NVIDIA GPU"
+msgstr "GPU NVIDIA"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst
+msgid "Model"
+msgstr "Modelo"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:8
+msgid "Qwen3-32B"
+msgstr "Qwen3-32B"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst
+msgid "Log context"
+msgstr "Contexto de los registros"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:9
+msgid "Xinference 1.0.3"
+msgstr "Xinference 1.0.3"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:12
+msgid "Symptom"
+msgstr "Síntoma"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:14
+msgid ""
+"Qwen3-32B on one GPU keeps its memory allocated and utilization near 100%, while "
+"Qwen2.5-VL on another GPU responds normally. Even a short probe waits; one recorded "
+"greeting returned about 40 minutes later as GPU utilization fell."
+msgstr ""
+"Qwen3-32B en una GPU mantiene su memoria asignada y una utilización cercana al 100 %,"
+" mientras que Qwen2.5-VL en otra GPU responde con normalidad. Incluso una sonda breve"
+" queda en espera; un saludo documentado obtuvo respuesta unos 40 minutos después, a "
+"medida que bajaba la utilización de la GPU."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst
+msgid "Observed"
+msgstr "Observado"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:18
+msgid ""
+"Another model on the same machine remained responsive. High GPU utilization shows "
+"active computation but does not distinguish many requests from one long-running "
+"request."
+msgstr ""
+"Otro modelo en la misma máquina seguía respondiendo. Una utilización elevada de la "
+"GPU indica cómputo activo, pero no distingue entre muchas solicitudes y una única "
+"solicitud de larga duración."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst
+msgid "Hypothesis"
+msgstr "Hipótesis"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:19
+msgid ""
+"Long prompts, large token budgets, thinking output or a queue may occupy this model "
+"instance. The root cause was not confirmed in the record."
+msgstr ""
+"Los prompts largos, los presupuestos de tokens grandes, la salida de razonamiento "
+"(thinking) o una cola pueden ocupar esta instancia del modelo. La causa raíz no se "
+"confirmó en el informe."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:22
+msgid "Logs and request correlation"
+msgstr "Registros y correlación de solicitudes"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:24
+msgid ""
+"In the recorded Xinference 1.0.3 context, chat entry and exit messages use DEBUG "
+"logging. Model subprocess logs may differ from the worker's main log; absent chat "
+"messages in that file do not prove the request never reached the model."
+msgstr ""
+"En el contexto documentado de Xinference 1.0.3, los mensajes de entrada y salida del "
+"chat usan el nivel de registro DEBUG. Los registros de los subprocesos del modelo "
+"pueden diferir del registro principal del worker; la ausencia de mensajes de chat en "
+"ese archivo no demuestra que la solicitud nunca llegara al modelo."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:27
+msgid "Mitigation and diagnostics"
+msgstr "Mitigación y diagnóstico"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:29
+msgid ""
+"The notes recommend streaming, a bounded token budget, a unique request identifier "
+"and disabling thinking where the engine supports it. The following is the recorded "
+"client request configuration; keep client-specific fields in the format expected by "
+"your SDK."
+msgstr ""
+"Las notas recomiendan streaming, un presupuesto de tokens acotado, un identificador "
+"de solicitud único y desactivar el razonamiento (thinking) cuando el motor lo admita."
+" A continuación se muestra la configuración de solicitud del cliente documentada; "
+"mantenga los campos específicos del cliente en el formato que espera su SDK."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:42
+msgid ""
+"Use a small ``request_limits`` value, such as 1 or 2, when reproducing the case. Add "
+"concurrency, timeout and queue limits at the entry layer so short requests do not "
+"wait indefinitely behind long ones."
+msgstr ""
+"Utilice un valor pequeño de  ``request_limits`` , como 1 o 2, al reproducir el caso. "
+"Añada límites de concurrencia, tiempo de espera y cola en la capa de entrada para que"
+" las solicitudes cortas no esperen indefinidamente detrás de las largas."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:45
+msgid "Verification"
+msgstr "Verificación"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:47
+msgid ""
+"Compare the same prompt on an idle instance and under load. Correlate request "
+"identifiers with model logs and record first-token latency, total latency and whether"
+" output completes. Treat these measures as diagnostic evidence, not confirmation of "
+"the proposed cause."
+msgstr ""
+"Compare el mismo prompt en una instancia inactiva y bajo carga. Correlacione los "
+"identificadores de solicitud con los registros del modelo y anote la latencia del "
+"primer token, la latencia total y si la salida llega a completarse. Trate estas "
+"medidas como evidencia de diagnóstico, no como confirmación de la causa propuesta."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:49
+msgid ":doc:`../xinference_images/performance`"
+msgstr ":doc:`../xinference_images/performance`"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/nvidia_slow_response.rst:50
+msgid ":doc:`../xinference_images/langfuse`"
+msgstr ":doc:`../xinference_images/langfuse`"

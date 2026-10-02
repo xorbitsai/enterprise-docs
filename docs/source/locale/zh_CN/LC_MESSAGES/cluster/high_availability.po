@@ -1,0 +1,403 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, Xorbits Inc.
+# This file is distributed under the same license as the Xinference package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-02 16:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:3
+msgid "High availability deployment"
+msgstr "高可用部署"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:5
+msgid ""
+"Deploy primary and secondary supervisors, workers, a shared database and a unified "
+"Nginx entry. This guide assumes containers with Xinference and the Enterprise HA "
+"script already installed."
+msgstr "部署主备 supervisor、worker、共享数据库及统一 Nginx 入口。本指南假设容器中已安装 Xinference 和企业版高可用脚本。"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst
+msgid "Control plane"
+msgstr "控制平面"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:9
+msgid "Primary and secondary supervisors"
+msgstr "主备 supervisor"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst
+msgid "Database"
+msgstr "数据库"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:10
+msgid "Shared MySQL or PostgreSQL"
+msgstr "共享 MySQL 或 PostgreSQL"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst
+msgid "Entry"
+msgstr "入口"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:11
+msgid "Nginx / OpenResty"
+msgstr "Nginx / OpenResty"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:15
+msgid ""
+"All addresses below are example private-network addresses from the supplied guide. "
+"Replace them with reachable addresses in your deployment. The original guide does not"
+" specify an image version; confirm that your image provides the HA options and script"
+" shown here."
+msgstr "以下地址是原始指南中的内网示例，请替换为部署环境中可访问的地址。原始指南未注明镜像版本，请确认所用镜像提供本文中的高可用参数和脚本。"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:18
+msgid "Topology and ports"
+msgstr "拓扑与端口"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:20
+msgid "Control-plane topology"
+msgstr "控制平面拓扑"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:27
+msgid "Example node and port allocation"
+msgstr "示例节点与端口分配"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:31
+msgid "Component"
+msgstr "组件"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:32
+msgid "Example address"
+msgstr "示例地址"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:33
+msgid "Ports"
+msgstr "端口"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:34
+msgid "Nginx entry"
+msgstr "Nginx 入口"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:35
+msgid "``10.1.0.10``"
+msgstr "``10.1.0.10``"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:36
+msgid "8008 (external entry)"
+msgstr "8008（外部入口）"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:37
+msgid "Primary supervisor"
+msgstr "主 supervisor"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:38
+msgid "``10.1.0.11``"
+msgstr "``10.1.0.11``"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:39
+msgid "9991 (API), 9911 (actor), 9551 (binlog), 9651 (checkpoint)"
+msgstr "9991 (API), 9911 (actor), 9551 (binlog), 9651 (checkpoint)"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:40
+msgid "Secondary supervisor"
+msgstr "备 supervisor"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:41
+msgid "``10.1.0.12``"
+msgstr "``10.1.0.12``"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:42
+msgid "9992 (API), 9912 (actor), 9552 (binlog), 9652 (checkpoint)"
+msgstr "9992 (API), 9912 (actor), 9552 (binlog), 9652 (checkpoint)"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst
+#: ../../source/cluster/high_availability.rst:43
+msgid "Worker"
+msgstr "Worker"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:44
+msgid "``10.1.0.13``"
+msgstr "``10.1.0.13``"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:45
+msgid "9921 (actor)"
+msgstr "9921 (actor)"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:46
+msgid "Shared database"
+msgstr "共享数据库"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:47
+msgid "``10.1.0.20``"
+msgstr "``10.1.0.20``"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:48
+msgid "3306 (MySQL) or 5432 (PostgreSQL)"
+msgstr "3306（MySQL）或 5432（PostgreSQL）"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:50
+msgid ""
+"Allow both supervisors to reach the database and each other's actor, binlog and "
+"checkpoint ports. Nginx must reach both supervisor APIs. Workers must reach the "
+"primary API, and both supervisors must reach worker actor ports. Do not use loopback "
+"addresses for communication between hosts."
+msgstr ""
+"两个 supervisor 均需连接数据库，并能访问对方的 actor、binlog 和 checkpoint 端口。Nginx 需能访问两者的 API；worker "
+"需能访问主 supervisor 的 API，两者也需能访问 worker 的 actor 端口。跨主机通信不要使用回环地址。"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:53
+msgid "Prepare the database and nodes"
+msgstr "准备数据库与节点"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:55
+msgid ""
+"Both supervisors must use the same shared database, not separate local SQLite "
+"databases. The database stores API, permission, task and instance records; binlog and"
+" checkpoint synchronize supervisor runtime metadata. These mechanisms have different "
+"responsibilities."
+msgstr ""
+"两个 supervisor 必须使用同一个共享数据库，不能分别使用本地 SQLite。数据库保存 API、权限、任务和实例记录；binlog 与 checkpoint "
+"同步 supervisor 的运行时元数据，两套机制的职责不同。"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:57
+msgid ""
+"Configure one database URL on both supervisors. Using the same configuration on "
+"workers keeps the environment consistent. The image must include the corresponding "
+"database driver."
+msgstr "在两个 supervisor 上配置相同的数据库 URL。worker 使用相同配置可保持环境一致，镜像中需包含对应的数据库驱动。"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst
+msgid "MySQL"
+msgstr "MySQL"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst
+msgid "PostgreSQL"
+msgstr "PostgreSQL"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:73
+msgid ""
+"Confirm the supervisor and worker commands exist, inspect the supervisor's supported "
+"options, and choose the working directory used by the image."
+msgstr "确认 supervisor 和 worker 命令可用，检查 supervisor 支持的选项，并选择镜像使用的工作目录。"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:82
+msgid ""
+"Before starting processes, check the ports allocated to that node. For the secondary "
+"use ports 9992, 9912, 9552 and 9652; for the worker use port 9921."
+msgstr "启动进程前，检查分配给该节点的端口。备节点检查 9992、9912、9552、9652，worker 检查 9921。"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:84
+msgid "Primary-node port check"
+msgstr "主节点端口检查"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:101
+msgid "Start the cluster"
+msgstr "启动集群"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:103
+msgid ""
+"Run each command on its designated node, after exporting the shared database URL. "
+"Logs are written to the working directory."
+msgstr "导出共享数据库 URL 后，在对应节点上执行命令。日志会写入工作目录。"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst
+msgid "Primary"
+msgstr "主节点"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst
+msgid "Secondary"
+msgstr "备节点"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:150
+msgid "Configure the unified entry"
+msgstr "配置统一入口"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:152
+msgid ""
+"Run the HA script on the Nginx node. It renders the OpenResty configuration and "
+"starts or reloads Nginx. The supplied script supports two supervisor backends; "
+"additional backends need a separate load-balancer configuration."
+msgstr ""
+"在 Nginx 节点运行高可用脚本。它会生成 OpenResty 配置并启动或重新加载 Nginx。原始脚本支持两个 supervisor "
+"后端；更多后端需另外配置负载均衡。"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:163
+msgid ""
+"The entry checks both supervisors' status endpoints and routes requests to the "
+"available primary. Use the unified entry for model deployment and client requests."
+msgstr "入口检查两个 supervisor 的状态接口，将请求路由至可用的主节点。模型部署和客户端请求均应通过统一入口。"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:175
+msgid "Acceptance checks"
+msgstr "验收检查"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:177
+msgid "Check both supervisors directly and then check the unified entry."
+msgstr "先直接检查两个 supervisor，再检查统一入口。"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:189
+msgid ""
+"Expect version information from the primary, ``it is a secondary supervisor`` from "
+"the secondary version endpoint, and the worker in both status responses. Initially "
+"the unified entry reports ``has_transfered=false`` and ``active_node=primary``."
+msgstr ""
+"主节点应返回版本信息，备节点的版本接口应返回  ``it is a secondary supervisor`` ，两者的状态响应中均应包含 "
+"worker。初始时统一入口应报告  ``has_transfered=false``  和  ``active_node=primary`` 。"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:191
+msgid ""
+"Deploy a model through the unified entry and test actual inference. Inspect both "
+"supervisor logs for synchronized replica routing metadata before testing failover."
+msgstr "通过统一入口部署模型并测试实际推理。在故障切换前，检查两个 supervisor 的日志，确认副本路由元数据已经同步。"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:198
+msgid ""
+"Successful secondary replay of ``META_REPLICA_MAP_INFO`` indicates that replica-to-"
+"worker routes were synchronized."
+msgstr "备节点成功回放  ``META_REPLICA_MAP_INFO`` ，说明副本到 worker 的路由已同步。"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:201
+msgid "Optional failover drill and recovery"
+msgstr "可选故障切换演练与恢复"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst
+msgid "Test a primary failure in a test environment"
+msgstr "在测试环境中验证主节点故障"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:205
+msgid ""
+"This drill intentionally stops the primary supervisor. Run it separately from routine"
+" installation and only in the environment chosen for failure testing."
+msgstr "本演练会主动停止主 supervisor。请与常规安装分开，仅在选定的故障测试环境中执行。"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:207
+msgid "On the example primary node:"
+msgstr "在示例主节点上执行："
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:215
+msgid ""
+"Poll the secondary version endpoint. Once it returns version information instead of "
+"the secondary-role message, inspect promotion and worker-reconnection logs."
+msgstr "轮询备节点的版本接口。当接口开始返回版本信息而非备节点角色提示时，检查升主和 worker 重连日志。"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:223
+msgid "Expected log indicators"
+msgstr "预期日志标志"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:230
+msgid ""
+"Check the unified entry again. The recorded configuration checks approximately every "
+"two seconds and switches after five failures; this is a configuration-specific "
+"timing, not a guaranteed recovery time."
+msgstr "再次检查统一入口。记录中的配置约每两秒检查一次，连续失败五次后切换；这一时间取决于该配置，并非保证的恢复时间。"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:238
+msgid ""
+"Expect ``has_transfered=true`` and ``active_node=backup``, with the old primary down "
+"and the backup up. Send a real chat request to the already deployed model through the"
+" same entry."
+msgstr ""
+"预期  ``has_transfered=true``  且  ``active_node=backup`` "
+"，原主节点处于停机状态，备节点正常运行。通过同一入口向已部署的模型发送实际对话请求。"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:240
+msgid ""
+"If inference cannot find the model, inspect the new primary's routing logs and the "
+"earlier replica-map replay. A successful role change alone does not establish that "
+"the model is still reachable."
+msgstr "如果推理找不到模型，检查新主节点的路由日志和此前的副本映射回放。角色切换成功本身不能证明模型仍可访问。"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:246
+msgid ""
+"After recovering the former primary, rejoin it as a secondary with the current "
+"primary's addresses and the same shared database. Avoid automatically reclaiming the "
+"primary role. Verify metadata synchronization, node status and inference again."
+msgstr "原主节点恢复后，应使用当前主节点的地址和同一个共享数据库，以备节点身份重新加入。避免自动抢回主节点角色，并再次验证元数据同步、节点状态和推理。"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:249
+msgid "Related guides"
+msgstr "相关指南"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:251
+msgid ":doc:`../xinference_images/multi_deployment`"
+msgstr ":doc:`../xinference_images/multi_deployment`"
+
+#. Reviewed technical translation.
+#: ../../source/cluster/high_availability.rst:252
+msgid ":doc:`../xinference_images/troubleshooting`"
+msgstr ":doc:`../xinference_images/troubleshooting`"

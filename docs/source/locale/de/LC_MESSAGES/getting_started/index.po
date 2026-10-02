@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xinference VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-10-02 15:10+0800\n"
+"POT-Creation-Date: 2026-10-02 16:45+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -19,7 +19,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
+#. Machine-translated technical prose; navigation reviewed and references preserved.
 #: ../../source/getting_started/index.rst:5
 msgid "Getting Started"
 msgstr "Erste Schritte"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/getting_started/index.rst:7
+msgid "Install Xinference Enterprise, configure its environment and activate a license."
+msgstr ""
+"Installieren Sie Xinference Enterprise, konfigurieren Sie die Umgebung und aktivieren"
+" Sie eine Lizenz."

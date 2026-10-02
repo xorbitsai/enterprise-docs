@@ -1,0 +1,247 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, Xorbits Inc.
+# This file is distributed under the same license as the Xinference package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-02 16:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:3
+msgid "MetaX GPU deployment"
+msgstr "Déploiement sur GPU MetaX"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:5
+msgid "Run the Enterprise image on a host with MetaX drivers and device files available."
+msgstr ""
+"Exécuter l'image Enterprise sur un hôte disposant des pilotes et des fichiers de "
+"périphérique MetaX."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst
+msgid "Hardware"
+msgstr "Matériel"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:9
+msgid "MetaX GPU"
+msgstr "GPU MetaX"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst
+msgid "Runtime"
+msgstr "Environnement d'exécution"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:10
+msgid "Docker"
+msgstr "Docker"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst
+msgid "Devices"
+msgstr "Périphériques"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:11
+msgid "``/dev/dri``, ``/dev/mem``, ``/dev/mxcd``"
+msgstr "``/dev/dri`` ,  ``/dev/mem`` ,  ``/dev/mxcd``"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:15
+msgid ""
+"The original deployment record does not specify driver, image or backend versions. "
+"Confirm a compatible combination for your environment before using this "
+"configuration."
+msgstr ""
+"L'enregistrement de déploiement d'origine ne précise pas les versions du pilote, de "
+"l'image ou du backend. Vérifiez qu'une combinaison est compatible avec votre "
+"environnement avant d'utiliser cette configuration."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:18
+msgid "Prerequisites"
+msgstr "Prérequis"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:20
+msgid ""
+"Install the MetaX driver and Docker on the host. Check that all three device paths "
+"listed above exist and choose the appropriate Enterprise image."
+msgstr ""
+"Installez le pilote MetaX et Docker sur l'hôte. Vérifiez que les trois chemins de "
+"périphérique indiqués ci-dessus existent et choisissez l'image Enterprise appropriée."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:23
+msgid "Start the container"
+msgstr "Démarrer le conteneur"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:25
+msgid ""
+"Replace the image placeholder with your MetaX Enterprise image. The shared-memory "
+"allocation below is the value from the deployment record; size it for the host and "
+"workload."
+msgstr ""
+"Remplacez l'espace réservé de l'image par votre image MetaX Enterprise. L'allocation "
+"de mémoire partagée ci-dessous est la valeur issue de l'enregistrement de déploiement"
+" ; dimensionnez-la en fonction de l'hôte et de la charge de travail."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:27
+msgid "Container startup"
+msgstr "Démarrage du conteneur"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:44
+msgid "Container parameters"
+msgstr "Paramètres du conteneur"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:48
+msgid "Parameter"
+msgstr "Paramètre"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:49
+msgid "Purpose"
+msgstr "Objectif"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:50
+msgid "``--network host``"
+msgstr "``--network host``"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:51
+msgid "Use host ports directly without port mapping."
+msgstr "Utiliser directement les ports de l'hôte, sans mappage de ports."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:52
+msgid "``--device``"
+msgstr "``--device``"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:53
+msgid "Expose the DRI, physical-memory and MetaX compute devices."
+msgstr "Exposer les périphériques DRI, de mémoire physique et de calcul MetaX."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:54
+msgid "``--group-add video``"
+msgstr "``--group-add video``"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:55
+msgid "Grant access through the video group."
+msgstr "Accorder l'accès via le groupe video."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:56
+msgid "``--shm-size=128g``"
+msgstr "``--shm-size=128g``"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:57
+msgid "Configure the container's shared-memory limit."
+msgstr "Configurer la limite de mémoire partagée du conteneur."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:58
+msgid "``--security-opt``"
+msgstr "``--security-opt``"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:59
+msgid "Use the seccomp and AppArmor settings from the recorded configuration."
+msgstr "Utiliser les paramètres seccomp et AppArmor de la configuration consignée."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:60
+msgid "``--ulimit memlock=-1``"
+msgstr "``--ulimit memlock=-1``"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:61
+msgid "Remove the locked-memory limit."
+msgstr "Supprimer la limite de mémoire verrouillée."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:62
+msgid "``--restart unless-stopped``"
+msgstr "``--restart unless-stopped``"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:63
+msgid "Restart after an unexpected stop, except when manually stopped."
+msgstr "Redémarrer après un arrêt inattendu, sauf en cas d'arrêt manuel."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:66
+msgid "Persistent model storage"
+msgstr "Stockage persistant des modèles"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:68
+msgid ""
+"Add these options to the container command to keep downloaded models on the host. "
+"Replace the host path with an existing directory."
+msgstr ""
+"Ajoutez ces options à la commande du conteneur pour conserver les modèles téléchargés"
+" sur l'hôte. Remplacez le chemin de l'hôte par un répertoire existant."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:76
+msgid "Start and verify the service"
+msgstr "Démarrer et vérifier le service"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:78
+msgid ""
+"Enter the container, replace the host placeholder with the machine's reachable "
+"address, and start the web entry and inference service."
+msgstr ""
+"Entrez dans le conteneur, remplacez l'espace réservé de l'hôte par l'adresse "
+"joignable de la machine, puis démarrez le point d'entrée web et le service "
+"d'inférence."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:85
+msgid ""
+"Check the container logs, access the web interface on port 8091 and launch a model. "
+"Validate actual inference output as well as API availability."
+msgstr ""
+"Consultez les journaux du conteneur, accédez à l'interface web sur le port 8091 et "
+"lancez un modèle. Validez la sortie réelle de l'inférence en plus de la disponibilité"
+" de l'API."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:88
+msgid "Related guides"
+msgstr "Guides associés"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:90
+msgid ":doc:`../getting_started/environments`"
+msgstr ":doc:`../getting_started/environments`"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/hardware/metax.rst:91
+msgid ":doc:`../xinference_images/troubleshooting`"
+msgstr ":doc:`../xinference_images/troubleshooting`"

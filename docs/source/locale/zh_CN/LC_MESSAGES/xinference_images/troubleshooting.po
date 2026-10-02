@@ -22,7 +22,7 @@ msgstr ""
 #. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/troubleshooting.rst:5
 msgid "故障排除"
-msgstr "故障排除"
+msgstr "通用故障排查"
 
 #. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/troubleshooting.rst:7

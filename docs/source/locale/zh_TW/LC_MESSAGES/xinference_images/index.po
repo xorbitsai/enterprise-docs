@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xinference VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-10-02 15:09+0800\n"
+"POT-Creation-Date: 2026-10-02 16:45+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: zh_TW\n"
@@ -19,202 +19,162 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
-#: ../../source/xinference_images/index.rst:5
-msgid "Xinference 镜像使用"
-msgstr "Xinference 映像使用指南"
-
-#. Machine-translated prose; technical literals and reference targets preserved.
+#. Reviewed technical translation.
 #: ../../source/xinference_images/index.rst:7
-msgid "本文档介绍了如何使用Xinference的各种镜像版本，包括Nvidia系列、MindIE系列和海光系列。"
-msgstr "本文檔介紹如何使用Xinference的各種鏡像版本，包括Nvidia系列、 MindIE 系列和海光系列。"
+msgid "Enterprise image guides"
+msgstr "企業版映象指南"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
+#. Reviewed technical translation.
+#: ../../source/xinference_images/index.rst:9
+msgid "The image guides are now organized by task. Existing guide addresses continue to work."
+msgstr "映象指南現按任務分類，原有指南地址仍可訪問。"
+
+#. Reviewed technical translation.
 #: ../../source/xinference_images/index.rst:11
-msgid "目录"
-msgstr "目錄"
+msgid ":doc:`../hardware/index` — NVIDIA, Ascend, Hygon and MetaX."
+msgstr ":doc:`../hardware/index`  — NVIDIA、昇騰、海光與沐曦。"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
+#. Reviewed technical translation.
+#: ../../source/xinference_images/index.rst:12
+msgid ":doc:`../getting_started/index` — installation, configuration and licensing."
+msgstr ":doc:`../getting_started/index`  — 安裝、環境配置與許可證管理。"
+
+#. Reviewed technical translation.
+#: ../../source/xinference_images/index.rst:13
+msgid ":doc:`../deployment/index` — PD disaggregation and performance."
+msgstr ":doc:`../deployment/index`  — PD 分離部署與效能最佳化。"
+
+#. Reviewed technical translation.
 #: ../../source/xinference_images/index.rst:14
-msgid "概述"
-msgstr "概述"
+msgid ":doc:`../cluster/index` — multi-node deployment, high availability and Kubernetes."
+msgstr ":doc:`../cluster/index`  — 多節點部署、高可用與 Kubernetes。"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
+#. Reviewed technical translation.
+#: ../../source/xinference_images/index.rst:15
+msgid ":doc:`../observability/index` — Langfuse integration."
+msgstr ":doc:`../observability/index`  — Langfuse 整合。"
+
+#. Reviewed technical translation.
 #: ../../source/xinference_images/index.rst:16
-msgid "Xinference提供了针对不同硬件平台优化的镜像版本："
-msgstr "Xinference 提供了針對不同硬體平台最佳化的鏡像版本："
+msgid ":doc:`../troubleshooting/index` — general checks and recorded cases."
+msgstr ":doc:`../troubleshooting/index`  — 通用檢查與已記錄的故障案例。"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
-#: ../../source/xinference_images/index.rst:18
-msgid "**Nvidia系列**：适用于CUDA环境的GPU加速推理"
-msgstr "**Nvidia 系列** ：適用於CUDA環境的GPU加速推理"
+#~ msgid "Xinference 镜像使用"
+#~ msgstr "Xinference 映像使用指南"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
-#: ../../source/xinference_images/index.rst:19
-msgid "**MindIE系列**：适用于华为昇腾NPU环境"
-msgstr "**MindIE 系列** ：適用於華為昇騰NPU環境"
+#~ msgid "本文档介绍了如何使用Xinference的各种镜像版本，包括Nvidia系列、MindIE系列和海光系列。"
+#~ msgstr "本文檔介紹如何使用Xinference的各種鏡像版本，包括Nvidia系列、 MindIE 系列和海光系列。"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
-#: ../../source/xinference_images/index.rst:20
-msgid "**海光系列**：适用于海光DCU环境"
-msgstr "**海光系列** ：適用於海光DCU環境"
+#~ msgid "目录"
+#~ msgstr "目錄"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
-#: ../../source/xinference_images/index.rst:22
-msgid "每个系列都提供了完整的部署和使用指南。"
-msgstr "每個系列都提供了完整的部署和使用指南。"
+#~ msgid "概述"
+#~ msgstr "概述"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
-#: ../../source/xinference_images/index.rst:25
-msgid "快速导航"
-msgstr "快速導航"
+#~ msgid "Xinference提供了针对不同硬件平台优化的镜像版本："
+#~ msgstr "Xinference 提供了針對不同硬體平台最佳化的鏡像版本："
 
-#. Machine-translated prose; technical literals and reference targets preserved.
-#: ../../source/xinference_images/index.rst:28 ../../source/xinference_images/index.rst:56
-msgid "硬件平台"
-msgstr "硬體平台"
+#~ msgid "**Nvidia系列**：适用于CUDA环境的GPU加速推理"
+#~ msgstr "**Nvidia 系列** ：適用於CUDA環境的GPU加速推理"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
-#: ../../source/xinference_images/index.rst:38
-msgid "管理和配置"
-msgstr "管理和配置"
+#~ msgid "**MindIE系列**：适用于华为昇腾NPU环境"
+#~ msgstr "**MindIE 系列** ：適用於華為昇騰NPU環境"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
-#: ../../source/xinference_images/index.rst:51
-msgid "选择指南"
-msgstr "選擇指南"
+#~ msgid "**海光系列**：适用于海光DCU环境"
+#~ msgstr "**海光系列** ：適用於海光DCU環境"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
-#: ../../source/xinference_images/index.rst:53
-msgid "根据你的硬件环境选择合适的镜像："
-msgstr "根據你的硬體環境選擇合適的鏡像："
+#~ msgid "每个系列都提供了完整的部署和使用指南。"
+#~ msgstr "每個系列都提供了完整的部署和使用指南。"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
-#: ../../source/xinference_images/index.rst:56
-msgid "推荐镜像"
-msgstr "推薦鏡像"
+#~ msgid "快速导航"
+#~ msgstr "快速導航"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
-#: ../../source/xinference_images/index.rst:56
-msgid "适用场景"
-msgstr "適用場景"
+#~ msgid "硬件平台"
+#~ msgstr "硬體平台"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
-#: ../../source/xinference_images/index.rst:58
-msgid "NVIDIA GPU"
-msgstr "NVIDIA GPU"
+#~ msgid "管理和配置"
+#~ msgstr "管理和配置"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
-#: ../../source/xinference_images/index.rst:58
-msgid ":doc:`nvidia`"
-msgstr ":doc:`nvidia`"
+#~ msgid "选择指南"
+#~ msgstr "選擇指南"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
-#: ../../source/xinference_images/index.rst:58
-msgid "CUDA环境， 高性能GPU推理"
-msgstr "CUDA 環境， 高效能GPU推理"
+#~ msgid "根据你的硬件环境选择合适的镜像："
+#~ msgstr "根據你的硬體環境選擇合適的鏡像："
 
-#. Machine-translated prose; technical literals and reference targets preserved.
-#: ../../source/xinference_images/index.rst:61
-msgid "华为昇腾NPU"
-msgstr "華為昇騰NPU"
+#~ msgid "推荐镜像"
+#~ msgstr "推薦鏡像"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
-#: ../../source/xinference_images/index.rst:61
-msgid ":doc:`mindie`"
-msgstr ":doc:`mindie`"
+#~ msgid "适用场景"
+#~ msgstr "適用場景"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
-#: ../../source/xinference_images/index.rst:61
-msgid "昇腾310/910系列 NPU推理"
-msgstr "昇騰310/910系列 NPU 推理"
+#~ msgid "NVIDIA GPU"
+#~ msgstr "NVIDIA GPU"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
-#: ../../source/xinference_images/index.rst:64
-msgid "海光DCU"
-msgstr "海光DCU"
+#~ msgid ":doc:`nvidia`"
+#~ msgstr ":doc:`nvidia`"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
-#: ../../source/xinference_images/index.rst:64
-msgid ":doc:`hygon`"
-msgstr ":doc:`hygon`"
+#~ msgid "CUDA环境， 高性能GPU推理"
+#~ msgstr "CUDA 環境， 高效能GPU推理"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
-#: ../../source/xinference_images/index.rst:64
-msgid "海光DCU环境"
-msgstr "海光DCU環境"
+#~ msgid "华为昇腾NPU"
+#~ msgstr "華為昇騰NPU"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
-#: ../../source/xinference_images/index.rst:68
-msgid "常见任务"
-msgstr "常見任務"
+#~ msgid ":doc:`mindie`"
+#~ msgstr ":doc:`mindie`"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
-#: ../../source/xinference_images/index.rst:70
-msgid "**首次部署**：选择对应硬件平台的镜像文档，按照步骤进行部署"
-msgstr "**首次部署** ：選擇對應硬體平台的鏡像文檔，依照步驟進行部署"
+#~ msgid "昇腾310/910系列 NPU推理"
+#~ msgstr "昇騰310/910系列 NPU 推理"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
-#: ../../source/xinference_images/index.rst:71
-msgid "**证书管理**：参考 :doc:`license` 进行证书更新"
-msgstr "**憑證管理** ：參考 :doc:`license` 進行憑證更新"
+#~ msgid "海光DCU"
+#~ msgstr "海光DCU"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
-#: ../../source/xinference_images/index.rst:72
-msgid "**性能测试**：使用 :doc:`performance` 中的工具进行性能评估"
-msgstr "**效能測試** ：使用 :doc:`performance` 中的工具進行效能評估"
+#~ msgid ":doc:`hygon`"
+#~ msgstr ":doc:`hygon`"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
-#: ../../source/xinference_images/index.rst:73
-msgid "**多机部署**：参考 :doc:`multi_deployment` 进行集群部署"
-msgstr "**多機部署** ：參考 :doc:`multi_deployment` 進行叢集部署"
+#~ msgid "海光DCU环境"
+#~ msgstr "海光DCU環境"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
-#: ../../source/xinference_images/index.rst:74
-msgid "**链路监控**：参考 :doc:`langfuse` 配置调用链路追踪"
-msgstr "**連結監控** ：參考 :doc:`langfuse` 設定呼叫連結追蹤"
+#~ msgid "常见任务"
+#~ msgstr "常見任務"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
-#: ../../source/xinference_images/index.rst:75
-msgid "**生产部署**：参考 :doc:`kubernetes` 进行K8s环境部署"
-msgstr "**生產部署** ：參考 :doc:`kubernetes` 進行K8s環境部署"
+#~ msgid "**首次部署**：选择对应硬件平台的镜像文档，按照步骤进行部署"
+#~ msgstr "**首次部署** ：選擇對應硬體平台的鏡像文檔，依照步驟進行部署"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
-#: ../../source/xinference_images/index.rst:76
-msgid "**故障排除**：参考 :doc:`troubleshooting` 解决常见问题"
-msgstr "**故障排除** ：參考 :doc:`troubleshooting` 解決常見問題"
+#~ msgid "**证书管理**：参考 :doc:`license` 进行证书更新"
+#~ msgstr "**憑證管理** ：參考 :doc:`license` 進行憑證更新"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
-#: ../../source/xinference_images/index.rst:79
-msgid "支持与帮助"
-msgstr "支持與幫助"
+#~ msgid "**性能测试**：使用 :doc:`performance` 中的工具进行性能评估"
+#~ msgstr "**效能測試** ：使用 :doc:`performance` 中的工具進行效能評估"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
-#: ../../source/xinference_images/index.rst:81
-msgid "如果在使用过程中遇到问题，请："
-msgstr "如果在使用過程中遇到問題，請："
+#~ msgid "**多机部署**：参考 :doc:`multi_deployment` 进行集群部署"
+#~ msgstr "**多機部署** ：參考 :doc:`multi_deployment` 進行叢集部署"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
-#: ../../source/xinference_images/index.rst:83
-msgid "首先查看对应硬件平台的文档"
-msgstr "首先查看對應硬體平台的文檔"
+#~ msgid "**链路监控**：参考 :doc:`langfuse` 配置调用链路追踪"
+#~ msgstr "**連結監控** ：參考 :doc:`langfuse` 設定呼叫連結追蹤"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
-#: ../../source/xinference_images/index.rst:84
-msgid "参考 :doc:`troubleshooting` 查找解决方案"
-msgstr "參考 :doc:`troubleshooting` 查找解決方案"
+#~ msgid "**生产部署**：参考 :doc:`kubernetes` 进行K8s环境部署"
+#~ msgstr "**生產部署** ：參考 :doc:`kubernetes` 進行K8s環境部署"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
-#: ../../source/xinference_images/index.rst:85
-msgid "检查证书是否正确配置"
-msgstr "檢查證書是否正確配置"
+#~ msgid "**故障排除**：参考 :doc:`troubleshooting` 解决常见问题"
+#~ msgstr "**故障排除** ：參考 :doc:`troubleshooting` 解決常見問題"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
-#: ../../source/xinference_images/index.rst:86
-msgid "运行性能测试验证环境配置"
-msgstr "執行效能測試驗證環境配置"
+#~ msgid "支持与帮助"
+#~ msgstr "支持與幫助"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
-#: ../../source/xinference_images/index.rst:87
-msgid "联系技术支持获取帮助"
-msgstr "聯絡技術支援以取得協助"
+#~ msgid "如果在使用过程中遇到问题，请："
+#~ msgstr "如果在使用過程中遇到問題，請："
+
+#~ msgid "首先查看对应硬件平台的文档"
+#~ msgstr "首先查看對應硬體平台的文檔"
+
+#~ msgid "参考 :doc:`troubleshooting` 查找解决方案"
+#~ msgstr "參考 :doc:`troubleshooting` 查找解決方案"
+
+#~ msgid "检查证书是否正确配置"
+#~ msgstr "檢查證書是否正確配置"
+
+#~ msgid "运行性能测试验证环境配置"
+#~ msgstr "執行效能測試驗證環境配置"
+
+#~ msgid "联系技术支持获取帮助"
+#~ msgstr "聯絡技術支援以取得協助"
