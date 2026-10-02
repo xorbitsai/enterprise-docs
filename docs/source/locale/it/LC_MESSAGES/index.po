@@ -1,0 +1,40 @@
+# Italian translations for Xinference.
+# Copyright (C) 2026 Xorbits Inc.
+# This file is distributed under the same license as the Xinference project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-10-02 15:23+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: it\n"
+"Language-Team: it <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/index.rst:5
+msgid "Welcome to Xinference!"
+msgstr "Benvenuti a Xinference!"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/index.rst:15
+msgid ""
+"Xorbits Inference (Xinference) is an open-source platform to streamline the operation"
+" and integration of a wide array of AI models. With Xinference, you're empowered to "
+"run inference using any open-source LLMs, embedding models, and multimodal models "
+"either in the cloud or on your own premises, and create robust AI-driven "
+"applications."
+msgstr ""
+"Inferenza di Xorbits (Xinference) è una piattaforma open source per ottimizzare il "
+"funzionamento e l'integrazione di una vasta gamma di modelli AI. Xinference, sei "
+"abilitato a eseguire l'inferenza utilizzando qualsiasi LLM open-source, modelli di "
+"incorporazione e modelli multimodali sia nel cloud che nei locali, e creare "
+"applicazioni robuste guidate dall'IA."

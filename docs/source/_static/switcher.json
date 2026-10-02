@@ -1,13 +1,53 @@
 [
   {
-    "name": "简体中文(Chinese)",
-    "version": "zh-cn",
-    "url": "/",
+    "name": "English",
+    "version": "en",
+    "url": "/enterprise-docs/",
     "preferred": true
   },
   {
-    "name": "English",
-    "version": "en",
-    "url": "/en/"
+    "name": "简体中文 (Chinese)",
+    "version": "zh-cn",
+    "url": "/enterprise-docs/zh-cn/"
+  },
+  {
+    "name": "繁體中文 (Traditional Chinese)",
+    "version": "zh-tw",
+    "url": "/enterprise-docs/zh-tw/"
+  },
+  {
+    "name": "日本語 (Japanese)",
+    "version": "ja",
+    "url": "/enterprise-docs/ja/"
+  },
+  {
+    "name": "한국어 (Korean)",
+    "version": "ko",
+    "url": "/enterprise-docs/ko/"
+  },
+  {
+    "name": "Deutsch (German)",
+    "version": "de",
+    "url": "/enterprise-docs/de/"
+  },
+  {
+    "name": "Français (French)",
+    "version": "fr",
+    "url": "/enterprise-docs/fr/"
+  },
+  {
+    "name": "Español (Spanish)",
+    "version": "es",
+    "url": "/enterprise-docs/es/"
+  },
+  {
+    "name": "Italiano (Italian)",
+    "version": "it",
+    "url": "/enterprise-docs/it/"
+  },
+  {
+    "name": "Português (Portuguese)",
+    "version": "pt-br",
+    "url": "/enterprise-docs/pt-br/"
   }
 ]

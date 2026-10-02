@@ -1,0 +1,385 @@
+# Korean translations for Xinference.
+# Copyright (C) 2026 Xorbits Inc.
+# This file is distributed under the same license as the Xinference project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-10-02 15:09+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ko\n"
+"Language-Team: ko <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:5
+msgid "故障排除"
+msgstr "문제 해결"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:7
+msgid "本文档提供Xinference企业版常见问题的解决方案和故障排除指南。"
+msgstr "이 문서는 Xinference Enterprise Edition의 일반적인 문제에 대한 솔루션과 문제 해결 가이드를 제공합니다."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:11
+msgid "目录"
+msgstr "디렉토리"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:14
+msgid "多机部署问题"
+msgstr "다중 머신 배포 문제"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:17
+msgid "Worker无法连接到Supervisor"
+msgstr "Worker 감독자에 연결할 수 없습니다."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:19
+msgid "**问题描述**：Worker节点无法成功连接到Supervisor节点"
+msgstr "**문제 설명**\\ : Worker 노드가 감독자 노드에 성공적으로 연결할 수 없습니다."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:21
+#: ../../source/xinference_images/troubleshooting.rst:68
+#: ../../source/xinference_images/troubleshooting.rst:105
+#: ../../source/xinference_images/troubleshooting.rst:142
+#: ../../source/xinference_images/troubleshooting.rst:180
+msgid "**可能原因及解决方案**："
+msgstr "**가능한 원인 및 해결 방법**\\ :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:23
+msgid "**网络连通性问题**"
+msgstr "**네트워크 연결 문제**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:34
+msgid "**防火墙配置问题**"
+msgstr "**방화벽 구성 문제**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:47
+msgid "**IP地址和端口配置错误**"
+msgstr "**IP 주소 및 포트 구성 오류**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:49
+msgid "确认Supervisor启动时使用的IP地址和端口"
+msgstr "Supervisor가 시작될 때 사용되는 IP 주소와 포트를 확인하세요."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:50
+msgid "检查Worker连接命令中的Supervisor地址"
+msgstr "Worker 연결 명령어에서 Supervisor 주소를 확인하세요."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:51
+msgid "验证IP地址是否为实际的网络接口地址"
+msgstr "IP 주소가 실제 네트워크 인터페이스 주소인지 확인하세요."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:53
+msgid "**Supervisor服务未正常启动**"
+msgstr "**Supervisor 서비스가 정상적으로 시작되지 않았습니다**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:64
+msgid "Web界面无法访问"
+msgstr "웹 인터페이스에 액세스할 수 없습니다."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:66
+msgid "**问题描述**：无法通过浏览器访问Xinference WebUI界面"
+msgstr "**문제 설명**\\ : 브라우저를 통해 Xinference WebUI 인터페이스에 액세스할 수 없습니다."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:70
+msgid "**nginx服务未启动**"
+msgstr "**nginx 서비스가 시작되지 않았습니다.**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:80
+msgid "**端口冲突或被占用**"
+msgstr "**포트 충돌 또는 점유**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:91
+msgid "**IP地址配置问题**"
+msgstr "**IP 주소 구성 문제**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:93
+msgid "确认访问的IP地址是否正确"
+msgstr "접속한 IP 주소가 맞는지 확인하세요"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:94
+msgid "检查是否使用了内网IP但从外网访问"
+msgstr "내부 IP를 사용하고 있으나 외부 네트워크에서 접속하는지 확인"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:95
+msgid "验证容器的网络模式配置"
+msgstr "컨테이너의 네트워크 모드 구성 확인"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:98
+msgid "单机部署问题"
+msgstr "독립 실행형 배포 문제"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:101
+msgid "容器启动失败"
+msgstr "컨테이너 시작 실패"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:103
+msgid "**问题描述**：Docker容器无法正常启动"
+msgstr "**문제 설명**\\ : Docker 컨테이너를 정상적으로 시작할 수 없습니다."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:107
+msgid "**GPU资源问题**"
+msgstr "**GPU 리소스 문제**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:117
+msgid "**内存不足**"
+msgstr "**메모리가 부족합니다**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:127
+#: ../../source/xinference_images/troubleshooting.rst:156
+msgid "**存储空间不足**"
+msgstr "**저장공간이 부족합니다**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:138
+msgid "模型加载问题"
+msgstr "모델 로딩 문제"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:140
+msgid "**问题描述**：模型下载或加载失败"
+msgstr "**문제 설명**\\ : 모델 다운로드 또는 로드 실패"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:144
+msgid "**网络连接问题**"
+msgstr "**네트워크 연결 문제**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:158
+msgid "确保模型存储目录有足够空间"
+msgstr "모델 저장소 디렉터리에 충분한 공간이 있는지 확인하세요."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:159
+msgid "大模型通常需要几十GB空间"
+msgstr "대형 모델에는 수십 GB의 공간이 필요한 경우가 많습니다."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:160
+msgid "检查挂载路径的磁盘使用情况"
+msgstr "마운트 경로의 디스크 사용량 확인"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:162
+msgid "**权限问题**"
+msgstr "**권한 문제**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:173
+msgid "性能问题"
+msgstr "성능 문제"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:176
+msgid "推理速度慢"
+msgstr "추론이 느리다"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:178
+msgid "**问题描述**：模型推理响应时间过长"
+msgstr "**문제 설명**\\ : 모델 추론 응답 시간이 너무 깁니다."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:182
+msgid "**GPU资源不足**"
+msgstr "**GPU 리소스 부족**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:192
+msgid "**模型配置问题**"
+msgstr "**모델 구성 문제**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:194
+msgid "选择合适的模型大小"
+msgstr "올바른 모델 크기 선택"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:195
+msgid "调整批处理大小"
+msgstr "배치 크기 조정"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:196
+msgid "使用量化模型减少内存占用"
+msgstr "양자화된 모델을 사용하여 메모리 사용량 줄이기"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:198
+msgid "**网络延迟**"
+msgstr "**네트워크 지연**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:200
+msgid "确保客户端与服务器网络连通良好"
+msgstr "클라이언트와 서버 네트워크 연결이 양호한지 확인하세요."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:201
+msgid "考虑使用本地部署减少网络开销"
+msgstr "네트워크 오버헤드를 줄이기 위해 온프레미스 배포 사용을 고려하세요."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:204
+msgid "内存使用过高"
+msgstr "메모리 사용량이 너무 높음"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:206
+msgid "**问题描述**：系统内存或GPU内存使用过高"
+msgstr "**문제 설명**\\ : 시스템 메모리 또는 GPU 메모리 사용량이 너무 높습니다."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:208
+msgid "**解决方案**："
+msgstr "**솔루션**\\ :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:210
+msgid "**调整模型参数**"
+msgstr "**모델 매개변수 조정**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:212
+msgid "使用较小的模型"
+msgstr "더 작은 모델을 사용하세요"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:213
+msgid "启用模型量化"
+msgstr "모델 양자화 활성화"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:214
+msgid "减少并发请求数量"
+msgstr "동시 요청 수 줄이기"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:216
+msgid "**优化容器配置**"
+msgstr "**컨테이너 구성 최적화**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:224
+msgid "日志和调试"
+msgstr "로깅 및 디버깅"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:227
+msgid "查看详细日志"
+msgstr "상세 로그 보기"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:241
+msgid "常用调试命令"
+msgstr "일반적으로 사용되는 디버깅 명령"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:257
+msgid "获取帮助"
+msgstr "도움 받기"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:259
+msgid "如果以上解决方案无法解决您的问题，请："
+msgstr "위의 해결 방법으로 문제가 해결되지 않으면 다음을 수행하십시오."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:261
+msgid "**收集信息**："
+msgstr "**는** 정보를 수집합니다."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:263
+msgid "系统环境信息（OS、Docker版本、GPU型号等）"
+msgstr "시스템 환경 정보(OS, Docker 버전, GPU 모델 등)"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:264
+msgid "错误日志和详细错误信息"
+msgstr "오류 로그 및 자세한 오류 정보"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:265
+msgid "使用的镜像版本和配置参数"
+msgstr "사용된 이미지 버전 및 구성 매개변수"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:267
+msgid "**联系支持**："
+msgstr "**지원팀에 문의** ："
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:269
+msgid "查看官方文档获取最新信息"
+msgstr "최신 정보는 공식 문서를 확인하세요."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:270
+msgid "联系技术支持团队"
+msgstr "기술 지원팀에 문의하세요"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:271
+msgid "提供详细的问题描述和环境信息"
+msgstr "자세한 문제 설명 및 환경 정보 제공"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:274
+msgid "相关文档"
+msgstr "관련 문서"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:276
+msgid ":doc:`multi_deployment` - 多机部署配置"
+msgstr ":doc:`multi_deployment` - 다중 머신 배포 구성"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:277
+msgid ":doc:`nvidia` - Nvidia系列镜像使用"
+msgstr ":doc:`nvidia` - Nvidia 시리즈 미러 사용"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:278
+msgid ":doc:`performance` - 性能测试指南"
+msgstr ":doc:`performance` - 성능 테스트 가이드"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/troubleshooting.rst:279
+msgid ":doc:`kubernetes` - K8s部署配置"
+msgstr ":doc:`kubernetes` - K8s 배포 구성"

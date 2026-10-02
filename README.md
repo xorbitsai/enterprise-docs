@@ -16,8 +16,12 @@
 
 ## 📚 Online Documentation
 
-- **中文文档**: [https://xorbitsai.github.io/enterprise-docs/](https://xorbitsai.github.io/enterprise-docs/)
-- **English Documentation**: [https://xorbitsai.github.io/enterprise-docs/en/](https://xorbitsai.github.io/enterprise-docs/en/)
+- **English (default)**: [https://xorbitsai.github.io/enterprise-docs/](https://xorbitsai.github.io/enterprise-docs/)
+- **简体中文**: [https://xorbitsai.github.io/enterprise-docs/zh-cn/](https://xorbitsai.github.io/enterprise-docs/zh-cn/)
+
+The language menu matches the Xinference documentation: English, Simplified Chinese,
+Traditional Chinese, Japanese, Korean, German, French, Spanish, Italian, and
+Portuguese (Brazil). Existing `/en/` links redirect to the English pages at the root.
 
 ## 🚀 Features
 
@@ -26,5 +30,7 @@ This repository contains comprehensive documentation for Xorbits Inference Enter
 - **Multi-platform Support**: NVIDIA, MindIE, Hygon hardware platforms
 - **Deployment Guides**: Single-node and multi-node deployment configurations
 - **Enterprise Features**: License management, performance monitoring, troubleshooting
-- **Multilingual**: Full Chinese and English documentation
+- **Multilingual**: Ten language editions with English as the default. Translation
+  catalogs include machine-translated prose; commands and configuration literals
+  are preserved. Translations can be reviewed in `docs/source/locale/`.
 - **Interactive**: Live examples and configuration templates

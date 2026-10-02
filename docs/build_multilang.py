@@ -1,124 +1,94 @@
 #!/usr/bin/env python3
-"""
-构建多语言版本的Sphinx文档
-"""
+"""Build every documentation language, with English at the site root."""
 
+import argparse
+import html
+import json
 import os
-import subprocess
-import shutil
 from pathlib import Path
+import shutil
+import subprocess
+import sys
 
-def run_command(cmd, cwd=None):
-    """运行命令并返回结果"""
-    print(f"Running: {cmd}")
-    result = subprocess.run(cmd, shell=True, cwd=cwd, capture_output=True, text=True)
-    if result.returncode != 0:
-        print(f"Error: {result.stderr}")
-        return False
-    print(f"Success: {result.stdout}")
-    return True
+from i18n import LANGUAGES, docs_base_path, sphinx_locale, switcher_config
 
-def build_language(lang, output_dir):
-    """构建指定语言的文档"""
-    print(f"\n=== Building {lang} documentation ===")
-    
-    # 设置环境变量
+DOCS_DIR = Path(__file__).resolve().parent
+
+
+def run_command(args, env=None):
+    print(f"Running: {' '.join(map(str, args))}", flush=True)
+    subprocess.run(args, cwd=DOCS_DIR, env=env, check=True)
+
+
+def build_language(slug, output_dir, base_path, doctrees_dir):
     env = os.environ.copy()
-    env['SPHINX_LANGUAGE'] = lang
-    
-    # 构建命令
-    if lang == 'zh_CN':
-        build_dir = f"build/html"
-    else:
-        build_dir = f"build/html/{lang}"
-    
-    cmd = f"sphinx-build -b html -D language={lang} source {build_dir}"
-    
-    result = subprocess.run(cmd, shell=True, env=env, capture_output=True, text=True)
-    if result.returncode != 0:
-        print(f"Error building {lang}: {result.stderr}")
-        return False
-    
-    print(f"Successfully built {lang} documentation")
-    return True
+    env.update(SPHINX_LANGUAGE=sphinx_locale(slug), DOCS_BASE_PATH=base_path)
+    # Each language needs its own Sphinx environment and search index.
+    run_command([
+        sys.executable, "-m", "sphinx", "-b", "html", "-E",
+        "-d", str(doctrees_dir / slug),
+        "-D", f"language={sphinx_locale(slug)}",
+        "source", str(output_dir),
+    ], env=env)
 
-def copy_nojekyll_file():
-    """复制.nojekyll文件到输出目录"""
-    nojekyll_source = Path("source/.nojekyll")
-    if nojekyll_source.exists():
-        # 复制到中文版本根目录
-        shutil.copy2(nojekyll_source, "build/html/.nojekyll")
-        print("Copied .nojekyll to build/html/")
 
-def update_switcher_config():
-    """更新语言切换器配置"""
-    switcher_config = [
-        {
-            "name": "简体中文(Chinese)",
-            "version": "zh_CN",
-            "url": "/",
-            "preferred": True
-        },
-        {
-            "name": "English",
-            "version": "en", 
-            "url": "/en/"
-        }
-    ]
-    
-    import json
-    
-    # 为中文版本创建switcher.json
-    zh_switcher_path = Path("build/html/_static/switcher.json")
-    zh_switcher_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(zh_switcher_path, 'w', encoding='utf-8') as f:
-        json.dump(switcher_config, f, ensure_ascii=False, indent=2)
-    
-    # 为英文版本创建switcher.json
-    en_switcher_path = Path("build/html/en/_static/switcher.json")
-    en_switcher_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(en_switcher_path, 'w', encoding='utf-8') as f:
-        json.dump(switcher_config, f, ensure_ascii=False, indent=2)
+def write_english_redirects(output_dir, base_path):
+    """Preserve previously published /en/ links, including nested pages."""
+    for page in list(output_dir.rglob("*.html")):
+        relative = page.relative_to(output_dir)
+        target = html.escape(base_path + relative.as_posix(), quote=True)
+        redirect = output_dir / "en" / relative
+        redirect.parent.mkdir(parents=True, exist_ok=True)
+        redirect.write_text(
+            '<!doctype html><html lang="en"><head><meta charset="utf-8">'
+            f'<link rel="canonical" href="{target}">'
+            f'<meta http-equiv="refresh" content="0;url={target}">'
+            f'<title>Redirecting</title></head><body><a href="{target}">'
+            'Continue to the English documentation</a></body></html>\n',
+            encoding="utf-8",
+        )
 
-def main():
-    """主函数"""
-    print("Building multilingual Xinference documentation...")
-    
-    # 确保在正确的目录
-    os.chdir(Path(__file__).parent)
-    
-    # 生成翻译模板
-    print("\n=== Generating translation templates ===")
-    if not run_command("sphinx-build -b gettext source build/locale"):
-        return False
-    
-    # 更新翻译文件
-    print("\n=== Updating translation files ===")
-    run_command("sphinx-intl update -p build/locale -l zh_CN")
-    run_command("sphinx-intl update -p build/locale -l en")
-    
-    # 构建中文版本（默认）
-    if not build_language('zh_CN', 'build/html'):
-        return False
-    
-    # 构建英文版本
-    if not build_language('en', 'build/html/en'):
-        return False
-    
-    # 复制.nojekyll文件
-    print("\n=== Copying .nojekyll file ===")
-    copy_nojekyll_file()
-    
-    # 更新语言切换器配置
-    print("\n=== Updating language switcher ===")
-    update_switcher_config()
-    
-    print("\n=== Build completed successfully! ===")
-    print("Chinese version: build/html/")
-    print("English version: build/html/en/")
-    
-    return True
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output-dir", type=Path, default=DOCS_DIR / "build/html")
+    parser.add_argument("--base-path", default=docs_base_path(),
+                        help="Site URL prefix; use / for a local preview.")
+    args = parser.parse_args(argv)
+    output_dir = args.output_dir.resolve()
+    base_path = docs_base_path(args.base_path)
+    if (output_dir == Path(output_dir.anchor) or output_dir in DOCS_DIR.parents
+            or output_dir == DOCS_DIR or output_dir == Path.cwd()
+            or output_dir.is_relative_to(DOCS_DIR / "source")):
+        parser.error("output directory must not contain documentation sources")
+    try:
+        run_command([sys.executable, "-m", "sphinx", "-b", "gettext", "-E",
+                     "source", "build/locale"])
+        locales = [sphinx_locale(item["version"]) for item in LANGUAGES]
+        run_command([sys.executable, "-m", "sphinx_intl", "update",
+                     "-p", "build/locale", "-d", "source/locale",
+                     *[arg for loc in locales for arg in ("-l", loc)]])
+        run_command([sys.executable, "-m", "sphinx_intl", "build", "-d", "source/locale"])
+        if output_dir.exists():
+            shutil.rmtree(output_dir)
+        doctrees_dir = output_dir.parent / f".{output_dir.name}-doctrees"
+        build_language("en", output_dir, base_path, doctrees_dir)
+        write_english_redirects(output_dir, base_path)
+        for item in LANGUAGES:
+            slug = item["version"]
+            if slug != "en":
+                build_language(slug, output_dir / slug, base_path, doctrees_dir)
+        config = json.dumps(switcher_config(base_path), ensure_ascii=False, indent=2) + "\n"
+        for item in LANGUAGES:
+            directory = output_dir if item["version"] == "en" else output_dir / item["version"]
+            (directory / "_static/switcher.json").write_text(config, encoding="utf-8")
+        shutil.copy2(DOCS_DIR / "source/.nojekyll", output_dir / ".nojekyll")
+    except subprocess.CalledProcessError as exc:
+        print(f"Documentation build failed (exit {exc.returncode}).", file=sys.stderr)
+        return 1
+    print(f"Built {len(LANGUAGES)} languages in {output_dir}; default: English.")
+    return 0
+
 
 if __name__ == "__main__":
-    success = main()
-    exit(0 if success else 1)
+    sys.exit(main())

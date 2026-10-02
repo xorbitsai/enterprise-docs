@@ -1,0 +1,116 @@
+# French translations for Xinference.
+# Copyright (C) 2026 Xorbits Inc.
+# This file is distributed under the same license as the Xinference project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-10-02 15:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/getting_started/environments.rst:5
+msgid "Environments Requirement"
+msgstr "Exigence des environnements"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/getting_started/environments.rst:9
+msgid "Recommended Systems"
+msgstr "Systèmes recommandés"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/getting_started/environments.rst:11
+msgid "Xinference supports the following operating systems:"
+msgstr "Xinference prend en charge les systèmes d'exploitation suivants :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/getting_started/environments.rst:13
+msgid "**Ubuntu 20.04 / 22.04** (Recommended)"
+msgstr "**Ubuntu 20.04 / 22.04** (recommandé)"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/getting_started/environments.rst:14
+msgid "**CentOS 7 / Rocky Linux 8**"
+msgstr "**CentOS 7 / Rocky Linux 8**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/getting_started/environments.rst:15
+msgid "**Windows 10/11 with WSL2**"
+msgstr "**Windows 10/11 avec WSL2**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/getting_started/environments.rst:19
+msgid "Recommended CUDA"
+msgstr "Recommandé CUDA"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/getting_started/environments.rst:21
+msgid "Xinference Recommended the following CUDA version:"
+msgstr "Xinference Recommandé la version CUDA suivante :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/getting_started/environments.rst:23
+msgid ""
+"**Driver Version 550.127.08** - `Download Driver "
+"<https://www.nvidia.cn/drivers/lookup/>`_"
+msgstr ""
+"Version du pilote **550.127.08** - `Download Driver "
+"<https://www.nvidia.cn/drivers/lookup/>`_"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/getting_started/environments.rst:24
+msgid ""
+"**CUDA Version 12.4** - `Download CUDA <https://developer.nvidia.com/cuda-12-4-0"
+"-download-archive>`_"
+msgstr ""
+"**CUDA Version 12.4** - `Download CUDA <https://developer.nvidia.com/cuda-12-4-0"
+"-download-archive>`_"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/getting_started/environments.rst:28
+msgid "Recommended Docker"
+msgstr "Recommandé Docker"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/getting_started/environments.rst:30
+msgid "Here are the recommended Docker versions for different environments:"
+msgstr "Voici les versions Docker recommandées pour différents environnements :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/getting_started/environments.rst:32
+msgid ""
+"Docker >= 19.03 (recommended, but some distributions may include older versions of "
+"Docker. The minimum supported version is 1.12)"
+msgstr ""
+"Docker >= 19.03 (recommandé, mais certaines distributions peuvent inclure des "
+"versions plus anciennes de Docker.. La version minimale prise en charge est 1.12)"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/getting_started/environments.rst:34
+msgid "`How to install Docker <https://docs.docker.com/engine/install/>`_"
+msgstr "`How to install Docker <https://docs.docker.com/engine/install/>`_"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/getting_started/environments.rst:36
+msgid "NVIDIA Container Toolkit >= 1.7.0"
+msgstr "Boîte à outils de conteneur NVIDIA >= 1.7.0"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/getting_started/environments.rst:38
+msgid ""
+"`How to install NVIDIA Container Toolkit <https://docs.nvidia.com/datacenter/cloud-"
+"native/container-toolkit/1.13.5/install-guide.html#install-guide>`_"
+msgstr ""
+"`How to install NVIDIA Container Toolkit <https://docs.nvidia.com/datacenter/cloud-"
+"native/container-toolkit/1.13.5/install-guide.html#install-guide>`_"
