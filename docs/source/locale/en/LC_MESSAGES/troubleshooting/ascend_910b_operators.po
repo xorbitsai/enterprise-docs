@@ -1,0 +1,142 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, Xorbits Inc.
+# This file is distributed under the same license as the Xinference package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-02 16:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/troubleshooting/ascend_910b_operators.rst:3
+msgid "Ascend 910B: custom operator environment missing"
+msgstr "Ascend 910B: custom operator environment missing"
+
+#: ../../source/troubleshooting/ascend_910b_operators.rst
+msgid "Hardware"
+msgstr "Hardware"
+
+#: ../../source/troubleshooting/ascend_910b_operators.rst:7
+msgid "Ascend 910B"
+msgstr "Ascend 910B"
+
+#: ../../source/troubleshooting/ascend_910b_operators.rst
+msgid "Backend"
+msgstr "Backend"
+
+#: ../../source/troubleshooting/ascend_910b_operators.rst:8
+msgid "vLLM-Ascend"
+msgstr "vLLM-Ascend"
+
+#: ../../source/troubleshooting/ascend_910b_operators.rst
+msgid "Model"
+msgstr "Model"
+
+#: ../../source/troubleshooting/ascend_910b_operators.rst:9
+msgid "Qwen3.6-35B-A3B"
+msgstr "Qwen3.6-35B-A3B"
+
+#: ../../source/troubleshooting/ascend_910b_operators.rst:12
+msgid "Symptom"
+msgstr "Symptom"
+
+#: ../../source/troubleshooting/ascend_910b_operators.rst:14
+msgid ""
+"Native vLLM starts and chats successfully, but the same model launched through "
+"Xinference fails with a recurrent-state dtype error."
+msgstr ""
+"Native vLLM starts and chats successfully, but the same model launched through "
+"Xinference fails with a recurrent-state dtype error."
+
+#: ../../source/troubleshooting/ascend_910b_operators.rst:22
+msgid "Evidence and diagnosis"
+msgstr "Evidence and diagnosis"
+
+#: ../../source/troubleshooting/ascend_910b_operators.rst
+msgid "Observed"
+msgstr "Observed"
+
+#: ../../source/troubleshooting/ascend_910b_operators.rst:26
+msgid ""
+"The recorded Xinference-launched process did not inherit the custom operator paths "
+"that were present in the working native vLLM environment."
+msgstr ""
+"The recorded Xinference-launched process did not inherit the custom operator paths "
+"that were present in the working native vLLM environment."
+
+#: ../../source/troubleshooting/ascend_910b_operators.rst
+msgid "Diagnosis"
+msgstr "Diagnosis"
+
+#: ../../source/troubleshooting/ascend_910b_operators.rst:27
+msgid ""
+"The missing custom GDN/Mamba operator environment caused a fallback to the built-in "
+"CANN operator, which rejected the model's float32 state in this case."
+msgstr ""
+"The missing custom GDN/Mamba operator environment caused a fallback to the built-in "
+"CANN operator, which rejected the model's float32 state in this case."
+
+#: ../../source/troubleshooting/ascend_910b_operators.rst:29
+msgid ""
+"Check both ``ASCEND_CUSTOM_OPP_PATH`` and the custom ``op_api/lib`` entry in "
+"``LD_LIBRARY_PATH`` before changing model precision."
+msgstr ""
+"Check both ``ASCEND_CUSTOM_OPP_PATH`` and the custom ``op_api/lib`` entry in "
+"``LD_LIBRARY_PATH`` before changing model precision."
+
+#: ../../source/troubleshooting/ascend_910b_operators.rst:32
+msgid "Load the operator environment"
+msgstr "Load the operator environment"
+
+#: ../../source/troubleshooting/ascend_910b_operators.rst:34
+msgid ""
+"Source the vLLM-Ascend custom environment in the same shell that starts Xinference. "
+"Adjust the installation path for your image."
+msgstr ""
+"Source the vLLM-Ascend custom environment in the same shell that starts Xinference. "
+"Adjust the installation path for your image."
+
+#: ../../source/troubleshooting/ascend_910b_operators.rst:42
+msgid ""
+"Align model parameters with the working native launch. These are the values from the "
+"original test, not defaults for every deployment."
+msgstr ""
+"Align model parameters with the working native launch. These are the values from the "
+"original test, not defaults for every deployment."
+
+#: ../../source/troubleshooting/ascend_910b_operators.rst:44
+msgid "Parameters from the recorded deployment"
+msgstr "Parameters from the recorded deployment"
+
+#: ../../source/troubleshooting/ascend_910b_operators.rst:57
+msgid "Verification"
+msgstr "Verification"
+
+#: ../../source/troubleshooting/ascend_910b_operators.rst:59
+msgid ""
+"Launch through Xinference again, inspect the inherited operator environment and "
+"confirm that the dtype error is gone and chat output is coherent. Record CANN, torch-"
+"npu, vLLM and vLLM-Ascend versions alongside the image tag."
+msgstr ""
+"Launch through Xinference again, inspect the inherited operator environment and "
+"confirm that the dtype error is gone and chat output is coherent. Record CANN, torch-"
+"npu, vLLM and vLLM-Ascend versions alongside the image tag."
+
+#: ../../source/troubleshooting/ascend_910b_operators.rst:61
+msgid ":doc:`../getting_started/environments`"
+msgstr ":doc:`../getting_started/environments`"
+
+#: ../../source/troubleshooting/ascend_910b_operators.rst:62
+msgid ":doc:`../xinference_images/mindie`"
+msgstr ":doc:`../xinference_images/mindie`"

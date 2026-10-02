@@ -1,0 +1,123 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, Xorbits Inc.
+# This file is distributed under the same license as the Xinference package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-02 16:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/gb10_multinode.rst:3
+msgid "GB10: multi-node communication dependency"
+msgstr "GB10: dependencia de comunicación multinodo"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/gb10_multinode.rst
+msgid "Hardware"
+msgstr "Hardware"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/gb10_multinode.rst:7
+msgid "Two NVIDIA GB10 hosts"
+msgstr "Dos hosts NVIDIA GB10"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/gb10_multinode.rst
+msgid "Architecture"
+msgstr "Arquitectura"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/gb10_multinode.rst:8
+msgid "aarch64"
+msgstr "aarch64"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/gb10_multinode.rst
+msgid "Xinference"
+msgstr "Xinference"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/gb10_multinode.rst:9
+msgid "1.0.4"
+msgstr "1.0.4"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/gb10_multinode.rst:12
+msgid "Symptom and evidence"
+msgstr "Síntoma y evidencia"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/gb10_multinode.rst:14
+msgid ""
+"A single-node deployment chats normally, but one replica spread across two workers "
+"waits without output and eventually encounters an engine error. GPU activity "
+"fluctuates during the distributed request. The deployment logs in the supplied record"
+" pointed to an outdated CuPy version."
+msgstr ""
+"Un despliegue de un solo nodo funciona con normalidad en el chat, pero una réplica "
+"distribuida entre dos workers espera sin producir salida y acaba encontrando un error"
+" del motor. La actividad de la GPU fluctúa durante la solicitud distribuida. Los "
+"registros de despliegue del informe proporcionado apuntaban a una versión obsoleta de"
+" CuPy."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/gb10_multinode.rst:17
+msgid "Recorded dependency change"
+msgstr "Cambio de dependencias documentado"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/gb10_multinode.rst:19
+msgid ""
+"The case used these versions. Apply them consistently to the affected worker "
+"environments and check their compatibility with the rest of the image rather than "
+"adopting them as requirements for other releases."
+msgstr ""
+"El caso utilizó estas versiones. Aplíquelas de forma coherente en los entornos de "
+"worker afectados y compruebe su compatibilidad con el resto de la imagen, en lugar de"
+" adoptarlas como requisitos para otras versiones."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/gb10_multinode.rst:29
+msgid ""
+"The original installation upgraded NumPy to 2.2.6 when CuPy was installed separately."
+" The recorded environment needed NumPy 1.26.4, so the command pins both dependencies "
+"together."
+msgstr ""
+"La instalación original actualizó NumPy a 2.2.6 cuando CuPy se instaló por separado. "
+"El entorno documentado necesitaba NumPy 1.26.4, por lo que el comando fija ambas "
+"dependencias a la vez."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/gb10_multinode.rst:32
+msgid "Verification"
+msgstr "Verificación"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/gb10_multinode.rst:34
+msgid ""
+"Restart the affected model processes after updating the environment. Confirm the "
+"versions on both workers, launch the distributed replica and verify coherent chat "
+"output. Retain the image tag and engine logs with the case."
+msgstr ""
+"Reinicie los procesos del modelo afectados después de actualizar el entorno. Confirme"
+" las versiones en ambos workers, lance la réplica distribuida y verifique que la "
+"salida del chat es coherente. Conserve la etiqueta de la imagen y los registros del "
+"motor junto con el caso."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/gb10_multinode.rst:36
+msgid ":doc:`../xinference_images/multi_deployment`"
+msgstr ":doc:`../xinference_images/multi_deployment`"

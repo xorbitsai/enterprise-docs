@@ -1,0 +1,115 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, Xorbits Inc.
+# This file is distributed under the same license as the Xinference package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-02 16:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_TW\n"
+"Language-Team: zh_TW <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_310p_qwen3.rst:3
+msgid "Ascend 310P: Qwen3 precision and eager execution"
+msgstr "昇騰 310P：Qwen3 精度與 eager 執行模式"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_310p_qwen3.rst
+msgid "Hardware"
+msgstr "硬體"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_310p_qwen3.rst:7
+msgid "Ascend 310P"
+msgstr "昇騰 310P"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_310p_qwen3.rst
+msgid "Backend"
+msgstr "後端"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_310p_qwen3.rst:8
+msgid "vLLM-Ascend"
+msgstr "vLLM-Ascend"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_310p_qwen3.rst
+msgid "Model"
+msgstr "模型"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_310p_qwen3.rst:9
+msgid "Qwen3"
+msgstr "Qwen3"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_310p_qwen3.rst:13
+msgid ""
+"Xinference, driver and backend versions were not supplied in the original case. This "
+"workaround belongs to the recorded hardware and model combination."
+msgstr "原始案例未提供 Xinference、驅動和後端版本。本規避方法僅對應記錄中的硬體與模型組合。"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_310p_qwen3.rst:16
+msgid "Symptom"
+msgstr "故障現象"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_310p_qwen3.rst:18
+msgid "Deployment or inference can fail with default parameters on this combination."
+msgstr "該組合使用預設引數時，部署或推理可能失敗。"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_310p_qwen3.rst:21
+msgid "Recorded workaround"
+msgstr "記錄中的規避方法"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_310p_qwen3.rst:23
+msgid "Explicitly configure half precision and eager execution in the engine parameters."
+msgstr "在引擎引數中明確配置半精度與 eager 執行模式。"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_310p_qwen3.rst:25
+msgid "Engine parameters"
+msgstr "引擎引數"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_310p_qwen3.rst:32
+msgid "Verification"
+msgstr "驗證"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_310p_qwen3.rst:34
+msgid ""
+"Confirm the effective engine parameters in model logs, then send a fixed prompt and "
+"check that inference completes with coherent output. The record does not isolate "
+"which parameter is decisive, so preserve both when reproducing this configuration."
+msgstr "在模型日誌中確認引擎引數已生效，再傳送固定提示詞，檢查推理是否完成且輸出連貫。原始記錄沒有單獨確定哪個引數起決定作用，因此復現時應保留兩個引數。"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_310p_qwen3.rst:37
+msgid "Related guides"
+msgstr "相關指南"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_310p_qwen3.rst:39
+msgid ":doc:`ascend_310p_qwen35`"
+msgstr ":doc:`ascend_310p_qwen35`"
+
+#. Reviewed technical translation.
+#: ../../source/troubleshooting/ascend_310p_qwen3.rst:40
+msgid ":doc:`../xinference_images/mindie`"
+msgstr ":doc:`../xinference_images/mindie`"

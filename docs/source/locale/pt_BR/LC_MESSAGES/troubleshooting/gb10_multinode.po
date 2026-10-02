@@ -1,0 +1,136 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, Xorbits Inc.
+# This file is distributed under the same license as the Xinference package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-02 16:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: pt_BR\n"
+"Language-Team: pt_BR <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/troubleshooting/gb10_multinode.rst:3
+msgid "GB10: multi-node communication dependency"
+msgstr "GB10: dependências de comunicação entre nós"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/troubleshooting/gb10_multinode.rst
+msgid "Hardware"
+msgstr "Hardware"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/troubleshooting/gb10_multinode.rst:7
+msgid "Two NVIDIA GB10 hosts"
+msgstr "Dois hosts NVIDIA GB10"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/troubleshooting/gb10_multinode.rst
+msgid "Architecture"
+msgstr "Arquitetura"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/troubleshooting/gb10_multinode.rst:8
+msgid "aarch64"
+msgstr "aarch64"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/troubleshooting/gb10_multinode.rst
+msgid "Xinference"
+msgstr "Xinference"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/troubleshooting/gb10_multinode.rst:9
+msgid "1.0.4"
+msgstr "1.0.4"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/troubleshooting/gb10_multinode.rst:12
+msgid "Symptom and evidence"
+msgstr "Sintoma e evidências"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/troubleshooting/gb10_multinode.rst:14
+msgid ""
+"A single-node deployment chats normally, but one replica spread across two workers "
+"waits without output and eventually encounters an engine error. GPU activity "
+"fluctuates during the distributed request. The deployment logs in the supplied record"
+" pointed to an outdated CuPy version."
+msgstr ""
+"Um chat de implantação de um único nó normalmente, mas uma réplica espalhada por dois"
+" trabalhadores espera sem saída e, eventualmente, encontra um erro no motor. GPU a "
+"atividade flutua durante a solicitação distribuída. Os registros de implantação no "
+"registro fornecido apontaram para um desatualizado CuPy  versão."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/troubleshooting/gb10_multinode.rst:17
+msgid "Recorded dependency change"
+msgstr "Alteração de dependências documentada"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/troubleshooting/gb10_multinode.rst:19
+msgid ""
+"The case used these versions. Apply them consistently to the affected worker "
+"environments and check their compatibility with the rest of the image rather than "
+"adopting them as requirements for other releases."
+msgstr ""
+"O caso usou essas versões. Aplique-as de forma consistente nos ambientes de trabalho "
+"afetados e verifique sua compatibilidade com o resto da imagem em vez de adotá-las "
+"como requisitos para outras versões."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/troubleshooting/gb10_multinode.rst:29
+msgid ""
+"The original installation upgraded NumPy to 2.2.6 when CuPy was installed separately."
+" The recorded environment needed NumPy 1.26.4, so the command pins both dependencies "
+"together."
+msgstr ""
+"Na instalação original, instalar CuPy separadamente atualizou o NumPy para 2.2.6. O "
+"ambiente documentado precisava do NumPy 1.26.4; por isso, o comando fixa as duas "
+"dependências juntas."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/troubleshooting/gb10_multinode.rst:32
+msgid "Verification"
+msgstr "Verificação"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/troubleshooting/gb10_multinode.rst:34
+msgid ""
+"Restart the affected model processes after updating the environment. Confirm the "
+"versions on both workers, launch the distributed replica and verify coherent chat "
+"output. Retain the image tag and engine logs with the case."
+msgstr ""
+"Reinicie os processos do modelo afetados após atualizar o ambiente. Confirme as "
+"versões em ambos os trabalhadores, inicie a réplica distribuída e verifique a saída "
+"coerente do chat. Mantenha a tag de imagem e os logs do motor com o caso."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/troubleshooting/gb10_multinode.rst:36
+msgid ":doc:`../xinference_images/multi_deployment`"
+msgstr ":doc:`../xinference_images/multi_deployment`"

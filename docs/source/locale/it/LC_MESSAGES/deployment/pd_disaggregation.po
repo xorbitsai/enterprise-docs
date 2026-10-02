@@ -1,0 +1,385 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, Xorbits Inc.
+# This file is distributed under the same license as the Xinference package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-02 16:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: it\n"
+"Language-Team: it <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:3
+msgid "Prefill–Decode disaggregation"
+msgstr "Separazione Prefill–Decode"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:5
+msgid ""
+"Separate prompt processing from token generation so long prefill work does not "
+"repeatedly interrupt decode batches. Xavier transfers the KV cache between replicas "
+"and maintains a shared per-model block tracker for cross-replica prefix reuse."
+msgstr ""
+"Lavorazione rapida separata dalla generazione di token così lungo lavoro di prefill "
+"non interrompe più i lotti di decodifica. Xavier trasferimenti KV cache tra le "
+"repliche e mantiene un tracker di blocco per-model condiviso per il riutilizzo del "
+"prefisso cross-replica."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst
+msgid "Backend"
+msgstr "Backend"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:9
+msgid "vLLM 0.23"
+msgstr "vLLM 0.23"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst
+msgid "Connector"
+msgstr "Connettore"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:10
+msgid "Xavier V1"
+msgstr "Xavier V1"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst
+msgid "Validated model"
+msgstr "Modello verificato"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:11
+msgid "Qwen3"
+msgstr "Qwen3"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:14
+msgid "Compatibility scope"
+msgstr "Ambito di compatibilità"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:18
+msgid ""
+"This guide describes the supplied validation record, not a promise of support in "
+"every release. Qwen3 was tested on hardware with the backend and connector versions "
+"above."
+msgstr ""
+"Questa guida descrive il caso di verifica fornito e non promette supporto in ogni "
+"versione. Qwen3 è stato provato su hardware con le versioni del backend e del "
+"connettore indicate sopra."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:20
+msgid "Recorded compatibility"
+msgstr "Compatibilità documentata"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:23
+msgid "Model architecture"
+msgstr "Architettura del modello"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:24
+msgid "Recorded result"
+msgstr "Risultato documentato"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:25
+msgid "Attention-only models"
+msgstr "Modelli basati solo sull'attenzione"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:26
+msgid ""
+"Qwen3 was validated. The record also lists Qwen2.5, Llama-3.1, GLM-4, QwQ and "
+"DeepSeek-R1-Distill as applicable model families; they were not all individually "
+"validated in this record."
+msgstr ""
+"Qwen3 è stato verificato. Il documento elenca anche Qwen2.5, Llama-3.1, GLM-4, QwQ e "
+"DeepSeek-R1-Distill come famiglie applicabili, ma non sono state tutte verificate "
+"singolarmente in questo caso."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:27
+msgid "Hybrid linear-attention / SSM models"
+msgstr "Modelli ibridi con attenzione lineare / SSM"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:28
+msgid ""
+"Qwen3.5 and Qwen3.6 produced garbled output in this configuration. Do not use them "
+"with this recorded Xavier V1 setup."
+msgstr ""
+"Qwen3.5 e Qwen3.6 hanno prodotto output illeggibile in questa configurazione. Non "
+"usarli con la configurazione Xavier V1 documentata."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:30
+msgid ""
+"Check the model configuration for ``linear_attention`` entries in ``layer_types`` or "
+"a ``full_attention_interval`` field. The recorded Xavier path moves token-block KV "
+"data; hybrid models also have recurrent state that needs different handling."
+msgstr ""
+"Controllare se la configurazione del modello contiene voci  ``linear_attention``  in"
+"  ``layer_types``  oppure il campo  ``full_attention_interval`` . Il percorso Xavier "
+"documentato trasferisce dati KV suddivisi in blocchi di token; i modelli ibridi hanno"
+" anche uno stato ricorrente che richiede una gestione diversa."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:33
+msgid "Configure replica roles"
+msgstr "Configurare i ruoli delle repliche"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:35
+msgid ""
+"Open the model registry and select the rocket icon on the model card to create an "
+"instance."
+msgstr ""
+"Aprire il registro del modello e selezionare l'icona del razzo sulla scheda modello "
+"per creare un'istanza."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:36
+msgid "Choose the vLLM engine, model version and model source."
+msgstr "Scegli il vLLM motore, versione modello e sorgente modello."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:37
+msgid ""
+"Add at least two device rows under replica configuration. Assign one Prefill role and"
+" one Decode role, with explicit worker addresses and different GPU indices."
+msgstr ""
+"Aggiungi almeno due righe di dispositivo sotto configurazione di replica. Assegnare "
+"uno Prefill ruolo e uno Decode ruolo, con indirizzi di lavoro espliciti e diversi GPU"
+" Indici."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:38
+msgid "Review advanced engine parameters and deploy the instance."
+msgstr "Rivedere i parametri avanzati del motore e distribuire l'istanza."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:40
+msgid "Xinference deployment form with replica device and advanced settings"
+msgstr "Modulo di deployment Xinference con dispositivi delle repliche e impostazioni avanzate"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:43
+msgid "Replica configuration and advanced engine settings in the deployment form."
+msgstr ""
+"Configurazione delle repliche e impostazioni avanzate del motore nel modulo di "
+"deployment."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:45
+msgid "Device role selector showing None, Prefill and Decode"
+msgstr "Selettore del ruolo del dispositivo con None, Prefill e Decode"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:48
+msgid "Choose a role for each device row."
+msgstr "Scegli un ruolo per ogni riga del dispositivo."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:50
+msgid "Device roles"
+msgstr "Ruoli dei dispositivi"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:53
+msgid "Role"
+msgstr "Ruolo"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:54
+msgid "Responsibility"
+msgstr "Responsabilità"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:55
+msgid "None"
+msgstr "None"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:56
+msgid "Ordinary deployment without PD disaggregation."
+msgstr "Distribuzione ordinaria senza PD disaggregazione."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:57
+msgid "Prefill"
+msgstr "Prefill"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:58
+msgid "Process the prompt and produce the initial KV cache."
+msgstr "Elaborare il prompt e produrre la prima KV cache."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:59
+msgid "Decode"
+msgstr "Decode"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:60
+msgid "Generate subsequent tokens using the transferred state."
+msgstr "Generare i token successivi utilizzando lo stato trasferito."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:62
+msgid "Two-device example"
+msgstr "Esempio con due dispositivi"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:68
+msgid "Engine settings"
+msgstr "Configurazione del motore"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:70
+msgid ""
+"Keep Prefill and Decode on separate GPUs. The recorded shared-GPU environment used "
+"``gpu_memory_utilization=0.8`` to leave room for other containers; choose the value "
+"from available memory rather than treating it as a universal default. The Xavier V1 "
+"path in this record enables ``enforce_eager=True`` automatically."
+msgstr ""
+"Tenere Prefill e Decode su GPU separate. L'ambiente documentato con GPU condivisa "
+"usava  ``gpu_memory_utilization=0.8``  per lasciare spazio ad altri container; "
+"scegliere il valore in base alla memoria disponibile, senza considerarlo un valore "
+"predefinito universale. Il percorso Xavier V1 di questo caso abilita automaticamente"
+"  ``enforce_eager=True`` ."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:73
+msgid "Validate inference and transfers"
+msgstr "Verificare inferenza e trasferimenti"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:75
+msgid ""
+"Confirm both roles are running, then use greedy decoding to inspect coherent output. "
+"A successful HTTP response alone does not establish that KV transfer is correct."
+msgstr ""
+"Confermare che entrambi i ruoli siano in esecuzione, quindi usare la decodifica "
+"greedy per verificare che l'output sia coerente. Una risposta HTTP riuscita, da sola,"
+" non dimostra che il trasferimento KV sia corretto."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:77
+msgid "Greedy decoding check"
+msgstr "Verifica con decodifica greedy"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:91
+msgid ""
+"Inspect logs for Xavier block staging, sending and receiving, and for the remote "
+"decode/prefill flags. Repeated newlines or garbled text in the recorded hybrid-model "
+"setup indicate invalid transferred state; sampling can obscure the symptom."
+msgstr ""
+"Ispezione dei registri per Xavier Bloccare la messa in scena, l'invio e la ricezione,"
+" e per le bandiere di decodifica/precarica a distanza. Le nuove linee ripetute o il "
+"testo guasti nella configurazione del modello ibrido registrato indicano lo stato "
+"trasferito non valido; il campionamento può oscurare il sintomo."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:93
+msgid "Transfer indicators from the validation record"
+msgstr "Indicatori di trasferimento del caso verificato"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:101
+msgid "Known limitations"
+msgstr "Limitazioni note"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:103
+msgid ""
+"The original record mentions fixes for non-streaming responses, BF16 transfer "
+"precision and stale block registrations. It does not identify their released image "
+"version. Confirm the deployed version contains those fixes before relying on the "
+"corresponding behavior."
+msgstr ""
+"Il documento originale menziona correzioni per risposte non streaming, precisione dei"
+" trasferimenti BF16 e registrazioni obsolete dei blocchi, senza indicare la versione "
+"dell'immagine in cui sono state rilasciate. Verificare che la versione installata "
+"contenga queste correzioni prima di fare affidamento sul comportamento "
+"corrispondente."
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:106
+msgid "Related guides"
+msgstr "Guide correlate"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:108
+msgid ":doc:`../xinference_images/performance`"
+msgstr ":doc:`../xinference_images/performance`"
+
+#. Machine-translated prose; technical literals preserved. Navigation and selected
+#. terminology reviewed.
+#: ../../source/deployment/pd_disaggregation.rst:109
+msgid ":doc:`../troubleshooting/index`"
+msgstr ":doc:`../troubleshooting/index`"

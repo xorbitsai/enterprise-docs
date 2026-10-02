@@ -27,10 +27,23 @@ Portuguese (Brazil). Existing `/en/` links redirect to the English pages at the 
 
 This repository contains comprehensive documentation for Xorbits Inference Enterprise, including:
 
-- **Multi-platform Support**: NVIDIA, MindIE, Hygon hardware platforms
-- **Deployment Guides**: Single-node and multi-node deployment configurations
+- **Multi-platform Support**: NVIDIA, Ascend/MindIE, Hygon and MetaX hardware platforms
+- **Deployment Guides**: Single-node, multi-node, high availability and Prefill–Decode disaggregation
 - **Enterprise Features**: License management, performance monitoring, troubleshooting
 - **Multilingual**: Ten language editions with English as the default. Translation
   catalogs include machine-translated prose; commands and configuration literals
   are preserved. Translations can be reviewed in `docs/source/locale/`.
 - **Interactive**: Live examples and configuration templates
+
+The site organizes guides into getting started, hardware, models and performance,
+clusters and availability, observability, and troubleshooting. Existing image-guide
+URLs remain valid. Recorded cases state their environment, evidence and limitations;
+missing version information is shown explicitly rather than inferred.
+
+The visual layer extends PyData Sphinx Theme in `docs/source/_static/enterprise.css`.
+Search, language menus, mobile navigation and theme switching use the theme's native
+components. Imported PD screenshots live in `docs/source/_static/images/`.
+Chinese search uses jieba and a small accelerator-name dictionary, following the
+[Sphinx search configuration](https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_search_options).
+
+Internal image-build and production AMI runbooks are not part of this public site.

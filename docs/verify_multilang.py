@@ -12,6 +12,8 @@ from babel.messages.pofile import read_po
 from i18n import LANGUAGES, docs_base_path, sphinx_locale, switcher_config
 
 DOCS_DIR = Path(__file__).resolve().parent
+TASK_SECTIONS = ('getting_started', 'hardware', 'deployment', 'cluster',
+                 'observability', 'troubleshooting')
 LITERALS = re.compile(r':\w+:`[^`]*`|``[^`]*``|`[^`]*`_{0,2}|https?://\S+')
 
 
@@ -96,6 +98,16 @@ def main(argv=None):
         directory = root if slug == 'en' else root / slug
         config = json.loads((directory / '_static/switcher.json').read_text())
         assert config == expected, f'{slug}: inconsistent switcher'
+        home = (directory / 'index.html').read_text(encoding='utf-8')
+        assert 'enterprise.css' in home, f'{slug}: missing enterprise theme'
+        assert 'hide-on-wide' not in home.split('id="pst-primary-sidebar"')[1].split('>')[0], \
+            f'{slug}: task navigation hidden on the home page'
+        for section in TASK_SECTIONS:
+            assert f'href="{section}/index.html"' in home, f'{slug}: missing task section {section}'
+        for screenshot in ('pd-deploy-form.png', 'pd-role-dropdown.png'):
+            assert (directory / '_static/images' / screenshot).is_file(), f'{slug}: missing PD screenshot'
+        for internal in ('SAAS_IMAGE_BUILD.html', 'ami-bake-runbook.html'):
+            assert not (directory / internal).exists(), f'{slug}: internal runbook published'
         for item in config:
             assert item['url'].startswith(base_path)
             target = root / item['url'][len(base_path):] / 'index.html'
@@ -118,6 +130,14 @@ def main(argv=None):
             if slug not in ('zh-cn', 'zh-tw', 'ja'):
                 assert not re.search('[\u4e00-\u9fff]', title), f'{slug}: untranslated heading'
         assert (directory / 'searchindex.js').is_file(), f'{slug}: missing search index'
+        if slug in ('zh-cn', 'zh-tw'):
+            index_text = (directory / 'searchindex.js').read_text(encoding='utf-8')
+            index = json.loads(index_text.removeprefix('Search.setIndex(').removesuffix(')'))
+            metax = index['docnames'].index('hardware/metax')
+            term_docs = index['titleterms'].get('沐曦', [])
+            if isinstance(term_docs, int):
+                term_docs = [term_docs]
+            assert metax in term_docs, f'{slug}: Chinese search cannot find the MetaX guide'
     for relative in source_pages | {Path('search.html'), Path('genindex.html')}:
         redirect = (root / 'en' / relative).read_text(encoding='utf-8')
         assert f'content="0;url={base_path}{relative.as_posix()}"' in redirect

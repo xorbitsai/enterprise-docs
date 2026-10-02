@@ -1,0 +1,117 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, Xorbits Inc.
+# This file is distributed under the same license as the Xinference package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-02 16:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/gb10_multinode.rst:3
+msgid "GB10: multi-node communication dependency"
+msgstr "GB10: マルチノード通信の依存関係"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/gb10_multinode.rst
+msgid "Hardware"
+msgstr "ハードウェア"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/gb10_multinode.rst:7
+msgid "Two NVIDIA GB10 hosts"
+msgstr "2 台の NVIDIA GB10 ホスト"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/gb10_multinode.rst
+msgid "Architecture"
+msgstr "アーキテクチャ"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/gb10_multinode.rst:8
+msgid "aarch64"
+msgstr "aarch64"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/gb10_multinode.rst
+msgid "Xinference"
+msgstr "Xinference"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/gb10_multinode.rst:9
+msgid "1.0.4"
+msgstr "1.0.4"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/gb10_multinode.rst:12
+msgid "Symptom and evidence"
+msgstr "症状と証拠"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/gb10_multinode.rst:14
+msgid ""
+"A single-node deployment chats normally, but one replica spread across two workers "
+"waits without output and eventually encounters an engine error. GPU activity "
+"fluctuates during the distributed request. The deployment logs in the supplied record"
+" pointed to an outdated CuPy version."
+msgstr ""
+"シングルノードのデプロイでは通常どおりチャットできますが、1 つのレプリカを 2 つの worker "
+"に分散させると、出力がないまま待機し、最終的にエンジンエラーが発生します。分散リクエスト中は GPU のアクティビティが変動します。提供された記録のデプロイログは、古い "
+"CuPy バージョンを示していました。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/gb10_multinode.rst:17
+msgid "Recorded dependency change"
+msgstr "記録された依存関係の変更"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/gb10_multinode.rst:19
+msgid ""
+"The case used these versions. Apply them consistently to the affected worker "
+"environments and check their compatibility with the rest of the image rather than "
+"adopting them as requirements for other releases."
+msgstr ""
+"この事例では以下のバージョンを使用しました。影響を受ける worker "
+"環境に一貫して適用し、他のリリースの要件として採用するのではなく、イメージの他の部分との互換性を確認してください。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/gb10_multinode.rst:29
+msgid ""
+"The original installation upgraded NumPy to 2.2.6 when CuPy was installed separately."
+" The recorded environment needed NumPy 1.26.4, so the command pins both dependencies "
+"together."
+msgstr ""
+"元のインストールでは、CuPy を個別にインストールした際に NumPy が 2.2.6 にアップグレードされました。記録された環境では NumPy 1.26.4 "
+"が必要だったため、コマンドでは両方の依存関係をまとめて固定しています。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/gb10_multinode.rst:32
+msgid "Verification"
+msgstr "検証"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/gb10_multinode.rst:34
+msgid ""
+"Restart the affected model processes after updating the environment. Confirm the "
+"versions on both workers, launch the distributed replica and verify coherent chat "
+"output. Retain the image tag and engine logs with the case."
+msgstr ""
+"環境を更新した後、影響を受けるモデルプロセスを再起動します。両方の worker "
+"でバージョンを確認し、分散レプリカを起動して、首尾一貫したチャット出力を確認します。イメージタグとエンジンログを事例とともに保存してください。"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/gb10_multinode.rst:36
+msgid ":doc:`../xinference_images/multi_deployment`"
+msgstr ":doc:`../xinference_images/multi_deployment`"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Xinference VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-10-02 15:07+0800\n"
+"POT-Creation-Date: 2026-10-02 16:45+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -19,22 +19,189 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.18.0\n"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/index.rst:5
-msgid "Welcome to Xinference!"
-msgstr "Welcome to Xinference!"
+msgid "Deploy and operate Xinference Enterprise"
+msgstr "Deploy and operate Xinference Enterprise"
 
-#. Machine-translated prose; technical literals and reference targets preserved.
-#: ../../source/index.rst:15
+#: ../../source/index.rst:9
 msgid ""
-"Xorbits Inference (Xinference) is an open-source platform to streamline the operation"
-" and integration of a wide array of AI models. With Xinference, you're empowered to "
-"run inference using any open-source LLMs, embedding models, and multimodal models "
-"either in the cloud or on your own premises, and create robust AI-driven "
-"applications."
+"Guides for installing on your hardware, running models across nodes and diagnosing "
+"issues, with cases from recorded deployments."
 msgstr ""
-"Xorbits Inference (Xinference) is an open-source platform to streamline the operation"
-" and integration of a wide array of AI models. With Xinference, you're empowered to "
-"run inference using any open-source LLMs, embedding models, and multimodal models "
-"either in the cloud or on your own premises, and create robust AI-driven "
-"applications."
+"Guides for installing on your hardware, running models across nodes and diagnosing "
+"issues, with cases from recorded deployments."
+
+#: ../../source/index.rst:12
+msgid "Common tasks"
+msgstr "Common tasks"
+
+#: ../../source/index.rst:16
+msgid ":doc:`getting_started/installation`"
+msgstr ":doc:`getting_started/installation`"
+
+#: ../../source/index.rst:18
+msgid "Choose a deployment option and prepare the runtime environment."
+msgstr "Choose a deployment option and prepare the runtime environment."
+
+#: ../../source/index.rst:20
+msgid ":doc:`hardware/index`"
+msgstr ":doc:`hardware/index`"
+
+#: ../../source/index.rst:22
+msgid "Set up NVIDIA, Ascend, Hygon or MetaX accelerators."
+msgstr "Set up NVIDIA, Ascend, Hygon or MetaX accelerators."
+
+#: ../../source/index.rst:24
+msgid ":doc:`xinference_images/license`"
+msgstr ":doc:`xinference_images/license`"
+
+#: ../../source/index.rst:26
+msgid "Activate and manage an Enterprise license."
+msgstr "Activate and manage an Enterprise license."
+
+#: ../../source/index.rst:28
+msgid ":doc:`xinference_images/multi_deployment`"
+msgstr ":doc:`xinference_images/multi_deployment`"
+
+#: ../../source/index.rst:30
+msgid "Connect supervisors and workers across hosts."
+msgstr "Connect supervisors and workers across hosts."
+
+#: ../../source/index.rst:32
+#: ../../source/index.rst:50
+msgid ":doc:`cluster/high_availability`"
+msgstr ":doc:`cluster/high_availability`"
+
+#: ../../source/index.rst:34
+msgid "Deploy primary and secondary supervisors and verify failover."
+msgstr "Deploy primary and secondary supervisors and verify failover."
+
+#: ../../source/index.rst:36
+msgid ":doc:`troubleshooting/index`"
+msgstr ":doc:`troubleshooting/index`"
+
+#: ../../source/index.rst:38
+msgid "Start from a symptom and compare recorded cases."
+msgstr "Start from a symptom and compare recorded cases."
+
+#: ../../source/index.rst
+msgid "New guides"
+msgstr "New guides"
+
+#: ../../source/index.rst:48
+msgid ":doc:`hardware/metax`"
+msgstr ":doc:`hardware/metax`"
+
+#: ../../source/index.rst:49
+msgid ":doc:`deployment/pd_disaggregation`"
+msgstr ":doc:`deployment/pd_disaggregation`"
+
+#: ../../source/index.rst
+msgid "Recorded troubleshooting cases"
+msgstr "Recorded troubleshooting cases"
+
+#: ../../source/index.rst:56
+msgid ":doc:`troubleshooting/ascend_310p_qwen3`"
+msgstr ":doc:`troubleshooting/ascend_310p_qwen3`"
+
+#: ../../source/index.rst:57
+msgid ":doc:`troubleshooting/ascend_310p_qwen35`"
+msgstr ":doc:`troubleshooting/ascend_310p_qwen35`"
+
+#: ../../source/index.rst:58
+msgid ":doc:`troubleshooting/ascend_910b_operators`"
+msgstr ":doc:`troubleshooting/ascend_910b_operators`"
+
+#: ../../source/index.rst:59
+msgid ":doc:`troubleshooting/nvidia_slow_response`"
+msgstr ":doc:`troubleshooting/nvidia_slow_response`"
+
+#: ../../source/index.rst:60
+msgid ":doc:`troubleshooting/gb10_multinode`"
+msgstr ":doc:`troubleshooting/gb10_multinode`"
+
+#: ../../source/index.rst:63
+msgid "All guides"
+msgstr "All guides"
+
+#: ../../source/index.rst:67
+msgid "Getting started"
+msgstr "Getting started"
+
+#: ../../source/index.rst:68
+msgid ""
+":doc:`getting_started/installation` · :doc:`getting_started/environments` · "
+":doc:`xinference_images/license`"
+msgstr ""
+":doc:`getting_started/installation` · :doc:`getting_started/environments` · "
+":doc:`xinference_images/license`"
+
+#: ../../source/index.rst:70
+msgid "Hardware & installation"
+msgstr "Hardware & installation"
+
+#: ../../source/index.rst:71
+msgid ""
+":doc:`xinference_images/nvidia` · :doc:`xinference_images/mindie` · "
+":doc:`xinference_images/hygon` · :doc:`hardware/metax`"
+msgstr ""
+":doc:`xinference_images/nvidia` · :doc:`xinference_images/mindie` · "
+":doc:`xinference_images/hygon` · :doc:`hardware/metax`"
+
+#: ../../source/index.rst:73
+msgid "Models & performance"
+msgstr "Models & performance"
+
+#: ../../source/index.rst:74
+msgid ":doc:`deployment/pd_disaggregation` · :doc:`xinference_images/performance`"
+msgstr ":doc:`deployment/pd_disaggregation` · :doc:`xinference_images/performance`"
+
+#: ../../source/index.rst:76
+msgid "Clusters & availability"
+msgstr "Clusters & availability"
+
+#: ../../source/index.rst:77
+msgid ""
+":doc:`xinference_images/multi_deployment` · :doc:`cluster/high_availability` · "
+":doc:`xinference_images/kubernetes`"
+msgstr ""
+":doc:`xinference_images/multi_deployment` · :doc:`cluster/high_availability` · "
+":doc:`xinference_images/kubernetes`"
+
+#: ../../source/index.rst:79
+msgid "Observability"
+msgstr "Observability"
+
+#: ../../source/index.rst:80
+msgid ":doc:`xinference_images/langfuse`"
+msgstr ":doc:`xinference_images/langfuse`"
+
+#: ../../source/index.rst:82
+msgid "Troubleshooting"
+msgstr "Troubleshooting"
+
+#: ../../source/index.rst:83
+msgid ":doc:`xinference_images/troubleshooting` · :doc:`troubleshooting/index`"
+msgstr ":doc:`xinference_images/troubleshooting` · :doc:`troubleshooting/index`"
+
+#~ msgid "Welcome to Xinference!"
+#~ msgstr "Welcome to Xinference!"
+
+#~ msgid ""
+#~ "Xorbits Inference (Xinference) is an open-"
+#~ "source platform to streamline the operation "
+#~ "and integration of a wide array of AI"
+#~ " models. With Xinference, you're empowered to "
+#~ "run inference using any open-source LLMs, "
+#~ "embedding models, and multimodal models either "
+#~ "in the cloud or on your own premises,"
+#~ " and create robust AI-driven applications."
+#~ msgstr ""
+#~ "Xorbits Inference (Xinference) is an open-"
+#~ "source platform to streamline the operation "
+#~ "and integration of a wide array of AI"
+#~ " models. With Xinference, you're empowered to "
+#~ "run inference using any open-source LLMs, "
+#~ "embedding models, and multimodal models either "
+#~ "in the cloud or on your own premises,"
+#~ " and create robust AI-driven applications."

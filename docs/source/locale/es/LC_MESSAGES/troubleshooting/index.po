@@ -1,0 +1,57 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, Xorbits Inc.
+# This file is distributed under the same license as the Xinference package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-02 16:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/index.rst:3
+msgid "Troubleshooting"
+msgstr "Solución de problemas"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/index.rst:5
+msgid ""
+"Start with :doc:`../xinference_images/troubleshooting` for connectivity, containers, "
+"model loading and logs. The cases below describe particular hardware, backend and "
+"model combinations; their workarounds are not universal version requirements."
+msgstr ""
+"Empiece por  :doc:`../xinference_images/troubleshooting`  para la conectividad, los "
+"contenedores, la carga de modelos y los registros. Los casos siguientes describen "
+"combinaciones concretas de hardware, backend y modelo; sus soluciones alternativas no"
+" son requisitos de versión universales."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/index.rst:8
+msgid "Ascend 310P"
+msgstr "Ascend 310P"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/index.rst:17
+msgid "Ascend 910B"
+msgstr "Ascend 910B"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/index.rst:25
+msgid "NVIDIA / CUDA"
+msgstr "NVIDIA / CUDA"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/index.rst:34
+msgid "General checks"
+msgstr "Comprobaciones generales"

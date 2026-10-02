@@ -1,0 +1,110 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, Xorbits Inc.
+# This file is distributed under the same license as the Xinference package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-02 16:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#: ../../source/troubleshooting/ascend_310p_qwen35.rst:3
+msgid "Ascend 310P: Qwen3.5 context length"
+msgstr "Ascend 310P: Qwen3.5 context length"
+
+#: ../../source/troubleshooting/ascend_310p_qwen35.rst
+msgid "Hardware"
+msgstr "Hardware"
+
+#: ../../source/troubleshooting/ascend_310p_qwen35.rst:7
+msgid "Ascend 310P"
+msgstr "Ascend 310P"
+
+#: ../../source/troubleshooting/ascend_310p_qwen35.rst
+msgid "Backend"
+msgstr "Backend"
+
+#: ../../source/troubleshooting/ascend_310p_qwen35.rst:8
+msgid "vLLM-Ascend"
+msgstr "vLLM-Ascend"
+
+#: ../../source/troubleshooting/ascend_310p_qwen35.rst
+msgid "Model"
+msgstr "Model"
+
+#: ../../source/troubleshooting/ascend_310p_qwen35.rst:9
+msgid "Qwen3.5"
+msgstr "Qwen3.5"
+
+#: ../../source/troubleshooting/ascend_310p_qwen35.rst:12
+msgid "Symptom and recorded configuration"
+msgstr "Symptom and recorded configuration"
+
+#: ../../source/troubleshooting/ascend_310p_qwen35.rst:14
+msgid ""
+"The deployment notes require an explicit context-length setting in addition to the "
+"Qwen3 precision and eager parameters. The exact failure log and backend version were "
+"not recorded."
+msgstr ""
+"The deployment notes require an explicit context-length setting in addition to the "
+"Qwen3 precision and eager parameters. The exact failure log and backend version were "
+"not recorded."
+
+#: ../../source/troubleshooting/ascend_310p_qwen35.rst:16
+msgid "Recorded engine parameters"
+msgstr "Recorded engine parameters"
+
+#: ../../source/troubleshooting/ascend_310p_qwen35.rst
+msgid "Observed"
+msgstr "Observed"
+
+#: ../../source/troubleshooting/ascend_310p_qwen35.rst:25
+msgid "The supplied notes record this parameter combination for Qwen3.5 on 310P."
+msgstr "The supplied notes record this parameter combination for Qwen3.5 on 310P."
+
+#: ../../source/troubleshooting/ascend_310p_qwen35.rst
+msgid "Hypothesis"
+msgstr "Hypothesis"
+
+#: ../../source/troubleshooting/ascend_310p_qwen35.rst:26
+msgid ""
+"The attention operator may require a large uncompressed mask. This explanation is "
+"unconfirmed; it is not evidence of a universal model or hardware limit."
+msgstr ""
+"The attention operator may require a large uncompressed mask. This explanation is "
+"unconfirmed; it is not evidence of a universal model or hardware limit."
+
+#: ../../source/troubleshooting/ascend_310p_qwen35.rst:29
+msgid "Verification and reference"
+msgstr "Verification and reference"
+
+#: ../../source/troubleshooting/ascend_310p_qwen35.rst:31
+msgid ""
+"Check the effective context limit after startup and verify inference within that "
+"limit. Record the exact backend and image versions when reproducing the case."
+msgstr ""
+"Check the effective context limit after startup and verify inference within that "
+"limit. Record the exact backend and image versions when reproducing the case."
+
+#: ../../source/troubleshooting/ascend_310p_qwen35.rst:33
+msgid ""
+"The original notes reference `vLLM-Ascend issue 7394 <https://github.com/vllm-project"
+"/vllm-ascend/issues/7394>`_."
+msgstr ""
+"The original notes reference `vLLM-Ascend issue 7394 <https://github.com/vllm-project"
+"/vllm-ascend/issues/7394>`_."
+
+#: ../../source/troubleshooting/ascend_310p_qwen35.rst:35
+msgid ":doc:`ascend_310p_qwen3`"
+msgstr ":doc:`ascend_310p_qwen3`"

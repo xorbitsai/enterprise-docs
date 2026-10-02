@@ -1,0 +1,8 @@
+{# Xinference Enterprise wordmark for navbar_start; replaces navbar-logo. #}
+{%- set _lang = (language or "en") | replace("_", "-") | lower -%}
+{%- set _docs = {"zh-cn": "文档", "zh-tw": "文件", "ja": "ドキュメント", "ko": "문서", "de": "Dokumentation", "fr": "Documentation", "es": "Documentación", "it": "Documentazione", "pt-br": "Documentação"}.get(_lang, "Docs") -%}
+<a class="navbar-brand logo enterprise-brand" href="{{ pathto(root_doc) }}">
+  <span class="enterprise-brand__mark">Xinference</span>
+  <span class="enterprise-brand__edition">Enterprise</span>
+  <span class="enterprise-brand__docs">{{ _docs }}</span>
+</a>

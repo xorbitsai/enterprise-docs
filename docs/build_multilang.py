@@ -25,7 +25,7 @@ def build_language(slug, output_dir, base_path, doctrees_dir):
     env.update(SPHINX_LANGUAGE=sphinx_locale(slug), DOCS_BASE_PATH=base_path)
     # Each language needs its own Sphinx environment and search index.
     run_command([
-        sys.executable, "-m", "sphinx", "-b", "html", "-E",
+        sys.executable, "-m", "sphinx", "-b", "html", "-E", "-W", "--keep-going",
         "-d", str(doctrees_dir / slug),
         "-D", f"language={sphinx_locale(slug)}",
         "source", str(output_dir),
@@ -62,7 +62,7 @@ def main(argv=None):
             or output_dir.is_relative_to(DOCS_DIR / "source")):
         parser.error("output directory must not contain documentation sources")
     try:
-        run_command([sys.executable, "-m", "sphinx", "-b", "gettext", "-E",
+        run_command([sys.executable, "-m", "sphinx", "-b", "gettext", "-E", "-W", "--keep-going",
                      "source", "build/locale"])
         locales = [sphinx_locale(item["version"]) for item in LANGUAGES]
         run_command([sys.executable, "-m", "sphinx_intl", "update",

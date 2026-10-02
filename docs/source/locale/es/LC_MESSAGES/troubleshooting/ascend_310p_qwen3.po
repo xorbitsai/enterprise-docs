@@ -1,0 +1,126 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, Xorbits Inc.
+# This file is distributed under the same license as the Xinference package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-02 16:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"Language-Team: es <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_310p_qwen3.rst:3
+msgid "Ascend 310P: Qwen3 precision and eager execution"
+msgstr "Ascend 310P: precisión de Qwen3 y ejecución eager"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_310p_qwen3.rst
+msgid "Hardware"
+msgstr "Hardware"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_310p_qwen3.rst:7
+msgid "Ascend 310P"
+msgstr "Ascend 310P"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_310p_qwen3.rst
+msgid "Backend"
+msgstr "Backend"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_310p_qwen3.rst:8
+msgid "vLLM-Ascend"
+msgstr "vLLM-Ascend"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_310p_qwen3.rst
+msgid "Model"
+msgstr "Modelo"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_310p_qwen3.rst:9
+msgid "Qwen3"
+msgstr "Qwen3"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_310p_qwen3.rst:13
+msgid ""
+"Xinference, driver and backend versions were not supplied in the original case. This "
+"workaround belongs to the recorded hardware and model combination."
+msgstr ""
+"En el caso original no se proporcionaron las versiones de Xinference, del controlador"
+" ni del backend. Esta solución alternativa corresponde a la combinación de hardware y"
+" modelo documentada."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_310p_qwen3.rst:16
+msgid "Symptom"
+msgstr "Síntoma"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_310p_qwen3.rst:18
+msgid "Deployment or inference can fail with default parameters on this combination."
+msgstr ""
+"El despliegue o la inferencia pueden fallar con los parámetros predeterminados en "
+"esta combinación."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_310p_qwen3.rst:21
+msgid "Recorded workaround"
+msgstr "Solución alternativa documentada"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_310p_qwen3.rst:23
+msgid "Explicitly configure half precision and eager execution in the engine parameters."
+msgstr ""
+"Configure explícitamente la media precisión y la ejecución eager en los parámetros "
+"del motor."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_310p_qwen3.rst:25
+msgid "Engine parameters"
+msgstr "Parámetros del motor"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_310p_qwen3.rst:32
+msgid "Verification"
+msgstr "Verificación"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_310p_qwen3.rst:34
+msgid ""
+"Confirm the effective engine parameters in model logs, then send a fixed prompt and "
+"check that inference completes with coherent output. The record does not isolate "
+"which parameter is decisive, so preserve both when reproducing this configuration."
+msgstr ""
+"Confirme los parámetros efectivos del motor en los registros del modelo y, a "
+"continuación, envíe un prompt fijo y compruebe que la inferencia se completa con una "
+"salida coherente. El informe no aísla qué parámetro es decisivo, así que conserve "
+"ambos al reproducir esta configuración."
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_310p_qwen3.rst:37
+msgid "Related guides"
+msgstr "Guías relacionadas"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_310p_qwen3.rst:39
+msgid ":doc:`ascend_310p_qwen35`"
+msgstr ":doc:`ascend_310p_qwen35`"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/troubleshooting/ascend_310p_qwen3.rst:40
+msgid ":doc:`../xinference_images/mindie`"
+msgstr ":doc:`../xinference_images/mindie`"

@@ -1,0 +1,32 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2023, Xorbits Inc.
+# This file is distributed under the same license as the Xinference package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-02 16:45+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ko\n"
+"Language-Team: ko <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/index.rst:3
+msgid "Clusters & availability"
+msgstr "클러스터 및 고가용성"
+
+#. Machine-translated technical prose; navigation reviewed and references preserved.
+#: ../../source/cluster/index.rst:5
+msgid ""
+"Connect nodes, deploy a highly available control plane or run Xinference Enterprise "
+"on Kubernetes."
+msgstr "노드를 연결하거나, 고가용성 컨트롤 플레인을 배포하거나, Kubernetes에서 Xinference Enterprise를 실행합니다."
