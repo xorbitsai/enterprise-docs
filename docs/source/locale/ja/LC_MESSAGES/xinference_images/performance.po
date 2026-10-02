@@ -1,0 +1,206 @@
+# Japanese translations for Xinference.
+# Copyright (C) 2026 Xorbits Inc.
+# This file is distributed under the same license as the Xinference project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-10-02 15:09+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/performance.rst:5
+msgid "性能测试"
+msgstr "パフォーマンステスト"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/performance.rst:7
+msgid "本文档介绍如何使用Xinference的性能测试工具。"
+msgstr "このドキュメントでは、Xinference のパフォーマンス テスト ツールの使用方法について説明します。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/performance.rst:11
+msgid "目录"
+msgstr "ディレクトリ"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/performance.rst:14
+msgid "测试工具概述"
+msgstr "テストツールの概要"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/performance.rst:16
+msgid "使用 https://github.com/xorbitsai/inference/tree/main/benchmark 提供的测试集。"
+msgstr "  https://github.com/xorbitsai/inference/tree/main/benchmark   が提供するテスト セットを使用してください。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/performance.rst:18
+msgid "测试工具包括："
+msgstr "テストツールには次のものが含まれます。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/performance.rst:20
+msgid "``benchmark_serving``：测试整体服务指标。"
+msgstr "``benchmark_serving``\\ : 全体的なサービス インジケーターをテストします。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/performance.rst:21
+msgid "``benchmark_latency``：测试延迟指标。"
+msgstr "``benchmark_latency``\\ : 遅延インジケーターをテストします。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/performance.rst:22
+msgid "``benchmark_long``：测试长上下文的推理效果。"
+msgstr "``benchmark_long``\\ : 長いコンテキストの推論効果をテストします。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/performance.rst:25
+msgid "测试数据集"
+msgstr "テストデータセット"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/performance.rst:27
+msgid ""
+"对于 serving 和 latency 的测试，需要使用数据集。默认使用的数据集在 https://hf-"
+"mirror.com/datasets/anon8231489123/ShareGPT_Vicuna_unfiltered/tree/main ，下载 "
+"``ShareGPT_V3_unfiltered_cleaned_split.json``"
+msgstr ""
+"サービス提供テストとレイテンシー テストには、データ セットが必要です。デフォルトで使用されるデータセットは   https://hf-"
+"mirror.com/datasets/anon8231489123/ShareGPT_Vicuna_unfiltered/tree/main   にあります。\\ "
+"``ShareGPT_V3_unfiltered_cleaned_split.json`` をダウンロードしてください"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/performance.rst:30
+msgid "运行测试集"
+msgstr "テストセットを実行する"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/performance.rst:33
+msgid "基本命令"
+msgstr "基本的なコマンド"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/performance.rst:43
+msgid "参数说明"
+msgstr "パラメータの説明"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/performance.rst:45
+msgid "``--dataset`` 为刚刚下载的数据集路径。"
+msgstr "``--dataset`` は、ダウンロードしたばかりのデータ セットのパスです。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/performance.rst:46
+msgid "``--tokenizer`` 指定为模型的下载路径。"
+msgstr "モデルのダウンロード パスとして ``--tokenizer`` が指定されています。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/performance.rst:47
+msgid "``--model-uid`` 指定为模型的 ID，在运行的模型列表里可以找到。"
+msgstr "``--model-uid`` がモデル ID として指定されます。これは、実行中のモデルのリストで見つけることができます。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/performance.rst:48
+msgid "``--num-prompt`` 为测试的 prompt 个数，默认 100。"
+msgstr "``--num-prompt`` はテスト プロンプトの数で、デフォルトは 100 です。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/performance.rst:49
+msgid "``--concurrency`` 同时并发的请求，默认100。"
+msgstr "``--concurrency`` 同時リクエスト、デフォルトは 100。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/performance.rst:52
+msgid "结果说明"
+msgstr "結果の説明"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/performance.rst:55
+msgid "测试结果示例"
+msgstr "テスト結果例"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/performance.rst:74
+msgid "指标含义"
+msgstr "インジケーターの意味"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/performance.rst:76
+msgid "``Successful requests``：成功的请求数。"
+msgstr "``Successful requests``\\ : 成功したリクエストの数。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/performance.rst:77
+msgid "``Benchmark duration (s)``：Benchmark 时长。"
+msgstr "``Benchmark duration (s)``\\ : ベンチマーク期間。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/performance.rst:78
+msgid "``Total input tokens``：总输入 token 数。"
+msgstr "``Total input tokens``\\ : 入力トークンの総数。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/performance.rst:79
+msgid "``Total generated tokens``：总生成 token 数。"
+msgstr "``Total generated tokens``\\ : 生成されたトークンの総数。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/performance.rst:80
+msgid "``Request throughput (req/s)``：请求吞吐（每秒处理的请求）。"
+msgstr "``Request throughput (req/s)``\\ : リクエストのスループット (1 秒あたりに処理されるリクエストの数)。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/performance.rst:81
+msgid "``Input token throughput (tok/s)``：输入 token 吞吐（每秒处理的输入 token）。"
+msgstr "``Input token throughput (tok/s)``\\ : 入力トークンのスループット (1 秒あたりに処理される入力トークン)。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/performance.rst:82
+msgid "``Output token throughput (tok/s)``：输出的 token 吞吐（每秒生成的 token）。"
+msgstr "``Output token throughput (tok/s)``\\ : 出力されたトークンのスループット (1 秒あたりに生成されたトークン)。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/performance.rst:83
+msgid "``Mean latency (s)``：平均延迟。"
+msgstr "``Mean latency (s)``\\ : 平均レイテンシ。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/performance.rst:84
+msgid "``Mean latency per token (s)``：平均每 token 延迟。"
+msgstr "``Mean latency per token (s)``\\ : トークンごとの平均遅延。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/performance.rst:85
+msgid "``Mean latency per output token (s)``：平均每输出 token 延迟。"
+msgstr "``Mean latency per output token (s)``\\ : 出力トークンごとの平均レイテンシ。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/performance.rst:88
+msgid "相关文档"
+msgstr "関連資料"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/performance.rst:90
+msgid ":doc:`nvidia` - Nvidia系列镜像使用"
+msgstr ":doc:`nvidia` - Nvidiaシリーズミラー用"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/performance.rst:91
+msgid ":doc:`mindie` - MindIE系列镜像使用"
+msgstr ":doc:`mindie` - MindIEシリーズミラー用"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/performance.rst:92
+msgid ":doc:`hygon` - 海光系列镜像使用"
+msgstr ":doc:`hygon` - Haiguang シリーズミラー使用"

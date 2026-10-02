@@ -11,6 +11,11 @@
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 import os
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from i18n import docs_base_path, language_slug, sphinx_locale, switcher_config
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
@@ -47,14 +52,15 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = []
+exclude_patterns = ['_build/**']
 
 # i18n
 locale_dirs = ["locale/"]  # path is example but recommended.
 gettext_compact = False  # optional
 
 # Language settings
-language = os.environ.get('SPHINX_LANGUAGE', 'zh_CN')  # Default to Chinese
+language = sphinx_locale(language_slug(os.environ.get(
+    'SPHINX_LANGUAGE', os.environ.get('READTHEDOCS_LANGUAGE', 'en'))))
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -71,10 +77,8 @@ html_title = "Xinference"
 html_static_path = ['_static']
 
 # Define the version for our local documentation
-version_match = os.environ.get("READTHEDOCS_LANGUAGE")
-json_url = "_static/switcher.json"
-if not version_match:
-    version_match = 'zh-cn'  # Default to Chinese for local documentation
+version_match = language_slug(language)
+json_url = docs_base_path() + "_static/switcher.json"
 
 html_theme_options = {
     "show_toc_level": 2,
@@ -97,34 +101,46 @@ html_theme_options = {
 }
 
 
-if version_match != 'zh-cn':
-    html_theme_options['icon_links'].extend([{
-        "name": "Discord",
-        "url": "https://discord.gg/Xw9tszSkr5",
-        "icon": "fa-brands fa-discord",
-        "type": "fontawesome",
-    },
-    {
-        "name": "Twitter",
-        "url": "https://twitter.com/xorbitsio",
-        "icon": "fa-brands fa-twitter",
-        "type": "fontawesome",
-    }])
-else:
-    html_theme_options['icon_links'].extend([{
-        "name": "WeChat",
-        "url": "https://xorbits.cn/assets/images/wechat_work_qr.png",
-        "icon": "fa-brands fa-weixin",
-        "type": "fontawesome",
-    },
-    {
-        "name": "Zhihu",
-        "url": "https://zhihu.com/org/xorbits",
-        "icon": "fa-brands fa-zhihu",
-        "type": "fontawesome",
-    }])
-    html_theme_options["external_links"] = [
-        {"name": "产品官网", "url": "https://xorbits.cn"},
-    ]
-
 html_favicon = "_static/favicon.svg"
+
+
+def apply_language_options(app, config):
+    # Honor `sphinx-build -D language=...` as well as environment selection.
+    slug = language_slug(config.language or 'en')
+    options = config.html_theme_options
+    options['switcher']['version_match'] = slug
+    options['header_dropdown_text'] = {
+        'en': 'More', 'zh-cn': '更多', 'zh-tw': '更多', 'ja': 'その他',
+        'ko': '더보기', 'de': 'Mehr', 'fr': 'Plus', 'es': 'Más',
+        'it': 'Altro', 'pt-br': 'Mais',
+    }[slug]
+    if slug in ('zh-cn', 'zh-tw'):
+        options['icon_links'].extend([
+            {'name': 'WeChat', 'url': 'https://xorbits.cn/assets/images/wechat_work_qr.png',
+             'icon': 'fa-brands fa-weixin', 'type': 'fontawesome'},
+            {'name': 'Zhihu', 'url': 'https://zhihu.com/org/xorbits',
+             'icon': 'fa-brands fa-zhihu', 'type': 'fontawesome'},
+        ])
+        options['external_links'] = [
+            {'name': '产品官网' if slug == 'zh-cn' else '產品官網', 'url': 'https://xorbits.cn'},
+        ]
+    else:
+        options['icon_links'].extend([
+            {'name': 'Discord', 'url': 'https://discord.gg/Xw9tszSkr5',
+             'icon': 'fa-brands fa-discord', 'type': 'fontawesome'},
+            {'name': 'Twitter', 'url': 'https://twitter.com/xorbitsio',
+             'icon': 'fa-brands fa-twitter', 'type': 'fontawesome'},
+        ])
+
+
+def setup(app):
+    app.connect('config-inited', apply_language_options)
+    app.connect('build-finished', write_switcher_config)
+
+
+def write_switcher_config(app, exception):
+    if exception is None and app.builder.format == 'html':
+        import json
+        path = Path(app.outdir) / '_static/switcher.json'
+        path.write_text(json.dumps(switcher_config(), ensure_ascii=False, indent=2) + '\n',
+                        encoding='utf-8')

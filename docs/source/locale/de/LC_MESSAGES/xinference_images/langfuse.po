@@ -1,0 +1,945 @@
+# German translations for Xinference.
+# Copyright (C) 2026 Xorbits Inc.
+# This file is distributed under the same license as the Xinference project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-10-02 15:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: de\n"
+"Language-Team: de <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:5
+msgid "企业版链路日志使用"
+msgstr "Nutzung des Linkprotokolls der Enterprise-Version"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:7
+msgid "本文档介绍如何使用Xinference企业版的链路日志功能，基于Langfuse服务实现调用链路追踪和监控。"
+msgstr ""
+"In diesem Dokument wird beschrieben, wie Sie die Linkprotokollfunktion von Xinference"
+" Enterprise Edition verwenden, um die Anruflinkverfolgung und -überwachung basierend "
+"auf dem Langfuse-Dienst zu implementieren."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:11
+msgid "目录"
+msgstr "Verzeichnis"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:14
+msgid "前置要求"
+msgstr "Voraussetzungen"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:17
+msgid "系统要求"
+msgstr "Systemanforderungen"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:19
+msgid "在部署Langfuse服务之前，请确保："
+msgstr "Stellen Sie vor der Bereitstellung des Langfuse-Dienstes Folgendes sicher:"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:21
+msgid "**Docker**：Docker 20.10+ 和 Docker Compose v2+"
+msgstr "**Docker**\\ : Docker 20.10+ und Docker Compose v2+"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:22
+msgid "**内存**：建议至少4GB可用内存"
+msgstr ""
+"**Speicher**\\ : Es wird empfohlen, mindestens 4 GB verfügbaren Speicher "
+"bereitzustellen"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:23
+msgid "**存储**：至少10GB可用磁盘空间"
+msgstr "**Speicher**\\ : Mindestens 10 GB verfügbarer Festplattenspeicher"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:24
+msgid "**网络**：确保相关端口未被占用"
+msgstr "**Netzwerk**\\ : Stellen Sie sicher, dass die entsprechenden Ports nicht belegt sind"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:27
+msgid "端口要求"
+msgstr "Hafenanforderungen"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:29
+msgid "Langfuse服务需要以下端口："
+msgstr "Der Langfuse-Dienst erfordert die folgenden Ports:"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:31
+msgid "**3000**：Langfuse Web界面"
+msgstr "**3000**\\ : Langfuse Webschnittstelle"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:32
+msgid "**5432**：PostgreSQL数据库"
+msgstr "**5432**\\ : PostgreSQL-Datenbank"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:33
+msgid "**6379**：Redis缓存"
+msgstr "**6379**\\ : Redis-Cache"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:34
+msgid "**8123/9000**：ClickHouse数据库"
+msgstr "**8123/9000**\\ : ClickHouse-Datenbank"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:35
+msgid "**9090/9091**：MinIO对象存储"
+msgstr "**9090/9091**\\ : MinIO-Objektspeicher"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:43
+msgid "概览"
+msgstr "Übersicht"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:45
+msgid "链路以及模型使用情况等相关的功能依赖于Langfuse服务，因此在启动Xinference后，还需要启动Langfuse服务。"
+msgstr ""
+"Zugehörige Funktionen wie Links und Modellnutzung hängen vom Langfuse-Dienst ab. "
+"Daher müssen Sie nach dem Start von Xinference auch den Langfuse-Dienst starten."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:47
+msgid "Langfuse是一个开源的LLM工程平台，提供："
+msgstr "Langfuse ist eine Open-Source-LLM-Engineering-Plattform, die Folgendes bietet:"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:49
+msgid "**链路追踪**：完整的模型调用链路记录"
+msgstr "**Link-Tracking**\\ : Vollständiger Modell-Call-Link-Datensatz"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:50
+msgid "**性能监控**：延迟、Token使用量等指标统计"
+msgstr ""
+"**-Leistungsüberwachung**\\ : Statistiken zu Latenz, Token-Nutzung und anderen "
+"Indikatoren"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:51
+msgid "**调用分析**：模型使用情况和趋势分析"
+msgstr "**Anrufanalyse**\\ : Modellnutzung und Trendanalyse"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:52
+msgid "**调试支持**：详细的输入输出日志"
+msgstr "**Debugging-Unterstützung**\\ : detaillierte Eingabe- und Ausgabeprotokolle"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:55
+msgid "服务启动"
+msgstr "Dienststart"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:57
+msgid ""
+"使用Docker Compose启动Langfuse服务。将以下代码保存为 ``docker-compose.yaml`` "
+"文件，xinference即可自动接入Langfuse服务。"
+msgstr ""
+"Verwenden Sie Docker Compose, um den Langfuse-Dienst zu starten. Speichern Sie den "
+"folgenden Code als ``docker-compose.yaml``\\ -Datei und xinference stellt automatisch"
+" eine Verbindung zum Langfuse-Dienst her."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:60
+msgid "**安全配置重要提醒**："
+msgstr "**Wichtiger Hinweis zur Sicherheitskonfiguration**\\ :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:62
+msgid "配置文件中包含多个需要修改的安全参数，标记为 ``# CHANGEME``："
+msgstr ""
+"Die Konfigurationsdatei enthält mehrere Sicherheitsparameter, die geändert werden "
+"müssen und mit ``# CHANGEME`` gekennzeichnet sind:"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:64
+msgid "数据库密码"
+msgstr "Datenbankpasswort"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:65
+msgid "Redis认证密码"
+msgstr "Redis-Authentifizierungskennwort"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:66
+msgid "MinIO访问密钥"
+msgstr "MinIO-Zugriffsschlüssel"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:67
+msgid "ClickHouse密码"
+msgstr "ClickHouse-Passwort"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:68
+msgid "加密密钥等"
+msgstr "Verschlüsselungsschlüssel usw."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:70
+msgid "**生产环境部署前务必修改这些默认值！**"
+msgstr ""
+"**Stellen Sie sicher, dass Sie diese Standardwerte vor der Bereitstellung in der "
+"Produktionsumgebung ändern!**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:73
+msgid "Docker Compose配置"
+msgstr "Docker Konfiguration erstellen"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:246
+msgid "启动服务"
+msgstr "Dienst starten"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:260
+msgid "验证部署"
+msgstr "Überprüfen Sie die Bereitstellung"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:262
+msgid "**检查服务状态**："
+msgstr "**Servicestatus prüfen**\\ :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:274
+msgid "**访问Web界面**："
+msgstr "**Greifen Sie auf die Weboberfläche zu**\\ :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:276
+msgid "**打开浏览器**：访问 ``http://localhost:3000``"
+msgstr "**Browser öffnen**\\ : Besuchen Sie ``http://localhost:3000``"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:277
+msgid "**首次登录**：使用配置的默认凭据"
+msgstr "**Erstmalige Anmeldung**\\ : Verwenden Sie konfigurierte Standardanmeldeinformationen"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:279
+msgid "邮箱：``administrator@orbitai.com``"
+msgstr "E-Mail: ``administrator@orbitai.com``"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:280
+msgid "密码：``administrator``"
+msgstr "Passwort: ``administrator``"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:282
+msgid "**验证功能**："
+msgstr "**Verifizierungsfunktion**\\ :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:284
+msgid "确认可以正常登录"
+msgstr "Bestätigen Sie, dass Sie sich normal anmelden können"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:285
+msgid "检查项目配置是否正确"
+msgstr "Überprüfen Sie, ob die Projektkonfiguration korrekt ist"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:286
+msgid "验证数据库连接状态"
+msgstr "Überprüfen Sie den Datenbankverbindungsstatus"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:289
+msgid "服务完全启动可能需要1-2分钟，请耐心等待所有容器状态变为健康。"
+msgstr ""
+"Es kann 1–2 Minuten dauern, bis der Dienst vollständig gestartet ist. Bitte haben Sie"
+" etwas Geduld und warten Sie, bis der Status aller Container auf „Gesund“ wechselt."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:292
+msgid "设置Langfuse"
+msgstr "SetupLangfuse"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:295
+msgid "配置连接"
+msgstr "Verbindung konfigurieren"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:297
+msgid "在Xinference WebUI中配置Langfuse连接参数："
+msgstr "Konfigurieren Sie Langfuse-Verbindungsparameter in Xinference WebUI:"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:300
+msgid "配置步骤"
+msgstr "Konfigurationsschritte"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:302
+msgid "**访问Xinference WebUI**：打开浏览器访问 ``http://<xinference-ip>:8000``"
+msgstr ""
+"**Besuchen Sie Xinference WebUI**\\ : Öffnen Sie den Browser, um ``http"
+"://<xinference-ip>:8000`` zu besuchen"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:303
+msgid "**进入设置页面**：点击右上角设置按钮"
+msgstr ""
+"**Rufen Sie die Einstellungsseite auf.**\\ : Klicken Sie auf die Schaltfläche "
+"„Einstellungen“ in der oberen rechten Ecke"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:304
+msgid "**选择链路配置**：选择\"链路\"标签页"
+msgstr "**Linkkonfiguration auswählen**\\ : Wählen Sie die Registerkarte „Link“."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:305
+msgid "**配置连接参数**：填写Langfuse服务信息"
+msgstr ""
+"**Verbindungsparameter konfigurieren**\\ : Geben Sie die Langfuse-"
+"Serviceinformationen ein"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:308
+msgid "配置参数"
+msgstr "Konfigurationsparameter"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:310
+msgid "**同机部署（默认配置）**："
+msgstr "**Bereitstellung auf demselben Computer (Standardkonfiguration)**\\ :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:312
+msgid "**主机地址**：``http://localhost:3000``"
+msgstr "**Hostadresse**\\ : ``http://localhost:3000``"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:313
+msgid "**项目公钥**：``pk-lf-8a79d84e-5537-47b7-86bb-ba36257684f2``"
+msgstr ""
+"Öffentlicher Schlüssel des **-Projekts**\\ : ``pk-lf-8a79d84e-5537-47b7-86bb-"
+"ba36257684f2``"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:314
+msgid "**项目私钥**：``sk-lf-d1d41a0b-672e-49c9-aece-f9a2b40828de``"
+msgstr "**privater Projektschlüssel**\\ : ``sk-lf-d1d41a0b-672e-49c9-aece-f9a2b40828de``"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:316
+msgid "**跨机部署配置**："
+msgstr "**maschinenübergreifende Bereitstellungskonfiguration**\\ :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:318
+msgid "如果Langfuse与Xinference不在同一台机器："
+msgstr "Wenn sich Langfuse und Xinference nicht auf demselben Computer befinden:"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:320
+msgid "**主机地址**：``http://<langfuse-server-ip>:3000``"
+msgstr "**Hostadresse**\\ : ``http://<langfuse-server-ip>:3000``"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:321
+msgid "**项目公钥**：保持不变或使用自定义项目的公钥"
+msgstr ""
+"Öffentlicher Schlüssel des **-Projekts**\\ : Lassen Sie ihn unverändert oder "
+"verwenden Sie den öffentlichen Schlüssel eines benutzerdefinierten Projekts"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:322
+msgid "**项目私钥**：保持不变或使用自定义项目的私钥"
+msgstr ""
+"Privater Schlüssel des **-Projekts**\\ : Lassen Sie ihn unverändert oder verwenden "
+"Sie den privaten Schlüssel eines benutzerdefinierten Projekts"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:325
+msgid "**配置注意事项**："
+msgstr "**Konfigurationshinweise**\\ :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:327
+msgid "确保Xinference服务可以访问Langfuse服务地址"
+msgstr ""
+"Stellen Sie sicher, dass der Xinference-Dienst auf die Langfuse-Dienstadresse "
+"zugreifen kann"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:328
+msgid "如果修改了Docker Compose中的端口，需要相应调整主机地址"
+msgstr ""
+"Wenn der Port in Docker Compose geändert wird, muss die Hostadresse entsprechend "
+"angepasst werden"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:329
+msgid "生产环境建议创建专用的项目和密钥对"
+msgstr ""
+"Für Produktionsumgebungen wird empfohlen, ein dediziertes Projekt und ein "
+"Schlüsselpaar zu erstellen"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:332
+msgid "测试连接"
+msgstr "Testverbindung"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:334
+msgid "配置完成后，可以通过以下方式验证连接："
+msgstr "Nach der Konfiguration kann die Verbindung überprüft werden über:"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:336
+msgid "**保存配置**：点击保存按钮"
+msgstr "**Konfiguration speichern**\\ : Klicken Sie auf die Schaltfläche Speichern"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:337
+msgid "**执行模型调用**：进行一次模型推理测试"
+msgstr "**führt einen Modellaufruf aus.**\\ : führt einen Modellinferenztest durch"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:338
+msgid "**检查Langfuse**：在Langfuse界面查看是否有新的调用记录"
+msgstr ""
+"**Langfuse prüfen**\\ : Überprüfen Sie, ob in der Langfuse-Schnittstelle neue "
+"Anrufdatensätze vorhanden sind"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:341
+msgid "模型调用监控"
+msgstr "Überwachung von Modellaufrufen"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:344
+msgid "概览页面"
+msgstr "Übersichtsseite"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:346
+msgid "模型调用监控页面提供以下功能："
+msgstr "Die Seite zur Modellaufrufüberwachung bietet folgende Funktionen:"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:349
+msgid "页面已实现轮询逻辑，无需手动刷新"
+msgstr ""
+"Die Seite verfügt über eine implementierte Abfragelogik und muss nicht manuell "
+"aktualisiert werden."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:350
+msgid "模型调用显示的是今日各个模型调用次数"
+msgstr "Modellaufrufe zeigen die Anzahl der Aufrufe für jedes Modell heute an."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:351
+msgid "tokens每日总数变化为最近一周，如需查看往日数据，请移步至 监控运维->模型调用"
+msgstr ""
+"Die tägliche Gesamtzahl der Token ändert sich zur letzten Woche. Wenn Sie frühere "
+"Daten anzeigen müssen, gehen Sie bitte zu „Überwachung von Betrieb und Wartung“ -> "
+"„Modellaufruf“."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:354
+msgid "主要指标"
+msgstr "Hauptindikatoren"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:357
+msgid "右上角支持日期筛选"
+msgstr "Die obere rechte Ecke unterstützt die Datumsfilterung"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:358
+msgid "提供指标：大模型调用次数总数及各个模型调用次数、输入/输出tokens总数及各个模型输入/输出tokens总数、大模型每日调用次数变化、tokens每日总数变化"
+msgstr ""
+"Stellt Indikatoren bereit: die Gesamtzahl der Aufrufe an große Modelle und die Anzahl"
+" der Aufrufe an jedes Modell, die Gesamtzahl der Eingabe-/Ausgabe-Tokens und die "
+"Gesamtzahl der Eingabe-/Ausgabe-Tokens an jedes Modell, Änderungen in der täglichen "
+"Anzahl von Aufrufen an große Modelle und Änderungen in der täglichen Gesamtzahl von "
+"Tokens."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:360
+msgid "监控指标包括："
+msgstr "Zu den Überwachungsindikatoren gehören:"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:362
+msgid "**调用统计**"
+msgstr "**Anrufstatistik**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:363
+msgid "大模型调用次数总数"
+msgstr "Gesamtzahl der großen Modellaufrufe"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:364
+msgid "各个模型调用次数分布"
+msgstr "Verteilung der Anrufzeiten für jedes Modell"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:365
+msgid "大模型每日调用次数变化趋势"
+msgstr "Änderungstrend der täglichen Anrufe großer Models"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:367
+msgid "**Token统计**"
+msgstr "**Token Statistik**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:368
+msgid "输入tokens总数"
+msgstr "Geben Sie die Gesamtzahl der Token ein"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:369
+msgid "输出tokens总数"
+msgstr "Geben Sie die Gesamtzahl der Token aus"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:370
+msgid "各个模型输入/输出tokens分布"
+msgstr "Verteilung der Eingabe-/Ausgabe-Tokens jedes Modells"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:371
+msgid "tokens每日总数变化趋势"
+msgstr "Trend der täglichen Gesamtzahl der Token ändern"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:374
+msgid "链路状态"
+msgstr "Linkstatus"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:376
+msgid "链路追踪功能提供详细的调用链路信息："
+msgstr "Die Link-Tracking-Funktion liefert detaillierte Aufruf-Link-Informationen:"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:379
+msgid "数据来源：运行实例详情 / 批处理"
+msgstr "Datenquelle: Details zur laufenden Instanz/Stapelverarbeitung"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:380
+msgid "链路列表：支持日期/User筛选，查看某链路详情"
+msgstr "Linkliste: Unterstützt Datums-/Benutzerfilterung, um Details eines Links anzuzeigen"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:382
+msgid "功能特性："
+msgstr "Eigenschaften:"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:384
+msgid "**日期筛选**：按时间范围查看链路记录"
+msgstr "**Datumsfilter**\\ : Linkdatensätze nach Zeitbereich anzeigen"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:385
+msgid "**用户筛选**：按用户维度分析调用情况"
+msgstr "**Benutzerfilterung**\\ : Anrufstatus nach Benutzerdimension analysieren"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:386
+msgid "**详情查看**：点击链路可查看完整调用详情"
+msgstr ""
+"**Details anzeigen**\\ : Klicken Sie auf den Link, um die vollständigen Anrufdetails "
+"anzuzeigen"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:389
+msgid "链路详情"
+msgstr "Linkdetails"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:391
+msgid "链路详情页面提供两种展示格式："
+msgstr "Die Linkdetailseite bietet zwei Anzeigeformate:"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:394
+msgid "展示格式"
+msgstr "Anzeigeformat"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:396
+msgid "**Tree格式**"
+msgstr "**Baumformat**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:397
+msgid "以树状结构展示调用链路层次关系"
+msgstr "Zeigen Sie die hierarchische Beziehung der Anrufverknüpfungen in einer Baumstruktur an"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:399
+msgid "**Timeline格式**"
+msgstr "**Zeitleistenformat**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:400
+msgid "以时间线形式展示调用的时序关系"
+msgstr "Zeigen Sie die zeitliche Beziehung von Anrufen in Form einer Zeitleiste an"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:403
+msgid "详情信息"
+msgstr "Detaillierte Informationen"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:406
+msgid "两种展示方式Tree/Timeline"
+msgstr "Zwei Anzeigemethoden: Baum/Zeitleiste"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:407
+msgid "详情数据：Latency，tokens输入/输出/总计，模型实例名称，对话的输入/输出，Metadata等"
+msgstr ""
+"Detaillierte Daten: Latenz, Token-Eingabe/-Ausgabe/Gesamtzahl, Name der "
+"Modellinstanz, Dialog-Eingabe/-Ausgabe, Metadaten usw."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:408
+msgid "支持Pretty/JSON格式转换"
+msgstr "Unterstützt die Konvertierung des Pretty/JSON-Formats"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:410
+msgid "每个链路详情包含："
+msgstr "Zu den einzelnen Linkdetails gehören:"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:412
+msgid "**性能指标**"
+msgstr "**Leistungsindikatoren**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:413
+msgid "**Latency**：调用延迟时间"
+msgstr "**Latenz**\\ : Anrufverzögerungszeit"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:414
+msgid "**Tokens**：输入/输出/总计token数量"
+msgstr "**Tokens**\\ : Eingabe/Ausgabe/Gesamtzahl der Token"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:416
+msgid "**调用信息**"
+msgstr "**Anrufinformationen**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:417
+msgid "**模型实例名称**：使用的具体模型实例"
+msgstr "**Modellinstanzname**\\ : spezifische Modellinstanz verwendet"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:418
+msgid "**输入内容**：用户的输入prompt"
+msgstr "**Eingabeinhalt**\\ : Eingabeaufforderung des Benutzers"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:419
+msgid "**输出内容**：模型的响应结果"
+msgstr "**Ausgabeinhalt**\\ : Modellantwortergebnis"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:421
+msgid "**元数据**"
+msgstr "**Metadaten**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:422
+msgid "**Metadata**：调用的附加信息"
+msgstr "**Metadaten**\\ : Zusätzliche Informationen zum Anruf"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:423
+msgid "**时间戳**：精确的调用时间"
+msgstr "**Zeitstempel**\\ : genaue Anrufzeit"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:424
+msgid "**用户信息**：调用者标识"
+msgstr "**Benutzerinformationen**\\ : Anrufer-ID"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:427
+msgid "数据格式"
+msgstr "Datenformat"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:429
+msgid "支持两种数据展示格式："
+msgstr "Es werden zwei Datenanzeigeformate unterstützt:"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:431
+msgid "**Pretty格式**：格式化的易读显示"
+msgstr "**Hübsches Format**\\ : Formatiertes, gut lesbares Display"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:432
+msgid "**JSON格式**：原始的JSON数据结构"
+msgstr "**JSON-Format**\\ : Ursprüngliche JSON-Datenstruktur"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:435
+msgid "使用场景"
+msgstr "Nutzungsszenarien"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:438
+msgid "性能优化"
+msgstr "Leistungsoptimierung"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:440
+msgid "通过延迟统计识别性能瓶颈"
+msgstr "Identifizieren Sie Leistungsengpässe mithilfe von Latenzstatistiken"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:441
+msgid "分析token使用效率"
+msgstr "Analysieren Sie die Effizienz der Token-Nutzung"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:442
+msgid "监控模型响应时间趋势"
+msgstr "Überwachen Sie Trends bei der Modellantwortzeit"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:445
+msgid "调试分析"
+msgstr "Debugging-Analyse"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:447
+msgid "查看完整的输入输出内容"
+msgstr "Vollständigen Eingabe- und Ausgabeinhalt anzeigen"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:448
+msgid "分析调用链路中的异常"
+msgstr "Analysieren Sie Ausnahmen im aufrufenden Link"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:449
+msgid "追踪特定用户的使用模式"
+msgstr "Verfolgen Sie spezifische Benutzernutzungsmuster"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:452
+msgid "成本管理"
+msgstr "Kostenmanagement"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:454
+msgid "统计各模型的token消耗"
+msgstr "Statistik des Tokenverbrauchs jedes Modells"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:455
+msgid "分析成本分布和趋势"
+msgstr "Analysieren Sie Kostenverteilung und -trends"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:456
+msgid "优化模型选择策略"
+msgstr "Optimieren Sie die Modellauswahlstrategie"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:459
+msgid "故障排除"
+msgstr "Fehlerbehebung"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:462
+msgid "常见问题"
+msgstr "FAQ"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:464
+msgid "**Langfuse服务无法启动**"
+msgstr "**Langfuse Der Dienst kann nicht gestartet werden**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:466
+msgid "**可能原因**： * Docker或Docker Compose版本过低 * 端口被占用 * 磁盘空间不足 * 内存不足"
+msgstr ""
+"**Mögliche Gründe für**\\ : * Docker oder die Docker Compose-Version ist zu niedrig *"
+" Der Port ist belegt * Nicht genügend Speicherplatz * Nicht genügend Speicher"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:472
+#: ../../source/xinference_images/langfuse.rst:497
+#: ../../source/xinference_images/langfuse.rst:514
+msgid "**解决方案**："
+msgstr "**Lösung**\\ :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:490
+msgid "**Xinference无法连接Langfuse**"
+msgstr "**Xinference Keine Verbindung zu Langfuse** möglich"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:492
+msgid "**可能原因**： * 网络连通性问题 * 配置参数错误 * 防火墙阻拦"
+msgstr ""
+"**Mögliche Gründe**\\ : * Netzwerkverbindungsproblem * Konfigurationsparameterfehler "
+"* Firewall-Blockierung"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:507
+msgid "**链路数据不显示**"
+msgstr "**Linkdaten werden nicht angezeigt**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:509
+msgid "**可能原因**： * Langfuse配置未生效 * 模型调用异常 * 数据库连接问题"
+msgstr ""
+"**Mögliche Gründe**\\ : * Langfuse-Konfiguration wird nicht wirksam * Ausnahme beim "
+"Modellaufruf * Datenbankverbindungsproblem"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:526
+msgid "**性能问题**"
+msgstr "**Leistungsprobleme**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:528
+msgid "**可能原因**： * 资源不足 * 数据库性能瓶颈 * 网络延迟"
+msgstr ""
+"**Mögliche Gründe**\\ : * Unzureichende Ressourcen * Engpass bei der "
+"Datenbankleistung * Netzwerkverzögerung"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:533
+msgid "**解决方案**： * 增加系统内存 * 优化数据库配置 * 使用本地部署减少网络延迟"
+msgstr ""
+"**Lösung**\\ : * Systemspeicher erhöhen * Datenbankkonfiguration optimieren * Lokale "
+"Bereitstellung verwenden, um die Netzwerklatenz zu reduzieren"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:539
+msgid "维护建议"
+msgstr "Wartungsempfehlungen"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:541
+msgid "**定期维护**： * 定期清理旧的链路数据 * 监控磁盘使用情况 * 备份重要的配置和数据"
+msgstr ""
+"**Regelmäßige Wartung**\\ : * Alte Verbindungsdaten regelmäßig bereinigen * "
+"Festplattennutzung überwachen * Wichtige Konfigurationen und Daten sichern"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:546
+msgid "**性能优化**： * 根据使用量调整数据库配置 * 考虑使用外部高性能数据库 * 定期更新到最新版本"
+msgstr ""
+"**Leistungsoptimierung**\\ : * Passen Sie die Datenbankkonfiguration entsprechend der"
+" Nutzung an * Erwägen Sie die Verwendung einer externen Hochleistungsdatenbank * "
+"Aktualisieren Sie regelmäßig auf die neueste Version"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:551
+msgid "更多详细的故障排除方案请参考：:doc:`troubleshooting`"
+msgstr "Ausführlichere Lösungen zur Fehlerbehebung finden Sie unter: :doc:`troubleshooting`"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:554
+msgid "相关文档"
+msgstr "Verwandte Dokumente"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:556
+msgid ":doc:`index` - 镜像使用总览"
+msgstr ":doc:`index` – Übersicht über die Spiegelnutzung"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:557
+msgid ":doc:`nvidia` - Nvidia系列镜像使用"
+msgstr "Verwendung von Spiegeln der Serie :doc:`nvidia` - Nvidia"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:558
+msgid ":doc:`multi_deployment` - 多机部署配置"
+msgstr ":doc:`multi_deployment` – Konfiguration für die Bereitstellung auf mehreren Maschinen"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:559
+msgid ":doc:`kubernetes` - K8s部署配置"
+msgstr ":doc:`kubernetes` – K8s-Bereitstellungskonfiguration"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:560
+msgid ":doc:`performance` - 性能测试指南"
+msgstr ":doc:`performance` – Leitfaden für Leistungstests"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:561
+msgid ":doc:`troubleshooting` - 故障排除指南"
+msgstr ":doc:`troubleshooting` – Leitfaden zur Fehlerbehebung"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:564
+msgid "**部署建议**："
+msgstr "**Bereitstellungsempfehlungen**\\ :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:566
+msgid "建议在Xinference服务稳定运行后再部署Langfuse"
+msgstr ""
+"Es wird empfohlen, Langfuse bereitzustellen, nachdem der Xinference-Dienst stabil "
+"ausgeführt wurde."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:567
+msgid "生产环境请修改所有默认密码和密钥"
+msgstr "Bitte ändern Sie alle Standardkennwörter und -schlüssel für die Produktionsumgebung"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:568
+msgid "定期备份Langfuse数据以防数据丢失"
+msgstr "Sichern Sie Langfuse-Daten regelmäßig, um Datenverlust zu verhindern"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:569
+msgid "如遇问题，请优先查看容器日志进行排查"
+msgstr ""
+"Wenn Sie auf Probleme stoßen, überprüfen Sie bitte zunächst die Containerprotokolle, "
+"um das Problem zu beheben."

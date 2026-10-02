@@ -1,0 +1,391 @@
+# Chinese (Traditional, Taiwan) translations for Xinference.
+# Copyright (C) 2026 Xorbits Inc.
+# This file is distributed under the same license as the Xinference project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-10-02 15:09+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_TW\n"
+"Language-Team: zh_TW <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:5
+msgid "MindIE系列"
+msgstr "MindIE 系列"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:7
+msgid "本文档介绍如何使用Xinference的MindIE系列镜像，适用于华为昇腾NPU环境。"
+msgstr "本文档介绍如何使用Xinference的MindIE系列镜像，适用于华为昇腾NPU环境。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:11
+msgid "目录"
+msgstr "目錄"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:14
+msgid "版本信息"
+msgstr "版本信息"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:16
+msgid "Python版本：3.10"
+msgstr "Python 版本：3.10"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:17
+msgid "CANN版本：8.0.rc2"
+msgstr "CANN 版本：8.0.rc2"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:18
+msgid "操作系统版本：ubuntu_22.04"
+msgstr "操作系统版本：ubuntu_22.04"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:19
+msgid "mindie_1.0.RC2"
+msgstr "明迪_1.0.RC2"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:22
+msgid "使用说明"
+msgstr "使用說明"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:25
+msgid "依赖"
+msgstr "依赖"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:28
+#: ../../source/xinference_images/mindie.rst:57
+msgid "310I DUO"
+msgstr "310I DUO"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:30
+msgid "驱动：Ascend-hdk-310p-npu-driver_24.1.rc2_linux-aarch64.run"
+msgstr "驱动： Ascend-hdk-310p-npu-driver_24.1.rc2_linux-aarch64.run"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:31
+msgid "固件：Ascend-hdk-310p-npu-firmware_7.3.0.1.231.run"
+msgstr "固件： Ascend-hdk-310p-npu-firmware_7.3.0.1.231.run"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:34
+#: ../../source/xinference_images/mindie.rst:66
+msgid "910B"
+msgstr "910B"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:36
+msgid "驱动：Ascend-hdk-910b-npu-driver_24.1.rc2_linux-aarch64.run"
+msgstr "驱动： Ascend-hdk-910b-npu-driver_24.1.rc2_linux-aarch64.run"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:37
+msgid "固件：Ascend-hdk-910b-npu-firmware_7.3.0.1.231.run"
+msgstr "固件： Ascend-hdk-910b-npu-firmware_7.3.0.1.231.run"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:39
+msgid "将run包下载到宿主机上，运行如下命令安装驱动和固件："
+msgstr "将run包下载到宿主机上，运行如下命令安装驱动和固件："
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:46
+msgid "完成安装后输出successfully即安装完成，固件安装方式相同。"
+msgstr "完成安装后输出successfully即安装完成，固件安装方式相同。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:49
+msgid "当Mindie无法正常启动时，请检查驱动和固件版本是否一致。"
+msgstr "当Mindie无法正常启动时，请检查驱动和固件版本是否一致。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:50
+msgid "驱动和固件请安装在宿主机，通过挂载的方式载入docker容器。"
+msgstr "驱动和固件请安装在宿主机，通过挂载的方式载入docker容器。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:51
+msgid "升级版本时，请先安装firmware固件再安装driver驱动。"
+msgstr "升级版本时，请先安装firmware固件再安装driver驱动。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:54
+msgid "拉取镜像"
+msgstr "拉取鏡像"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:75
+msgid "**镜像仓库访问说明**："
+msgstr "**鏡像倉庫存取說明** ："
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:77
+msgid "用户名：``qin@qinxuye.me``"
+msgstr "使用者名稱： ``qin@qinxuye.me``"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:78
+msgid "密码：``cre.uwd3nyn4UDM6fzm``"
+msgstr "密碼： ``cre.uwd3nyn4UDM6fzm``"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:79
+msgid "仓库地址：``registry.cn-hangzhou.aliyuncs.com``"
+msgstr "倉庫位址： ``registry.cn-hangzhou.aliyuncs.com``"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:81
+msgid "这是访问Xinference企业版镜像仓库的凭据。登录成功后即可拉取相应的镜像。"
+msgstr "這是存取Xinference企業版鏡像倉庫的憑證。登入成功後即可拉取對應的鏡像。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:84
+msgid "启动指令示例"
+msgstr "啟動指令範例"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:113
+msgid "**路径配置说明**："
+msgstr "**路徑配置說明** ："
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:115
+msgid "请将 ``</your/home/path>`` 替换为你的实际存储路径。可以选择："
+msgstr "請將 ``</your/home/path>`` 替換為你的實際儲存路徑。可以選擇："
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:117
+msgid "**主目录**：``/home/username`` (默认)"
+msgstr "**主目錄** ： ``/home/username`` (預設)"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:118
+msgid "**数据盘**：``/data`` (推荐用于大容量存储)"
+msgstr "**數據盤** ： ``/data`` (建議用於大容量儲存)"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:119
+msgid "**自定义路径**：任何有足够空间的目录"
+msgstr "**自訂路徑** ：任何有足夠空間的目錄"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:121
+msgid "参考Nvidia系列文档中的详细配置示例。"
+msgstr "參考Nvidia系列文件中的詳細設定範例。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:124
+msgid "启动Xinference"
+msgstr "啟動Xinference"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:126
+msgid "启动容器后，进入容器/opt/projects目录下，执行以下命令："
+msgstr "啟動容器後，進入容器/opt/projects目錄下，執行下列指令："
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:134
+msgid "**IP地址和端口配置**："
+msgstr "**IP位址和連接埠配置** ："
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:136
+msgid ""
+"请将 ``<your-machine-ip>`` 和 ``<your-port>`` 替换为你的实际机器IP地址和端口号。 详细配置示例请参考 :doc:`nvidia`"
+" 文档中的\"IP地址和端口配置\"部分。"
+msgstr ""
+"請將 ``<your-machine-ip>`` 和 ``<your-port>`` 替換為你的實際機器IP位址和連接埠號碼。 詳細設定範例請參考 "
+":doc:`nvidia` 文件中的\"IP位址和連接埠配置\"部分。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:140
+msgid "``./xinf-enterprise.sh`` 脚本用于启动nginx服务，以及将Xinf服务启动地址写入配置文件"
+msgstr "``./xinf-enterprise.sh`` 腳本用於啟動nginx服務，以及將Xinf服務啟動位址寫入設定檔"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:141
+msgid "脚本详细参数说明请参考 :doc:`nvidia` 文档中的\"xinf-enterprise.sh 脚本参数说明\"部分"
+msgstr "腳本詳細參數說明請參考 :doc:`nvidia` 文件中的\"xinf-enterprise.sh 腳本參數說明\"部分"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:142
+msgid "Xinf服务启动命令可以根据实际需求进行调整"
+msgstr "Xinf 服務啟動指令可依實際需求進行調整"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:143
+msgid "host和port请根据自己设备情况自行调整"
+msgstr "host和port請依照自己設備狀況自行調整"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:145
+msgid "Xinf服务启动完成后，即可通过访问8000端口进入Xinf WebUI界面。"
+msgstr "Xinf 服務啟動完成後，即可透過存取8000連接埠進入Xinf WebUI 介面。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:148
+msgid "支持模型"
+msgstr "支持模型"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:150
+msgid "在选择模型运行引擎时，推荐使用Mindie模型，推理速度更快，其他引擎推理速度较慢，不推荐使用。"
+msgstr "在选择模型运行引擎时，推荐使用Mindie模型，推理速度更快，其他引擎推理速度较慢，不推荐使用。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:153
+msgid "大语言模型"
+msgstr "大语言模型"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:155
+msgid "目前Mindie大语言模型支持："
+msgstr "目前Mindie大语言模型支持："
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:157
+msgid "baichuan-chat"
+msgstr "baichuan-chat"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:158
+msgid "baichuan-2-chat"
+msgstr "baichuan-2-chat"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:159
+msgid "chatglm3"
+msgstr "聊天glm3"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:160
+msgid "deepseek-chat"
+msgstr "深度搜尋聊天"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:161
+msgid "deepseek-coder-instruct"
+msgstr "deepseek 編碼器指令"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:162
+msgid "llama-3-instruct"
+msgstr "美洲駝 3 指令"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:163
+msgid "mistral-instruct-v0.3"
+msgstr "米斯特拉爾-指令-v0.3"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:164
+msgid "telechat"
+msgstr "遠端聊天"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:165
+msgid "Yi-chat"
+msgstr "Yi-chat"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:166
+msgid "Yi-1.5-chat"
+msgstr "Yi-1.5-chat"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:167
+msgid "qwen-chat"
+msgstr "qwen聊天室"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:168
+msgid "qwen1.5-chat"
+msgstr "qwen1.5-聊天"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:169
+msgid "codeqwen1.5-chat"
+msgstr "codeqwen1.5-聊天"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:170
+msgid "qwen2-instruct"
+msgstr "qwen2-instruct"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:171
+msgid "csg-wukong-chat-v0.1"
+msgstr "csg-wukong-chat-v0.1"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:172
+msgid "qwen2.5 系列（qwen2.5-instruct, qwen2.5-coder-instruct 等）"
+msgstr "qwen2.5 系列（qwen2.5-instruct, qwen2.5-coder-instruct 等）"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:175
+msgid "Embedding 模型"
+msgstr "Embedding 模型"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:177
+msgid "bge-large-zh-v1.5"
+msgstr "bge-large-zh-v1.5"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:180
+msgid "Rerank 模型"
+msgstr "Rerank 模型"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:182
+msgid "bge-reranker-large"
+msgstr "bge-reranker-large"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:185
+msgid "相关文档"
+msgstr "相關文件"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:187
+msgid ":doc:`license` - 证书更新说明"
+msgstr ":doc:`license` - 憑證更新說明"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:188
+msgid ":doc:`performance` - 性能测试指南"
+msgstr ":doc:`performance` - 效能測試指南"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:189
+msgid ":doc:`multi_deployment` - 多机部署配置"
+msgstr ":doc:`multi_deployment` - 多機部署配置"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:190
+msgid ":doc:`langfuse` - 企业版链路日志使用"
+msgstr ":doc:`langfuse` - 企業版連結日誌使用"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/mindie.rst:191
+msgid ":doc:`kubernetes` - K8s部署配置"
+msgstr ":doc:`kubernetes` - K8s 部署配置"

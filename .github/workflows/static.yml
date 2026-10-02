@@ -41,9 +41,12 @@ jobs:
         pip install -r docs/requirements.txt
         
     - name: Build multilingual documentation
+      env:
+        DOCS_BASE_PATH: /${{ github.event.repository.name }}/
       run: |
         cd docs
         python build_multilang.py
+        python verify_multilang.py
         
     - name: Setup Pages
       uses: actions/configure-pages@v4

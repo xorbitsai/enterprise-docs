@@ -1,0 +1,624 @@
+# French translations for Xinference.
+# Copyright (C) 2026 Xorbits Inc.
+# This file is distributed under the same license as the Xinference project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-10-02 15:10+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:5
+msgid "Xinference 多机部署"
+msgstr "Xinference Déploiement multi-machines"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:7
+msgid "本文档介绍如何在多台机器上部署Xinference集群服务。"
+msgstr ""
+"Ce document décrit comment déployer les services de cluster Xinference sur plusieurs "
+"machines."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:11
+msgid "目录"
+msgstr "Annuaire"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:14
+msgid "前置要求"
+msgstr "Conditions préalables"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:17
+msgid "系统要求"
+msgstr "Configuration système requise"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:19
+msgid "**每台机器都需要满足**："
+msgstr "**Chaque machine doit répondre à** :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:21
+msgid "**硬件**：NVIDIA GPU（支持CUDA计算能力3.5+）"
+msgstr "**Matériel** : NVIDIA GPU (prend en charge la capacité informatique CUDA 3.5+)"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:22
+msgid "**内存**：建议16GB以上系统内存"
+msgstr "**Mémoire** : 16 Go ou plus de mémoire système recommandés"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:23
+msgid "**存储**：至少50GB可用磁盘空间"
+msgstr "**Stockage** : au moins 50 Go d'espace disque disponible"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:24
+msgid "**网络**：稳定的局域网连接，各节点间可互相访问"
+msgstr "**Réseau** : connexion LAN stable, chaque nœud peut accéder les uns aux autres"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:26
+msgid "**软件要求**："
+msgstr "**Configuration logicielle requise pour** :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:28
+msgid "**操作系统**：Linux (Ubuntu 20.04+, CentOS 7+)"
+msgstr "**Système d'exploitation** : Linux (Ubuntu 20.04+, CentOS 7+)"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:29
+msgid "**Docker**：Docker 20.10+"
+msgstr "**Docker** : Docker 20.10+"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:30
+msgid "**NVIDIA Driver**：版本450+"
+msgstr "Pilote **NVIDIA** : version 450+"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:31
+msgid "**NVIDIA Container Toolkit**：用于Docker GPU支持"
+msgstr "Boîte à outils de conteneur **NVIDIA** : pour la prise en charge de Docker GPU"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:34
+msgid "网络规划"
+msgstr "planification du réseau"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:36
+msgid "**端口规划**："
+msgstr "**Planification des ports** :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:38
+msgid "**Supervisor节点**：需要开放服务端口（如9997）和WebUI端口（8000）"
+msgstr ""
+"Nœud **Supervisor** : nécessité d'ouvrir le port de service (tel que 9997) et le port"
+" WebUI (8000)"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:39
+msgid "**Worker节点**：需要能够访问Supervisor的服务端口"
+msgstr "Nœud **Worker** : besoin de pouvoir accéder au port de service du superviseur"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:40
+msgid "**防火墙**：确保相关端口在防火墙中开放"
+msgstr "**Pare-feu** : assurez-vous que les ports concernés sont ouverts dans le pare-feu"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:42
+msgid "**IP地址规划示例**："
+msgstr "**Exemple de planification d'adresse IP** :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:44
+msgid "Supervisor：192.168.1.100"
+msgstr "Supervisor : 192.168.1.100"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:45
+msgid "Worker-01：192.168.1.101"
+msgstr "Worker-01 : 192.168.1.101"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:46
+msgid "Worker-02：192.168.1.102"
+msgstr "Worker-02 : 192.168.1.102"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:49
+msgid "概述"
+msgstr "Aperçu"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:51
+msgid "在Xinf服务中，Supervisor负责调度Worker的执行，因此在集群服务中，需要1个Supervisor和1个及以上的Worker来组成多机服务。"
+msgstr ""
+"Dans le service Xinf, Supervisor est responsable de la planification de l'exécution "
+"de Worker. Par conséquent, dans le service de cluster, un superviseur et un ou "
+"plusieurs travailleurs sont nécessaires pour former un service multi-machines."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:54
+msgid "架构说明"
+msgstr "Descriptif architectural"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:56
+msgid "**Supervisor节点**：负责任务调度和管理，提供Web界面访问"
+msgstr ""
+"Nœud **Supervisor** : responsable de la planification et de la gestion des tâches, "
+"fournissant un accès à l'interface Web"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:57
+msgid "**Worker节点**：负责实际的模型推理计算"
+msgstr "Nœud **Worker** : responsable du calcul d'inférence du modèle réel"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:58
+msgid "**集群要求**：1个Supervisor + 1个或多个Worker"
+msgstr "**Exigences du cluster** : 1 superviseur + 1 ou plusieurs travailleurs"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:61
+msgid "启动Supervisor"
+msgstr "Démarrer le superviseur"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:63
+msgid "以nvidia系列镜像为例，如要启动Supervisor，需要通过以下命令来启动容器。"
+msgstr ""
+"En prenant les images de la série nvidia comme exemple, si vous souhaitez démarrer "
+"Supervisor, vous devez démarrer le conteneur avec la commande suivante."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:66
+msgid "拉取镜像"
+msgstr "Extraire l'image"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:68
+msgid "首先登录镜像仓库并拉取所需的镜像："
+msgstr "Connectez-vous d’abord à l’entrepôt d’images et extrayez l’image requise :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:77
+msgid "**镜像仓库访问说明**："
+msgstr "**Instructions d'accès à l'entrepôt miroir** :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:79
+msgid "用户名：``qin@qinxuye.me``"
+msgstr "Nom d'utilisateur : ``qin@qinxuye.me``"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:80
+msgid "密码：``cre.uwd3nyn4UDM6fzm``"
+msgstr "Mot de passe : ``cre.uwd3nyn4UDM6fzm``"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:81
+msgid "仓库地址：``registry.cn-hangzhou.aliyuncs.com``"
+msgstr "Adresse de l'entrepôt : ``registry.cn-hangzhou.aliyuncs.com``"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:83
+msgid "这是访问Xinference企业版镜像仓库的凭据。登录成功后即可拉取相应的镜像。"
+msgstr ""
+"Il s'agit des informations d'identification permettant d'accéder au référentiel "
+"miroir Xinference Enterprise Edition. Après une connexion réussie, vous pouvez "
+"extraire l'image correspondante."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:86
+msgid "启动Supervisor容器"
+msgstr "Démarrer le conteneur Superviseur"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:104
+#: ../../source/xinference_images/multi_deployment.rst:206
+msgid "**路径配置说明**："
+msgstr "**Instructions de configuration du chemin** :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:106
+msgid "请将 ``</your/home/path>`` 替换为你的实际存储路径。可以选择："
+msgstr ""
+"Veuillez remplacer ``</your/home/path>`` par votre chemin de stockage réel. Vous "
+"pouvez choisir :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:108
+msgid "**主目录**：``/home/username`` 或 ``/Users/username``"
+msgstr "**Répertoire principal** : ``/home/username`` ou ``/Users/username``"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:109
+msgid "**数据盘**：``/data`` 或 ``/mnt/data`` (推荐用于大容量存储)"
+msgstr ""
+"**Disque de données** : ``/data`` ou ``/mnt/data`` (recommandé pour le stockage de "
+"grande capacité)"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:110
+msgid "**自定义路径**：任何有足够空间的目录"
+msgstr "**Chemin personnalisé** : tout répertoire disposant de suffisamment d'espace"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:112
+msgid "详细配置示例请参考 :doc:`nvidia` 文档中的\"路径配置说明\"部分。"
+msgstr ""
+"Pour des exemples de configuration détaillés, veuillez vous référer à la section « "
+"Instructions de configuration du chemin » dans le document :doc:`nvidia`\\ ."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:115
+msgid "启动Supervisor服务"
+msgstr "Démarrer le service Superviseur"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:117
+msgid "在进入容器xinference-supervisor后，可以执行以下两种方式来启动Supervisor服务。"
+msgstr ""
+"Après avoir entré le conteneur xinference-supervisor, vous pouvez appliquer les deux "
+"méthodes suivantes pour démarrer le service Supervisor."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:120
+msgid "方法一：机器上只启动Supervisor节点"
+msgstr "Méthode 1 : démarrer uniquement le nœud Superviseur sur la machine"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:128
+#: ../../source/xinference_images/multi_deployment.rst:163
+#: ../../source/xinference_images/multi_deployment.rst:221
+msgid "**参数配置说明**："
+msgstr "**Description de la configuration des paramètres** :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:130
+#: ../../source/xinference_images/multi_deployment.rst:223
+msgid "请将上述命令中的占位符替换为实际值："
+msgstr ""
+"Veuillez remplacer les espaces réservés dans la commande ci-dessus par les valeurs "
+"réelles :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:132
+#: ../../source/xinference_images/multi_deployment.rst:225
+msgid "``<supervisor-ip>``：Supervisor节点的IP地址"
+msgstr "``<supervisor-ip>`` : adresse IP du nœud Supervisor"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:133
+#: ../../source/xinference_images/multi_deployment.rst:226
+msgid "``<supervisor-port>``：Supervisor服务端口号"
+msgstr "``<supervisor-port>`` : numéro de port de service Supervisor"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:135
+#: ../../source/xinference_images/multi_deployment.rst:167
+#: ../../source/xinference_images/multi_deployment.rst:229
+msgid "**配置示例**："
+msgstr "**Exemple de configuration** :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:148
+msgid "**访问说明**："
+msgstr "**Instructions d'accès** :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:150
+msgid "Supervisor服务启动成功后，可通过 ``http://<supervisor-ip>:8000`` 访问WebUI界面"
+msgstr ""
+"Une fois le service Supervisor démarré avec succès, l'interface WebUI est accessible "
+"via ``http://<supervisor-ip>:8000``"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:151
+msgid "确保防火墙已开放相应端口（Supervisor端口 + 8000端口）"
+msgstr ""
+"Assurez-vous que le pare-feu a ouvert le port correspondant (port Supervisor + port "
+"8000)"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:152
+msgid "其他Worker节点需要能够访问Supervisor的IP地址和端口"
+msgstr ""
+"Les autres nœuds Worker doivent pouvoir accéder à l'adresse IP et au port du "
+"superviseur."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:155
+msgid "方法二：机器上同时启动Supervisor和Worker节点"
+msgstr "Méthode 2 : démarrer les nœuds Supervisor et Worker sur la machine en même temps"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:165
+msgid "此方法在单台机器上同时运行Supervisor和Worker功能，适用于单机多GPU场景。"
+msgstr ""
+"Cette méthode exécute les fonctions Supervisor et Worker simultanément sur une seule "
+"machine et convient aux scénarios multi-GPU sur une seule machine."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:176
+msgid "**使用场景**："
+msgstr "**Scénarios d'utilisation du** :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:178
+msgid "适用于单台高性能服务器，具有多个GPU"
+msgstr "Convient à un seul serveur hautes performances avec plusieurs GPU"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:179
+msgid "既提供调度管理功能，又直接参与模型推理"
+msgstr ""
+"Il fournit non seulement des fonctions de gestion d'ordonnancement, mais participe "
+"également directement au raisonnement du modèle."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:180
+msgid "简化部署，减少网络通信开销"
+msgstr "Simplifiez le déploiement et réduisez les frais de communication réseau"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:183
+msgid "启动Worker"
+msgstr "Démarrer le travailleur"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:185
+msgid "同样以nvidia系列镜像为例，如要启动Worker，启动命令与Supervisor类似。"
+msgstr ""
+"En prenant également l'image de la série nvidia comme exemple, si vous souhaitez "
+"démarrer le Worker, la commande de démarrage est similaire à celle du Supervisor."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:188
+msgid "启动Worker容器"
+msgstr "Démarrer le conteneur Worker"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:208
+msgid ""
+"Worker节点的路径配置与Supervisor节点相同。请将 ``</your/home/path>`` 替换为你的实际存储路径。 详细配置示例请参考 "
+":doc:`nvidia` 文档中的\"路径配置说明\"部分。"
+msgstr ""
+"La configuration du chemin du nœud Worker est la même que celle du nœud Superviseur. "
+"Veuillez remplacer ``</your/home/path>`` par votre chemin de stockage réel. Pour des "
+"exemples de configuration détaillés, veuillez vous référer à la section « "
+"Instructions de configuration du chemin » dans le document :doc:`nvidia`\\ ."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:212
+msgid "启动Worker服务"
+msgstr "Démarrer le service Worker"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:214
+msgid "在进入容器xinference-worker-01后，需要通过以下命令启动Worker服务。"
+msgstr ""
+"Après avoir entré le conteneur xinference-worker-01, vous devez démarrer le service "
+"Worker via la commande suivante."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:227
+msgid "``<worker-ip>``：当前Worker节点的IP地址"
+msgstr "``<worker-ip>`` : adresse IP du nœud Worker actuel"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:244
+msgid "**网络要求**："
+msgstr "**Configuration réseau requise** :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:246
+msgid "Worker节点必须能够访问Supervisor节点的IP和端口"
+msgstr "Le nœud Worker doit pouvoir accéder à l'adresse IP et au port du nœud superviseur."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:247
+msgid "确保网络连通性和防火墙配置正确"
+msgstr "Assurez-vous que la connectivité réseau et la configuration du pare-feu sont correctes"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:248
+msgid "建议在同一局域网内部署，减少网络延迟"
+msgstr ""
+"Il est recommandé de déployer au sein du même réseau local pour réduire la latence du"
+" réseau."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:251
+msgid "部署验证"
+msgstr "Vérification du déploiement"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:253
+msgid "完成上述操作以后，就实现了Xinf的多机部署。以下步骤帮助您验证部署是否成功。"
+msgstr ""
+"Après avoir terminé les opérations ci-dessus, le déploiement multi-machines de Xinf "
+"est réalisé. Les étapes suivantes vous aident à vérifier que le déploiement a réussi."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:256
+msgid "服务状态检查"
+msgstr "Vérification de l'état du service"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:258
+msgid "**检查容器状态**："
+msgstr "**Vérifier l'état du conteneur** :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:270
+msgid "**检查网络连通性**："
+msgstr "**Vérifiez la connectivité réseau** :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:282
+msgid "访问Web界面"
+msgstr "Accéder à l'interface web"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:284
+msgid "**打开浏览器**，访问：``http://<supervisor-ip>:8000``"
+msgstr "**Ouvrez le navigateur** et visitez : ``http://<supervisor-ip>:8000``"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:285
+msgid "**登录界面**：如果配置了认证，请使用相应凭据登录"
+msgstr ""
+"**Interface de connexion** : Si l'authentification est configurée, veuillez utiliser "
+"les informations d'identification correspondantes pour vous connecter"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:286
+msgid "**验证功能**：确认可以正常访问各个功能模块"
+msgstr ""
+"**Fonction de vérification** : Confirmer que chaque module fonctionnel est accessible"
+" normalement"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:289
+msgid "检查集群状态"
+msgstr "Vérifier l'état du cluster"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:291
+msgid "在Web界面中验证以下内容："
+msgstr "Vérifiez les éléments suivants dans l'interface Web :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:293
+msgid ""
+"**节点管理页面**： * Supervisor节点状态显示为\"在线\" * 所有Worker节点都显示在节点列表中 * 各节点的资源使用情况正常显示 * "
+"节点连接状态为\"已连接\""
+msgstr ""
+"**Page de gestion des nœuds** : * L'état du nœud Supervisor est affiché comme \"en "
+"ligne\" * Tous les nœuds Worker sont affichés dans la liste des nœuds * L'utilisation"
+" des ressources de chaque nœud est affichée normalement * L'état de connexion du nœud"
+" est \"Connecté\""
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:299
+msgid "**模型管理**： * 可以查看可用模型列表 * 尝试在不同Worker节点上加载模型 * 验证模型负载均衡功能"
+msgstr ""
+"**Gestion des modèles** : * Peut afficher la liste des modèles disponibles * Essayez "
+"de charger des modèles sur différents nœuds Worker * Vérifiez la fonction "
+"d'équilibrage de charge du modèle"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:304
+msgid "**API测试**："
+msgstr "**Test API** :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:317
+msgid "部署架构示例"
+msgstr "Exemple d'architecture de déploiement"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:319
+msgid "典型的多机部署架构如下："
+msgstr "Une architecture de déploiement multi-machine typique est la suivante :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:331
+msgid "部署流程总结"
+msgstr "Résumé du processus de déploiement"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:333
+msgid "完整的多机部署流程如下："
+msgstr "Le processus complet de déploiement multi-machines est le suivant :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:335
+msgid "**准备阶段**： 1. 确认所有节点满足系统要求 2. 规划IP地址和端口分配 3. 配置防火墙和网络连通性"
+msgstr ""
+"**Phase de préparation** : 1. Confirmez que tous les nœuds répondent à la "
+"configuration système requise 2. Planifiez l'adresse IP et l'allocation de port 3. "
+"Configurez le pare-feu et la connectivité réseau"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:340
+msgid "**部署阶段**： 1. 在所有节点上拉取镜像 2. 启动Supervisor容器和服务 3. 启动Worker容器和服务 4. 验证节点连接状态"
+msgstr ""
+"**Phase de déploiement** : 1. Extrayez les images sur tous les nœuds 2. Démarrez les "
+"conteneurs et les services Supervisor 3. Démarrez les conteneurs et les services "
+"Worker 4. Vérifiez l'état de connexion du nœud"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:346
+msgid "**验证阶段**： 1. 检查容器和服务状态 2. 访问WebUI界面 3. 验证集群功能 4. 进行API测试"
+msgstr ""
+"**Phase de vérification** : 1. Vérifier l'état du conteneur et du service 2. Accéder "
+"à l'interface WebUI 3. Vérifier la fonctionnalité du cluster 4. Effectuer des tests "
+"d'API"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:352
+msgid "**运维建议**： * 定期检查节点状态和资源使用情况 * 监控网络连接质量 * 及时处理异常节点 * 参考故障排除文档解决问题"
+msgstr ""
+"**Suggestions d'exploitation et de maintenance** : * Vérifiez régulièrement l'état "
+"des nœuds et l'utilisation des ressources * Surveillez la qualité de la connexion "
+"réseau * Gérez les nœuds anormaux en temps opportun * Reportez-vous au document de "
+"dépannage pour résoudre le problème."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:359
+msgid "相关文档"
+msgstr "Documents associés"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:361
+msgid ":doc:`index` - 镜像使用总览"
+msgstr ":doc:`index` - Présentation de l'utilisation du miroir"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:362
+msgid ":doc:`nvidia` - Nvidia系列镜像使用"
+msgstr ":doc:`nvidia` - Utilisation de miroirs de la série Nvidia"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:363
+msgid ":doc:`kubernetes` - K8s部署配置"
+msgstr ":doc:`kubernetes` - Configuration de déploiement K8s"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:364
+msgid ":doc:`troubleshooting` - 故障排除指南"
+msgstr ":doc:`troubleshooting` - Guide de dépannage"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:367
+msgid "如需单机部署，请参考文档：:doc:`index`"
+msgstr "Pour un déploiement autonome, veuillez vous référer au document : :doc:`index`"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/multi_deployment.rst:368
+msgid "如遇到部署问题，请参考：:doc:`troubleshooting`"
+msgstr ""
+"Si vous rencontrez des problèmes de déploiement, veuillez vous référer à : "
+":doc:`troubleshooting`"

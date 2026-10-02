@@ -21,7 +21,7 @@
 当你创建或更新 Pull Request 时，GitHub Actions 会自动：
 
 1. **安装依赖**: 安装 Python 和 Sphinx 相关包
-2. **构建文档**: 运行 `build_multilang.py` 生成多语言文档
+2. **构建文档**: 运行 `build_multilang.py` 生成 10 种语言的文档（默认英文）
 3. **上传预览**: 将构建结果作为 artifacts 上传（保留7天）
 4. **状态检查**: 在PR中显示构建状态和预览链接
 
@@ -36,12 +36,14 @@
 
 部署完成后，文档将在以下地址可用：
 
-- **中文文档**: `https://[username].github.io/[repository-name]/`
-- **英文文档**: `https://[username].github.io/[repository-name]/en/`
+- **英文文档（默认）**: `https://[username].github.io/[repository-name]/`
+- **简体中文文档**: `https://[username].github.io/[repository-name]/zh-cn/`
+- **其他语言**: `zh-tw/`、`ja/`、`ko/`、`de/`、`fr/`、`es/`、`it/`、`pt-br/`
+- 旧的 `en/` 页面地址会跳转至根目录对应的英文页面。
 
 例如：
-- 中文: https://xorbitsai.github.io/enterprise-docs/
-- 英文: https://xorbitsai.github.io/enterprise-docs/en/
+- 英文: https://xorbitsai.github.io/enterprise-docs/
+- 简体中文: https://xorbitsai.github.io/enterprise-docs/zh-cn/
 
 ## 🔧 手动部署
 
@@ -81,8 +83,8 @@ enterprise-docs/
 │   └── build/
 │       └── html/                   # 构建输出
 │           ├── .nojekyll           # 复制到输出目录
-│           ├── index.html          # 中文首页
-│           └── en/                 # 英文版本
+│           ├── index.html          # 英文首页（默认）
+│           └── zh-cn/              # 简体中文版本
 │               └── index.html
 ├── README.md                       # 项目说明
 └── DEPLOYMENT.md                   # 本文档
@@ -117,7 +119,7 @@ enterprise-docs/
 1. **本地测试**
    ```bash
    cd docs
-   python build_multilang.py
+   python build_multilang.py --base-path /
    cd build/html
    python -m http.server 8080
    ```
@@ -131,7 +133,7 @@ enterprise-docs/
    # 检查关键文件是否存在
    ls docs/build/html/.nojekyll
    ls docs/build/html/_static/switcher.json
-   ls docs/build/html/en/_static/switcher.json
+   ls docs/build/html/zh-cn/_static/switcher.json
    ```
 
 ## 📝 自定义配置
@@ -148,8 +150,8 @@ enterprise-docs/
 
 如果仓库名不是 `enterprise-docs`，需要：
 
-1. 修改 `docs/source/conf.py` 中的 `html_baseurl`
-2. 更新 `switcher.json` 中的 URL 路径
+1. 构建时设置 `DOCS_BASE_PATH=/[repository-name]/`，或使用 `python build_multilang.py --base-path /[repository-name]/`
+2. 本地直接从网站根目录预览时使用 `--base-path /`。构建脚本会为所有语言生成正确的切换链接。
 
 ## 🔄 更新流程
 
@@ -164,3 +166,13 @@ enterprise-docs/
 - **构建状态**: 查看仓库 README 中的构建徽章
 - **部署历史**: 在 GitHub Actions 页面查看部署历史
 - **访问统计**: 在 GitHub Insights 中查看页面访问情况
+
+## 多语言维护
+
+语言列表与 inference 文档一致：英文、简体中文、繁体中文、日语、韩语、德语、法语、西班牙语、意大利语、葡萄牙语（巴西）。
+
+- 语言名称、顺序和默认项统一维护在 `docs/source/_static/switcher.json`。
+- URL 使用 `zh-cn`、`zh-tw`、`pt-br`；Sphinx 翻译目录分别为 `zh_CN`、`zh_TW`、`pt_BR`。
+- 翻译保存在 `docs/source/locale/<locale>/LC_MESSAGES/*.po`。当前正文已补齐机器翻译，后续可在这些文件中校对；命令、参数、配置值和引用目标保持原样。
+- 编辑原文后重新构建会更新翻译目录。新增或变化的条目需要补充译文；构建本身不调用在线翻译服务。
+- CI 构建后运行 `python verify_multilang.py`，检查语言列表、页面、切换链接和旧英文地址兼容性。

@@ -1,0 +1,404 @@
+# Italian translations for Xinference.
+# Copyright (C) 2026 Xorbits Inc.
+# This file is distributed under the same license as the Xinference project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-10-02 15:23+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: it\n"
+"Language-Team: it <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:5
+msgid "Nvidia系列"
+msgstr "NVIDIA Serie"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:7
+msgid "本文档介绍如何使用Xinference的Nvidia系列镜像，适用于CUDA环境。"
+msgstr ""
+"Questo documento descrive come utilizzare XinferenceE'... Nvidia immagini serie, che "
+"sono adatti per CUDA ambienti."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:11
+msgid "目录"
+msgstr "Contenuto"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:14
+msgid "系统要求"
+msgstr "Requisiti di sistema"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:17
+msgid "硬件要求"
+msgstr "Requisiti hardware"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:19
+msgid "**GPU**：NVIDIA GPU（支持CUDA计算能力3.5+）"
+msgstr "**GPU**\\ : NVIDIA GPU (supporti) CUDA capacità di elaborazione 3.5+)"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:20
+msgid "**内存**：建议16GB以上系统内存"
+msgstr "**Memoria**\\ : 16GB o più memoria di sistema consigliata"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:21
+msgid "**存储**：至少50GB可用磁盘空间（用于模型存储）"
+msgstr "**Stoccaggio**\\ : Almeno 50 GB di spazio libero su disco (per lo storage di modello)"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:22
+msgid "**网络**：稳定的网络连接（用于模型下载）"
+msgstr "**Rete di rete**\\ : Collegamento di rete stabile (per il download del modello)"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:25
+msgid "软件要求"
+msgstr "Requisiti di software"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:27
+msgid "**操作系统**：Linux (Ubuntu 20.04+, CentOS 7+) 或 macOS"
+msgstr "**Sistema operativo**\\ : Linux (Ubuntu 20.04+, CentOS 7+) o macOS"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:28
+msgid "**Docker**：Docker 20.10+"
+msgstr "**Docker**\\ ：Docker 20.10+"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:29
+msgid "**NVIDIA Driver**：版本450+"
+msgstr "**NVIDIA Driver**\\ : Versione 450+"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:30
+msgid "**NVIDIA Container Toolkit**：用于Docker GPU支持"
+msgstr "**NVIDIA Toolkit del contenitore**\\ : per Docker GPU sostegno"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:39
+msgid "使用说明"
+msgstr "Istruzioni d'uso"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:42
+msgid "拉取镜像"
+msgstr "Tirare l'immagine"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:51
+msgid "**镜像仓库访问说明**："
+msgstr "**istruzioni per l'accesso al registro di immagine**\\ :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:53
+msgid "用户名：``qin@qinxuye.me``"
+msgstr "Nome utente: ``qin@qinxuye.me``"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:54
+msgid "密码：``cre.uwd3nyn4UDM6fzm``"
+msgstr "Password: ``cre.uwd3nyn4UDM6fzm``"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:55
+msgid "仓库地址：``registry.cn-hangzhou.aliyuncs.com``"
+msgstr "Indirizzo del magazzino: ``registry.cn-hangzhou.aliyuncs.com``"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:57
+msgid "这是访问Xinference企业版镜像仓库的凭据。登录成功后即可拉取相应的镜像。"
+msgstr ""
+"Queste sono le credenziali per accedere al Xinference Enterprise Edition immagine "
+"repository. Dopo il login di successo, è possibile tirare l'immagine corrispondente."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:60
+msgid "启动指令示例"
+msgstr "Esempi di comando di avvio"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:78
+msgid "**路径配置说明**："
+msgstr "**istruzioni per la configurazione del percorso**\\ :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:80
+msgid "请将 ``</your/home/path>`` 替换为你的实际存储路径。可以选择以下位置："
+msgstr ""
+"Si prega di sostituire ``</your/home/path>`` con il vostro percorso di archiviazione "
+"reale. Le seguenti posizioni sono disponibili:"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:82
+msgid "**主目录**：``/home/username`` 或 ``/Users/username``"
+msgstr "**directory principale**\\ : ``/home/username`` o ``/Users/username``"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:83
+msgid "**数据盘**：``/data`` 或 ``/mnt/data`` (推荐用于大容量存储)"
+msgstr ""
+"**disco dati**\\ : ``/data`` o ``/mnt/data`` (consigliato per lo stoccaggio di grande"
+" capacità)"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:84
+msgid "**自定义路径**：任何有足够空间的目录"
+msgstr "**Percorso personalizzato**\\ : Qualsiasi directory con spazio sufficiente"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:86
+#: ../../source/xinference_images/nvidia.rst:130
+#: ../../source/xinference_images/nvidia.rst:168
+msgid "**配置示例**："
+msgstr "**Esempio di configurazione**\\ :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:106
+msgid "**存储建议**："
+msgstr "**Raccomandazioni di stoccaggio**\\ :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:108
+msgid "模型文件通常较大(几GB到几十GB)，建议使用容量充足的磁盘"
+msgstr ""
+"I file di modello sono di solito grandi (sogni GB a decine di GB), quindi si "
+"consiglia di utilizzare un disco con una capacità sufficiente."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:109
+msgid "如果有专门的数据盘(如 ``/data``)，优先使用数据盘存储"
+msgstr ""
+"Se c'è un disco di dati speciale (come ad esempio ``/data``\\ ), utilizzare prima "
+"l'archiviazione del disco dati."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:110
+msgid "确保选择的目录有足够的读写权限"
+msgstr ""
+"Assicurarsi che la directory selezionata abbia sufficienti autorizzazioni di lettura "
+"e scrittura"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:113
+msgid "启动Xinference"
+msgstr "Inizio Xinference"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:115
+msgid "启动容器后，进入容器/opt/projects目录下，执行以下命令："
+msgstr ""
+"Dopo aver avviato il contenitore, immettere la directory /opt/projects ed eseguire i "
+"seguenti comandi:"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:123
+msgid "**IP地址和端口配置**："
+msgstr "**Indirizzo IP e configurazione della porta**\\ :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:125
+msgid "请将上述命令中的占位符替换为实际值："
+msgstr "Si prega di sostituire i segnaposto nel comando sopra con valori effettivi:"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:127
+msgid "``<your-machine-ip>``：替换为你的机器IP地址"
+msgstr "``<your-machine-ip>``\\ : Sostituire con il tuo indirizzo IP della macchina"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:128
+msgid "``<your-port>``：替换为你要使用的端口号"
+msgstr "``<your-port>``\\ : Sostituire con il numero di porta che si desidera utilizzare"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:147
+msgid "xinf-enterprise.sh 脚本参数说明"
+msgstr "descrizione del parametro xinf-enterprise.sh"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:149
+msgid "``xinf-enterprise.sh`` 脚本用于启动nginx服务并配置Xinf服务地址。使用方法："
+msgstr ""
+"Il ``xinf-enterprise.sh`` lo script viene utilizzato per avviare il nginx servizio e "
+"configurazione Xinf indirizzo di servizio. Come usare:"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:162
+msgid "**参数说明**："
+msgstr "**Descrizione del parametro**\\ :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:164
+msgid "``--host`` / ``-H``：指定Xinference服务的主机地址"
+msgstr ""
+"``--host`` / ``-H``\\ : Specificare l'indirizzo dell'host Xinference servizio "
+"assistenza"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:165
+msgid "``--port`` / ``-P``：指定Xinference服务的端口号"
+msgstr ""
+"``--port`` / ``-P``\\ : Specificare il numero di porta del Xinference servizio "
+"assistenza"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:166
+msgid "``--listen-port`` / ``-L``：指定nginx监听端口（可选，默认8000）"
+msgstr ""
+"``--listen-port`` / ``-L``\\ : Specificare nginx porta di ascolto (opzionale, "
+"predefinito 8000)"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:182
+msgid "``./xinf-enterprise.sh`` 脚本用于启动nginx服务，以及将Xinf服务启动地址写入配置文件"
+msgstr ""
+"Il ``./xinf-enterprise.sh`` lo script viene utilizzato per avviare il nginx servizio "
+"e scrivere Xinf indirizzo di avvio del servizio nel file di configurazione"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:183
+msgid "Xinf服务启动命令可以根据实际需求进行调整"
+msgstr "Xinf il comando di avvio del servizio può essere regolato in base alle esigenze reali"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:184
+msgid "host和port请根据自己设备的实际IP地址和端口配置"
+msgstr ""
+"Si prega di configurare l'host e la porta in base all'indirizzo IP effettivo e alla "
+"porta del dispositivo."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:185
+msgid "nginx默认监听8000端口，可通过 ``--listen-port`` 参数自定义"
+msgstr ""
+"nginx ascolta il porto 8000 per impostazione predefinita e può essere personalizzato "
+"attraverso il ``--listen-port`` parametro"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:187
+msgid "Xinf服务启动完成后，即可通过访问nginx监听端口(默认8000)进入Xinf WebUI界面。"
+msgstr ""
+"Dopo il Xinf il servizio è iniziato, è possibile inserire il Xinf WebUI interfaccia "
+"accedendo alla nginx porta di ascolto (default 8000)."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:190
+msgid "验证部署"
+msgstr "Verificare la distribuzione"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:193
+msgid "服务状态检查"
+msgstr "Controllo dello stato di servizio"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:207
+msgid "访问WebUI界面"
+msgstr "Accesso al WebUI interfaccia"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:209
+msgid "**打开浏览器**，访问：``http://<your-machine-ip>:8000``"
+msgstr "**Aprire il browser** e visita: ``http://<your-machine-ip>:8000``"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:210
+msgid "**验证功能**："
+msgstr "**Funzione di verifica**\\ :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:212
+msgid "查看模型列表"
+msgstr "Visualizza elenco modelli"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:213
+msgid "尝试加载一个小模型进行测试"
+msgstr "Prova a caricare un piccolo modello per la prova"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:214
+msgid "检查节点状态和资源使用情况"
+msgstr "Controlla lo stato dei nodi e l'utilizzo delle risorse"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:216
+msgid "**API测试**："
+msgstr "**test API**\\ :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:229
+msgid "常见问题"
+msgstr "FAQ"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:231
+msgid "如果遇到问题，请参考："
+msgstr "Se si verificano problemi, si prega di fare riferimento a:"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:233
+msgid ":doc:`troubleshooting` - 详细的故障排除指南"
+msgstr ":doc:`troubleshooting` - Guida alla risoluzione dei problemi dettagliata"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:234
+msgid "检查GPU驱动和Docker配置"
+msgstr "Check GPU conducente e Docker configurazione"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:235
+msgid "确认网络端口配置正确"
+msgstr "Confermare che la porta di rete è configurata correttamente"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:238
+msgid "相关文档"
+msgstr "Documentazione correlata"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:240
+msgid ":doc:`license` - 证书更新说明"
+msgstr ":doc:`license` - Istruzioni di aggiornamento certificato"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:241
+msgid ":doc:`performance` - 性能测试指南"
+msgstr ":doc:`performance` - Guida alla prova delle prestazioni"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:242
+msgid ":doc:`multi_deployment` - 多机部署配置"
+msgstr ":doc:`multi_deployment` - Configurazione di distribuzione multi-macchina"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:243
+msgid ":doc:`langfuse` - 企业版链路日志使用"
+msgstr ":doc:`langfuse` - Uso del registro di collegamento della versione Enterprise"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:244
+msgid ":doc:`kubernetes` - K8s部署配置"
+msgstr ":doc:`kubernetes` - K8s configurazione di distribuzione"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/nvidia.rst:245
+msgid ":doc:`troubleshooting` - 故障排除指南"
+msgstr ":doc:`troubleshooting` - Guida alla risoluzione dei problemi"

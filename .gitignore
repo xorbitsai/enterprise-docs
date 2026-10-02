@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+*.mo
+docs/build/
+docs/source/_build/

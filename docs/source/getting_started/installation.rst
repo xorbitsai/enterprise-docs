@@ -67,12 +67,12 @@ Version Information
 Dependencies
 ^^^^^^^^^^^^^^^^^^^
 For 310I DUO:
-- Driver: Ascend-hdk-310p-npu-driver_24.1.rc2_linux-aarch64.run - `Download <https://obs-whaicc-fae-public.obs.cn-central-221.ovaijisuan.com/cann/mindie/1.0.RC2/310p/Ascend-hdk-310p-npu-driver_24.1.rc2_linux-aarch64.run>`_
-- Firmware: Ascend-hdk-310p-npu-firmware_7.3.0.1.231.run - `Download <https://obs-whaicc-fae-public.obs.cn-central-221.ovaijisuan.com/cann/mindie/1.0.RC2/310p/Ascend-hdk-310p-npu-firmware_7.3.0.1.231.run>`_
+- Driver: Ascend-hdk-310p-npu-driver_24.1.rc2_linux-aarch64.run - `Download <https://obs-whaicc-fae-public.obs.cn-central-221.ovaijisuan.com/cann/mindie/1.0.RC2/310p/Ascend-hdk-310p-npu-driver_24.1.rc2_linux-aarch64.run>`__
+- Firmware: Ascend-hdk-310p-npu-firmware_7.3.0.1.231.run - `Download <https://obs-whaicc-fae-public.obs.cn-central-221.ovaijisuan.com/cann/mindie/1.0.RC2/310p/Ascend-hdk-310p-npu-firmware_7.3.0.1.231.run>`__
 
 For 910B:
-- Driver: Ascend-hdk-910b-npu-driver_24.1.rc3_linux-aarch64.run - `Download <https://ascend-repo.obs.cn-east-2.myhuaweicloud.com/Ascend%20HDK/Ascend%20HDK%2024.1.RC3/Ascend-hdk-910b-npu-driver_24.1.rc3_linux-aarch64.run?response-content-type=application/octet-stream>`_
-- Firmware: Ascend-hdk-910b-npu-firmware_7.5.0.1.129.run - `Download <https://ascend-repo.obs.cn-east-2.myhuaweicloud.com/Ascend%20HDK/Ascend%20HDK%2024.1.RC3/Ascend-hdk-910b-npu-firmware_7.5.0.1.129.run?response-content-type=application/octet-stream>`_
+- Driver: Ascend-hdk-910b-npu-driver_24.1.rc3_linux-aarch64.run - `Download <https://ascend-repo.obs.cn-east-2.myhuaweicloud.com/Ascend%20HDK/Ascend%20HDK%2024.1.RC3/Ascend-hdk-910b-npu-driver_24.1.rc3_linux-aarch64.run?response-content-type=application/octet-stream>`__
+- Firmware: Ascend-hdk-910b-npu-firmware_7.5.0.1.129.run - `Download <https://ascend-repo.obs.cn-east-2.myhuaweicloud.com/Ascend%20HDK/Ascend%20HDK%2024.1.RC3/Ascend-hdk-910b-npu-firmware_7.5.0.1.129.run?response-content-type=application/octet-stream>`__
 
 Download the `.run` packages to the host machine, and then run the following commands to install the drivers and firmware:
 

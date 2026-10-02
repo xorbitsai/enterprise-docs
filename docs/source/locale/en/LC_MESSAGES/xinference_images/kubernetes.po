@@ -1,13 +1,14 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2023, Xorbits Inc.
-# This file is distributed under the same license as the Xinference package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+# English translations for Xinference.
+# Copyright (C) 2026 Xorbits Inc.
+# This file is distributed under the same license as the Xinference project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Xinference \n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-26 11:49+0800\n"
+"Project-Id-Version: Xinference VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-10-02 15:07+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -16,102 +17,137 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.17.0\n"
+"Generated-By: Babel 2.18.0\n"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/kubernetes.rst:5
 msgid "在 K8s 上部署"
 msgstr "Deploy on K8s"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/kubernetes.rst:7
 msgid "本文档介绍如何在Kubernetes环境中部署Xinference企业版。"
 msgstr ""
+"This document describes how to deploy Xinference Enterprise Edition in a Kubernetes "
+"environment."
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/kubernetes.rst:11
 msgid "目录"
 msgstr "Contents"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/kubernetes.rst:14
 msgid "前置准备"
-msgstr ""
+msgstr "Preparation"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/kubernetes.rst:17
 msgid "创建用于私有镜像拉取的 Docker Registry Secret"
-msgstr ""
+msgstr "Create Docker Registry Secret for private image pull"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/kubernetes.rst:29
 msgid "配置文件"
 msgstr "Configuration Files"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/kubernetes.rst:32
 msgid "准备 values-xinf-enterprise.yaml 文件"
-msgstr ""
+msgstr "Prepare the values-xinf-enterprise.yaml file"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/kubernetes.rst:157
 msgid "配置注意点"
-msgstr ""
+msgstr "Configuration notes"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/kubernetes.rst:159
 msgid ""
-"Worker 个数在 config 里配置；worker 使用的资源在 xinferenceWorker.worker.resources "
-"里定义。包括 CPU、GPU 以及内存大小。"
+"Worker 个数在 config 里配置；worker 使用的资源在 xinferenceWorker.worker.resources 里定义。包括 CPU、GPU "
+"以及内存大小。"
 msgstr ""
+"The number of Worker is configured in config; the resources used by the worker are "
+"defined in xinferenceWorker.worker.resources. Including CPU, GPU and memory size."
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/kubernetes.rst:160
 msgid ""
-"``/opt/projects/xinf-enterprise.sh --host $(POD_IP) --port 30004`` 是 "
-"Xinference 企业版前端（内部端口 8000，对外映射为 30003）需要连接的后端地址，当 Xinference "
-"API（端口9997，默认映射到对外地址是 30004）暴露后，需要将这里的 host 和 port 指定成对外地址。"
+"``/opt/projects/xinf-enterprise.sh --host $(POD_IP) --port 30004`` 是 Xinference "
+"企业版前端（内部端口 8000，对外映射为 30003）需要连接的后端地址，当 Xinference API（端口9997，默认映射到对外地址是 "
+"30004）暴露后，需要将这里的 host 和 port 指定成对外地址。"
 msgstr ""
+"``/opt/projects/xinf-enterprise.sh --host $(POD_IP) --port 30004`` is the backend "
+"address that the Xinference enterprise version front end (internal port 8000, "
+"external mapping is 30003) needs to connect to. When the Xinference API (port 9997, "
+"the default mapping to the external address is 30004) is exposed, the host and port "
+"here need to be specified as the external address."
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/kubernetes.rst:163
 msgid "部署步骤"
-msgstr ""
+msgstr "Deployment steps"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/kubernetes.rst:166
 msgid "创建 Xinference helm charts 服务"
-msgstr ""
+msgstr "Create Xinference helm charts service"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/kubernetes.rst:183
 msgid "验证部署"
-msgstr ""
+msgstr "Verify deployment"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/kubernetes.rst:185
 msgid "使用如下命令看 Xinference supervisor 和 worker 的启动情况："
 msgstr ""
+"Use the following command to check the startup status of Xinference supervisor and "
+"worker:"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/kubernetes.rst:192
 msgid "访问服务"
-msgstr ""
+msgstr "access services"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/kubernetes.rst:194
 msgid ""
-"根据 values-xinf-enterprise.yaml，默认 XInference 前端对外配置在 "
-"supervisor_ip:30003，API 地址在 supervisor_ip:30004。访问 "
-"http://supervisor_ip:30003 即可打开 Xinference 企业版服务地址。（supervisor_ip 替换成真实 "
-"IP）"
+"根据 values-xinf-enterprise.yaml，默认 XInference 前端对外配置在 supervisor_ip:30003，API 地址在 "
+"supervisor_ip:30004。访问 http://supervisor_ip:30003 即可打开 Xinference "
+"企业版服务地址。（supervisor_ip 替换成真实 IP）"
 msgstr ""
+"According to values-xinf-enterprise.yaml, the default XInference front-end external "
+"configuration is supervisor_ip:30003, and the API address is supervisor_ip:30004. "
+"Visit   http://supervisor_ip:30003   to open the Xinference enterprise version "
+"service address. (Replace supervisor_ip with real IP)"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/kubernetes.rst:197
 msgid "相关文档"
 msgstr "Related Documentation"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/kubernetes.rst:199
 msgid ":doc:`multi_deployment` - 多机部署配置"
-msgstr ""
+msgstr ":doc:`multi_deployment` - Multi-machine deployment configuration"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/kubernetes.rst:200
 msgid ":doc:`langfuse` - 企业版链路日志使用"
-msgstr ""
+msgstr ":doc:`langfuse` - Enterprise version link log usage"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/kubernetes.rst:201
 msgid ":doc:`nvidia` - Nvidia系列镜像使用"
-msgstr ""
+msgstr ":doc:`nvidia` - Nvidia series image use"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/kubernetes.rst:202
 msgid ":doc:`mindie` - MindIE系列镜像使用"
-msgstr ""
+msgstr ":doc:`mindie` - MindIE series image use"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/kubernetes.rst:203
 msgid ":doc:`hygon` - 海光系列镜像使用"
-msgstr ""
-
+msgstr ":doc:`hygon` - Hygon series image use"

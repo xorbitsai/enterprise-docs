@@ -1,0 +1,222 @@
+# Korean translations for Xinference.
+# Copyright (C) 2026 Xorbits Inc.
+# This file is distributed under the same license as the Xinference project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-10-02 15:09+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ko\n"
+"Language-Team: ko <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/index.rst:5
+msgid "Xinference 镜像使用"
+msgstr "Xinference 컨테이너 이미지 사용"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/index.rst:7
+msgid "本文档介绍了如何使用Xinference的各种镜像版本，包括Nvidia系列、MindIE系列和海光系列。"
+msgstr ""
+"이 문서에서는 Nvidia 시리즈, MindIE 시리즈 및 Haiguang 시리즈를 포함하여 Xinference의 다양한 이미지 버전을 사용하는 방법을 "
+"설명합니다."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/index.rst:11
+msgid "目录"
+msgstr "디렉토리"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/index.rst:14
+msgid "概述"
+msgstr "개요"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/index.rst:16
+msgid "Xinference提供了针对不同硬件平台优化的镜像版本："
+msgstr "Xinference는 다양한 하드웨어 플랫폼에 최적화된 이미지 버전을 제공합니다."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/index.rst:18
+msgid "**Nvidia系列**：适用于CUDA环境的GPU加速推理"
+msgstr "**Nvidia 시리즈**\\ : CUDA 환경을 위한 GPU 가속 추론"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/index.rst:19
+msgid "**MindIE系列**：适用于华为昇腾NPU环境"
+msgstr "**MindIE 시리즈**\\ : Huawei Shengteng NPU 환경에 적합"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/index.rst:20
+msgid "**海光系列**：适用于海光DCU环境"
+msgstr "**Haiguang 시리즈**\\ : Haiguang DCU 환경에 적합"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/index.rst:22
+msgid "每个系列都提供了完整的部署和使用指南。"
+msgstr "각 시리즈는 완전한 배포 및 사용 지침을 제공합니다."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/index.rst:25
+msgid "快速导航"
+msgstr "빠른 탐색"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/index.rst:28 ../../source/xinference_images/index.rst:56
+msgid "硬件平台"
+msgstr "하드웨어 플랫폼"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/index.rst:38
+msgid "管理和配置"
+msgstr "관리 및 구성"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/index.rst:51
+msgid "选择指南"
+msgstr "선택 가이드"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/index.rst:53
+msgid "根据你的硬件环境选择合适的镜像："
+msgstr "하드웨어 환경에 따라 적절한 이미지를 선택하십시오."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/index.rst:56
+msgid "推荐镜像"
+msgstr "추천 거울"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/index.rst:56
+msgid "适用场景"
+msgstr "적용 가능한 시나리오"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/index.rst:58
+msgid "NVIDIA GPU"
+msgstr "NVIDIA GPU"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/index.rst:58
+msgid ":doc:`nvidia`"
+msgstr ":doc:`nvidia`"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/index.rst:58
+msgid "CUDA环境， 高性能GPU推理"
+msgstr "CUDA 환경, 고성능 GPU 추론"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/index.rst:61
+msgid "华为昇腾NPU"
+msgstr "화웨이 성텡 NPU"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/index.rst:61
+msgid ":doc:`mindie`"
+msgstr ":doc:`mindie`"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/index.rst:61
+msgid "昇腾310/910系列 NPU推理"
+msgstr "Shengteng 310/910 시리즈 NPU 추론"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/index.rst:64
+msgid "海光DCU"
+msgstr "하이광 DCU"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/index.rst:64
+msgid ":doc:`hygon`"
+msgstr ":doc:`hygon`"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/index.rst:64
+msgid "海光DCU环境"
+msgstr "하이광 DCU 환경"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/index.rst:68
+msgid "常见任务"
+msgstr "일반적인 작업"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/index.rst:70
+msgid "**首次部署**：选择对应硬件平台的镜像文档，按照步骤进行部署"
+msgstr "**의 첫 번째 배포**\\ : 하드웨어 플랫폼에 해당하는 이미지 파일을 선택하고 배포 단계를 따릅니다."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/index.rst:71
+msgid "**证书管理**：参考 :doc:`license` 进行证书更新"
+msgstr "**인증서 관리**\\ : 인증서 업데이트는 :doc:`license`\\ 를 참조하세요."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/index.rst:72
+msgid "**性能测试**：使用 :doc:`performance` 中的工具进行性能评估"
+msgstr "**성능 테스트**\\ : 성능 평가를 위해 :doc:`performance`\\ 의 도구를 사용합니다."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/index.rst:73
+msgid "**多机部署**：参考 :doc:`multi_deployment` 进行集群部署"
+msgstr "**다중 머신 배포**\\ : 클러스터 배포는 :doc:`multi_deployment`\\ 를 참조하세요."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/index.rst:74
+msgid "**链路监控**：参考 :doc:`langfuse` 配置调用链路追踪"
+msgstr "**링크 모니터링**\\ : :doc:`langfuse` 구성 호출 링크 추적을 참조하세요."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/index.rst:75
+msgid "**生产部署**：参考 :doc:`kubernetes` 进行K8s环境部署"
+msgstr "**프로덕션 배포**\\ : K8s 환경 배포는 :doc:`kubernetes`\\ 를 참조하세요."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/index.rst:76
+msgid "**故障排除**：参考 :doc:`troubleshooting` 解决常见问题"
+msgstr "**문제 해결**\\ : 일반적인 문제를 해결하려면 :doc:`troubleshooting`\\ 를 참조하십시오."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/index.rst:79
+msgid "支持与帮助"
+msgstr "지원 및 도움"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/index.rst:81
+msgid "如果在使用过程中遇到问题，请："
+msgstr "사용 중 문제가 발생하면 다음을 수행하십시오."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/index.rst:83
+msgid "首先查看对应硬件平台的文档"
+msgstr "먼저 해당 하드웨어 플랫폼에 대한 설명서를 확인하세요."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/index.rst:84
+msgid "参考 :doc:`troubleshooting` 查找解决方案"
+msgstr "솔루션을 찾으려면 :doc:`troubleshooting`\\ 를 참조하세요."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/index.rst:85
+msgid "检查证书是否正确配置"
+msgstr "인증서가 올바르게 구성되었는지 확인하세요."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/index.rst:86
+msgid "运行性能测试验证环境配置"
+msgstr "성능 테스트를 실행하여 환경 구성 확인"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/index.rst:87
+msgid "联系技术支持获取帮助"
+msgstr "도움이 필요하면 기술 지원에 문의하세요."

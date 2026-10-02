@@ -1,0 +1,880 @@
+# Japanese translations for Xinference.
+# Copyright (C) 2026 Xorbits Inc.
+# This file is distributed under the same license as the Xinference project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-10-02 15:09+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:5
+msgid "企业版链路日志使用"
+msgstr "Enterprise バージョンのリンク ログの使用状況"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:7
+msgid "本文档介绍如何使用Xinference企业版的链路日志功能，基于Langfuse服务实现调用链路追踪和监控。"
+msgstr ""
+"このドキュメントでは、Xinference Enterprise Edition のリンク ログ機能を使用して、Langfuse サービスに基づいたコール "
+"リンクの追跡と監視を実装する方法について説明します。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:11
+msgid "目录"
+msgstr "ディレクトリ"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:14
+msgid "前置要求"
+msgstr "前提条件"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:17
+msgid "系统要求"
+msgstr "システム要件"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:19
+msgid "在部署Langfuse服务之前，请确保："
+msgstr "Langfuse サービスをデプロイする前に、次のことを確認してください。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:21
+msgid "**Docker**：Docker 20.10+ 和 Docker Compose v2+"
+msgstr "**Docker**\\ : Docker 20.10+ および Docker Compose v2+"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:22
+msgid "**内存**：建议至少4GB可用内存"
+msgstr "**メモリ**\\ : 少なくとも 4GB の空きメモリを推奨します"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:23
+msgid "**存储**：至少10GB可用磁盘空间"
+msgstr "**ストレージ**\\ : 少なくとも 10 GB の利用可能なディスク容量"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:24
+msgid "**网络**：确保相关端口未被占用"
+msgstr "**ネットワーク**\\ : 関連するポートが占有されていないことを確認してください"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:27
+msgid "端口要求"
+msgstr "ポートの要件"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:29
+msgid "Langfuse服务需要以下端口："
+msgstr "Langfuse サービスには次のポートが必要です。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:31
+msgid "**3000**：Langfuse Web界面"
+msgstr "**3000**\\ : Langfuse Web インターフェイス"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:32
+msgid "**5432**：PostgreSQL数据库"
+msgstr "**5432**\\ : PostgreSQL データベース"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:33
+msgid "**6379**：Redis缓存"
+msgstr "**6379**\\ : Redis キャッシュ"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:34
+msgid "**8123/9000**：ClickHouse数据库"
+msgstr "**8123/9000**\\ : ClickHouse データベース"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:35
+msgid "**9090/9091**：MinIO对象存储"
+msgstr "**9090/9091**\\ : MinIO オブジェクト ストレージ"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:43
+msgid "概览"
+msgstr "概要"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:45
+msgid "链路以及模型使用情况等相关的功能依赖于Langfuse服务，因此在启动Xinference后，还需要启动Langfuse服务。"
+msgstr "リンクやモデルの使用などの関連機能は Langfuse サービスに依存するため、Xinference を起動した後、Langfuse サービスも起動する必要があります。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:47
+msgid "Langfuse是一个开源的LLM工程平台，提供："
+msgstr "Langfuse は、以下を提供するオープンソース LLM エンジニアリング プラットフォームです。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:49
+msgid "**链路追踪**：完整的模型调用链路记录"
+msgstr "**リンク追跡**\\ : 完全なモデル呼び出しリンク レコード"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:50
+msgid "**性能监控**：延迟、Token使用量等指标统计"
+msgstr "**パフォーマンス監視**\\ : レイテンシー、Token の使用状況、その他の指標に関する統計"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:51
+msgid "**调用分析**：模型使用情况和趋势分析"
+msgstr "**コール分析**\\ : モデルの使用法と傾向分析"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:52
+msgid "**调试支持**：详细的输入输出日志"
+msgstr "**デバッグ サポート**\\ : 詳細な入出力ログ"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:55
+msgid "服务启动"
+msgstr "サービス開始"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:57
+msgid ""
+"使用Docker Compose启动Langfuse服务。将以下代码保存为 ``docker-compose.yaml`` "
+"文件，xinference即可自动接入Langfuse服务。"
+msgstr ""
+"Docker Compose を使用して Langfuse サービスを開始します。次のコードを ``docker-compose.yaml`` "
+"ファイルとして保存すると、xinference は自動的に Langfuse サービスに接続します。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:60
+msgid "**安全配置重要提醒**："
+msgstr "**セキュリティ設定に関する重要な注意事項**\\ :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:62
+msgid "配置文件中包含多个需要修改的安全参数，标记为 ``# CHANGEME``："
+msgstr "構成ファイルには、\\ ``# CHANGEME`` とマークされた、変更が必要な複数のセキュリティ パラメータが含まれています。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:64
+msgid "数据库密码"
+msgstr "データベースのパスワード"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:65
+msgid "Redis认证密码"
+msgstr "Redis認証パスワード"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:66
+msgid "MinIO访问密钥"
+msgstr "MinIO アクセスキー"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:67
+msgid "ClickHouse密码"
+msgstr "クリックハウスのパスワード"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:68
+msgid "加密密钥等"
+msgstr "暗号化キーなど"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:70
+msgid "**生产环境部署前务必修改这些默认值！**"
+msgstr "**運用環境に展開する前に、これらのデフォルト値を必ず変更してください。**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:73
+msgid "Docker Compose配置"
+msgstr "Docker 構成の作成"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:246
+msgid "启动服务"
+msgstr "サービス開始"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:260
+msgid "验证部署"
+msgstr "導入の検証"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:262
+msgid "**检查服务状态**："
+msgstr "**サービスステータスの確認**\\ :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:274
+msgid "**访问Web界面**："
+msgstr "**Web インターフェイス** にアクセスします。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:276
+msgid "**打开浏览器**：访问 ``http://localhost:3000``"
+msgstr "**ブラウザ** を開く: ``http://localhost:3000`` にアクセスします"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:277
+msgid "**首次登录**：使用配置的默认凭据"
+msgstr "**初回ログイン**\\ : 設定されたデフォルトの資格情報を使用する"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:279
+msgid "邮箱：``administrator@orbitai.com``"
+msgstr "電子メール: ``administrator@orbitai.com``"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:280
+msgid "密码：``administrator``"
+msgstr "パスワード: ``administrator``"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:282
+msgid "**验证功能**："
+msgstr "**検証関数**\\ :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:284
+msgid "确认可以正常登录"
+msgstr "正常にログインできることを確認する"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:285
+msgid "检查项目配置是否正确"
+msgstr "プロジェクトの構成が正しいか確認してください"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:286
+msgid "验证数据库连接状态"
+msgstr "データベース接続ステータスを確認する"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:289
+msgid "服务完全启动可能需要1-2分钟，请耐心等待所有容器状态变为健康。"
+msgstr "サービスが完全に開始されるまでに 1 ～ 2 分かかる場合があります。すべてのコンテナのステータスが正常に変わるまで、しばらくお待ちください。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:292
+msgid "设置Langfuse"
+msgstr "セットアップLangfuse"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:295
+msgid "配置连接"
+msgstr "接続の設定"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:297
+msgid "在Xinference WebUI中配置Langfuse连接参数："
+msgstr "Xinference WebUI で Langfuse 接続パラメータを構成します。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:300
+msgid "配置步骤"
+msgstr "設定手順"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:302
+msgid "**访问Xinference WebUI**：打开浏览器访问 ``http://<xinference-ip>:8000``"
+msgstr "**Xinference にアクセス WebUI**\\ : ブラウザを開いて ``http://<xinference-ip>:8000`` にアクセスします"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:303
+msgid "**进入设置页面**：点击右上角设置按钮"
+msgstr "**設定ページに入ります**\\ : 右上隅の設定ボタンをクリックします"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:304
+msgid "**选择链路配置**：选择\"链路\"标签页"
+msgstr "**リンク構成の選択**\\ : 「リンク」タブを選択します"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:305
+msgid "**配置连接参数**：填写Langfuse服务信息"
+msgstr "**接続パラメータの設定**\\ : Langfuse サービス情報の入力"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:308
+msgid "配置参数"
+msgstr "設定パラメータ"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:310
+msgid "**同机部署（默认配置）**："
+msgstr "**同一マシン展開 (デフォルト構成)**\\ :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:312
+msgid "**主机地址**：``http://localhost:3000``"
+msgstr "**ホストアドレス**\\ : ``http://localhost:3000``"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:313
+msgid "**项目公钥**：``pk-lf-8a79d84e-5537-47b7-86bb-ba36257684f2``"
+msgstr "**プロジェクト公開キー**\\ : ``pk-lf-8a79d84e-5537-47b7-86bb-ba36257684f2``"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:314
+msgid "**项目私钥**：``sk-lf-d1d41a0b-672e-49c9-aece-f9a2b40828de``"
+msgstr "**プロジェクト秘密鍵**\\ : ``sk-lf-d1d41a0b-672e-49c9-aece-f9a2b40828de``"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:316
+msgid "**跨机部署配置**："
+msgstr "**クロスマシン展開構成**\\ :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:318
+msgid "如果Langfuse与Xinference不在同一台机器："
+msgstr "Langfuse と Xinference が同じマシン上にない場合:"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:320
+msgid "**主机地址**：``http://<langfuse-server-ip>:3000``"
+msgstr "**ホストアドレス**\\ : ``http://<langfuse-server-ip>:3000``"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:321
+msgid "**项目公钥**：保持不变或使用自定义项目的公钥"
+msgstr "**プロジェクトの公開キー**\\ : 変更しないままにするか、カスタム プロジェクトの公開キーを使用します"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:322
+msgid "**项目私钥**：保持不变或使用自定义项目的私钥"
+msgstr "**プロジェクトの秘密キー**\\ : 変更しないままにするか、カスタム プロジェクトの秘密キーを使用します"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:325
+msgid "**配置注意事项**："
+msgstr "**構成メモ**\\ :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:327
+msgid "确保Xinference服务可以访问Langfuse服务地址"
+msgstr "Xinference サービスが Langfuse サービスのアドレスにアクセスできることを確認してください"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:328
+msgid "如果修改了Docker Compose中的端口，需要相应调整主机地址"
+msgstr "Docker Compose のポートが変更された場合は、それに応じてホスト アドレスを調整する必要があります"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:329
+msgid "生产环境建议创建专用的项目和密钥对"
+msgstr "実稼働環境では、専用のプロジェクトとキーペアを作成することをお勧めします。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:332
+msgid "测试连接"
+msgstr "テスト接続"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:334
+msgid "配置完成后，可以通过以下方式验证连接："
+msgstr "構成が完了すると、次の方法で接続を確認できます。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:336
+msgid "**保存配置**：点击保存按钮"
+msgstr "**構成の保存**\\ : 保存ボタンをクリックします。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:337
+msgid "**执行模型调用**：进行一次模型推理测试"
+msgstr "**はモデル呼び出しを実行します**\\ : モデル推論テストを実行します"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:338
+msgid "**检查Langfuse**：在Langfuse界面查看是否有新的调用记录"
+msgstr "**Langfuse の確認**\\ : Langfuse インターフェイスに新しい通話レコードがあるかどうかを確認します。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:341
+msgid "模型调用监控"
+msgstr "モデル呼び出しの監視"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:344
+msgid "概览页面"
+msgstr "概要ページ"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:346
+msgid "模型调用监控页面提供以下功能："
+msgstr "モデル呼び出し監視ページでは、次の機能が提供されます。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:349
+msgid "页面已实现轮询逻辑，无需手动刷新"
+msgstr "このページにはポーリング ロジックが実装されているため、手動で更新する必要はありません。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:350
+msgid "模型调用显示的是今日各个模型调用次数"
+msgstr "モデル コールには、今日の各モデルのコール数が表示されます。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:351
+msgid "tokens每日总数变化为最近一周，如需查看往日数据，请移步至 监控运维->模型调用"
+msgstr "トークンの毎日の合計数は最新の週に変更されます。過去のデータをご覧になりたい場合は、「監視・運用・保守」→「モデル呼び出し」からご覧ください。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:354
+msgid "主要指标"
+msgstr "主な指標"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:357
+msgid "右上角支持日期筛选"
+msgstr "右上隅は日付フィルタリングをサポートしています"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:358
+msgid "提供指标：大模型调用次数总数及各个模型调用次数、输入/输出tokens总数及各个模型输入/输出tokens总数、大模型每日调用次数变化、tokens每日总数变化"
+msgstr "大規模モデルへの呼び出しの合計数と各モデルへの呼び出し数、入出力トークンの合計数と各モデルへの入出力トークンの合計数、大規模モデルへの毎日の呼び出し数の変化、および毎日の合計トークン数の変化のインジケーターを提供します。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:360
+msgid "监控指标包括："
+msgstr "監視指標には次のものが含まれます。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:362
+msgid "**调用统计**"
+msgstr "**通話統計**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:363
+msgid "大模型调用次数总数"
+msgstr "大規模モデル呼び出しの合計数"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:364
+msgid "各个模型调用次数分布"
+msgstr "機種ごとの通話時間の分布"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:365
+msgid "大模型每日调用次数变化趋势"
+msgstr "大規模モデルの毎日のコールの変化傾向"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:367
+msgid "**Token统计**"
+msgstr "**Token 統計**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:368
+msgid "输入tokens总数"
+msgstr "トークンの合計数を入力してください"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:369
+msgid "输出tokens总数"
+msgstr "トークンの総数を出力する"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:370
+msgid "各个模型输入/输出tokens分布"
+msgstr "各モデルの入出力トークンの分布"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:371
+msgid "tokens每日总数变化趋势"
+msgstr "日次総トークン数の推移"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:374
+msgid "链路状态"
+msgstr "リンクステータス"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:376
+msgid "链路追踪功能提供详细的调用链路信息："
+msgstr "リンク追跡機能は、詳細な呼び出しリンク情報を提供します。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:379
+msgid "数据来源：运行实例详情 / 批处理"
+msgstr "データソース: 実行中のインスタンスの詳細/バッチ処理"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:380
+msgid "链路列表：支持日期/User筛选，查看某链路详情"
+msgstr "リンク リスト: リンクの詳細を表示するための日付/ユーザー フィルタリングをサポートします。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:382
+msgid "功能特性："
+msgstr "特徴:"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:384
+msgid "**日期筛选**：按时间范围查看链路记录"
+msgstr "**日付フィルター**\\ : 時間範囲ごとにリンク レコードを表示"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:385
+msgid "**用户筛选**：按用户维度分析调用情况"
+msgstr "**ユーザー フィルタリング**\\ : ユーザー ディメンションによる通話ステータスの分析"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:386
+msgid "**详情查看**：点击链路可查看完整调用详情"
+msgstr "**詳細を表示**\\ : リンクをクリックして通話の詳細を表示します"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:389
+msgid "链路详情"
+msgstr "リンクの詳細"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:391
+msgid "链路详情页面提供两种展示格式："
+msgstr "リンクの詳細ページには、次の 2 つの表示形式が用意されています。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:394
+msgid "展示格式"
+msgstr "表示形式"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:396
+msgid "**Tree格式**"
+msgstr "**ツリー形式**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:397
+msgid "以树状结构展示调用链路层次关系"
+msgstr "コールリンクの階層関係をツリー構造で表示する"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:399
+msgid "**Timeline格式**"
+msgstr "**タイムライン形式**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:400
+msgid "以时间线形式展示调用的时序关系"
+msgstr "通話のタイミング関係をタイムライン形式で表示します"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:403
+msgid "详情信息"
+msgstr "詳細情報"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:406
+msgid "两种展示方式Tree/Timeline"
+msgstr "2つの表示方法 ツリー/タイムライン"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:407
+msgid "详情数据：Latency，tokens输入/输出/总计，模型实例名称，对话的输入/输出，Metadata等"
+msgstr "詳細データ：レイテンシ、トークン入出力/総数、モデルインスタンス名、ダイアログ入出力、メタデータなど"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:408
+msgid "支持Pretty/JSON格式转换"
+msgstr "Pretty/JSON 形式の変換をサポート"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:410
+msgid "每个链路详情包含："
+msgstr "各リンクの詳細には次のものが含まれます。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:412
+msgid "**性能指标**"
+msgstr "**パフォーマンス指標**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:413
+msgid "**Latency**：调用延迟时间"
+msgstr "**遅延時間**\\ : 通話遅延時間"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:414
+msgid "**Tokens**：输入/输出/总计token数量"
+msgstr "**Tokens**\\ : 入力/出力/トークンの総数"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:416
+msgid "**调用信息**"
+msgstr "**通話情報**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:417
+msgid "**模型实例名称**：使用的具体模型实例"
+msgstr "**モデル インスタンス名**\\ : 使用される特定のモデル インスタンス"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:418
+msgid "**输入内容**：用户的输入prompt"
+msgstr "**入力内容**\\ : ユーザーの入力プロンプト"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:419
+msgid "**输出内容**：模型的响应结果"
+msgstr "**出力内容**\\ ：モデル応答結果"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:421
+msgid "**元数据**"
+msgstr "**メタデータ**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:422
+msgid "**Metadata**：调用的附加信息"
+msgstr "**メタデータ**\\ : 通話の追加情報"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:423
+msgid "**时间戳**：精确的调用时间"
+msgstr "**タイムスタンプ**\\ : 正確な通話時間"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:424
+msgid "**用户信息**：调用者标识"
+msgstr "**ユーザー情報**\\ : 発信者番号"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:427
+msgid "数据格式"
+msgstr "データ形式"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:429
+msgid "支持两种数据展示格式："
+msgstr "次の 2 つのデータ表示形式がサポートされています。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:431
+msgid "**Pretty格式**：格式化的易读显示"
+msgstr "**きれいなフォーマット**\\ : フォーマットされた読みやすい表示"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:432
+msgid "**JSON格式**：原始的JSON数据结构"
+msgstr "**JSON 形式**\\ : オリジナルの JSON データ構造"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:435
+msgid "使用场景"
+msgstr "使用シナリオ"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:438
+msgid "性能优化"
+msgstr "パフォーマンスの最適化"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:440
+msgid "通过延迟统计识别性能瓶颈"
+msgstr "遅延統計を使用してパフォーマンスのボトルネックを特定する"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:441
+msgid "分析token使用效率"
+msgstr "トークンの使用効率を分析する"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:442
+msgid "监控模型响应时间趋势"
+msgstr "モデルの応答時間の傾向を監視する"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:445
+msgid "调试分析"
+msgstr "デバッグ分析"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:447
+msgid "查看完整的输入输出内容"
+msgstr "完全な入出力コンテンツを表示する"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:448
+msgid "分析调用链路中的异常"
+msgstr "呼び出し側リンクの例外を分析する"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:449
+msgid "追踪特定用户的使用模式"
+msgstr "特定のユーザーの使用パターンを追跡する"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:452
+msgid "成本管理"
+msgstr "コスト管理"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:454
+msgid "统计各模型的token消耗"
+msgstr "各モデルのトークン消費量の統計"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:455
+msgid "分析成本分布和趋势"
+msgstr "コストの分布と傾向を分析する"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:456
+msgid "优化模型选择策略"
+msgstr "モデル選択戦略を最適化する"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:459
+msgid "故障排除"
+msgstr "トラブルシューティング"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:462
+msgid "常见问题"
+msgstr "よくある質問"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:464
+msgid "**Langfuse服务无法启动**"
+msgstr "**Langfuse サービスを開始できません**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:466
+msgid "**可能原因**： * Docker或Docker Compose版本过低 * 端口被占用 * 磁盘空间不足 * 内存不足"
+msgstr ""
+"**の考えられる理由**\\ : * Docker または Docker Compose のバージョンが低すぎる * ポートが占有されている * 不十分なディスク容量 *"
+" 不十分なメモリ"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:472
+#: ../../source/xinference_images/langfuse.rst:497
+#: ../../source/xinference_images/langfuse.rst:514
+msgid "**解决方案**："
+msgstr "**ソリューション**\\ :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:490
+msgid "**Xinference无法连接Langfuse**"
+msgstr "**Xinference Langfuse に接続できません**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:492
+msgid "**可能原因**： * 网络连通性问题 * 配置参数错误 * 防火墙阻拦"
+msgstr "**考えられる理由**\\ : * ネットワーク接続の問題 * 構成パラメーターのエラー * ファイアウォールのブロック"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:507
+msgid "**链路数据不显示**"
+msgstr "**リンクデータが表示されない**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:509
+msgid "**可能原因**： * Langfuse配置未生效 * 模型调用异常 * 数据库连接问题"
+msgstr "**考えられる理由**\\ : * Langfuse 設定が有効にならない * モデル呼び出し例外 * データベース接続の問題"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:526
+msgid "**性能问题**"
+msgstr "**パフォーマンスの問題**"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:528
+msgid "**可能原因**： * 资源不足 * 数据库性能瓶颈 * 网络延迟"
+msgstr "**考えられる理由**\\ : * リソース不足 * データベース パフォーマンスのボトルネック * ネットワーク遅延"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:533
+msgid "**解决方案**： * 增加系统内存 * 优化数据库配置 * 使用本地部署减少网络延迟"
+msgstr "**ソリューション**\\ : * システム メモリを増やす * データベース構成を最適化する * ローカル展開を使用してネットワーク遅延を短縮する"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:539
+msgid "维护建议"
+msgstr "メンテナンスに関する推奨事項"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:541
+msgid "**定期维护**： * 定期清理旧的链路数据 * 监控磁盘使用情况 * 备份重要的配置和数据"
+msgstr "**定期メンテナンス**\\ : * 古いリンク データを定期的にクリーンアップします。 * ディスク使用量を監視します。 * 重要な構成とデータをバックアップします。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:546
+msgid "**性能优化**： * 根据使用量调整数据库配置 * 考虑使用外部高性能数据库 * 定期更新到最新版本"
+msgstr "**パフォーマンスの最適化**\\ : * 用途に応じてデータベース構成を調整 * 外部の高性能データベースの使用を検討 * 定期的に最新バージョンに更新"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:551
+msgid "更多详细的故障排除方案请参考：:doc:`troubleshooting`"
+msgstr "トラブルシューティングの解決策の詳細については、\\ :doc:`troubleshooting` を参照してください。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:554
+msgid "相关文档"
+msgstr "関連資料"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:556
+msgid ":doc:`index` - 镜像使用总览"
+msgstr ":doc:`index` - ミラーの使用法の概要"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:557
+msgid ":doc:`nvidia` - Nvidia系列镜像使用"
+msgstr ":doc:`nvidia` - Nvidiaシリーズミラー用"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:558
+msgid ":doc:`multi_deployment` - 多机部署配置"
+msgstr ":doc:`multi_deployment` - マルチマシン展開構成"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:559
+msgid ":doc:`kubernetes` - K8s部署配置"
+msgstr ":doc:`kubernetes` - K8s デプロイメント構成"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:560
+msgid ":doc:`performance` - 性能测试指南"
+msgstr ":doc:`performance` - パフォーマンス テスト ガイド"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:561
+msgid ":doc:`troubleshooting` - 故障排除指南"
+msgstr ":doc:`troubleshooting` - トラブルシューティング ガイド"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:564
+msgid "**部署建议**："
+msgstr "**導入に関する推奨事項**\\ :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:566
+msgid "建议在Xinference服务稳定运行后再部署Langfuse"
+msgstr "Xinference サービスが安定して実行されてから、Langfuse をデプロイすることをお勧めします。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:567
+msgid "生产环境请修改所有默认密码和密钥"
+msgstr "運用環境のデフォルトのパスワードとキーをすべて変更してください。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:568
+msgid "定期备份Langfuse数据以防数据丢失"
+msgstr "データ損失を防ぐために、Langfuse データを定期的にバックアップします。"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/langfuse.rst:569
+msgid "如遇问题，请优先查看容器日志进行排查"
+msgstr "問題が発生した場合は、まずコンテナーのログを確認してトラブルシューティングを行ってください。"

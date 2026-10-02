@@ -41,19 +41,19 @@ docs/
 ### 1. 安装依赖
 
 ```bash
-pip install sphinx sphinx-tabs sphinx-design pydata-sphinx-theme python-docx
+pip install -r docs/requirements.txt
 ```
 
 ### 2. 构建HTML文档
 
 ```bash
 cd docs
-make html
+python build_multilang.py --base-path /
 ```
 
 ### 3. 查看文档
 
-构建完成后，可以通过以下方式查看文档：
+构建完成后，默认首页为英文，菜单提供与 inference 文档一致的 10 种语言。可以通过以下方式查看文档：
 
 ```bash
 # 启动本地服务器

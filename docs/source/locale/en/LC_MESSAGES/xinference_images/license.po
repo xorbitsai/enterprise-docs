@@ -1,13 +1,14 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2023, Xorbits Inc.
-# This file is distributed under the same license as the Xinference package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+# English translations for Xinference.
+# Copyright (C) 2026 Xorbits Inc.
+# This file is distributed under the same license as the Xinference project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Xinference \n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-26 13:38+0800\n"
+"Project-Id-Version: Xinference VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-10-02 15:07+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -16,410 +17,506 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.17.0\n"
+"Generated-By: Babel 2.18.0\n"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:5
 msgid "Xinf证书更新"
-msgstr ""
+msgstr "Xinf certificate update"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:7
 msgid "本文档介绍如何更新Xinference企业版的证书。"
 msgstr ""
+"This document describes how to update the certificate of Xinference Enterprise "
+"Edition."
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:11
 msgid "目录"
 msgstr "Contents"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:14
 msgid "前置要求"
-msgstr ""
+msgstr "Prerequisites"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:16
 msgid "在开始证书更新之前，请确保："
-msgstr ""
+msgstr "Before starting the certificate update, make sure:"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:18
 msgid "Xinference服务已正常启动"
-msgstr ""
+msgstr "Xinference service has started normally"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:19
 msgid "可以访问WebUI界面（即使显示证书过期提示）"
 msgstr ""
+"Can access the WebUI interface (even if the certificate expiration prompt is "
+"displayed)"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:20
 msgid "具有管理员权限"
-msgstr ""
+msgstr "Have administrator rights"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:21
 msgid "网络连接正常，可以访问API接口"
-msgstr ""
+msgstr "The network connection is normal and the API interface can be accessed."
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:24
 msgid "概述"
 msgstr "Overview"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:26
 msgid "Xinference企业版需要有效的证书才能正常使用。首次部署或证书过期时，会出现以下情况："
 msgstr ""
+"Xinference Enterprise Edition requires a valid certificate for normal use. When "
+"deploying for the first time or when the certificate expires, the following "
+"situations occur:"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:28
 msgid "访问WebUI界面时显示\"License is expired.\"提示"
-msgstr ""
+msgstr "\"License is expired.\" prompt is displayed when accessing the WebUI interface"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:29
 msgid "部分功能受限或无法使用"
-msgstr ""
+msgstr "Some functions are limited or unavailable"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:30
 msgid "需要获取设备信息并申请新证书"
-msgstr ""
+msgstr "Need to obtain device information and apply for a new certificate"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:32
 msgid "证书更新流程："
-msgstr ""
+msgstr "Certificate update process:"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:34
 msgid "**获取设备信息**：通过API或WebUI获取MAC地址"
-msgstr ""
+msgstr "**Get device information**\\ : Get MAC address through API or WebUI"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:35
 msgid "**申请证书**：将设备信息发送给技术支持"
-msgstr ""
+msgstr "**Apply for certificate**\\ : Send device information to technical support"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:36
 msgid "**更新证书**：通过WebUI或API更新证书"
-msgstr ""
+msgstr "**Update certificate**\\ : Update certificate through WebUI or API"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:37
 msgid "**验证生效**：确认证书更新成功"
-msgstr ""
+msgstr "**Verification takes effect**\\ : Confirm that the certificate update is successful"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:40
 msgid "获取设备信息"
-msgstr ""
+msgstr "Get device information"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:43
 #: ../../source/xinference_images/license.rst:114
 msgid "方法一：通过WebUI界面"
-msgstr ""
+msgstr "Method 1: Through WebUI interface"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:45
 #: ../../source/xinference_images/license.rst:116
 msgid "**访问WebUI**：打开浏览器访问 ``http://<your-ip>:8000``"
-msgstr ""
+msgstr "**access WebUI**\\ : Open the browser to access ``http://<your-ip>:8000``"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:46
 msgid "**查看提示**：证书过期时会自动弹出对话框显示设备信息"
 msgstr ""
+"**View prompt**\\ : When the certificate expires, a dialog box will automatically pop"
+" up to display device information."
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:47
 msgid "**复制信息**：从对话框中复制MAC地址等设备信息"
 msgstr ""
+"**Copy information**\\ : Copy device information such as MAC address from the dialog "
+"box"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:50
 #: ../../source/xinference_images/license.rst:123
 msgid "方法二：通过API接口"
-msgstr ""
+msgstr "Method 2: Through API interface"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:52
 msgid "使用以下命令获取设备的MAC地址信息："
-msgstr ""
+msgstr "Use the following command to obtain the device's MAC address information:"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:59
 #: ../../source/xinference_images/license.rst:136
 msgid "**参数说明**："
-msgstr ""
+msgstr "**Parameter Description**\\ :"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:61
 #: ../../source/xinference_images/license.rst:138
 msgid "``<your-ip>``：替换为Xinference服务的IP地址"
-msgstr ""
+msgstr "``<your-ip>``\\ : Replace with the IP address of the Xinference service"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:62
 #: ../../source/xinference_images/license.rst:139
 msgid "``<your-port>``：替换为Xinference服务端口（通常为9997）"
-msgstr ""
+msgstr "``<your-port>``\\ : Replaced by the Xinference service port (usually 9997)"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:64
 #: ../../source/xinference_images/license.rst:142
 msgid "**示例**："
-msgstr ""
+msgstr "**Example**\\ :"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:70
 #: ../../source/xinference_images/license.rst:152
 msgid "**响应示例**："
-msgstr ""
+msgstr "**Response example**\\ :"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:82
 msgid "申请证书"
-msgstr ""
+msgstr "Apply for a certificate"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:84
 msgid "获取设备信息后，需要向技术支持申请证书："
 msgstr ""
+"After obtaining the device information, you need to apply for a certificate from "
+"technical support:"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:87
 msgid "申请流程"
-msgstr ""
+msgstr "Application process"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:89
 msgid "**收集信息**："
-msgstr ""
+msgstr "**collects information**\\ :"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:91
 msgid "设备MAC地址"
-msgstr ""
+msgstr "Device MAC address"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:92
 msgid "公司名称和联系信息"
-msgstr ""
+msgstr "Company name and contact information"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:93
 msgid "使用用途说明"
-msgstr ""
+msgstr "Instructions for use"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:94
 msgid "预期使用期限"
-msgstr ""
+msgstr "Expected period of use"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:96
 msgid "**提交申请**："
-msgstr ""
+msgstr "**Submit application**\\ :"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:98
 msgid "发送邮件给技术支持团队"
-msgstr ""
+msgstr "Send an email to the technical support team"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:99
 msgid "或通过客服渠道提交申请"
-msgstr ""
+msgstr "Or submit an application through customer service channels"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:100
 msgid "包含完整的设备信息和申请说明"
-msgstr ""
+msgstr "Contains complete equipment information and application instructions"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:102
 msgid "**获取证书**："
-msgstr ""
+msgstr "**Obtain certificate**\\ :"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:104
 msgid "技术支持会生成对应的证书文件"
-msgstr ""
+msgstr "Technical support will generate the corresponding certificate file"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:105
 msgid "通过邮件或其他安全方式发送证书"
-msgstr ""
+msgstr "Send certificate via email or other secure method"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:106
 msgid "证书通常为Base64编码的字符串"
-msgstr ""
+msgstr "The certificate is usually a Base64 encoded string"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:109
 msgid "更新证书"
-msgstr ""
+msgstr "Update certificate"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:111
 msgid "获得证书后，可以通过以下两种方式更新："
-msgstr ""
+msgstr "Once you obtain the certificate, you can renew it in the following two ways:"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:117
 msgid "**打开证书对话框**：如果证书已过期，会自动弹出；否则可在设置中找到"
 msgstr ""
+"**Open the certificate dialog box**\\ : If the certificate has expired, it will pop "
+"up automatically; otherwise it can be found in the settings"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:118
 msgid "**输入证书**：将获得的证书字符串粘贴到输入框中"
-msgstr ""
+msgstr "**Enter certificate**\\ : Paste the obtained certificate string into the input box"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:119
 msgid "**提交更新**：点击确认按钮完成更新"
-msgstr ""
+msgstr "**Submit update**\\ : Click the confirm button to complete the update"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:120
 msgid "**验证结果**：页面会显示更新结果"
-msgstr ""
+msgstr "**verification result**\\ : The page will display the updated result"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:125
 msgid "使用以下命令通过API更新证书："
-msgstr ""
+msgstr "Update the certificate via API using the following command:"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:140
 msgid "``<your-license-key>``：替换为获得的实际证书字符串"
-msgstr ""
+msgstr "``<your-license-key>``\\ : Replaced with the actual certificate string obtained"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:161
 msgid "出现\"Request Successful\"即表示更新成功，可以正常访问Xinf服务了。"
 msgstr ""
+"When \"Request Successful\" appears, it means the update is successful and the Xinf "
+"service can be accessed normally."
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:164
 msgid "验证证书生效"
-msgstr ""
+msgstr "Verify that the certificate is valid"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:166
 msgid "更新证书后，建议进行以下验证："
-msgstr ""
+msgstr "After renewing the certificate, the following verifications are recommended:"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:169
 msgid "功能验证"
-msgstr ""
+msgstr "Functional verification"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:171
 msgid "**刷新WebUI**：重新加载浏览器页面"
-msgstr ""
+msgstr "**Refresh WebUI**\\ : Reload the browser page"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:172
 msgid "**检查状态**：确认不再显示证书过期提示"
 msgstr ""
+"**Check status**\\ : Confirm that the certificate expiration prompt will no longer be"
+" displayed"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:173
 msgid "**测试功能**：尝试访问各个功能模块"
-msgstr ""
+msgstr "**test function**\\ : try to access each function module"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:174
 msgid "**模型加载**：测试模型加载和推理功能"
-msgstr ""
+msgstr "**model loading**\\ : test model loading and inference functions"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:177
 msgid "API验证"
-msgstr ""
+msgstr "API verification"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:188
 msgid "默认凭据"
-msgstr ""
+msgstr "Default credentials"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:191
 msgid "WebUI访问凭据"
-msgstr ""
+msgstr "WebUI access credentials"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:193
 msgid "**用户名**：``administrator``"
-msgstr ""
+msgstr "**Username**\\ : ``administrator``"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:194
 msgid "**密码**：``administrator``"
-msgstr ""
+msgstr "**Password**\\ : ``administrator``"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:197
 msgid "**安全建议**："
-msgstr ""
+msgstr "**Safety recommendations**\\ :"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:199
 msgid "首次登录后请立即修改默认密码"
-msgstr ""
+msgstr "Please change the default password immediately after logging in for the first time."
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:200
 msgid "使用强密码，包含字母、数字和特殊字符"
-msgstr ""
+msgstr "Use a strong password that contains letters, numbers, and special characters"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:201
 msgid "定期更换密码以确保安全"
-msgstr ""
+msgstr "Change your password regularly to ensure security"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:204
 msgid "常见问题"
-msgstr ""
+msgstr "FAQ"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:207
 msgid "证书更新失败"
-msgstr ""
+msgstr "Certificate update failed"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:209
 msgid "如果证书更新失败，请检查："
-msgstr ""
+msgstr "If the certificate update fails, check:"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:211
 msgid "证书字符串是否完整且正确"
-msgstr ""
+msgstr "Is the certificate string complete and correct?"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:212
 msgid "网络连接是否正常"
-msgstr ""
+msgstr "Is the network connection normal?"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:213
 msgid "服务是否正常运行"
-msgstr ""
+msgstr "Is the service running normally?"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:214
 msgid "是否有足够的权限"
-msgstr ""
+msgstr "Do you have sufficient permissions?"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:217
 msgid "证书仍然显示过期"
-msgstr ""
+msgstr "Certificate still shows expired"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:219
 msgid "如果更新后仍显示过期："
-msgstr ""
+msgstr "If it still shows expired after updating:"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:221
 msgid "清除浏览器缓存并重新访问"
-msgstr ""
+msgstr "Clear browser cache and visit again"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:222
 msgid "重启Xinference服务"
-msgstr ""
+msgstr "Restart the Xinference service"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:223
 msgid "检查系统时间是否正确"
-msgstr ""
+msgstr "Check whether the system time is correct"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:224
 msgid "联系技术支持确认证书有效性"
-msgstr ""
+msgstr "Contact technical support to confirm certificate validity"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:226
 msgid "更多问题解决方案请参考：:doc:`troubleshooting`"
-msgstr ""
+msgstr "For more problem solutions, please refer to: :doc:`troubleshooting`"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:229
 msgid "相关文档"
 msgstr "Related Documentation"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:231
 msgid ":doc:`nvidia` - Nvidia系列镜像使用"
-msgstr ""
+msgstr ":doc:`nvidia` - Nvidia series image use"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:232
 msgid ":doc:`mindie` - MindIE系列镜像使用"
-msgstr ""
+msgstr ":doc:`mindie` - MindIE series image use"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:233
 msgid ":doc:`hygon` - 海光系列镜像使用"
-msgstr ""
+msgstr ":doc:`hygon` - Hygon series image use"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:234
 msgid ":doc:`multi_deployment` - 多机部署配置"
-msgstr ""
+msgstr ":doc:`multi_deployment` - Multi-machine deployment configuration"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:235
 msgid ":doc:`troubleshooting` - 故障排除指南"
-msgstr ""
+msgstr ":doc:`troubleshooting` - Troubleshooting Guide"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:238
 msgid "证书更新是使用Xinference企业版的必要步骤"
-msgstr ""
+msgstr "Certificate renewal is a necessary step to use Xinference Enterprise Edition"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:239
 msgid "建议在部署完成后立即进行证书更新"
-msgstr ""
+msgstr "It is recommended to update the certificate immediately after deployment is complete"
 
+#. Machine-translated prose; technical literals and reference targets preserved.
 #: ../../source/xinference_images/license.rst:240
 msgid "如遇到问题，请及时联系技术支持"
-msgstr ""
-
-#~ msgid ""
-#~ "首次访问Xinf WebUI界面，会出现\"License is "
-#~ "expired.\"提示，需要更新Xinf证书。设备信息已显示在WebUI弹出框中或通过以下命令获取设备信息来生成Xinf证书。"
-#~ msgstr ""
-
-#~ msgid "响应示例："
-#~ msgstr ""
-
-#~ msgid "将命令回包发送给Xinf开发人员，会获得设备对应的Xinf证书，输入WebUI弹出框中或通过以下命令对证书进行更新。"
-#~ msgstr ""
-
-#~ msgid "出现Request Successful即更新成功，可以正常访问Xinf服务了。"
-#~ msgstr ""
-
-#~ msgid "管理员用户名密码默认是 ``administrator``。"
-#~ msgstr ""
-
+msgstr "If you encounter problems, please contact technical support in time"

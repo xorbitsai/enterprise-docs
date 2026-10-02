@@ -1,0 +1,505 @@
+# Korean translations for Xinference.
+# Copyright (C) 2026 Xorbits Inc.
+# This file is distributed under the same license as the Xinference project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-10-02 15:09+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ko\n"
+"Language-Team: ko <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:5
+msgid "Xinf证书更新"
+msgstr "Xinf 인증서 업데이트"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:7
+msgid "本文档介绍如何更新Xinference企业版的证书。"
+msgstr "이 문서에서는 Xinference Enterprise Edition의 인증서를 업데이트하는 방법을 설명합니다."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:11
+msgid "目录"
+msgstr "디렉토리"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:14
+msgid "前置要求"
+msgstr "전제 조건"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:16
+msgid "在开始证书更新之前，请确保："
+msgstr "인증서 업데이트를 시작하기 전에 다음을 확인하세요."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:18
+msgid "Xinference服务已正常启动"
+msgstr "Xinference 서비스가 정상적으로 시작되었습니다"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:19
+msgid "可以访问WebUI界面（即使显示证书过期提示）"
+msgstr "WebUI 인터페이스에 액세스할 수 있습니다(인증서 만료 프롬프트가 표시되는 경우에도)."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:20
+msgid "具有管理员权限"
+msgstr "관리자 권한이 있습니다"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:21
+msgid "网络连接正常，可以访问API接口"
+msgstr "네트워크 연결이 정상이며 API 인터페이스에 접근할 수 있습니다."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:24
+msgid "概述"
+msgstr "개요"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:26
+msgid "Xinference企业版需要有效的证书才能正常使用。首次部署或证书过期时，会出现以下情况："
+msgstr ""
+"Xinference Enterprise Edition을 정상적으로 사용하려면 유효한 인증서가 필요합니다. 처음으로 배포하거나 인증서가 만료되면 다음 "
+"상황이 발생합니다."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:28
+msgid "访问WebUI界面时显示\"License is expired.\"提示"
+msgstr "\"라이센스가 만료되었습니다.\" WebUI 인터페이스에 액세스할 때 프롬프트가 표시됩니다."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:29
+msgid "部分功能受限或无法使用"
+msgstr "일부 기능이 제한되거나 사용할 수 없습니다."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:30
+msgid "需要获取设备信息并申请新证书"
+msgstr "기기 정보 획득 및 신규 인증서 신청 필요"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:32
+msgid "证书更新流程："
+msgstr "인증서 업데이트 프로세스:"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:34
+msgid "**获取设备信息**：通过API或WebUI获取MAC地址"
+msgstr "**장치 정보 가져오기**\\ : API 또는 WebUI를 통해 MAC 주소 가져오기"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:35
+msgid "**申请证书**：将设备信息发送给技术支持"
+msgstr "**인증서 신청**\\ : 기술 지원부에 장치 정보 보내기"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:36
+msgid "**更新证书**：通过WebUI或API更新证书"
+msgstr "**업데이트 인증서**\\ : WebUI 또는 API를 통해 인증서 업데이트"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:37
+msgid "**验证生效**：确认证书更新成功"
+msgstr "**확인이 적용됩니다.**\\ : 인증서 업데이트가 성공했는지 확인하세요."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:40
+msgid "获取设备信息"
+msgstr "장치 정보 가져오기"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:43
+#: ../../source/xinference_images/license.rst:114
+msgid "方法一：通过WebUI界面"
+msgstr "방법 1: WebUI 인터페이스를 통해"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:45
+#: ../../source/xinference_images/license.rst:116
+msgid "**访问WebUI**：打开浏览器访问 ``http://<your-ip>:8000``"
+msgstr "**액세스 WebUI**\\ : 브라우저를 열어 ``http://<your-ip>:8000``\\ 에 액세스합니다."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:46
+msgid "**查看提示**：证书过期时会自动弹出对话框显示设备信息"
+msgstr "**프롬프트 보기**\\ : 인증서가 만료되면 장치 정보를 표시하는 대화 상자가 자동으로 팝업됩니다."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:47
+msgid "**复制信息**：从对话框中复制MAC地址等设备信息"
+msgstr "**정보 복사**\\ : 대화 상자에서 MAC 주소 등 장치 정보를 복사합니다."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:50
+#: ../../source/xinference_images/license.rst:123
+msgid "方法二：通过API接口"
+msgstr "방법 2: API 인터페이스를 통해"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:52
+msgid "使用以下命令获取设备的MAC地址信息："
+msgstr "장치의 MAC 주소 정보를 얻으려면 다음 명령을 사용하십시오."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:59
+#: ../../source/xinference_images/license.rst:136
+msgid "**参数说明**："
+msgstr "**매개변수 설명**\\ :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:61
+#: ../../source/xinference_images/license.rst:138
+msgid "``<your-ip>``：替换为Xinference服务的IP地址"
+msgstr "``<your-ip>``\\ : Xinference 서비스의 IP 주소로 교체"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:62
+#: ../../source/xinference_images/license.rst:139
+msgid "``<your-port>``：替换为Xinference服务端口（通常为9997）"
+msgstr "``<your-port>``\\ : Xinference 서비스 포트(보통 9997)로 대체됨"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:64
+#: ../../source/xinference_images/license.rst:142
+msgid "**示例**："
+msgstr "**예**\\ :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:70
+#: ../../source/xinference_images/license.rst:152
+msgid "**响应示例**："
+msgstr "**응답 예**\\ :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:82
+msgid "申请证书"
+msgstr "인증서 신청"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:84
+msgid "获取设备信息后，需要向技术支持申请证书："
+msgstr "장치 정보를 얻은 후 기술 지원부에 인증서를 신청해야 합니다."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:87
+msgid "申请流程"
+msgstr "신청 절차"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:89
+msgid "**收集信息**："
+msgstr "**는** 정보를 수집합니다."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:91
+msgid "设备MAC地址"
+msgstr "장치 MAC 주소"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:92
+msgid "公司名称和联系信息"
+msgstr "회사명 및 연락처 정보"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:93
+msgid "使用用途说明"
+msgstr "사용 지침"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:94
+msgid "预期使用期限"
+msgstr "사용예정기간"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:96
+msgid "**提交申请**："
+msgstr "**신청서 제출**\\ :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:98
+msgid "发送邮件给技术支持团队"
+msgstr "기술 지원팀에 이메일 보내기"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:99
+msgid "或通过客服渠道提交申请"
+msgstr "또는 고객 서비스 채널을 통해 신청서를 제출하세요."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:100
+msgid "包含完整的设备信息和申请说明"
+msgstr "완전한 장비 정보 및 적용 지침이 포함되어 있습니다."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:102
+msgid "**获取证书**："
+msgstr "**인증서** 획득:"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:104
+msgid "技术支持会生成对应的证书文件"
+msgstr "기술 지원팀에서 해당 인증서 파일을 생성합니다."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:105
+msgid "通过邮件或其他安全方式发送证书"
+msgstr "이메일 또는 기타 보안 방법을 통해 인증서 보내기"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:106
+msgid "证书通常为Base64编码的字符串"
+msgstr "인증서는 일반적으로 Base64로 인코딩된 문자열입니다."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:109
+msgid "更新证书"
+msgstr "인증서 업데이트"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:111
+msgid "获得证书后，可以通过以下两种方式更新："
+msgstr "인증서를 획득한 후에는 다음 두 가지 방법으로 갱신할 수 있습니다."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:117
+msgid "**打开证书对话框**：如果证书已过期，会自动弹出；否则可在设置中找到"
+msgstr "**인증서 대화 상자 열기**\\ : 인증서가 만료된 경우 자동으로 팝업됩니다. 그렇지 않으면 설정에서 찾을 수 있습니다"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:118
+msgid "**输入证书**：将获得的证书字符串粘贴到输入框中"
+msgstr "**인증서 입력**\\ : 획득한 인증서 문자열을 입력창에 붙여넣기"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:119
+msgid "**提交更新**：点击确认按钮完成更新"
+msgstr "**업데이트 제출**\\ : 업데이트를 완료하려면 확인 버튼을 클릭하세요."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:120
+msgid "**验证结果**：页面会显示更新结果"
+msgstr "**검증 결과**\\ : 페이지에 업데이트된 결과가 표시됩니다."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:125
+msgid "使用以下命令通过API更新证书："
+msgstr "다음 명령을 사용하여 API를 통해 인증서를 업데이트합니다."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:140
+msgid "``<your-license-key>``：替换为获得的实际证书字符串"
+msgstr "``<your-license-key>``\\ : 획득한 실제 인증서 문자열로 대체됨"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:161
+msgid "出现\"Request Successful\"即表示更新成功，可以正常访问Xinf服务了。"
+msgstr "\"요청 성공\"이 나타나면 업데이트가 성공하여 Xinf 서비스에 정상적으로 액세스할 수 있다는 의미입니다."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:164
+msgid "验证证书生效"
+msgstr "인증서가 유효한지 확인하세요."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:166
+msgid "更新证书后，建议进行以下验证："
+msgstr "인증서를 갱신한 후 다음 확인을 권장합니다."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:169
+msgid "功能验证"
+msgstr "기능 검증"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:171
+msgid "**刷新WebUI**：重新加载浏览器页面"
+msgstr "**WebUI 새로 고침**\\ : 브라우저 페이지를 다시 로드합니다."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:172
+msgid "**检查状态**：确认不再显示证书过期提示"
+msgstr "**상태 확인**\\ : 인증서 만료 프롬프트가 더 이상 표시되지 않는지 확인"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:173
+msgid "**测试功能**：尝试访问各个功能模块"
+msgstr "**테스트 기능**\\ : 각 기능 모듈에 액세스를 시도합니다."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:174
+msgid "**模型加载**：测试模型加载和推理功能"
+msgstr "**모델 로딩**\\ : 테스트 모델 로딩 및 추론 기능"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:177
+msgid "API验证"
+msgstr "API 검증"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:188
+msgid "默认凭据"
+msgstr "기본 자격 증명"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:191
+msgid "WebUI访问凭据"
+msgstr "WebUI 액세스 자격 증명"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:193
+msgid "**用户名**：``administrator``"
+msgstr "**사용자 이름**\\ : ``administrator``"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:194
+msgid "**密码**：``administrator``"
+msgstr "**비밀번호**\\ : ``administrator``"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:197
+msgid "**安全建议**："
+msgstr "**안전 권장 사항**\\ :"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:199
+msgid "首次登录后请立即修改默认密码"
+msgstr "처음 로그인한 후 즉시 기본 비밀번호를 변경하세요."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:200
+msgid "使用强密码，包含字母、数字和特殊字符"
+msgstr "문자, 숫자, 특수문자가 포함된 강력한 비밀번호를 사용하세요."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:201
+msgid "定期更换密码以确保安全"
+msgstr "보안을 위해 정기적으로 비밀번호를 변경하세요."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:204
+msgid "常见问题"
+msgstr "FAQ"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:207
+msgid "证书更新失败"
+msgstr "인증서 업데이트 실패"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:209
+msgid "如果证书更新失败，请检查："
+msgstr "인증서 업데이트가 실패하면 다음을 확인하세요."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:211
+msgid "证书字符串是否完整且正确"
+msgstr "인증서 문자열이 완전하고 정확합니까?"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:212
+msgid "网络连接是否正常"
+msgstr "네트워크 연결이 정상인가요?"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:213
+msgid "服务是否正常运行"
+msgstr "서비스가 정상적으로 운영되고 있나요?"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:214
+msgid "是否有足够的权限"
+msgstr "충분한 권한이 있습니까?"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:217
+msgid "证书仍然显示过期"
+msgstr "인증서가 여전히 만료된 것으로 표시됩니다."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:219
+msgid "如果更新后仍显示过期："
+msgstr "업데이트 후에도 여전히 만료된 것으로 표시되는 경우:"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:221
+msgid "清除浏览器缓存并重新访问"
+msgstr "브라우저 캐시를 지우고 다시 방문하세요."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:222
+msgid "重启Xinference服务"
+msgstr "Xinference 서비스를 다시 시작하세요"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:223
+msgid "检查系统时间是否正确"
+msgstr "시스템 시간이 올바른지 확인하세요."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:224
+msgid "联系技术支持确认证书有效性"
+msgstr "인증서 유효성을 확인하려면 기술 지원팀에 문의하세요."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:226
+msgid "更多问题解决方案请参考：:doc:`troubleshooting`"
+msgstr "더 많은 문제 해결 방법은 다음을 참조하십시오: :doc:`troubleshooting`"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:229
+msgid "相关文档"
+msgstr "관련 문서"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:231
+msgid ":doc:`nvidia` - Nvidia系列镜像使用"
+msgstr ":doc:`nvidia` - Nvidia 시리즈 미러 사용"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:232
+msgid ":doc:`mindie` - MindIE系列镜像使用"
+msgstr ":doc:`mindie` - MindIE 시리즈 미러 사용"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:233
+msgid ":doc:`hygon` - 海光系列镜像使用"
+msgstr ":doc:`hygon` - Haiguang 시리즈 거울 사용"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:234
+msgid ":doc:`multi_deployment` - 多机部署配置"
+msgstr ":doc:`multi_deployment` - 다중 머신 배포 구성"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:235
+msgid ":doc:`troubleshooting` - 故障排除指南"
+msgstr ":doc:`troubleshooting` - 문제 해결 가이드"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:238
+msgid "证书更新是使用Xinference企业版的必要步骤"
+msgstr "인증서 갱신은 Xinference Enterprise Edition을 사용하는 데 필요한 단계입니다."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:239
+msgid "建议在部署完成后立即进行证书更新"
+msgstr "배포가 완료된 후 즉시 인증서를 업데이트하는 것이 좋습니다."
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/xinference_images/license.rst:240
+msgid "如遇到问题，请及时联系技术支持"
+msgstr "문제가 발생하면 적시에 기술 지원에 문의하십시오."

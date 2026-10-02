@@ -1,0 +1,38 @@
+# Korean translations for Xinference.
+# Copyright (C) 2026 Xorbits Inc.
+# This file is distributed under the same license as the Xinference project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Xinference VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-10-02 15:09+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ko\n"
+"Language-Team: ko <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/index.rst:5
+msgid "Welcome to Xinference!"
+msgstr "Xinference에 오신 것을 환영합니다!"
+
+#. Machine-translated prose; technical literals and reference targets preserved.
+#: ../../source/index.rst:15
+msgid ""
+"Xorbits Inference (Xinference) is an open-source platform to streamline the operation"
+" and integration of a wide array of AI models. With Xinference, you're empowered to "
+"run inference using any open-source LLMs, embedding models, and multimodal models "
+"either in the cloud or on your own premises, and create robust AI-driven "
+"applications."
+msgstr ""
+"Xorbits Inference(Xinference)는 다양한 AI 모델의 운영 및 통합을 간소화하는 오픈 소스 플랫폼입니다. Xinference를 "
+"사용하면 클라우드나 자체 프레미스에서 오픈 소스 LLM, 임베딩 모델 및 다중 모달 모델을 사용하여 추론을 실행하고 강력한 AI 기반 애플리케이션을 만들"
+" 수 있습니다."
